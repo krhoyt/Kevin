@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="Makes cool shit." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>{{ title }}</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/article.css" />
+  <link rel="stylesheet" href="/style/footer.css" />
+  <link rel="stylesheet" href="/style/prism.css" />  
+
+</head>
+<body>
+  
+  {% include 'header.njk' %}
+
+  {% block content %}
+  <main>
+
+    <img src="{{ feature_image }}" alt="{{ title }}">
+    <article>
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    </article>
+  </main>
+  {% endblock %}        
+
+  {% include 'footer.njk' %}
+
+</body>
+</html>

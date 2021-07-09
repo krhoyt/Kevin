@@ -1,0 +1,161 @@
+main {
+  display: grid; 
+  gap: 32px 32px; 
+  grid-template-columns: repeat( 3, 1fr );
+  margin: 24px;
+  padding: 0 16px 0 16px;
+}
+
+main a {
+  color: #000000;
+  text-decoration: none;
+}
+
+main article {
+  padding: 16px 0 8px 0;
+}
+
+/*
+main article:first-of-type {
+  background-image: url( img/whisk.jpg );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 4px;
+  grid-column: span 2;
+}
+*/
+
+main article > div {
+  background-image: url( img/whisk.jpg );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 4px;
+  min-height: 200px;
+}
+
+main article > p {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 24px 0 8px 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+main article > p a {
+  color: #15171a;
+}
+
+main article h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  padding: 0;
+}
+
+main article section {
+  flex-basis: 0;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+main article section p {
+  flex-basis: 0;
+  flex-grow: 1;
+  font-size: 17px;
+  line-height: 26px;
+  margin: 0 0 16px 0;
+  overflow: hidden;  
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+main article section p a {
+  color: #60757e;  
+}
+
+main article address {
+  display: flex;
+  flex-direction: row;
+  font-style: normal;
+}
+
+main article address div p {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 0 8px;
+  padding: 0;
+}
+
+main article address div p a {
+  color: #373c44;
+}
+
+main article address div p:last-of-type {
+  color: #90A2AA;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 2px 0 0 8px;
+}
+
+main article address img {
+  border-radius: 36px;
+  height: 36px;
+  width: 36px;
+}
+
+@media only screen and ( max-width: 768px ) {
+  main {
+    gap: 32px; 
+    grid-template-columns: repeat( 2, 1fr );
+    padding: 0;
+  }
+
+  main article {
+    min-height: 430px;    
+    padding: 0 0 16px 0;
+  }
+
+  main article > div {
+    background-image: url( img/whisk.jpg );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 4px;
+    display: block;
+    min-height: 200px;    
+    margin: 0 0 24px 0 ;
+  }
+
+  main article h2 {
+    font-size: 24px;
+  }  
+
+  main article section p {
+    font-size: 16px;
+    margin: 0 0 12px 0;
+  }  
+}
+
+@media only screen and ( max-width: 425px ) {
+  main {
+    display: block;
+    margin: 0 16px 0 16px;
+  } 
+
+  main article {
+    padding: 16px 0 0 0;
+  }  
+
+  main article h2 {
+    font-size: 19px;
+  }    
+}
+
+@media only screen and ( max-width: 375px ) {
+  main article {
+    padding: 16px 0 16px 0;
+  }    
+}

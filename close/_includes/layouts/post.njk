@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Kevin Hoyt</title>
+
+  <link href="/css/styles.css" rel="stylesheet" />    
+
+</head>
+<body>
+  
+  {% include 'partials/header.njk' %}
+
+  {% block content %}
+    <article class="content">
+      {% if feature_image %}
+        <figure class="post-feature-image">
+          <img src="{{ feature_image }}" alt="{{ title }}">
+        </figure>
+      {% endif %}
+      <section class="post-full-content">
+        <h1 class="content-title">{{ title }}</h1>
+        <section class="content-body load-external-scripts">
+          {{ content | safe }}
+        </section>
+      </section>
+    </article>
+  {% endblock %}
+
+  {% include 'partials/footer.njk' %}
+
+</body>
+</html>

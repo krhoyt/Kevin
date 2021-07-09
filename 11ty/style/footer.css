@@ -1,0 +1,48 @@
+footer {
+  background-color: #000000;
+  display: flex;
+  height: 90px;
+  justify-content: center;
+  margin: 20px 0 0 0;
+  width: 100%;
+}
+
+footer p {
+  color: #ffffff;
+  cursor: default;
+  font-family: sans-serif;
+  font-size: 13px;
+  margin: 20px 0 0 0;  
+  width: 80%;
+}
+
+footer p a {
+  color: #ffffff;  
+  opacity: 0.80;      
+  text-decoration: none;  
+}
+
+footer p a:hover {
+  opacity: 1.0;
+}
+
+footer span {
+  opacity: 0.80;    
+}
+
+@media only screen and ( max-width: 1024px ) {     
+  footer p {
+    width: 90%;
+  }   
+}
+
+@media only screen and ( max-width: 425px ) {        
+  footer {
+    margin: 20px 20px 0 20px;
+  }
+
+  footer p {
+    margin: 20px 20px 0 20px;    
+    width: 100%;
+  }
+}

@@ -1,0 +1,95 @@
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat( auto-fill, 1fr );
+  grid-gap: 32px;
+  margin: 50px 0 50px 0;
+  width: 80%;
+}
+
+main article address {
+  display: flex;
+  flex-direction: row;
+  font-style: normal;
+}
+
+main article address div p:first-of-type {
+  color: #373c44;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;      
+}
+
+main article address div p:last-of-type {
+  color: #5b7a81;
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;      
+}    
+
+main article address img {
+  border-radius: 30px;
+  height: 36px;
+  margin: 0 8px 0 0;
+  width: 36px;      
+}
+
+main article h4 {
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  margin: 0 0 10px 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;      
+}
+
+main article > img {
+  height: 200px;
+  margin: 0 0 10px 0;
+  object-fit: cover;
+  width: 100%;
+}    
+
+main article p:first-of-type {    
+  color: #5b7a81;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;      
+  margin: 0 0 5px 0;      
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-transform: capitalize;
+}
+
+main article p:last-of-type {    
+  color: #3c484e;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;      
+  line-height: 24px;
+  margin: 0 0 24px 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;      
+}
+
+@media only screen and ( max-width: 1024px ) {     
+  main {
+    width: 90%;
+    margin: 30px 0 16px 0;    
+  }   
+}
+
+@media only screen and ( max-width: 768px ) {    
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}    
+
+@media only screen and ( max-width: 425px ) {    
+  main {
+    grid-template-columns: 1fr;
+    margin: 16px;
+  }
+}

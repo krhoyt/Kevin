@@ -1,0 +1,152 @@
+header {
+  align-items: center;
+  background-image: url( /img/covers/smokey.ghost.jpg );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  width: 100%;
+}
+
+header div {
+  width: 80%;
+}
+
+header div:first-of-type {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 56px;
+  padding: 0;
+}
+
+header div:first-of-type > a {
+  height: 16px;
+  opacity: 0.80;
+  margin: 0 0 0 16px;
+}
+
+header div:first-of-type > a:hover {
+  opacity: 1.0;
+}
+
+header div:first-of-type p {
+  flex-basis: 0;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+}
+
+header div:first-of-type p a {
+  color: #ffffff;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;      
+}
+
+header div:last-of-type {
+  align-items: center;
+  display: flex;
+  flex-basis: 0;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+header h2 {
+  color: #ffffff;
+  cursor: default;
+  font-family: Roboto, sans-serif;
+  font-size: 40px;
+  margin: 0;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;      
+}
+
+header h3 {
+  color: #ffffff;
+  cursor: default;
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.80;
+  padding: 5px 0 0 0;
+  text-align: center;     
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;       
+}
+
+header ul {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 56px;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  width: 80%;
+}
+
+header ul li {
+  list-style: none;
+  padding: 0 16px 0 0;
+}
+
+header ul li a {
+  color: #ffffff;
+  font-family: Roboto, sans-serif;      
+  font-size: 16px;
+  opacity: 0.80;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+header ul li a:hover {
+  opacity: 1.0;
+}
+
+header.home div:first-of-type p {
+  visibility: hidden;
+}
+
+header:not( .home ) {
+  min-height: 0;
+}
+
+header:not( .home ) div:last-of-type {
+  display: none;
+}
+
+@media only screen and ( max-width: 1024px ) {    
+  header div {
+    width: 90%;
+  }
+
+  header ul {
+    width: 90%;
+  }  
+}
+
+@media only screen and ( max-width: 425px ) {    
+  header {
+    min-height: 300px;
+  }
+
+  header h3 {
+    width: 70%;
+  }
+}
+
+@media only screen and ( max-width: 375px ) {    
+  header h3 {
+    width: 80%;
+  }
+}

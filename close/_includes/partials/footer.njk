@@ -1,0 +1,21 @@
+<footer class="site-foot">
+  <div class="site-foot-nav container">
+    <div class="site-foot-nav-left">
+      <a aria-current="page" class="" href="/">
+        Kevin Hoyt
+      </a> &copy; 2021 – Published with
+      <a class="site-foot-nav-item" href="https://11ty.dev" target="_blank" rel="noopener noreferrer">
+        Eleventy
+      </a>
+    </div>
+    {% if collections.docs %}
+      <div class="site-foot-nav-right">
+        {% for doc in collections.docs %}
+          <a {% if page.url == doc.url %}aria-current="page"{% endif %}  class="site-foot-nav-item" href="{{ doc.url }}">
+            {{ doc.meta_title if doc.meta_title else doc.title }}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</footer>

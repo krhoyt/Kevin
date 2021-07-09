@@ -9,7 +9,7 @@ header {
   height: 340px;
 }
 
-header main {
+header > div {
   display: flex;
   flex-basis: 0;
   flex-direction: column;      
@@ -18,7 +18,7 @@ header main {
   width: 600px;
 }
 
-header main h1 {
+header > div h1 {
   color: #ffffff;
   font-size: 2.8em;
   font-weight: 700;
@@ -29,7 +29,7 @@ header main h1 {
   text-align: center;
 }
 
-header main p {
+header > div p {
   color: #ffffff;
   font-size: 1.5em;
   opacity: 0.80;
@@ -67,6 +67,7 @@ header nav a:hover {
 
 header nav img {
   height: 20px;
+  margin: 0;
   width: 20px;
 }
 
@@ -109,27 +110,40 @@ header nav ul li a {
     height: 230px;
   }
 
-  header main {
+  header > div {
+    width: 340px;
+  }
+
+  header > div h1 {
+    font-size: 28px;
+    line-height: 0.70rem;    
+  }
+
+  header > div p {
+    font-size: 18px;
+  }
+
+  header > div:last-of-type {
     width: 320px;
   }
 
-  header main h1 {
+  header > div:last-of-type h1 {
     font-size: 1.8em;
   }      
 
-  header main p {      
+  header > div:last-of-type p {      
     font-size: 1.1em;
   }
 }    
 
 @media only screen and ( max-width: 375px ) {    
-  header main {
+  header > div:last-of-type {
     width: 300px;
   }      
 }
 
 @media only screen and ( max-width: 320px ) {    
-  header main {
+  header > div:last-of-type {
     width: 255px;
   }      
 }    
