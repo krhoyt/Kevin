@@ -2,7 +2,7 @@
 layout: default.njk
 ---
 
-{% for post in collections.posts %}
+{% for post in collections.posts reversed %}
 
   <article>
     <img src="{{ post.data.feature_image }}" />
@@ -15,7 +15,7 @@ layout: default.njk
       </a>
       <div>        
         <p>Kevin Hoyt</p>
-        <p>Apr 8, 2019 &bull; {{ post.html | safe | getReadingTime }} min read</p>
+        <p>{{ post.date | htmlDateString }} &bull; {{ post.templateContent | safe | getReadingTime }} min read</p>
       </div>
     </address>
   </article>

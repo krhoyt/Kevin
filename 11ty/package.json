@@ -2,6 +2,7 @@
   "dependencies": {
     "@11ty/eleventy-plugin-rss": "^1.1.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.1",
+    "eleventy-plugin-youtube-embed": "^1.6.3",
     "luxon": "^1.27.0",
     "markdown-it": "^10.0.0"
   }
