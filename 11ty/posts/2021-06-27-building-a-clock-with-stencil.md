@@ -1,5 +1,8 @@
 ---
 feature_image: /img/covers/wall.clock.jpg
+unsplash_author: CHUTTERSNAP
+unsplash_author_url: https://unsplash.com/@chuttersnap
+unsplash_photo_url: https://unsplash.com/photos/T5H17wB55VY
 title: Building a Clock with Stencil
 description: Building a clock can reveal a lot about how a platform works. In this walkthrough we will take a look at building a clock component using Stencil.
 permalink: /2021/06/27/building-a-clock-with-stencil/

@@ -28,7 +28,16 @@
   {% block content %}
   <main>
 
-    <img src="{{ feature_image }}" alt="{{ title }}">
+    <div>
+      <img src="{{ feature_image }}" alt="{{ title }}">
+
+      {% if unsplash_author %}
+        <figcaption>
+          <p>Photo by <a href="{{ unsplash_author_url }}">{{ unsplash_author }}</a> on <a href="{{ unsplash_photo_url }}">Unsplash</a></p>
+        </figcaption>
+      {% endif %}
+    </div>
+
     <article>
       <h1>{{ title }}</h1>
       {{ content | safe }}
