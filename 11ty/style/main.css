@@ -8,36 +8,18 @@ main {
 }
 
 main article address {
-  display: flex;
-  flex-direction: row;
-  font-style: normal;
+  margin: 0 0 10px 0;
 }
 
-main article address div p:first-of-type {
-  color: #373c44;
-  font-family: Roboto, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  margin: 0;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;      
-}
-
-main article address div p:last-of-type {
+main article address p {
   color: #5b7a81;
   font-family: Roboto, sans-serif;
   font-size: 13px;
+  font-style: normal;
   margin: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;      
 }    
-
-main article address img {
-  border-radius: 30px;
-  height: 36px;
-  margin: 0 8px 0 0;
-  width: 36px;      
-}
 
 main article h4 {
   font-family: Roboto, sans-serif;
@@ -47,14 +29,19 @@ main article h4 {
   -webkit-font-smoothing: antialiased;      
 }
 
-main article > img {
+main article h4 a {
+  color: #000000;
+  text-decoration: none;
+}
+
+main article a img {
   height: 200px;
   margin: 0 0 10px 0;
   object-fit: cover;
   width: 100%;
 }    
 
-main article p:first-of-type {    
+main article > p:first-of-type {    
   color: #5b7a81;
   font-family: Roboto, sans-serif;
   font-size: 14px;      
@@ -64,14 +51,18 @@ main article p:first-of-type {
   text-transform: capitalize;
 }
 
-main article p:last-of-type {    
-  color: #3c484e;
+main article > p:last-of-type {    
   font-family: Roboto, sans-serif;
   font-size: 16px;      
   line-height: 24px;
-  margin: 0 0 24px 0;
+  margin: 0 0 10px 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;      
+}
+
+main article > p:last-of-type a {    
+  color: #3c484e;  
+  text-decoration: none;
 }
 
 @media only screen and ( max-width: 1024px ) {     

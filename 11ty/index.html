@@ -5,18 +5,18 @@ layout: default.njk
 {% for post in collections.posts reversed %}
 
   <article>
-    <img src="{{ post.data.feature_image }}" />
+    <a href="{{ post.url }}">
+      <img src="{{ post.data.feature_image }}" />
+    </a>
     <p>{% for tag in tags %}{{ tag.name }}{% endfor %}</p>
-    <h4>{{ post.data.title }}</h4>
-    <p>{{ post.data.description }}</p>
+    <h4>
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+    </h4>
+    <p>
+      <a href="">{{ post.data.description }}</a>
+    </p>
     <address>
-      <a href="{{ post.url }}">
-        <img src="/img/krhoyt.jpg" />
-      </a>
-      <div>        
-        <p>Kevin Hoyt</p>
-        <p>{{ post.date | htmlDateString }} &bull; {{ post.templateContent | safe | getReadingTime }} min read</p>
-      </div>
+      <p>{{ post.date | htmlDateString }} &bull; {{ post.templateContent | safe | getReadingTime }} min read</p>
     </address>
   </article>
 

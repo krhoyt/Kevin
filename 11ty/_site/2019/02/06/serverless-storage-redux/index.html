@@ -25,6 +25,7 @@
   
   <header >
   <div>
+    <!-- <img src="/img/krhoyt.jpg" /> -->
     <p><a href="">Kevin Hoyt</a></p>
     <a href="https://twitter.com/krhoyt">
       <img src="/img/twitter.svg" width="16" height="16" />
@@ -57,6 +58,7 @@
 
     <article>
       <h1>Serverless Storage Redux</h1>
+      <time>Feb 6, 2019 &bull; 12 min read</time>
       <p>In my previous two posts I wrote about upload a file to <a href="https://console.bluemix.net/openwhisk/">IBM Cloud Functions</a> (serverless), and then how to download a file from <a href="https://www.ibm.com/cloud/object-storage">IBM Cloud Object Storage</a> (COS) using serverless. Both of these posts used the the provided <a href="https://github.com/ibm/ibm-cos-sdk-js">IBM COS SDK for Node.js</a>. In this post I will rehash the upload and download process, but using the COS REST API.</p>
 <h2>Et tu, SDK?</h2>
 <p>The IBM COS SDK for Node.js is a fork of the AWS S3 SDK for Node.js. As an IBM developer advocate, this has always felt a bit ... dirty. It is important that the interface to S3 is a de facto standard used by numerous storage providers. This comes with most of the benefits that would come with any other standardization.</p>

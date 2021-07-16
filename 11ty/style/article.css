@@ -51,29 +51,29 @@ code {
 }
 
 main figcaption {
-  bottom: 0;
-  left: 0;
-  padding: 8px 16px 8px 16px;
-  position: absolute;
+  margin: 0;
+  padding: 0;
+  text-align: right;
 }
 
 main figcaption a {
-  color: #ffffffcc;
+  color: #000000cc;
   text-decoration: none;
 }
 
 main figcaption a:hover {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
 }
 
 main figcaption p {
-  color: #ffffff8c;
+  color: #0000008c;
   font-family: Roboto, sans-serif;
   font-size: 13px;
   margin: 0;
   padding: 0;
-  text-shadow: 0 1px 8px rgb( 0 0 0 / 10% );
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;              
 }
 
 h1, h2, h3, h4, h5 {
@@ -94,7 +94,17 @@ main h1 {
 main h1:first-of-type {
   font-size: 50px;
   font-weight: 700;
-  margin: 0 0 40px 0;
+  margin: 0;
+}
+
+main time {
+  color: #5b7a81;
+  display: block;
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  margin: 10px 0 40px 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;        
 }
 
 main h2 {
@@ -115,9 +125,11 @@ main h5 {
 
 main img {
   box-sizing: border-box;      
-  width: 100%;
   height: 500px;
+  margin: 0;
+  padding: 0;
   object-fit: cover;
+  width: 100%;  
 }
 
 main p {
@@ -178,9 +190,13 @@ main li {
     padding: 0 28px 0 28px;    
   }
 
+  main > div {
+    margin: 0;
+  }  
+
   main h1:first-of-type {
     font-size: 34px;
-    margin: 20px 0 24px 0;
+    margin: 20px 0 10px 0;
   }
 
   main h1 {
@@ -206,7 +222,7 @@ main li {
 
   main img {
     height: 280px;
-    margin: 20px 0 20px 0;    
+    margin: 20px 0 0 0;    
   }
 
   main li {
@@ -216,6 +232,10 @@ main li {
   main p {
     font-size: 18px;
     margin: 0 0 27px 0;    
+  }
+
+  main time {
+    margin: 0 0 27px 0;
   }
 
   main ul {

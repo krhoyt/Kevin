@@ -32,6 +32,12 @@ header div:first-of-type > a:hover {
   opacity: 1.0;
 }
 
+header div:first-of-type > img {
+  border-radius: 36px;
+  height: 36px;
+  width: 36px;
+}
+
 header div:first-of-type p {
   flex-basis: 0;
   flex-grow: 1;
