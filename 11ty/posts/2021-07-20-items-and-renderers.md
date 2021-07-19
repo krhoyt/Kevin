@@ -5,7 +5,7 @@ unsplash_author_url: https://unsplash.com/@glenncarstenspeters
 unsplash_photo_url: https://unsplash.com/photos/RLw-UC03Gwc
 title: Items and Renderers
 description: Consider for a moment the humble list control. In this article we take a closer look at building a list control, and the different ways to render content.
-permalink: /2021/07/19/items-and-renderers/
+permalink: /2021/07/20/items-and-renderers/
 tags:
   - components
   - stencil  

@@ -706,9 +706,9 @@
   
   <entry>
     <title>Items and Renderers</title>
-    <link href="https://kevinhoyt.com/2021/07/19/items-and-renderers/"/>
+    <link href="https://kevinhoyt.com/2021/07/20/items-and-renderers/"/>
     <updated>2021-07-20T06:00:00Z</updated>
-    <id>https://kevinhoyt.com/2021/07/19/items-and-renderers/</id>
+    <id>https://kevinhoyt.com/2021/07/20/items-and-renderers/</id>
     <content type="html">&lt;p&gt;Consider for a moment the humble list control. It is everywhere. From the social media feed you check in the morning, to your email inbox on the train to work, to the search results for that old western movie you wanted to stream tonight. The pattern of the list control is instantly recognizable, yet it can have so many variations of what it displays.&lt;/p&gt;
 &lt;p&gt;In this article we will take a closer look at building a list component and the different ways we can render content.&lt;/p&gt;
 &lt;h3&gt;The Humble List&lt;/h3&gt;
