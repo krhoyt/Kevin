@@ -32,6 +32,14 @@ Last visited: July 17, 2017
 
 Technically a hotel, with an outstanding restaurant, there is a small-ish, but very comfortable outdoor smoking area (COSA) in the back. The area is heated, with a privacy screen for your pleasure. The staff is very attentive, and highly trained. They will escort you to their humidor, which is well-stocked with a large assortment of Cuban cigars. Just be prepared for the bespoke price tag.
 
+### Club Humidor
+*7074 San Pedro Ave, San Antonio, TX 78216*
+Last visited: July 22, 2021
+
+![Texas class. Texas comfort.](/img/lounge/club.humidor.pedro.jpg)
+
+About fifteen minutes out of downtown, the Club Humidor on San Pedro Avenue is one of a chain around the San Antonio, TX area (at least - there may be more). Spacious, well-stocked humidor with prompt and attentive staff, despite having a steady stream of customers. The public lounge runs throughout the front area of the store, surrounded by all the accessories you can purchase.
+
 ### Havana Cigar Lounge
 *4850 W Flamingo Rd #18, Las Vegas, NV 89103*
 Last visited: February 21, 2018
