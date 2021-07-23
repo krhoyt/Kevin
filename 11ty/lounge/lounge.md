@@ -88,6 +88,14 @@ Last visited: July 21, 2019
 
 If you are in Orlando, FL, and looking for the quintessential cigar lounge - this is not it. If you are a suburban dad, booked in the VRBO at [Vista Cay](https://www.vistacayholidays.com) across the street, and looking for a little escape from theme park madness and kids - you have found your nirvana. Pick up a beverage at the Publix on the way in, or have some tea at the shop.
 
+### Redland Cigar Club
+*18847 Redland Rd, San Antonio, TX 78259*
+Last visited: July 23, 2021
+
+![Have a cigar, and a nap.](/img/lounge/redland.cigar.club.jpg)
+
+At 2,200 ft² this is the largest cigar lounge in Texas. I counted thirty (30) full-size leather recliners, in addition to another six (6) tables of various height and size, each with four (4) chairs. Comfortable seating for fifty (50)? All this arranged into several conversation areas ("pits" as they call them). The atmosphere is so relaxed, that it would be rediculously easy to fall asleep before finishing your favorite stick. God bless Texas.
+
 ### Slo Burn
 *10449 S Parker Rd, Parker, CO 80134*
 Last visited: All the time
