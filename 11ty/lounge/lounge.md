@@ -46,7 +46,7 @@ Last visited: July 24, 2021
 
 ![Clean. Modern. Attentive.](/img/lounge/finck.cigars.jpg)
 
-In terms of cigar lounges, I would describe Finck's a clean and modern. The white walls,seafoam green floor, and 80's pop music give off a distinctly Dominican Republic feel. The well-lit public lounge has ample seating in leather chairs. A well-appointed patio equipped with fans is also available should the weather be to your liking. The humidor is spacious and well-stocked. 
+In terms of cigar lounges, I would describe Finck's a clean and modern. The white walls, seafoam green floor, and 80's pop music give off a distinctly Dominican Republic feel. The well-lit public lounge has ample seating in leather chairs. A well-appointed patio equipped with fans is also available should the weather be to your liking. The humidor is spacious and well-stocked. 
 
 ### Havana Cigar Lounge
 *4850 W Flamingo Rd #18, Las Vegas, NV 89103*
