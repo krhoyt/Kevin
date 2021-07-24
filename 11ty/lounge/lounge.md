@@ -40,6 +40,14 @@ Last visited: July 22, 2021
 
 About fifteen minutes out of downtown, the Club Humidor on San Pedro Avenue is one of a chain around the San Antonio, TX area (at least - there may be more). Spacious, well-stocked humidor with prompt and attentive staff, despite having a steady stream of customers. The public lounge runs throughout the front area of the store, surrounded by all the accessories you can purchase.
 
+### Finck Cigars
+*3111 Broadway, San Antonio, TX 78209*
+Last visited: July 24, 2021
+
+![Clean. Modern. Attentive.](/img/lounge/finck.cigars.jpg)
+
+In terms of cigar lounges, I would describe Finck's a clean and modern. The white walls,seafoam green floor, and 80's pop music give off a distinctly Dominican Republic feel. The well-lit public lounge has ample seating in leather chairs. A well-appointed patio equipped with fans is also available should the weather be to your liking. The humidor is spacious and well-stocked. 
+
 ### Havana Cigar Lounge
 *4850 W Flamingo Rd #18, Las Vegas, NV 89103*
 Last visited: February 21, 2018
