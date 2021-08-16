@@ -44,7 +44,7 @@ In the example above, the data is an array of string values. The display area is
 
 This is all good for an array of strings, but what happens when our data is more complex? Take for example your email inbox. Depending on the state of a message, there are a number of pieces of information displayed to us in a single glance - who the message is from, the subject, perhaps a snippet of the content, the date it was sent, etc.
 
-An array of strings is not going to hold the data we need. In this case we will use an array of objects. If you are particularly object-oriented, it might be an array of `Email` instances, but let us keep with `object` for now so we can focus on the nuances of the behavior.
+An array of strings is not going to efficiently hold the data we need. In this case we will use an array of objects. If you are particularly object-oriented, it might be an array of `Email` instances, but let us keep with `object` for now so we can focus on the nuances of the behavior.
 
 When it comes to rendering your list of email messages, you may be initially inclined to update your markup so that you have a place to display all the various pieces of information.
 
@@ -98,7 +98,7 @@ Again, keep in mind that if you are more inclined to use strict data types, the 
 
 The thing about `object` though, is that it can be whatever you want it to be. This can help us think about our list component in new ways.
 
-You see, what we have created here is not so much a list component, but rather an email-list component. When you think of the content division (`div`) tag or that paragraph (`p`) tag, they can be used in myriad of ways. This list component can only be used to display email.
+You see, what we have created here is not so much a list component, but rather an email-list component. When you think of the content division (`div`) tag or that paragraph (`p`) tag, they can be used in myriad of ways. This list component can only be used to display email; and potentially only from an `Array` of `Email` instances.
 
 In order to make our list into a generic list - a list that can list rows of a variety of items - we need to think about abstracting the content that gets rendered. To account for this, we can add a property that lets the developer using our component specify what tag should be used to render the data.
 
@@ -121,13 +121,13 @@ export class List {
 }
 ``` 
 
-`Tag` is special in JSX, and yes, it must be an uppercase `T`. The `Tag` variable gets assigned to it a string representing a tag to be used in the render. Then inside the render, wherever you might use `p` or `div` you use `Tag`.  Now, the tag that will be rendered is whatever tag name is supplied to the `itemRenderer` property.
+`Tag` is special in JSX - it is a JSX variable. The variable name does not have to be the word "Tag" but it must start with an uppercase letter. The `Tag` variable gets assigned to it a string representing a tag to be used in the render. Then inside the render, wherever you might use `p` or `div` you use `Tag`.  Now, the tag that will be rendered is whatever tag name is supplied to the `itemRenderer` property.
 
 ``` html
 <ionx-list item-renderer="ionx-email-item"></ionx-list>
 ```
 
-> While this example uses the `Tag` feature of JSX in a list, the approach is useful wherever you do not know what tag the component will be rendering. For example, I have used `Tag` in dynamic forms that vary based on location.
+> While this example uses the variable feature of JSX in a list, the approach is useful wherever you do not know what tag the component will be rendering. For example, I have successfully used them in dynamic forms that vary based on location.
 
 What you have now is a truly generic list component. This approach does come with a couple caveats.
 

@@ -42,6 +42,7 @@
       <h1>{{ title }}</h1>
       <time>{{ page.date | htmlDateString }} &bull; {{ content | safe | getReadingTime }} min read</time>
       {{ content | safe }}
+      <time>Published on {{ page.date | htmlDateString }}</time>
     </article>
   </main>
   {% endblock %}        
