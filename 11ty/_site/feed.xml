@@ -4,7 +4,7 @@
   <subtitle>Makes cool shit.</subtitle>
   <link href="https://kevinhoyt.com/feed.xml" rel="self"/>
   <link href="https://kevinhoyt.com/"/>
-  <updated>2021-07-20T06:00:00Z</updated>
+  <updated>2021-08-16T06:00:00Z</updated>
   <id>https://kevinhoyt.com/</id>
   <author>
     <name>Kevin Hoyt</name>
@@ -756,6 +756,26 @@
 &lt;p&gt;The validity of this approach could be argued within the context of a list component. Is this too much overhead work just to abstract how the list displays its contents? Maybe. Knowing how to create dynamic tags in JSX however, comes in pretty handy once you know it exists.&lt;/p&gt;
 &lt;p&gt;I have already mentioned how I have used this approach before on dynamic form content. Another area where I have used it is in a &amp;quot;table&amp;quot; component where the columns - and how they are to be displayed - are defined by the developer using the component [in the markup].&lt;/p&gt;
 &lt;p&gt;The next time you look at a list, you will never think of it the same way. If you want to look at the complete code for this example, it is available on GitHub. There is also a &lt;a href=&quot;http://temp.kevinhoyt.com/ionic/list/&quot;&gt;live demonstration&lt;/a&gt; of the list component in action.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Reasons to Stencil</title>
+    <link href="https://kevinhoyt.com/2021/08/16/reasons-to-stencil/"/>
+    <updated>2021-08-16T06:00:00Z</updated>
+    <id>https://kevinhoyt.com/2021/08/16/reasons-to-stencil/</id>
+    <content type="html">&lt;p&gt;Congratulations, you have decided to use one of the many libraries and tools available for building modern web interfaces. Maybe you have chosen React, and you start through the tutorial.&lt;/p&gt;
+&lt;p&gt;The very first React example is a shopping list that extends &lt;code&gt;React.Component&lt;/code&gt;. Congratulations, you have locked you and your team into React. If another team leveraging Vue wants to use your shopping list component, then they are out of luck - they will have to invest the engineering hours to port it.&lt;/p&gt;
+&lt;p&gt;As for Vue itself, the tutorial starts off by walking you through some of the high-level features - those slick flow control tricks that Vue brings to the table. Eventually however, you are introduced to &lt;code&gt;Vue.component()&lt;/code&gt;. This component of course cannot be shared with the team using React.&lt;/p&gt;
+&lt;p&gt;Components are the third step in the guide to learning Angular. &amp;quot;Components to the rescue!&amp;quot; is declared before dropping you into &lt;code&gt;component()&lt;/code&gt; and the Component Definition Object (CDO). And of course, these components do not work with the React or Vue.&lt;/p&gt;
+&lt;p&gt;Why are all these frameworks and libraries so quick to introduce you to components of their own design, when a web-standards approach exists and is widely implemented? To ensure interoperability and operational longevity of your components, build on the standards - use frameworks and libraries to add value to the development process where standards are still nascent or absent entirely. Reevaluate as the standards mature.&lt;/p&gt;
+&lt;p&gt;Now you might be inclined to think that the standards for components are great, but that they are not idiomatic - they do not work in the same manner - to your chosen framework or library. And you would be right! What is needed is an abstraction that allows you to write the components to the standards, but that provides integrations with Angular, React, and Vue, while leaving the door open for any new technologies that may emerge in the future. The tool you would then be thinking of is, &lt;a href=&quot;https://stenciljs.com/&quot;&gt;Stencil&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You might &lt;em&gt;not&lt;/em&gt; be inclined to think that the standards for component are great - it is all so verbose. And you would be right! You want to keep that syntactic sugar that increases productivity by decreasing the time it takes to write a component in the first place. You want to lean into reactive patterns with data binding, keep everything organized with separation of styles, and you want modern language constructs like type checking and decorators that come with TypeScript. The tool you would then be wanting is, &lt;a href=&quot;https://stenciljs.com/&quot;&gt;Stencil&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There are interesting side-effects to investing in standards-based web components. For example, you will see a community develop; all teams contributing to the core patterns of the business regardless of their framework choice. Some of these patterns will be architectural in nature, while others will surface in your design system.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;By leveraging Stencil to build standards-based web components, you bring together the best of both worlds. You can easily share that core functionality across teams using whatever framework they want, while taking advantage of modern development approaches. When you want features like state management and routing, frameworks bring to the table what they do best. At least until the next version when they do not. Either way, that investment in standards with Stencil will still be there, chugging along and adding value.&lt;/p&gt;
+&lt;p&gt;If at some point you decide that building components in general - especially UI components - is simply not core to your business, then the tool you want is &lt;a href=&quot;https://ionicframework.com/&quot;&gt;Ionic Framework&lt;/a&gt;. Ionic Framework components are standards-based components created using Stencil. And because they are web components, they integrate with React, Angular, and Vue.&lt;/p&gt;
 </content>
   </entry>
 </feed>
