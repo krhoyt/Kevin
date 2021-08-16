@@ -4,7 +4,7 @@ unsplash_author: Sergey Zolkin
 unsplash_author_url: https://unsplash.com/@szolkin
 unsplash_photo_url: https://unsplash.com/photos/32YLLwBI8Q4
 title: Reasons to Stencil
-description: Consider for a moment the humble list control. In this article we take a closer look at building a list control, and the different ways to render content.
+description: Congratulations, you have decided to use one of the many libraries and tools available for building modern web interfaces. Now just do not lock yourself into that decision.
 permalink: /2021/08/16/reasons-to-stencil/
 tags:
   - components
