@@ -127,7 +127,20 @@ export class List {
 <ionx-list item-renderer="ionx-email-item"></ionx-list>
 ```
 
-> While this example uses the variable feature of JSX in a list, the approach is useful wherever you do not know what tag the component will be rendering. For example, I have successfully used them in dynamic forms that vary based on location.
+If you should need to dynamically change the tag name for each iteration in the loop, you put some extra syntax to how you declare the map function. First, use braces to denote a function block, and then provide a `return` with the tag and necessary attributes mapped as you typically would with JSX. 
+
+``` jsx
+<div>
+  {this.data.map( ( value: object ) => {
+    const Tag = `ionx-${value['kind']}-field`;
+    return (
+      <Tag hidden={value['hidden']}></Tag>
+    );
+  } )}
+</div>
+```
+
+> You can even use the spread operator of JavaScript if you do not know all the properties of the object in the iteration: `<Tag {... value}></Tag>`. This will look very familiar to React developers.
 
 What you have now is a truly generic list component. This approach does come with a couple caveats.
 
