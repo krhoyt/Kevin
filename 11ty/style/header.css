@@ -39,20 +39,16 @@ header div:first-of-type > img {
 }
 
 header div:first-of-type p {
+  color: #ffffff;  
   flex-basis: 0;
   flex-grow: 1;
-  margin: 0;
-  padding: 0;
-}
-
-header div:first-of-type p a {
-  color: #ffffff;
   font-family: Roboto, sans-serif;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 500;  
+  margin: 0;
+  padding: 0;
   text-decoration: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;      
+  text-rendering: optimizeLegibility;  
 }
 
 header div:last-of-type {
