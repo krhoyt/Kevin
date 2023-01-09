@@ -104,6 +104,14 @@ Last visited: Every Friday
 
 Probably the most well-known cigar lounge in the Denver metro, where the humidor has a large selection and the best prices in town. The front of the store is open to the public and has a dozen or so leather seats for your smoking pleasure. The vast members lounge has several rooms (yes, rooms) appointed with a variety of leather seats. Special events abound, usually with free food. Say "Hello!" to Slick Rick at the cashier's counter; the grumpiest nice person I know.
 
+### Stanley Pappas
+*6880 S Clinton St, Englewood, CO 80112*
+Last visited: January 9, 2023
+
+![Sinatra would be envious.](/img/lounge/stanley.pappas.jpg)
+
+A fixture in the area, Stanley Pappas was once located in a renovated train car - the likes of which you would have ridden through the area in the 1800s. From there the location moved into the nearby strip mall. Now with two locations, it is the Clinton St location where you are most likely to find the namesake, Stanley, himself. The Rat Pack is always playing, and there is ample seating for a group meeting, or a simple table to get some work done. The walk-in humidor is well stocked with smokes from vendors old and new.
+
 ### Tobacco Leaf
 *6870 S Rainbow Blvd #118, Las Vegas, NV 89118*
 Last visited: February 22, 2018
