@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="Makes cool shit." />
+  <meta name="description" content="The intersection of development and design." />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <title>Three P Weekly Status Report</title>
@@ -46,7 +46,6 @@
   <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/about">About</a></li>
-    <!-- <li><a href="/apps">Apps</a></li> -->
     <li><a href="/events">Events</a></li>
     <li><a href="/lounge">Lounge</a></li>
   </ul>
@@ -82,7 +81,25 @@
 <h2>The First Report</h2>
 <p>Once a week, generally on Monday or Friday, create a new markdown document. Save the file using a name consisting of the current ISO 8601 formatted date, followed by a dash, followed by the word &quot;status&quot; and then the <code>md</code> markdown extension. This results in a file name along the lines of <code>2022-06-06-status.md</code> for <code>June 6, 2022</code>. It does not matter that you use this suggested formatting approach. Whatever you choose - you must be consistent. I use the ISO 8601 approach because it makes the status report files easily sortable whether you are using a command line or GUI finder.</p>
 <p>With our report file created, break out the three sections of progress, priorities, and problems. I generally use an <code>H2</code> heading for the sections. Using an <code>H2</code> provides the flexibility of using an <code>H1</code> for the title should the report need one. An example of where a title might be included is when you spend all week dedicated to a significant event for the company (e.g. AWS re:Invent).</p>
-<pre class="language-md"><code class="language-md"><span class="token title important"><span class="token punctuation">##</span> Progress</span><br><br><span class="token list punctuation">-</span> Finished meetup presentation 🙌<br><span class="token list punctuation">-</span> Drove social media attention for my session<br>  <span class="token list punctuation">-</span> Twitter<br>  <span class="token list punctuation">-</span> YouTube preview<br>  <span class="token list punctuation">-</span> Blog post<br><br><span class="token title important"><span class="token punctuation">##</span> Priorities</span><br><br><span class="token list punctuation">-</span> Deliver meetup presentation<br><span class="token list punctuation">-</span> Draft API for v2 architecture meeting<br><span class="token list punctuation">-</span> Fix bug KH-123 once and for all<br><br><span class="token title important"><span class="token punctuation">##</span> Problems</span><br><br><span class="token list punctuation">-</span> Access to production database<br><span class="token list punctuation">-</span> Plane was delayed - avoid ORD ✈️<br><span class="token list punctuation">-</span> Did not get adequate sleep</code></pre>
+<pre class="language-md"><code class="language-md"><span class="token title important"><span class="token punctuation">##</span> Progress</span>
+
+<span class="token list punctuation">-</span> Finished meetup presentation 🙌
+<span class="token list punctuation">-</span> Drove social media attention for my session
+  <span class="token list punctuation">-</span> Twitter
+  <span class="token list punctuation">-</span> YouTube preview
+  <span class="token list punctuation">-</span> Blog post
+
+<span class="token title important"><span class="token punctuation">##</span> Priorities</span>
+
+<span class="token list punctuation">-</span> Deliver meetup presentation
+<span class="token list punctuation">-</span> Draft API for v2 architecture meeting
+<span class="token list punctuation">-</span> Fix bug KH-123 once and for all
+
+<span class="token title important"><span class="token punctuation">##</span> Problems</span>
+
+<span class="token list punctuation">-</span> Access to production database
+<span class="token list punctuation">-</span> Plane was delayed - avoid ORD ✈️
+<span class="token list punctuation">-</span> Did not get adequate sleep</code></pre>
 <h3>Progress</h3>
 <p>Next up, review the work you did over the last week and try to summarize it into three-to-five items. Sometimes there are more items that you may want to call out - sometimes many more - and that is fine. Add what you need. Want to embellish? Add a link to a bug you fixed? Great! Markdown is there for you. Have fun. This is <em>your</em> status report after all. The point here is not to detail every waking minute, the point is to record a general sense of how you spent the time.</p>
 <p>If you stop for a moment, take a breath, and think about what you accomplished this past week, certain items will likely surface in your mind. These items, and potentially the items related to those items, are what you are trying to capture.</p>
@@ -129,7 +146,20 @@
 <p>Historically, as a manager, I have had pretty solid insight into the work the team is doing - if not outright influence and control. This comment should not surprise anybody. However, I have recently encountered a management scenario where that insight and influence is very low. At the very least, insight matters for annual reviews, promotions, etc. Influence matters for reasons of coaching, mentoring, and &quot;firewall&quot; activities.</p>
 <p>To address this, I have recently started requesting a fourth &quot;P&quot; for &quot;Plan&quot;. I ask for a rolling four-week high-level plan painted with broad brushes. I do not need to know how the team spends every hour of their week. I do need to know what feature(s) or issues they intend to tackle. This is the kind of data that one might use in a rollup report for senior management and/or other stakeholders.</p>
 <p>In keeping with he Markdown approach, I have encouraged the use of the <a href="https://markwhen.com/">Markwhen</a> syntax. Since Markwhen has a parser, I can easily extract the parts of the individual reports that I need for the rollup reports.</p>
-<pre class="language-md"><code class="language-md"><span class="token title important"><span class="token punctuation">##</span> Plan</span><br><br>group Important Project<br>2022-07-18/2022-07-22: Start Feature ABC-123<br>2022-07-25/2022-07-29: Issued filed by customer  <br><span class="token url">[<span class="token content">Ticket</span>](<span class="token url">link-to-ticket</span>)</span><br>2022-08-08/2022-08-10: Finish feature ABC-123<br>2022-08-11/2022-08-12: Transition to Feature 123-ABC<br><br>group Vacation/PTO<br>2022-08-15/2022-08-19: Kevin on vacation (Oregon Coast)<br><br>group Professional Development<br>2022-08-01/2022-08-05: Certification training</code></pre>
+<pre class="language-md"><code class="language-md"><span class="token title important"><span class="token punctuation">##</span> Plan</span>
+
+group Important Project
+2022-07-18/2022-07-22: Start Feature ABC-123
+2022-07-25/2022-07-29: Issued filed by customer  
+<span class="token url">[<span class="token content">Ticket</span>](<span class="token url">link-to-ticket</span>)</span>
+2022-08-08/2022-08-10: Finish feature ABC-123
+2022-08-11/2022-08-12: Transition to Feature 123-ABC
+
+group Vacation/PTO
+2022-08-15/2022-08-19: Kevin on vacation (Oregon Coast)
+
+group Professional Development
+2022-08-01/2022-08-05: Certification training</code></pre>
 <p>Every week, each individual on the team (myself included), add the work for the next week to the &quot;Plan&quot; section, and remove the week that just was just completed (past). I cannot be sure yet just how the team will respond to this work long term, but wanted to document the addition and its motivations.</p>
 
       <time>Published on Jun 15, 2022</time>

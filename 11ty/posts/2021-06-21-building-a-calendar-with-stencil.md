@@ -211,6 +211,7 @@ article button.selected.today {
 As you can probably tell from the CSS, each day in the month will be rendered as a `button` element. On that `button` element, we can use `data` attributes to store the day, month, and year that each represents. In the click handler, a reference to the `button` can be obtained using the `target` property of the `MouseEvent`. These values can then be parsed, and a `Date` object then created to represent the date that was selected.  This keeps us from having to store DOM references to each of the days being rendered. A `button` marked `disabled` will not fire the click handler.
 
 ``` jsx
+{% raw %}
 <article>
   {this.days.map( ( day: Day ) =>
     <button
@@ -227,6 +228,7 @@ As you can probably tell from the CSS, each day in the month will be rendered as
     </button>
   ) }
 </article>
+{% endraw %}
 ```
 
 This whole technique of calculating what needs to be displayed before the actual rendering process is what I call "pre-rendering". The approach is valuable not only in calendars, but also in any situation where there can be a variable number of elements to be rendered. Dynamic SVG content is another place where this technique comes in handy.

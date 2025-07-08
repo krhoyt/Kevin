@@ -4,7 +4,7 @@
   "eleventyExcludeFromCollections": true,
   "metadata": {
     "title": "Kevin Hoyt",
-    "subtitle": "Makes cool shit.",
+    "subtitle": "The intersection of development and design.",
     "url": "https://kevinhoyt.com/",
     "feedUrl": "https://kevinhoyt.com/feed.xml",
     "author": {
@@ -27,13 +27,13 @@
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in collections.posts %}
-  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
-  <entry>
-    <title>{{ post.data.title }}</title>
-    <link href="{{ absolutePostUrl }}"/>
-    <updated>{{ post.date | dateToRfc3339 }}</updated>
-    <id>{{ absolutePostUrl }}</id>
-    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
-  </entry>
+    {% set absolutePostUrl %}{{ post.url | url | absoluteUrl( metadata.url ) }}{% endset %}
+    <entry>
+      <title>{{ post.data.title }}</title>
+      <link href="{{ absolutePostUrl }}"/>
+      <updated>{{ post.date | dateToRfc3339 }}</updated>
+      <id>{{ absolutePostUrl }}</id>
+      <content type="html">{{ post.templateContent | htmlToAbsoluteUrls( absolutePostUrl ) }}</content>
+    </entry>
   {%- endfor %}
 </feed>

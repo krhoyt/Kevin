@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="Makes cool shit." />
+  <meta name="description" content="The intersection of development and design." />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <title>{{ title }}</title>
@@ -40,7 +40,7 @@
 
     <article>
       <h1>{{ title }}</h1>
-      <time>{{ page.date | htmlDateString }} &bull; {{ content | safe | getReadingTime }} min read</time>
+      <time>{{ page.date | htmlDateString }} &bull; {{ content | getReadingTime }} min read</time>
       {{ content | safe }}
       <time>Published on {{ page.date | htmlDateString }}</time>
     </article>
