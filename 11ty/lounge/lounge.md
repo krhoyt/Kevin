@@ -4,7 +4,7 @@ layout: post.njk
 title: Cigar Lounges
 ---
 
-In this day of negative sentiment towards smoking you might be inclined to think that the cigar lounge would be a dying breed. As bars, restaurants, and public spaces alike ban smoking, brothers of the leaf (BOTL) find sanctuary in their local cigar lounge.
+In this day of negative sentiment towards smoking you might be inclined to think that the cigar lounge would be a dying breed. As bars, restaurants, and public spaces alike ban smoking, brothers of the leaf (BOTL) find sanctuary in their local cigar lounge. 
 
 As a frequent traveler, I find myself in the position of getting to experience the character of these fine establishments all over the world. This then is my ode to the character, and characters, of the places I have encountered along the way.
 
@@ -15,6 +15,14 @@ Last visited: July 2, 2017
 ![Go Scottish with Scotch.](/img/lounge/boisdale.canary.jpg)
 
 There are several [Boisdale](https://www.boisdale.co.uk) locations around London, all of which are smoker friendly. The Canary Wharf location features a plush, enclosed, lounge where you can get high-end food, drink, and cigars. The Scottish decor begs a single malt pairing. An attendant will see to your every need along the way.
+
+### Casbar Cigar (previously Slo Burn)
+*10449 S Parker Rd, Parker, CO 80134*
+Last visited: December, 2019
+
+![The testosterone overfloweth.](/img/lounge/slo.burn.jpg)
+
+The little town of Parker, CO, located on the southeast side of Denver, CO actually has *two* cigar lounges, of which Casbar has the larger lounge, and is what most would consider more traditional. There is public seating in the front, and a private lounge in the back. Televisions and leather recliners are in abundant supply. Sizable walk-in humidor with a wide selection, and regular events to cater to every interest.
 
 ### Cigar Bar and Grill
 *850 Montgomery St, San Francisco, CA 94133*
@@ -31,22 +39,6 @@ Last visited: July 17, 2017
 ![High class. Or. Not.](/img/lounge/cigars.at.no.ten.jpg)
 
 Technically a hotel, with an outstanding restaurant, there is a small-ish, but very comfortable outdoor smoking area (COSA) in the back. The area is heated, with a privacy screen for your pleasure. The staff is very attentive, and highly trained. They will escort you to their humidor, which is well-stocked with a large assortment of Cuban cigars. Just be prepared for the bespoke price tag.
-
-### Club Humidor
-*7074 San Pedro Ave, San Antonio, TX 78216*
-Last visited: July 22, 2021
-
-![Texas class. Texas comfort.](/img/lounge/club.humidor.pedro.jpg)
-
-About fifteen minutes out of downtown, the Club Humidor on San Pedro Avenue is one of a chain around the San Antonio, TX area (at least - there may be more). Spacious, well-stocked humidor with prompt and attentive staff, despite having a steady stream of customers. The public lounge runs throughout the front area of the store, surrounded by all the accessories you can purchase.
-
-### Finck Cigars
-*3111 Broadway, San Antonio, TX 78209*
-Last visited: July 24, 2021
-
-![Clean. Modern. Attentive.](/img/lounge/finck.cigars.jpg)
-
-In terms of cigar lounges, I would describe Finck's a clean and modern. The white walls, seafoam green floor, and 80's pop music give off a distinctly Dominican Republic feel. The well-lit public lounge has ample seating in leather chairs. A well-appointed patio equipped with fans is also available should the weather be to your liking. The humidor is spacious and well-stocked. 
 
 ### Havana Cigar Lounge
 *4850 W Flamingo Rd #18, Las Vegas, NV 89103*
@@ -96,29 +88,29 @@ Last visited: July 21, 2019
 
 If you are in Orlando, FL, and looking for the quintessential cigar lounge - this is not it. If you are a suburban dad, booked in the VRBO at [Vista Cay](https://www.vistacayholidays.com) across the street, and looking for a little escape from theme park madness and kids - you have found your nirvana. Pick up a beverage at the Publix on the way in, or have some tea at the shop.
 
-### Redland Cigar Club
-*18847 Redland Rd, San Antonio, TX 78259*
-Last visited: July 23, 2021
+### Rocky Mountain Cigar Company
+*640 Unit C Rt. 285, Fairplay, CO 80440*
+Last visited: December 1, 2022
 
-![Have a cigar, and a nap.](/img/lounge/redland.cigar.club.jpg)
+![The highest cigar lounge in the world.](/img/lounge/rocky.mountain.cigar.company.jpg)
 
-At 2,200 ft² this is the largest cigar lounge in Texas. I counted thirty (30) full-size leather recliners, in addition to another six (6) tables of various height and size, each with four (4) chairs. Comfortable seating for fifty (50)? All this arranged into several conversation areas ("pits" as they call them). The atmosphere is so relaxed, that it would be rediculously easy to fall asleep before finishing your favorite stick. God bless Texas.
-
-### Slo Burn
-*10449 S Parker Rd, Parker, CO 80134*
-Last visited: All the time
-
-![The testosterone overfloweth.](/img/lounge/slo.burn.jpg)
-
-Veteran owned and operated, I consider [Slo Burn](https://www.sloburncigars.com/) to be my "home" lounge. If you are ever on the south side of Denver, drop on by, and you will likely find me here. Public seating in the front, private lounge with stocked minibar in the back. Televisions and leather recliners all around. Sizable walk-in humidor with a wide selection.
+With Breckenridge, CO and the surrounding towns becoming obtusely restrictive around smoking, why not take the 30-minute drive over the beautifully scenic Hoosier Pass into downtown Fairplay, CO, and settle in with your favorite cigar? This comfortable lounge also offers indoor golf and a selection of alcoholic beverages.
 
 ### Smoking Cave
 *5435 Boatworks Dr, Highlands Ranch, CO 80126*
-Last visited: Every Thursday
+Last visited: Every Friday
 
 ![A cave with a mermaid view.](/img/lounge/smoking.cave.jpg)
 
-Probably the most well-known cigar lounge in the Denver metro, where the humidor has a large selection and the best prices in town. The front of the store is open to the public and has a dozen or so leather seats for your smoking pleasure. The members lounge has another two-dozen leather seats. Special events abound, usually with free food. Just watch out that Quang does not steal your stick.
+Probably the most well-known cigar lounge in the Denver metro, where the humidor has a large selection and the best prices in town. The front of the store is open to the public and has a dozen or so leather seats for your smoking pleasure. The vast members lounge has several rooms (yes, rooms) appointed with a variety of leather seats. Special events abound, usually with free food. Say "Hello!" to Slick Rick at the cashier's counter; the grumpiest nice person I know.
+
+### Stanley Pappas
+*6880 S Clinton St, Englewood, CO 80112*
+Last visited: January 9, 2023
+
+![Sinatra would be envious.](/img/lounge/stanley.pappas.jpg)
+
+A fixture in the area, Stanley Pappas was once located in a renovated train car - the likes of which you would have ridden through the area in the 1800s. From there the location moved into the nearby strip mall. Now with two locations, it is the Clinton St location where you are most likely to find the namesake, Stanley, himself. The Rat Pack is always playing, and there is ample seating for a group meeting, or a simple table to get some work done. The walk-in humidor is well stocked with smokes from vendors old and new.
 
 ### Tobacco Leaf
 *6870 S Rainbow Blvd #118, Las Vegas, NV 89118*
@@ -126,4 +118,4 @@ Last visited: February 22, 2018
 
 ![Lounge in the back.](/img/lounge/tobacco.leaf.4.jpg)
 
-What?! You go to Las Vegas and you head to a shop off the strip? Yes. Yes I do. The tiled room in the back with a dozen or so leather chairs is a perfect escape from the constant barrage of casino noise. A lengthy, and well-categorized, humidor runs along the length of most of the store where you are sure to find a stick of your liking.
+What?! You go to Las Vegas and you head to a shop off the strip? Yes. Yes I do. The tiled room in the back with a dozen or so leather chairs is a perfect escape from the constant barrage of casino noise. A lengthy, and well-categorized, humidor runs along the length of most of the store where you are sure to find a stick of your liking. 

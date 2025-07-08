@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="Makes cool shit." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>AWS Transcribe with Python</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/article.css" />
+  <link rel="stylesheet" href="/style/footer.css" />
+  <link rel="stylesheet" href="/style/prism.css" />  
+
+</head>
+<body>
+  
+  <header >
+  <div>
+    <p>Kevin Hoyt</p>
+    <a href="https://twitter.com/krhoyt" target="_blank">
+      <img src="/img/twitter.svg" width="16" height="16" />
+    </a>
+    <a href="https://github.com/krhoyt" target="_blank">
+      <img src="/img/github.svg" width="16" height="16" />
+    </a>      
+    <a href="https://www.youtube.com/channel/UCSFeFhtLBuzU2UMs7oOL54A" target="_blank">
+      <img src="/img/youtube.svg" width="20" height="20" style="margin-top: -1px;" />
+    </a>          
+    <a href="https://www.instagram.com/parkerkrhoyt" target="_blank">
+      <img src="/img/instagram.svg" width="16" height="16" />
+    </a>      
+  </div>
+  <div>
+    <h2>Kevin Hoyt</h2>
+    <h3>The intersection of development and design.</h3>
+  </div>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/apps">Apps</a></li>        
+    <li><a href="/events">Events</a></li>
+    <li><a href="/lounge">Lounge</a></li>
+  </ul>
+</header>
+
+
+  
+  <main>
+
+    <div>
+      <img src="/img/covers/python.jpg" alt="AWS Transcribe with Python">
+
+      
+        <figcaption>
+          <p>Photo by <a href="https://unsplash.com/@davidclode">David Clode</a> on <a href="https://unsplash.com/photos/5uU8HSpfwkI">Unsplash</a></p>
+        </figcaption>
+      
+    </div>
+
+    <article>
+      <h1>AWS Transcribe with Python</h1>
+      <time>Dec 2, 2022 &bull; 15 min read</time>
+      <p>Amazon Web Services (AWS) has so many services. A stroll through the catalog will likely yield something useful for just about any project. Sometimes our projects pick us. This week a customer asked for an example of using <a href="https://aws.amazon.com/transcribe/">AWS Transcribe</a> with Python. Having used other transcription services, I could not pass up the challenge. What follows is my approach to implementing a solution.</p>
+<h2>Prerequisites</h2>
+<p>There is a little setup required to get all this going. I have tried to stick to the absolute minimum amount of setup. While walking through each of these setup steps is beyond the scope of this post, I will give you some pointers along the way.</p>
+<h3>Access and Identity</h3>
+<p>To use AWS, you will obviously need an account. With your account in hand, you can get the credentials you will need to access the AWS services. The danger with doing this is that if you are using the root account credentials, then those credentials have access to everything in your account. If you let those credentials slip into malicious hands - say, by accidentally committing them to a public GitHub account - then those hands can really cause you a lot of pain.</p>
+<p>Rather than use the root account credentials directly, I recommend heading over to the Identity Management (IAM) service and creating a group with specific permissions for the services you will be using. In this case, those permissions are &quot;Transcribe&quot; and &quot;S3&quot;. Then create a user and generate credentials for that user. Finally, assign that user to the group that has the appropriate permissions. Now should those credentials fall into malicious hands, the only access they have is to those services specified for the group. If you suspect malicious activity, you can log into the root account and disable the user and/or group with a few clicks.</p>
+<h3>S3</h3>
+<p>In order to provide the audio file for Transcribe to use, you will need a place in AWS to put that file; namely an S3 bucket. If you already have an S3 Bucket setup, you can use that, or even create a folder inside of that bucket if you do not want your Transcribe content to co-mingle with other content you may have in the bucket. However you go about it, note the region in which the bucket resides. You will need this piece of information to use both Transcribe and S3.</p>
+<h3>Python</h3>
+<p>There are a few moving pieces on the Python side of this solution. The first is a file to put your environment variables. What environment variables? Namely, those all so precious access keys. You want to avoid putting those access keys directly into your Python code (or any language you may be using). There are also some other variables that are used throughout this solution that go nicely into that environment file. In a file named <code>transcribe.env</code> I have placed the following variable details.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">AWS_ACCESS_KEY</span><span class="token operator">=</span>_YOUR_ACCESS_KEY_<br><span class="token assign-left variable">AWS_SECRET_KEY</span><span class="token operator">=</span>_YOUR_SECRET_KEY_<br><span class="token assign-left variable">AWS_REGION</span><span class="token operator">=</span>_S3_REGION_<br><span class="token assign-left variable">LOCAL_AUDIO</span><span class="token operator">=</span>hello-world.m4a<br><span class="token assign-left variable">S3_BUCKET</span><span class="token operator">=</span>_S3_BUCKET_NAME_<br><span class="token assign-left variable">S3_OBJECT</span><span class="token operator">=</span>_PATH_TO_AUDIO_IN_BUCKET_<br><span class="token assign-left variable">SLEEP_TIME</span><span class="token operator">=</span><span class="token number">5</span><br><span class="token assign-left variable">TRANSCRIPTION_JOB</span><span class="token operator">=</span>hello-world</code></pre>
+<p>I will talk about these environment variables in more detail as we get into the specific Python code.</p>
+<p>Secondly, you will need to install two Python libraries. Again, I have tried to keep this pretty minimal.</p>
+<ul>
+<li>
+<p><strong><a href="https://boto3.amazonaws.com/v1/documentation/api/latest/index.html">Boto3</a></strong>: This is the AWS library for Python. While AWS is mostly REST under the covers, trying to manage the headers and structure of the requests yourself can be very overwhelming. While I am not a fan of adding libraries for the sake of adding libraries, this is one case where it absolutely makes sense.</p>
+</li>
+<li>
+<p><strong><a href="https://pypi.org/project/python-dotenv/">DotEnv</a></strong>: You have externalized key pieces of data into an environment variable file. That is great! Now we need a way to pull them into our main logic, parse them, and make use of them. Like anything Python, there are a dozen ways to do this, but I find this little helper worth the value to have along for the ride.</p>
+</li>
+</ul>
+<blockquote>
+<p>Installing libraries will look something like <code>pip install boto3</code>.</p>
+</blockquote>
+<p>Everything else used in this solution is a part of the standard Python runtime. Oh, and it is worth mentioning that this is all Python 3 code.</p>
+<h2>Ready, Set...</h2>
+<p>This solution uses a variety of libraries, both third-party as mentioned above, and from the Python runtime.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> boto3<br><span class="token keyword">import</span> io<br><span class="token keyword">import</span> json<br><span class="token keyword">import</span> os<br><span class="token keyword">import</span> sys<br><span class="token keyword">import</span> time<br><br><span class="token keyword">from</span> dotenv <span class="token keyword">import</span> load_dotenv<br><span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path</code></pre>
+<ul>
+<li><strong>boto3</strong>: As previously mentioned, this is the Python AWS library.</li>
+<li><strong>io</strong>: Allows reading the Transcribe results directly into memory.</li>
+<li><strong>json</strong>: Provides a means to parse and read the JSON data that often results from interacting with AWS.</li>
+<li><strong>os</strong>: Used for access the environment variables once read and parsed by the supporting <code>dotenv</code> library.</li>
+<li><strong>sys</strong>: Access to command-line arguments.</li>
+<li><strong>time</strong>: Can pause execution while we poll the Transcribe service to see if it has completed its work.</li>
+<li><strong>from dotenv import load_dotenv</strong>: Reads and parses the environment variable file.</li>
+<li><strong>from pathlib import Path</strong>: Helps specify where the environment variable file lives on the local file system.</li>
+</ul>
+<h2>Go!</h2>
+<p>Our first lines of code should be to read and parse the environment variables file so they can be used throughout the solution.</p>
+<pre class="language-python"><code class="language-python">dotenv_path <span class="token operator">=</span> Path<span class="token punctuation">(</span> <span class="token string">"transcribe.env"</span> <span class="token punctuation">)</span><br>load_dotenv<span class="token punctuation">(</span> dotenv_path <span class="token operator">=</span> Path<span class="token punctuation">(</span> <span class="token string">"transcribe.env"</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span></code></pre>
+<h2>Clients</h2>
+<p>To access an AWS service, we must for instantiate a &quot;client&quot; for services we want to access. Client instantiation includes parameters specific to that service. We will need two clients since we are accessing two different services.</p>
+<pre class="language-python"><code class="language-python">storage <span class="token operator">=</span> boto3<span class="token punctuation">.</span>client<span class="token punctuation">(</span> <br>  <span class="token string">"s3"</span><span class="token punctuation">,</span><br>  aws_access_key_id <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"AWS_ACCESS_KEY"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><br>  aws_secret_access_key <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"AWS_SECRET_KEY"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><br>  region_name <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"AWS_REGION"</span> <span class="token punctuation">)</span><br><span class="token punctuation">)</span><br><br>transcribe <span class="token operator">=</span> boto3<span class="token punctuation">.</span>client<span class="token punctuation">(</span><br>  <span class="token string">"transcribe"</span><span class="token punctuation">,</span><br>  aws_access_key_id <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"AWS_ACCESS_KEY"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><br>  aws_secret_access_key <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"AWS_SECRET_KEY"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><br>  region_name <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"AWS_REGION"</span> <span class="token punctuation">)</span><br><span class="token punctuation">)</span></code></pre>
+<p>Here you can see those environment variables in action as referenced by <code>os.getenv( &quot;variable_name&quot; )</code>.</p>
+<h2>Audio File</h2>
+<p>AWS Transcribe works from an audio file placed on S3. Here we will check S3 to see if our desired audio file already exists. If it does not, we will upload an audio file from the local file system to S3 for later use by Transcribe.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span><br>  response <span class="token operator">=</span> storage<span class="token punctuation">.</span>get_object_attributes<span class="token punctuation">(</span><br>    Bucket <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"S3_BUCKET"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><br>    Key <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"S3_OBJECT"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><br>    ObjectAttributes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"ETag"</span><span class="token punctuation">]</span><br>  <span class="token punctuation">)</span><br>  <span class="token keyword">print</span><span class="token punctuation">(</span> response <span class="token punctuation">)</span><br><br><span class="token keyword">except</span><span class="token punctuation">:</span> <br>  storage<span class="token punctuation">.</span>upload_file<span class="token punctuation">(</span> <br>    Filename <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"LOCAL_AUDIO"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span> <br>    Bucket <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"S3_BUCKET"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span> <br>    Key <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"S3_OBJECT"</span> <span class="token punctuation">)</span><br>  <span class="token punctuation">)</span></code></pre>
+<h2>Transcribe</h2>
+<p>In order to tell AWS Transcribe to work on a specific audio file, we create a &quot;job&quot;. That job is asynchronous. That is to say that when we make the call to create a job, that call will kick off the job and return. It will not hold up execution of the logic while waiting for the job to complete. In order to find out if the job has completed, we will need to repeatedly ask Transcribe about the status of the job (polling).</p>
+<blockquote>
+<p>Many parts of <code>Boto3</code> include <code>waiters</code>. <code>Waiters</code> are a means of <em>waiting</em> for the work on AWS to complete. Transcribe does not support <code>waiters</code> at this time, so polling it is.</p>
+</blockquote>
+<pre class="language-python"><code class="language-python">completed <span class="token operator">=</span> <span class="token boolean">False</span><br><br><span class="token keyword">try</span><span class="token punctuation">:</span> <br>  response <span class="token operator">=</span> transcribe<span class="token punctuation">.</span>get_transcription_job<span class="token punctuation">(</span><br>    TranscriptionJobName <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"TRANSCRIPTION_JOB"</span> <span class="token punctuation">)</span><br>  <span class="token punctuation">)</span><br>  <span class="token keyword">print</span><span class="token punctuation">(</span> response <span class="token punctuation">)</span>      <br>  <br><span class="token keyword">except</span><span class="token punctuation">:</span><br>  response <span class="token operator">=</span> transcribe<span class="token punctuation">.</span>start_transcription_job<span class="token punctuation">(</span><br>    TranscriptionJobName <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"TRANSCRIPTION_JOB"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><br>    LanguageCode <span class="token operator">=</span> <span class="token string">"en-US"</span><span class="token punctuation">,</span><br>    OutputBucketName <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"S3_BUCKET"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><br>    OutputKey <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"S3_OBJECT"</span> <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">".json"</span><span class="token punctuation">,</span><br>    Media <span class="token operator">=</span> <span class="token punctuation">{</span><br>      <span class="token string">"MediaFileUri"</span><span class="token punctuation">:</span> <span class="token string">"s3://"</span> <span class="token operator">+</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"S3_BUCKET"</span> <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"/"</span> <span class="token operator">+</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"S3_OBJECT"</span> <span class="token punctuation">)</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">)</span><br>  <span class="token keyword">print</span><span class="token punctuation">(</span> response <span class="token punctuation">)</span>    <br>  <br><span class="token keyword">if</span> response<span class="token punctuation">[</span><span class="token string">"TranscriptionJob"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"TranscriptionJobStatus"</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">"IN_PROGRESS"</span><span class="token punctuation">:</span><br>  completed <span class="token operator">=</span> <span class="token boolean">True</span>  <br>  <br><span class="token comment"># Job status</span><br><span class="token keyword">while</span> completed <span class="token operator">==</span> <span class="token boolean">False</span><span class="token punctuation">:</span><br>  response <span class="token operator">=</span> transcribe<span class="token punctuation">.</span>get_transcription_job<span class="token punctuation">(</span><br>    TranscriptionJobName <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"TRANSCRIPTION_JOB"</span> <span class="token punctuation">)</span><br>  <span class="token punctuation">)</span><br>  <span class="token keyword">print</span><span class="token punctuation">(</span> response <span class="token punctuation">)</span><br>  <br>  <span class="token keyword">if</span> response<span class="token punctuation">[</span><span class="token string">"TranscriptionJob"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"TranscriptionJobStatus"</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">"IN_PROGRESS"</span><span class="token punctuation">:</span><br>    completed <span class="token operator">=</span> <span class="token boolean">True</span><br>    <span class="token keyword">break</span><br>    <br>  time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span> <span class="token builtin">int</span><span class="token punctuation">(</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"SLEEP_TIME"</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span></code></pre>
+<p>That is a lot to take in at once. Let us review what is going on in the above snippet. First, we create a variable to track if the job is complete. Since it is not complete when we first create the job, the value of <code>completed</code> is <code>False</code>.</p>
+<p>Second, we ask Transcribe for the status of the job. The job may not exist yet. If the job does not exist, we start a new job using the <code>start_transcription_job()</code> function call. Among the parameters passed to the <code>start_transcription_job()</code> includes the path to our audio file sitting on S3. Also specified is the path where Transcribe should place the results.</p>
+<p>Third, after either of those calls are made, we check the progress in the resulting JSON dictionary. There are different values that might come back from checking on the job status. One of those might be an error. Another might be a failure to transcribe the content. In either of those cases, as well as in the case of the status being <code>COMPLETE</code> we want to stop polling and move on to the next phase.</p>
+<p>Fourth, is to continue checking on the job status - polling. We do not want to poll too aggressively here (DDoS), so we pause execution of the logic for a few seconds before checking again. The time that Transcribe will take to complete the job depends on the size of the audio file. Eventually the job will complete. Transcribe will then place the JSON formatted results in the bucket we specified when we started the job.</p>
+<h2>Results</h2>
+<p>In the case of this solution, we want to download the Transcribe results JSON file, and place it on the local file system so we can open it up with a text editor and learn about the various pieces of data that are included with the results.</p>
+<pre class="language-python"><code class="language-python">dir_index <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"S3_OBJECT"</span> <span class="token punctuation">)</span><span class="token punctuation">.</span>index<span class="token punctuation">(</span> <span class="token string">"/"</span> <span class="token punctuation">)</span><br>file_name <span class="token operator">=</span> <span class="token string">"./"</span> <span class="token operator">+</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"S3_OBJECT"</span> <span class="token punctuation">)</span><span class="token punctuation">[</span>dir_index<span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">".json"</span><br>storage<span class="token punctuation">.</span>download_file<span class="token punctuation">(</span><br>  Filename <span class="token operator">=</span> file_name<span class="token punctuation">,</span><br>  Bucket <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"S3_BUCKET"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><br>  Key <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"S3_OBJECT"</span> <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">".json"</span>      <br><span class="token punctuation">)</span><br><br><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span> file_name<span class="token punctuation">,</span> <span class="token string">"r"</span> <span class="token punctuation">)</span> <span class="token keyword">as</span> local_file<span class="token punctuation">:</span><br>  response <span class="token operator">=</span> json<span class="token punctuation">.</span>load<span class="token punctuation">(</span> local_file <span class="token punctuation">)</span><br>  <span class="token keyword">print</span><span class="token punctuation">(</span> response<span class="token punctuation">[</span><span class="token string">"results"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"transcripts"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"transcript"</span><span class="token punctuation">]</span> <span class="token punctuation">)</span>  <br>  local_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>Our <code>S3_OBJECT</code> environment variable includes some path information (&quot;transcribe&quot;). If we keep this as-is, then the download from S3 will try to put the results into a &quot;transcribe&quot; folder in our project on the local file system. I just want to put the results in the same folder as the Python program itself, so I take a few steps to parse out the file name from the rest of the path.</p>
+<p>Heading over to our S3 client instance, we then download the file. We can then open the file, and read the contents as JSON data, yielding a Python dictionary.</p>
+<blockquote>
+<p>In the Gist, I also include a version of downloading the results file from S3, directly into memory.</p>
+</blockquote>
+<p>For any given transcription, there may be multiple results. I good next step might be to dig deeper into the results to determine the confidence of the various transcriptions, and then select a specific result. In this case, I am getting, and displaying, the first result only.</p>
+<h2>Cleanup</h2>
+<p>This solution takes into account that you may want to reuse the audio file on S3, or just plain keep it around for archival purposes. If you have no intention of reusing any of the associated parts and pieces of the process, it is a good idea to clean up after ourselves.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">if</span> <span class="token string">"-c"</span> <span class="token keyword">in</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">:</span><br>  transcribe<span class="token punctuation">.</span>delete_transcription_job<span class="token punctuation">(</span><br>    TranscriptionJobName <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"TRANSCRIPTION_JOB"</span> <span class="token punctuation">)</span><br>  <span class="token punctuation">)</span><br>  <br>  response <span class="token operator">=</span> storage<span class="token punctuation">.</span>delete_object<span class="token punctuation">(</span><br>    Bucket <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"S3_BUCKET"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><br>    Key <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span> <span class="token string">"S3_OBJECT"</span> <span class="token punctuation">)</span><br>  <span class="token punctuation">)</span></code></pre>
+<p>To account for this, you can add a command-line argument of <code>-c</code> when you run the Python program. There is no significance to the <code>-c</code>. It is made up by me. The &quot;c&quot; stands for &quot;cleanup&quot;. If the <code>-c</code> argument is included, we delete the Transcribe job, and then delete the audio file from S3.</p>
+<h2>Next Steps</h2>
+<p>All said and done, this solution is a little over 100 lines of code. Depending on how you fit this solution into your project, those lines of code could be much less or much more. This really all depends on how robust you need the code to be. Thanks to judicious use of the <code>boto3</code> library however, you are on your way to using AWS Transcribe.</p>
+<p>I absolutely appreciate these types of questions from AWS customers, and hope this example serves to answer questions around using AWS Transcribe with Python. For reference, I have placed the environment variable file (with security-specific values redacted), and the entirety of the Python program in a <a href="https://gist.github.com/krhoyt/46a8fac60cb25c44eaad9447e4c4685a">GitHub Gist</a> for your reference. Or copy and paste. Whatever. Enjoy!</p>
+
+      <time>Published on Dec 2, 2022</time>
+    </article>
+  </main>
+          
+
+  <footer>
+  <p>
+    <a href="https://kevinhoyt.com">Kevin Hoyt</a>
+    <span>&copy; 2022 - Published with</span>
+    <a href="https://www.11ty.dev">Eleventy</a>
+  </p>
+</footer>
+
+
+</body>
+</html>

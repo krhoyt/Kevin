@@ -9,6 +9,7 @@ module.exports = function( config ) {
   config.addPlugin( pluginSyntaxHighlight );
   config.addPlugin( pluginYouTube );
 
+  config.addPassthroughCopy( 'apps/quinn' );  
   config.addPassthroughCopy( 'img' );
   config.addPassthroughCopy( 'style' );  
 
