@@ -76,12 +76,20 @@ I was beyond excited when I landed a part-time role as a Sales Engineer at **[Io
 
 Thankfully, around the same time, the pharmacuetical industry started to produce viable COVID vaccines, and the world began to return to something like normal.
 
+### Welcome to the Jungle
+
+In May 2022, I joined **[Amazon Web Services](https://aws.amazon.com)** (AWS) as a **Senior Documentation Manager**, for AI/ML related functionality. I also took on writing responsibilities for technologies such as Transcribe, Deep Learning Amazon Machine Images/Containers, and MemoryDB. 
+
+Inspired by the needs of my writers, I built the first internal **Generative AI** tooling for Technical Writers from the ground up. I used Python/Flask for the server, DocumentDB for storage, and built my own [Web-standards version](https://github.com/krhoyt/Rainforest) of the [Amazon Cloudscape](https://cloudscape.design/) components for the user interface. The project was containerized with Docker, and hosted on Elastic Container Services (ECS).
+
+By 2024, the tide started to turn against remote workers. I was told to relocate to Seattle, WA by October 2025, or I would be considered to have "voluntarily resigned." After 25 years as a remote employee, with aging parents and a daughter in college, I was not about to relocate. In March of 2025, Amazon and I parted ways.
+
 ### Today
 
-In May 2022, I joined **[Amazon Web Services](https://aws.amazon.com)** (AWS) as a **Senior Documentation Manager**, for AI/ML related functionality.
+I have spent the vast majority of my near **30-year career** helping developers achieve their goals. Now I am taking a page out of my own book, and setting out to achieve one of my personal goals - to be an **entreprenuer**. I am not sure what that looks like just yet. I have ideas for applications. Some more commercial than others. I have decades of Developer Relations experience to share. And I still geek out about programming, data visualization, and Web standards. There is bound to be something in the nexus of all of that knowledge. Right?
 
 ### Also of Note
 
 I started picking up electronics hardware as a gimmick in my demonstrations around 2007.  Electronics connected to the Internet has since become called, the **Internet of Things** (IoT), and is something I am deeply passionate about.  I have traveled the world talking about IoT, including teaching hands-on workshops for audiences ranging from grade school to professionals.
 
-An emerging market closely related to IoT is what I refer to as "desktop fabrication".  This includes **3D printers, laser cutting, and CNC**, and is one of the many ways I enjoy spending my leisure time.  I also have a **private pilots license**, see loads of movies (even the bad ones), and spend as much time as possible with my **wife** of 24 years, and our eighteen (18) year-old **daughter**. 
+An emerging market closely related to IoT is what I refer to as "desktop fabrication".  This includes **3D printers, laser cutting, and CNC**, and is one of the many ways I enjoy spending my leisure time.  I also have a **private pilots license**, see loads of movies (even the bad ones), and spend as much time as possible with my **wife** of 27 years, and our 21 year-old **daughter**. 
