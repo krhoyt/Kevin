@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="The intersection of development and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Teaching Watson to See My Garage</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/article.css" />
+  <link rel="stylesheet" href="/style/footer.css" />
+  <link rel="stylesheet" href="/style/prism.css" />  
+
+</head>
+<body>
+  
+  <header >
+  <div>
+    <p>Kevin Hoyt</p>
+    <a href="https://bsky.app/profile/krhoyt.bsky.social" target="_blank">
+      <img src="/img/bluesky.svg" width="16" height="16" />
+    </a>
+    <a href="https://github.com/krhoyt" target="_blank">
+      <img src="/img/github.svg" width="16" height="16" />
+    </a>      
+    <a href="https://www.youtube.com/channel/UCSFeFhtLBuzU2UMs7oOL54A" target="_blank">
+      <img src="/img/youtube.svg" width="20" height="20" style="margin-top: -1px;" />
+    </a>          
+    <a href="https://www.instagram.com/parkerkrhoyt" target="_blank">
+      <img src="/img/instagram.svg" width="16" height="16" />
+    </a>      
+  </div>
+  <div>
+    <h2>Kevin Hoyt</h2>
+    <h3>The intersection of development and design.</h3>
+  </div>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/events">Events</a></li>
+    <li><a href="/lounge">Lounge</a></li>
+  </ul>
+</header>
+
+
+  
+  <main>
+
+    <div>
+      <img src="/img/covers/teaching.jpg" alt="Teaching Watson to See My Garage">
+
+      
+        <figcaption>
+          <p>Photo by <a href="https://unsplash.com/@element5digital">Element5 Digital</a> on <a href="https://unsplash.com/photos/red-apple-fruit-on-four-pyle-books-OyCl7Y4y0Bk">Unsplash</a></p>
+        </figcaption>
+      
+    </div>
+
+    <article>
+      <h1>Teaching Watson to See My Garage</h1>
+      <time>Apr 17, 2018 &bull; 8 min read</time>
+      <p>After a long day of work, I like to head out to my garage and tinker, binge the latest series, listen to a podcast, or settle in with a book. If the weather is right, I will open the garage door. Eventually I will head to bed. Then it hits me - did I close the garage door?</p>
+<p>The last thing I want to do is get up, put on some clothes, head downstairs to the garage, and check it. By the time I get back to bed, I have to settle back down before drifting off to sleep. If only Watson could watch the garage for me.</p>
+<h3>Teaching Watson</h3>
+<p><a href="https://www.ibm.com/watson/services/visual-recognition/">Watson Visual Recognition</a> can &quot;see&quot; a lot of things right out of the box - including some brand logos, and celebrities. The real power of Visual Recognition however surfaces when you train Watson to see what it is that you want it to see. This feature is called &quot;Custom Classifiers&quot;. Creating a custom classifier has a few steps.</p>
+<ol>
+<li></li>
+</ol>
+<p><strong>Capture</strong> or assemble a set of images that contain the content you want to teach (train) Watson to see.</p>
+<ol start="2">
+<li></li>
+</ol>
+<p><strong>Manipulate</strong> the images to best represent your content (optional). There is a lot of content in some images, and you want to pare down to your specific content.</p>
+<ol start="3">
+<li></li>
+</ol>
+<p><strong>Bundle and train</strong> Watson on your images. The creates the classifier, and will be available only to your account.</p>
+<ol start="4">
+<li></li>
+</ol>
+<p><strong>Send</strong> Watson an image you want to classify. This may require additional image tuning en route.</p>
+<h3>Capture</h3>
+<p>To capture images of my garage I needed a camera, so I stuck a <a href="https://www.sparkfun.com/products/14329">Raspberry Pi Zero</a> with camera module on the wall of my garage. I wrote a Python script to take a picture once every five (5) minutes for an entire day, and upload it to <a href="https://www.ibm.com/cloud/object-storage">IBM Cloud Object Storage</a> (S3-compatible).</p>
+<p><img src="http://images.kevinhoyt.com/garagepi.whole.jpg" alt="The whole garage."></p>
+<p>Why one image every five minutes for an entire day? The garage does not change that much over time. The Watson documentation on custom classifiers suggest that a training sample will yield the best results at around 300 images. There are <strong>24 hours</strong> in a day, or <strong>1,440 minutes</strong>. Divided by <strong>300</strong>, that gives us <strong>4.8</strong> - so once every five minutes should yield enough images.</p>
+<p>I also wanted to capture the garage door open and closed, during both the day time and during the night time. To get this I needed at least a full day to start. All said and done, I got enough images to yield an accurate training model. If I needed more, I could run the script again, until I had all the images I needed.</p>
+<h3>Manipulate</h3>
+<p>In the case of the above photo of my garage, there is a lot to &quot;see&quot;. There are two cars. There is a wall with a bunch of objects on and near it. The ceiling with the actual garage door opener. And somewhere, in the distance is the actual garage door. What is it that we want to actually teach Watson?</p>
+<blockquote>
+<p>To the human eye, it is easy to see that the garage door is open, but Watson needs little more direction.</p>
+</blockquote>
+<p>To solve this problem, I wrote a Python script to download the images from IBM Cloud Object Storage, and further process them.</p>
+<p>The documentation states that a good image is 200x200 pixels. It turns out that you do not need the full resolution of the camera image. The first step then is to resize the entire image down to 640x480 pixels. The second step then extracts only a specific portion of the image - the area behind the cars, where the human eye can see the garage door as open or closed.</p>
+<p><img src="http://images.kevinhoyt.com/garagepi.crop.jpg" alt="The part of the image we are interested in using."></p>
+<p>I arrived at 640x480 through trial and error. I tried 1024x768, and then looked at the cropped area. It was still really big - far larger than the 200-ish the documentation recommends. Then 800x600. Still a big on the large side. When I got down to 640x480, the portion of the image which shows the state of the garage door was about 350x85. Close enough.</p>
+<p><img src="http://images.kevinhoyt.com/garagepi.garage.jpg" alt="Just the garage, please."></p>
+<p>I should mention that <a href="https://pillow.readthedocs.io/en/5.1.x/">Pillow</a>, a fork of the <a href="http://www.pythonware.com/products/pil/">Python Image Library</a> (PIL) made the work of sizing and cropping just a few lines of code.</p>
+<h3>Bundle and Train</h3>
+<p>Once I had all the samples sized and cropped, I pulled them (manually) into folders for &quot;open day&quot;, &quot;open night&quot;, &quot;closed day&quot;, and &quot;closed night&quot;. From there I bundled each into an archive file (zip).  From there, a little cURL action against the Watson API for training, was a single call.</p>
+<p>## Create Classifier
+curl -X &quot;POST&quot; &quot;https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classifiers?api_key=YOUR_API_KEY&amp;version=2016-05-20&quot; <br>
+-H 'Content-Type: multipart/form-data; charset=utf-8;' <br>
+-F &quot;closed_day_positive_examples=@closed.day.zip&quot; <br>
+-F &quot;open_day_positive_examples=@open.day.zip&quot; <br>
+-F &quot;closed_night_positive_examples=@closed.night.zip&quot; <br>
+-F &quot;open_night_positive_examples=@open.night.zip&quot; <br>
+-F &quot;name=garage&quot;</p>
+<p>It can take some time for Watson to build the fully trained model. This makes sense if you are looking at 200-ish images per state, with four (4) states. That is about 800 images for Watson to process. For my dataset it took about five minutes. You can run the following script to check the progress along the way. You should not train or test against the classifier while it is being built.</p>
+<p>## Classifier Details
+curl &quot;https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classifiers/CLASSIFIER_ID?api_key=YOUR_API_KEY&amp;version=2016-05-20&quot;</p>
+<p>While I have put the cURL here for review, I personally recommend the awesome <a href="https://paw.cloud/">Paw</a> tool. I have folders in Paw for nearly a dozen difference IBM Cloud APIs - each folder with as many &quot;requests&quot; as needed to fully utilize that API. Whenever I need to use that API, I just open Paw, and all the hard work is done. What is better is that Paw will generate cURL, or Python, or ... take your pick ... sample code for you to use.</p>
+<h3>Send To Watson</h3>
+<p>Now back to the Raspberry Pi setup. Here I put one more Python script. The script serves two purposes.</p>
+<p>The first thing it does is take a picture, and store it locally, every five minutes (keeping with the aforementioned maths). The Pi camera can take a moment start up, and I did not want to incur that in my calls to Watson. I also did not want to process images when I did not need to - using the API call limits of my Lite (<strong>free</strong>) tier.</p>
+<p>The second thing the Python script on the Pi does is connect to <a href="https://www.ibm.com/internet-of-things">Watson IoT</a> (MQTT). This lets the Pi sit there and wait for a command to process the most recently captured image.</p>
+<p>When the command comes in, the script sends the image to Watson Visual Recognition for processing. When a result has arrived from Watson, the Pi sends an MQTT event with the pertinent data. I leave it up to the client implementation to decide what that means, and what to do with the results.</p>
+<p>## Classify Image
+curl -X &quot;POST&quot; &quot;https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classify?api_key=YOUR_API_KEY&amp;version=2016-05-20&quot; <br>
+-H 'Content-Type: multipart/form-data; charset=utf-8;' <br>
+-F &quot;images_file=@garage.jpg&quot; <br>
+-F &quot;classifier_ids=CLASSIFIER_ID&quot;</p>
+<p>Decoupling the device (Pi) from the client implementation, allows me to integrate with a Progressive Web Application (PWA), native application, and/or voice systems such as Amazon Alexa.</p>
+<h3>Next Steps</h3>
+<p>Now when I am lying in bed, and want to know if the garage is open, I can simply say &quot;Alexa, ask Tennyson about the garage door.&quot; The result, on a good day, is &quot;The garage door is closed.&quot; Off to sleep I go.</p>
+<p>The next problem to solve with this project is to close the garage door for me if I am lying in bed, and find that I forgot to close it.  This would surface as another command for the Pi to monitor. &quot;Alexa, ask Tennyson to close the garage door.&quot; Then it would activate a relay hooked to the garage door opener itself.</p>
+<p>Where things start getting really interesting is in running the classifier when every image is taken, and storing the results in a database. Then I could teach Watson to know that the garage door should not be open in the first place, and close it for me automatically.</p>
+<p>While the Lite (<strong>free</strong>) account for Watson Visual Recognition has a limit of a single custom classifier, I want to eventually add two more classifiers - one for where my car is in the image, and one for where my wife's car is in the image. Then I can even ask Watson if my wife is home from anywhere in the world.</p>
+<h3>What About ... ?</h3>
+<p>You might be asking &quot;Why not just use <strong>IoT</strong> sensors to detect the state of the garage?&quot; I thought about this for a long time. Maybe some magnets and Hall sensors on the rails of the door? Maybe an ultrasonic range sensor that would yield one distance when the door was open, and another if it was closed?</p>
+<p>Sure! These are possibilities, but powering the sensors, and integrating them with a master involves a lot more engineering.</p>
+<p>In the end, I wanted to best model how I actually work as a human. How I work as a human is look out to the garage, and see, with my eyes, the state of the door. A single Pi with a camera, mounted on the wall is the closest approximation to that - and it costs about $70 USD to get going.</p>
+
+      <time>Published on Apr 17, 2018</time>
+    </article>
+  </main>
+          
+
+  <footer>
+  <p>
+    <a href="https://kevinhoyt.com">Kevin Hoyt</a>
+    <span>&copy; 2025 - Published with</span>
+    <a href="https://www.11ty.dev">Eleventy</a>
+  </p>
+</footer>
+
+
+</body>
+</html>

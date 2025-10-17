@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">    
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <meta name="description" content="Strange and mysterious creature of the seas.">  
+
+  <title>Tiny Bubbles</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link href="/img/bubbles.svg" rel="icon" type="image/svg+xml">
+  <link href="/styles/squideroo.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <main></main>
+  <aside>
+    <header>
+      <img src="/img/bubbles.svg">
+      <h3>Tiny Bubbles</h3>
+      <button id="settings" type="button">
+        <img src="/img/settings.svg">
+      </button>
+    </header>
+    <form>
+      <h3>Editing Tools</h3>
+      <div id="controls">
+        <h4>Mode</h4>
+        <pix-button-group>
+          <button type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm0-2h14V5H5zm7-3q-1.65 0-2.825-1.175T8 12t1.175-2.825T12 8t2.825 1.175T16 12t-1.175 2.825T12 16"/>
+            </svg>
+            <span>Pixel</span>          
+          </button>
+          <button type="button">          
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm0-2h14V5H5zm0 0V5zm2-2h10q.3 0 .45-.275t-.05-.525l-2.75-3.675q-.15-.2-.4-.2t-.4.2L11.25 16L9.4 13.525q-.15-.2-.4-.2t-.4.2l-2 2.675q-.2.25-.05.525T7 17"/>
+            </svg>
+            <span>Bitmap</span>          
+          </button>        
+        </pix-button-group>      
+        <h4>Pixel Size</h4>
+        <pix-slider maximum="10" minimum="1" value="5"></pix-slider>
+        <h4>Spacing</h4>
+        <pix-slider></pix-slider>        
+        <h4>Shape</h4>
+        <pix-button-group>
+          <button type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm0-2h14V5H5zm0 0V5z"/>
+            </svg>          
+            <span>Square</span>          
+          </button>
+          <button type="button">          
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/>
+            </svg>
+            <span>Circle</span>          
+          </button>        
+        </pix-button-group>
+        <h4>Background Color</h4>
+        <div class="split">
+          <button class="primary" style="background: #f4f4f4;" type="button">
+            <span>#f4f4f4</span>
+          </button>            
+        </div>
+      </div>
+      <h4>Export</h4>
+      <div class="row">
+        <button class="primary flex" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M11 16.175V5q0-.425.288-.712T12 4t.713.288T13 5v11.175l4.9-4.9q.3-.3.7-.288t.7.313q.275.3.287.7t-.287.7l-6.6 6.6q-.15.15-.325.213t-.375.062t-.375-.062t-.325-.213l-6.6-6.6q-.275-.275-.275-.687T4.7 11.3q.3-.3.713-.3t.712.3z"/>
+          </svg>
+          <span>Export image</span>
+        </button>      
+        <button class="secondary flex" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 20q-3.35 0-5.675-2.325T4 12t2.325-5.675T12 4q1.725 0 3.3.712T18 6.75V5q0-.425.288-.712T19 4t.713.288T20 5v5q0 .425-.288.713T19 11h-5q-.425 0-.712-.288T13 10t.288-.712T14 9h3.2q-.8-1.4-2.187-2.2T12 6Q9.5 6 7.75 7.75T6 12t1.75 4.25T12 18q1.7 0 3.113-.862t2.187-2.313q.2-.35.563-.487t.737-.013q.4.125.575.525t-.025.75q-1.025 2-2.925 3.2T12 20"/>
+          </svg>
+          <span>Choose image</span>
+        </button>
+      </div>
+    </form>
+  </aside>
+
+  <!-- Application -->
+  <script src="/script/component/button-group.js" type="module"></script>
+  <script src="/script/component/slider.js" type="module"></script>  
+  <script src="/script/squideroo.js" type="module"></script>
+  <script src="/script/main.js"></script>
+
+  <style>
+    aside {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 350px;
+    }
+
+    aside header {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+    }
+
+    aside header button {
+      align-items: center;
+      appearance: none;
+      background: #ffffff40;
+      border: none;
+      border-radius: 20px;
+      color: #000000;
+      cursor: pointer;
+      height: 40px;
+      justify-content: center;
+      margin: 0;
+      outline: none;
+      padding: 0;
+      width: 40px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    aside header h3 {
+      color: #000000;
+      cursor: default;
+      font-family: 'Roboto', sans-serif;
+      font-size: 28px;
+      font-weight: 300;
+      flex-basis: 0;
+      flex-grow: 1;
+      margin: 0;
+      padding: 0;
+    }
+
+    button.primary {
+      align-items: center;
+      appearance: none;
+      background: #ffffff;
+      border: solid 1px transparent;
+      border-radius: 20px;
+      color: #000000;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      gap: 8px;
+      height: 40px;
+      margin: 0;
+      outline: none;
+      padding: 0 16px 0 12px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button.secondary {
+      align-items: center;
+      appearance: none;
+      background: #999999;
+      border: solid 1px #ffffff;
+      border-radius: 20px;
+      color: #ffffff;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      gap: 8px;
+      height: 40px;
+      margin: 0;
+      outline: none;
+      padding: 0 16px 0 12px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:not( :has( svg ) ) {
+      justify-content: center;
+    }
+
+    button.flex {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+
+    button img {
+      display: inline-block;
+      height: 22px;
+      width: 22px;
+    }
+
+    div.row {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+    }
+
+    div.split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    form {
+      background: #ffffff40;
+      border: solid 1px #ffffff;
+      border-radius: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-basis: 0;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 16px;
+    }
+
+    form h3 {
+      color: #000000;
+      cursor: default;
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 28px;
+      margin: 0;
+      padding: 0;
+    }
+    
+    form h4 {
+      color: #000000;
+      cursor: default;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 24px;
+      margin: 0;
+      padding: 24px 0 8px 0;
+    }    
+
+    form h4:first-of-type {
+      padding: 0 0 8px 0;      
+    }
+
+    main {
+      align-items: center;
+      background: #f4f4f4;
+      border: solid 1px #ffffff40;
+      border-radius: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-grow: 1;
+      flex-basis: 0;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    #controls {
+      display: flex;
+      flex-basis: 0;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+    }    
+  </style>
+
+</body>
+</html> 
