@@ -8,441 +8,411 @@
 
   <title>Kevin Hoyt</title>
 
+  <link rel="icon" type="image/x-icon" href="/img/edit.svg">  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
 
   <link rel="stylesheet" href="/style/kevinhoyt.css" />
   <link rel="stylesheet" href="/style/header.css" />
-  <link rel="stylesheet" href="/style/main.css" />
+  <link rel="stylesheet" href="/style/hero.css" />  
+  <link rel="stylesheet" href="/style/skills.css" />  
+  <link rel="stylesheet" href="/style/writing.css" />  
+  <link rel="stylesheet" href="/style/projects.css" />    
+  <link rel="stylesheet" href="/style/contact.css" />      
   <link rel="stylesheet" href="/style/footer.css" />  
 
 </head>
 <body>
 
-  <header class="home">
-  <div>
-    <p>Kevin Hoyt</p>
-    <a href="https://bsky.app/profile/krhoyt.bsky.social" target="_blank">
-      <img src="/img/bluesky.svg" width="16" height="16" />
-    </a>
-    <a href="https://github.com/krhoyt" target="_blank">
-      <img src="/img/github.svg" width="16" height="16" />
-    </a>      
-    <a href="https://www.youtube.com/channel/UCSFeFhtLBuzU2UMs7oOL54A" target="_blank">
-      <img src="/img/youtube.svg" width="20" height="20" style="margin-top: -1px;" />
-    </a>          
-    <a href="https://www.instagram.com/parkerkrhoyt" target="_blank">
-      <img src="/img/instagram.svg" width="16" height="16" />
-    </a>      
-  </div>
-  <div>
-    <h2>Kevin Hoyt</h2>
-    <h3>The intersection of development and design.</h3>
-  </div>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/events">Events</a></li>
-    <li><a href="/lounge">Lounge</a></li>
-  </ul>
+  
+  
+  
+
+  <header id="header">
+
+  <article>
+
+    <kh-follow>
+      <img src="/img/krhoyt.jpg">
+    </kh-follow>
+
+    <nav>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/>
+      </svg>           
+      <select>
+        <option value="/" selected>Home</option>
+        <option value="/blog" >Writing</option>
+        <option value="/about" >About</option>
+        <option value="/events" >Events</option>
+      </select>      
+    </nav>
+
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog">Writing</a></li>    
+      <li><a href="/about">About</a></li>
+      <li><a href="/events">Events</a></li>
+    </ul>  
+
+    <div>
+
+      <!-- Bluesky (not listed)
+      <a href="https://bsky.app/profile/krhoyt.bsky.social" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 11.388c-.906-1.761-3.372-5.044-5.665-6.662c-2.197-1.55-3.034-1.283-3.583-1.033C2.116 3.978 2 4.955 2 5.528c0 .575.315 4.709.52 5.4c.68 2.28 3.094 3.05 5.32 2.803c-3.26.483-6.157 1.67-2.36 5.898c4.178 4.325 5.726-.927 6.52-3.59c.794 2.663 1.708 7.726 6.444 3.59c3.556-3.59.977-5.415-2.283-5.898c2.225.247 4.64-.523 5.319-2.803c.205-.69.52-4.825.52-5.399c0-.575-.116-1.55-.752-1.838c-.549-.248-1.386-.517-3.583 1.033c-2.293 1.621-4.76 4.904-5.665 6.664"/>
+        </svg>
+      </a>
+      -->
+
+      <!-- Twitter (not listed)
+      <a href="https://x.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" fill-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->      
+
+      <!-- GitHub -->
+      <a href="https://github.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+        </svg>
+      </a>      
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/channel/UCSFeFhtLBuzU2UMs7oOL54A" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/>
+        </svg>
+      </a>          
+
+      <!-- RSS feed -->
+      <a href="/feed.xml" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19t.588-1.412T5 17t1.413.588T7 19t-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1T9.138 8.413T4.6 7.1q-.65-.075-1.125-.512T3 5.5t.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337t3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35t-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062t2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/>
+        </svg>
+      </a>      
+
+      <!-- Instagram (not listed)
+      <a href="https://www.instagram.com/parkerkrhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 14">
+          <path fill="currentColor" fill-rule="evenodd" d="M3.39.787A2.604 2.604 0 0 0 .786 3.39v6.944a2.604 2.604 0 0 0 2.604 2.604h6.944a2.604 2.604 0 0 0 2.603-2.604V3.39A2.604 2.604 0 0 0 10.334.787zm7.693 2.607a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m-4.22 1.388a2.08 2.08 0 1 0 0 4.16a2.08 2.08 0 0 0 0-4.16m-3.081 2.08a3.08 3.08 0 1 1 6.16 0a3.08 3.08 0 0 1-6.16 0" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->     
+
+    </div>
+
+  </article>
+
 </header>
 
+  <section id="hero">
 
-  <main>          
+  <article>
+
+    
+      <h2>Kevin Hoyt</h2>
     
 
+    
+      <h3>The intersection of development and design.</h3>
+    
 
-  <article>
-    <a href="/2025/10/21/warp-test-drive/">
-      <img src="/img/covers/black.hole.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2025/10/21/warp-test-drive/">Warp Test Drive</a>
-    </h4>
-    <p>
-      <a href="">AI is coming for your terminal. I spent an afternoon testing Warp's Agentic Development. The results were surprising, humbling, and kind of inspiring.</a>
-    </p>
-    <address>
-      <p>Oct 21, 2025 &bull; 10 min read</p>
-    </address>
+    
+      <p>Full-stack technologist and lifelong maker who has spent decades building software, exploring data, tinkering with hardware, and helping developers succeed. My work spans UX/UI, web standards, application development, data analytics, AI/ML, and practical problem-solving — and I still love learning something new every day.</p>
+      <a href="#contact">Let's build something together</a>  
+    
+  
   </article>
+  
+</section>
+
+  <section id="skills">
+
+  <h2>Skills Snapshot</h2>
+
+  <div>
+
+    <article>
+      <h3><span>🧭</span> Developer Enablement</h3>
+      <p>Documentation, samples, developer tooling, education, and DX strategy.</p>
+    </article>
+
+    <article>
+      <h3><span>🌐</span> Web Architecture</h3>
+      <p>Modern UI/UX, Web Components, and standards-based client architecture.</p>
+    </article>  
+
+    <article>
+      <h3><span>💻</span> Application Development</h3>
+      <p>APIs, backend services, automation tools, and production-ready systems.</p>
+    </article>    
+
+    <article>
+      <h3><span>📊</span> Data &amp; Analytics</h3>
+      <p>Database design, real-time telemetry, data pipelines, and insight generation.</p>
+    </article>      
+
+    <article>
+      <h3><span>🤖</span> AI &amp; Machine Learning</h3>
+      <p>Model training, computer vision, inference pipelines, and applied ML tooling.</p>
+    </article>
+
+    <article>
+      <h3><span>📡</span> IoT &amp; Embedded Systems</h3>
+      <p>Sensor design, device integration, and real-time data flows.</p>
+    </article>
+
+  </div>
+  
+</section>
+  
+  <section id="writing">
+
+  <h2>Featured Writing</h2>
+
+  <div>
+
+    
+      <article>
+
+        
+          <a href="/blog/2019/01/17/watson-garage/"><img src="/img/covers/teaching.jpg"></a>
+        
+
+        <h3><a href="/blog/2019/01/17/watson-garage/">Teaching Watson to See My Garage</a></h3>
+
+        
+          <p><a href="/blog/2019/01/17/watson-garage/">A Raspberry Pi camera and custom-trained Watson model detect whether a garage door is open or closed. Combines ML, image processing, and IoT.</a></p>
+        
+
+        
+          <aside>
+            
+              <p>AI/ML</p>
+            
+              <p>IoT</p>
+            
+          </aside>
+        
+
+      </article>
+    
+      <article>
+
+        
+          <a href="/blog/2021/07/14/building-a-bar-chart-with-stencil/"><img src="/img/covers/light.bars.jpg"></a>
+        
+
+        <h3><a href="/blog/2021/07/14/building-a-bar-chart-with-stencil/">Building a Bar Chart with Stencil</a></h3>
+
+        
+          <p><a href="/blog/2021/07/14/building-a-bar-chart-with-stencil/">Every once in a while you need to roll your own. With a splash of SVG and helping hand from Stencil, you can create a custom chart as a web component.</a></p>
+        
+
+        
+          <aside>
+            
+              <p>Web</p>
+            
+              <p>Data</p>
+            
+          </aside>
+        
+
+      </article>
+    
+      <article>
+
+        
+          <a href="/blog/2022/12/02/transcribe-with-python/"><img src="/img/covers/python.jpg"></a>
+        
+
+        <h3><a href="/blog/2022/12/02/transcribe-with-python/">AWS Transcribe with Python</a></h3>
+
+        
+          <p><a href="/blog/2022/12/02/transcribe-with-python/">Upload an audio file to S3, manage the details of an AWS Transcribe job, and download the results. Include code to clean up after yourself if you are so inclined.</a></p>
+        
+
+        
+          <aside>
+            
+              <p>App Dev</p>
+            
+              <p>AI/ML</p>
+            
+          </aside>
+        
+
+      </article>
+    
+      <article>
+
+        
+          <a href="/blog/2025/07/15/comfort-w-circles/"><img src="/img/covers/circles.jpg"></a>
+        
+
+        <h3><a href="/blog/2025/07/15/comfort-w-circles/">Getting Comfortable with Circles</a></h3>
+
+        
+          <p><a href="/blog/2025/07/15/comfort-w-circles/">In this post, we put aside the charting libraries, dive into some circle math, and discover that building lightweight custom charts is easier than you think.</a></p>
+        
+
+        
+          <aside>
+            
+              <p>Web</p>
+            
+              <p>Data</p>
+            
+          </aside>
+        
+
+      </article>
+    
+      <article>
+
+        
+          <a href="/blog/2015/05/14/drone-telemetry/"><img src="/img/covers/drone.jpg"></a>
+        
+
+        <h3><a href="/blog/2015/05/14/drone-telemetry/">Real-Time Drone Telemetry</a></h3>
+
+        
+          <p><a href="/blog/2015/05/14/drone-telemetry/">A real-time telemetry demo using a drone, sensors, wireless links, and satellite uplink to stream flight-style data to the cloud, illustrating a modern &quot;black box.&quot;</a></p>
+        
+
+        
+          <aside>
+            
+              <p>IoT</p>
+            
+              <p>Data</p>
+            
+          </aside>
+        
+
+      </article>
+    
+      <article>
+
+        
+          <a href="/posts/2018-02-08-advocacy-project-triange/"><img src="/img/covers/levers.jpg"></a>
+        
+
+        <h3><a href="/posts/2018-02-08-advocacy-project-triange/">Developer Advocacy and the Project Triangle</a></h3>
+
+        
+          <p><a href="/posts/2018-02-08-advocacy-project-triange/">A reflection on how the classic Project Triangle applies to developer relations, exploring the trade-offs when building authentic developer communities.</a></p>
+        
+
+        
+          <aside>
+            
+              <p>Enablement</p>
+            
+          </aside>
+        
+
+      </article>
+    
+
+  </div>
+
+</section>
+
+  <section id="projects">
+  <h2>Featured Projects</h2>
+  <kh-carousel>
+    <div>
+      <img src="/img/projects/anno-awesome.png">
+      <h3>Anno Awesome (Year-View Calendar)</h3>
+      <p>A comprehensive year-at-a-glance calendar. Built with Web Components, embracing a MacOS look and feel. Supports multiple calendars and limited sharing via cloud object storage and serverless integration. <span>Role:</span> <span>Developer<span> • <span>Tech:</span> <span>Serverless, Web Architecture</span></p>
+      <a class="visit">Visit project</a>
+    </div>
+    <div>
+      <img src="/img/projects/diesel.png">
+      <h3>Diesel (DEA Controlled Substances Log)</h3>
+      <p>A comprehensive year-at-a-glance calendar. Built with Web Components, embracing a MacOS look and feel. Supports multiple calendars and limited sharing via cloud object storage and serverless integration. <span>Role:</span> <span>Developer<span> • <span>Tech:</span> <span>Serverless, Web Architecture</span></p>
+      <a class="visit">Visit project</a>
+    </div>
+    <div>
+      <img src="/img/projects/flavor-all.png">
+      <h3>Flavor Awesome (Palate Development Journal)</h3>
+      <p>A comprehensive year-at-a-glance calendar. Built with Web Components, embracing a MacOS look and feel. Supports multiple calendars and limited sharing via cloud object storage and serverless integration. <span>Role:</span> <span>Developer<span> • <span>Tech:</span> <span>Serverless, Web Architecture</span></p>
+      <a class="visit">Visit project</a>
+    </div>            
+  </kh-carousel>
+</section>
+  
+  <section id="contact">
+
+  <h2>Let's Build Something Together</h2>
 
-
-
-  <article>
-    <a href="/2025/08/04/svelte-5-ownership-mutation/">
-      <img src="/img/covers/data.binding.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2025/08/04/svelte-5-ownership-mutation/">Svelte 5 Ownership Mutation</a>
-    </h4>
-    <p>
-      <a href="">Svelte data binding is a joy, but you can work yourself into a corner if you are not careful. Take a closer look at some edge cases to stay on track.</a>
-    </p>
-    <address>
-      <p>Aug 4, 2025 &bull; 11 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2025/07/15/comfort-w-circles/">
-      <img src="/img/covers/circles.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2025/07/15/comfort-w-circles/">Getting Comfortable with Circles</a>
-    </h4>
-    <p>
-      <a href="">In this post, we put aside the charting libraries, dive into some circle math, and discover that building lightweight custom charts is easier than you think.</a>
-    </p>
-    <address>
-      <p>Jul 15, 2025 &bull; 28 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2022/06/15/four-d/">
-      <img src="/img/covers/business.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2022/06/15/four-d/">Four D Time Management</a>
-    </h4>
-    <p>
-      <a href="">Time management is a key "soft" skill for Information Technology professionals. This heavily distilled version of Getting Things Done will help you master your time, and lower your stress.</a>
-    </p>
-    <address>
-      <p>Dec 27, 2022 &bull; 8 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2022/12/02/transcribe-with-python/">
-      <img src="/img/covers/python.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2022/12/02/transcribe-with-python/">AWS Transcribe with Python</a>
-    </h4>
-    <p>
-      <a href="">Upload an audio file to S3, manage the details of an AWS Transcribe job, and download the results. Include code to clean up after yourself if you are so inclined.</a>
-    </p>
-    <address>
-      <p>Dec 2, 2022 &bull; 15 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2022/06/15/three-p/">
-      <img src="/img/covers/business.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2022/06/15/three-p/">Three P Weekly Status Report</a>
-    </h4>
-    <p>
-      <a href="">My term for agile status reports. These weekly reports make a manager's job much easier - and setup employees for success. Let us take a look at how I structure and run my weekly reports.</a>
-    </p>
-    <address>
-      <p>Jun 15, 2022 &bull; 11 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2021/08/16/reasons-to-stencil/">
-      <img src="/img/covers/stencil.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2021/08/16/reasons-to-stencil/">Reasons to Stencil</a>
-    </h4>
-    <p>
-      <a href="">Congratulations, you have decided to use one of the many libraries and tools available for building modern web interfaces. Now just do not lock yourself into that decision.</a>
-    </p>
-    <address>
-      <p>Aug 16, 2021 &bull; 4 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2021/07/20/items-and-renderers/">
-      <img src="/img/covers/paper.list.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2021/07/20/items-and-renderers/">Items and Renderers</a>
-    </h4>
-    <p>
-      <a href="">Consider for a moment the humble list control. In this article we take a closer look at building a list control, and the different ways to render content.</a>
-    </p>
-    <address>
-      <p>Jul 20, 2021 &bull; 15 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2021/07/14/building-a-bar-chart-with-stencil/">
-      <img src="/img/covers/light.bars.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2021/07/14/building-a-bar-chart-with-stencil/">Building a Bar Chart with Stencil</a>
-    </h4>
-    <p>
-      <a href="">Every once in a while you need to roll your own. With a splash of SVG and helping hand from Stencil, you can create a custom chart as a web component.</a>
-    </p>
-    <address>
-      <p>Jul 14, 2021 &bull; 10 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2021/07/07/the-secret-life-of-tabs/">
-      <img src="/img/covers/colored.tabs.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2021/07/07/the-secret-life-of-tabs/">The Secret Life of Tabs</a>
-    </h4>
-    <p>
-      <a href="">As user interfaces (UI) go, tabs are a particularly useful pattern. In this example we will look at the mechanics of building a tab component using Stencil.</a>
-    </p>
-    <address>
-      <p>Jul 7, 2021 &bull; 19 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2021/06/27/building-a-clock-with-stencil/">
-      <img src="/img/covers/wall.clock.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2021/06/27/building-a-clock-with-stencil/">Building a Clock with Stencil</a>
-    </h4>
-    <p>
-      <a href="">Building a clock can reveal a lot about how a platform works. In this walkthrough we will take a look at building a clock component using Stencil.</a>
-    </p>
-    <address>
-      <p>Jun 27, 2021 &bull; 24 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2021/06/21/building-a-calendar-with-stencil/">
-      <img src="/img/covers/calendar.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2021/06/21/building-a-calendar-with-stencil/">Building a Calendar with Stencil</a>
-    </h4>
-    <p>
-      <a href="">Learn about calculating content before rendering while building a calendar component with Stencil. Styling allows you to drop the result into your iOS application.</a>
-    </p>
-    <address>
-      <p>Jun 21, 2021 &bull; 18 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2019/04/06/storage-function-watson-oh-my/">
-      <img src="/img/covers/whisk.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2019/04/06/storage-function-watson-oh-my/">Functions, Storage, Watson ... Oh, My!</a>
-    </h4>
-    <p>
-      <a href="">Recently Apache OpenWhisk (IBM Cloud Functions) released a beta feature around triggers for Cloud Object Storage, and I figured I would take it for a spin.</a>
-    </p>
-    <address>
-      <p>Apr 8, 2019 &bull; 10 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2019/02/14/ibm-to-acquire-an-open-organization/">
-      <img src="/img/covers/red.hat.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2019/02/14/ibm-to-acquire-an-open-organization/">IBM and the Open Organization</a>
-    </h4>
-    <p>
-      <a href="">A review of Red Hat CEO, Jim Whitehurst's book, The Open Organization, wherein I attempt to distill the why, how, and what contents into my favorite quotes.</a>
-    </p>
-    <address>
-      <p>Feb 14, 2019 &bull; 14 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2019/02/06/serverless-storage-redux/">
-      <img src="/img/covers/whisk.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2019/02/06/serverless-storage-redux/">Serverless Storage Redux</a>
-    </h4>
-    <p>
-      <a href="">In previous posts you can read about uploading and download a file with IBM Cloud Functions. In those posts I use an SDK. This time we look at the REST API.</a>
-    </p>
-    <address>
-      <p>Feb 6, 2019 &bull; 13 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2019/01/30/serverless-download-from-object-storage/">
-      <img src="/img/covers/whisk.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2019/01/30/serverless-download-from-object-storage/">Serverless Download from Object Storage</a>
-    </h4>
-    <p>
-      <a href="">In a previous post, I walked through how to upload a file to an IBM Cloud Function. In this post, we will get it back out, and download it to an HTTP client.</a>
-    </p>
-    <address>
-      <p>Jan 30, 2019 &bull; 10 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2019/01/23/serverless-upload-to-object-storage/">
-      <img src="/img/covers/whisk.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2019/01/23/serverless-upload-to-object-storage/">Serverless Upload to Object Storage</a>
-    </h4>
-    <p>
-      <a href="">Uploading a file to an IBM Cloud Function takes some consideration. In this post we combine IBM Cloud Object Storage with Web Actions for robust storage.</a>
-    </p>
-    <address>
-      <p>Jan 23, 2019 &bull; 16 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2018/12/19/what-i-install/">
-      <img src="/img/covers/library.congress.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2018/12/19/what-i-install/">What I Install</a>
-    </h4>
-    <p>
-      <a href="">I have been a Mac user for some time, and really committed to the platform with the release of Mac OS X. Here is what I installed, when I moved to Mojave.</a>
-    </p>
-    <address>
-      <p>Dec 19, 2018 &bull; 5 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2018/10/31/transferable-imagedata/">
-      <img src="/img/covers/needle.thread.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2018/10/31/transferable-imagedata/">Transferable ImageData</a>
-    </h4>
-    <p>
-      <a href="">When passed as a transferable object (versus structured clone), the reference to the place in memory where the object resides is being handed off.</a>
-    </p>
-    <address>
-      <p>Oct 31, 2018 &bull; 6 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2018/10/23/image-processing-in-a-web-worker/">
-      <img src="/img/covers/needle.thread.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2018/10/23/image-processing-in-a-web-worker/">Image Processing in a Web Worker</a>
-    </h4>
-    <p>
-      <a href="">Web Workers give us a separate thread but they come with a trade-off - no access to the DOM. In the case of image processing however, this does not matter.</a>
-    </p>
-    <address>
-      <p>Oct 23, 2018 &bull; 15 min read</p>
-    </address>
-  </article>
-
-
-
-  <article>
-    <a href="/2018/04/17/watson-garage/">
-      <img src="/img/covers/teaching.jpg" />
-    </a>
-    <p></p>
-    <h4>
-      <a href="/2018/04/17/watson-garage/">Teaching Watson to See My Garage</a>
-    </h4>
-    <p>
-      <a href="">Svelte data binding is a joy, but you can work yourself into a corner if you are not careful. Take a closer look at some edge cases to stay on track.</a>
-    </p>
-    <address>
-      <p>Apr 17, 2018 &bull; 9 min read</p>
-    </address>
-  </article>
-
-
-
-  </main>
-
-  <footer>
   <p>
-    <a href="https://kevinhoyt.com">Kevin Hoyt</a>
-    <span>&copy; 2025 - Published with</span>
-    <a href="https://www.11ty.dev">Eleventy</a>
+    Have a project, collaboration, or opportunity you would like to discuss?
+    I am especially interested in work involving web architecture, data,
+    IoT, and developer experience.
   </p>
+
+  <form data-netlify="true">
+
+    <div class="field">
+      <label for="name">Name</label>
+      <input type="text" id="poc" name="name" required>
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="field">
+      <label for="reason">Subject</label>
+      <select id="reason" name="reason">
+        <option value="">Select an option</option>
+        <option value="project">Project collaboration</option>
+        <option value="consulting">Consulting</option>
+        <option value="speaking">Speaking / workshops</option>
+        <option value="career">Career opportunity</option>
+        <option value="other">Something else</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+    </div>
+
+    <button type="button">Send Message</button>    
+
+  </form>
+
+  <p class="email">
+    Prefer email? You can reach me at <a href="mailto:kevin@ketnerlake.com">kevin@ketnerlake.com</a>.
+  </p>
+
+</section>
+  
+  <footer id="footer">
+
+  <p>
+    Made with ❤️ by Kevin Hoyt &copy; 2025 · Published with <a href="https://www.11ty.dev">Eleventy</a>
+  </p>
+  
 </footer>
 
+
+  <script src="/script/carousel.js" type="module"></script>  
+  <script src="/script/follow.js" type="module"></script>
+
+  <script src="/script/contact.js"></script>
+  <script src="/script/menu.js"></script>
 
 </body>
 </html>

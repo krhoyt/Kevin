@@ -2,11 +2,11 @@
 description: In a previous post, I walked through how to upload a file to an IBM Cloud Function. In this post, we will get it back out, and download it to an HTTP client.
 feature_image: /img/covers/whisk.jpg
 title: Serverless Download from Object Storage
-permalink: /2019/01/30/serverless-download-from-object-storage/
+permalink: /blog/2019/01/30/serverless-download-from-object-storage/
 tags:
-  - serverless
-  - storage
-  - posts
+  - App Dev
+  - Data
+rating: 1
 ---
 
 In the [previous post](/2019/01/23/upload-files-to/), I walked through how to upload a file from an HTTP multipart client, to an [IBM Cloud Function](https://console.bluemix.net/openwhisk/), and how to persist that file on [IBM Cloud Object Storage](https://www.ibm.com/cloud/object-storage) (COS). In this post I will explore getting the file back out of COS and downloaded to an HTTP client.

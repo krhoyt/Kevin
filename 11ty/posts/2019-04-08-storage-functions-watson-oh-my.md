@@ -2,12 +2,12 @@
 description: Recently Apache OpenWhisk (IBM Cloud Functions) released a beta feature around triggers for Cloud Object Storage, and I figured I would take it for a spin.
 feature_image: /img/covers/whisk.jpg
 title: Functions, Storage, Watson ... Oh, My!
-permalink: /2019/04/06/storage-function-watson-oh-my/
+permalink: /blog/2019/04/06/storage-function-watson-oh-my/
 tags:
-  - serverless
-  - storage  
-  - watson
-  - posts
+  - App Dev
+  - AI/ML
+  - Data
+rating: 1
 ---
 
 I have a love-hate relationship with serverless. My style of development definitely trends towards dropping a function in the cloud and calling it done. But the tooling, integration, and best practices are still maturing. It is however, fun to watch the technology evolve. Recently [Apache OpenWhisk](https://openwhisk.apache.org/) ([IBM Cloud Functions](https://www.ibm.com/cloud/functions)) released a beta feature around triggers for [Cloud Object Storage](https://www.ibm.com/cloud/object-storage), and I figured I would take it for a spin.

@@ -2,11 +2,11 @@
 description: I have been a Mac user for some time, and really committed to the platform with the release of Mac OS X. Here is what I installed, when I moved to Mojave.
 feature_image: /img/covers/library.congress.jpg
 title: What I Install
-permalink: /2018/12/19/what-i-install/
+permalink: /blog/2018/12/19/what-i-install/
 tags:
-  - mac
-  - developer
-  - posts
+  - Web
+  - App Dev
+rating: 1
 ---
 
 I have been a Mac user for some time, and really committed to the platform with the release of Mac OS X. With every major release I completely wipe my machine, and reinstall everything from scratch. Why not just upgrade in-place? Because I like the minty cool freshness of a clean install. This of course means I need to install all my applications from scratch as well. Here is what I installed, and why, when I moved to Mojave (Nov 2018).

@@ -5,12 +5,11 @@ unsplash_author_url: https://unsplash.com/@quasichiara
 unsplash_photo_url: https://unsplash.com/photos/MI8He1NWPWg
 title: The Secret Life of Tabs
 description: As user interfaces (UI) go, tabs are a particularly useful pattern. In this example we will look at the mechanics of building a tab component using Stencil.
-permalink: /2021/07/07/the-secret-life-of-tabs/
+permalink: /blog/2021/07/07/the-secret-life-of-tabs/
 tags:
-  - components
-  - stencil  
-  - web
-  - posts
+  - Web
+  - App Dev
+rating: 1
 ---
 
 As user interfaces (UI) go, tabs are a particularly useful pattern. The word "tab" invokes images of beige manila file folders. Early UI mimicked this physical property by placing buttons along the top of a dedicated space. Mobile devices, with their confined spaces, finds the tab pattern in accordions, bottom button bars, and more.

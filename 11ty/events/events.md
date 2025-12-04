@@ -1,7 +1,9 @@
 ---
 feature_image: /img/covers/audience.jpg
-layout: post.njk
-title: Events
+layout: section.njk
+title: "Events · Kevin Hoyt"
+section: "Kevin Hoyt · Events"
+quote: "Conversations on development and design."
 ---
 
 ### TL;DR
@@ -21,14 +23,14 @@ title: Events
 
 ### By Date (Newest to Oldest)
 
-**[DevNexus 2019](https://devnexus.com)**
-*March 6 - 8, 2019*
+**[DevNexus 2019](https://devnexus.com)**  
+*March 6 - 8, 2019* 
 
 **Session:** [Computer Vision vs. Machine Learning](https://devnexus.com/presentations/3150)
 
 Set against the backdrop of the capabilities of the browser, this interactive session compares and contrasts both approaches through two different applications. In the first, you will learn image processing and feature detection techniques to track, and solve, a Rubik’s Cube. In the second, you will learn to apply those techniques to build an object classifier for facial recognition. Sit in the front row at your own risk!
 
-**[Heartland Developer Conference 2018](http://careerlink.com/hdc)**
+**[Heartland Developer Conference 2018](http://careerlink.com/hdc)**  
 *September 5 - 7, 2018*
 
 **Workshop:** [Computer Vision and Machine Learning in the Browser](http://sched.co/FEvn)
@@ -43,7 +45,7 @@ Computer vision seeks to acquire, process, and analyze digital images based on d
 
 Set against the backdrop of the capabilities of the browser, this interactive session compares and contrasts both approaches through two different applications. In the first, you will learn image processing and feature detection techniques to track, and solve, a Rubik’s Cube. In the second, you will learn to apply those techniques to build an object classifier for facial recognition. Sit in the front row at your own risk!
 
-**[Index Conference 2018](http://indexconf.com)**
+**[Index Conference 2018](http://indexconf.com)**  
 *February 20 - 22, 2018*
 
 **Track Manager:** Geek Shop and the Future
@@ -52,7 +54,7 @@ In the fall of 2017, I was asked to manage a track centered around future techno
 
 At first, as a passionate practitioner of desktop fabrication, and the maker movement, I really wanted to focus on the "geek shop" side of things. Most of the makers in my professional network were busy however, and the submitted abstracts pushed the track into the "futures" topic. Coverage included quantum computing, blockchain, augmented reality, and even "wetware" - the physical integration of man and machine.
 
-**[Heartland Developer Conference 2017](http://careerlink.com/hdc/)**
+**[Heartland Developer Conference 2017](http://careerlink.com/hdc/)**  
 *September 6 - 8, 2017*
 
 **Workshop:** [Understanding Blockchain](http://sched.co/B98S)
@@ -82,7 +84,7 @@ Having a highly capable and accurate GPS in everybody's pocket has fundamentally
 
 In this session learn how beacons function at the physical layer, how that gets interpreted at the network layer, how to use the APIs at the presentation layer, and how to make sense of it all at the application layer. This will be accomplished as IBM Developer Advocate, Kevin Hoyt, configures and deploys a set of beacons in the conference room, live, during the session. We will also explore how various industries are using indoor location from shopping malls to hotels, and airports to grocery stores.
 
-**[FullStack London 2017](https://skillsmatter.com/conferences/8264-fullstack-2017-the-conference-on-javascript-node-and-internet-of-things)**
+**[FullStack London 2017](https://skillsmatter.com/conferences/8264-fullstack-2017-the-conference-on-javascript-node-and-internet-of-things)**  
 *July 12 - 14, 2017*
 
 **Session:** [Understanding Blockchain](https://skillsmatter.com/conferences/8264-fullstack-2017-the-conference-on-javascript-node-and-internet-of-things#program)
@@ -91,14 +93,14 @@ The cryptocurrency Bitcoin is well known even outside of technology spheres of i
 
 Centered around a web-based to-do list application, built on the Polymer 2 RC, topics covered will include spinning up your own Blockchain (Hyperledger Fabric 1.0) node, writing and deploying a "smart contract" to perform CRUD operations, and integration using Web standards. With proficiency obtained, you will also take a look at blockchain scaffolding tools. You will leave understanding where and how to use Blockchain technolgies, with the knowledge needed to get started.
 
-**[Jfokus 2017](https://www.jfokus.se/jfokus/)**
+**[Jfokus 2017](https://www.jfokus.se/jfokus/)**  
 *February 6 - 8, 2017*
 
 **Keynote:** [Crossing the IoT Chasm](https://www.jfokus.se/jfokus/talks.jsp#CrossingtheIoTChasm)
 
 I gave my first IoT presentation over a decade ago. The response was overwhelming, and I've been waiting for the IoT tidal wave to land ever since. Strangely, it has not. Why not? Fast-forward through those ten years, and I have learned countless lessons. Join me as I review the strengths and weakness of hardware platforms designed to get you to market, examine how Big Data may just hold the key to IoT success, and glimpse at an AI-powered future.
 
-**[Desert Code Camp 2016](http://oct2016.desertcodecamp.com/)**
+**[Desert Code Camp 2016](http://oct2016.desertcodecamp.com/)**  
 *October 8, 2016*
 
 **Session:** [Explore Machine Learning with IBM Watson](http://oct2016.desertcodecamp.com/session/1313)
@@ -107,7 +109,7 @@ It has been suggested that in the future, developers will not program computers,
 
 In this session, join IBM Developer Advocate, Kevin Hoyt, and IBM Watson, to untangle the details. We will start with a little artificial intelligence history. From there we will move on to defining some of the more common machine learning features by implementing them in various applications (Node.js, iOS, JavaScript).
 
-**[LibertyJS 2016](http://www.libertyjs.com/)**
+**[LibertyJS 2016](http://www.libertyjs.com/)**  
 *September 30 - October 1, 2016*
 
 **Workshop:** [Machine Learning for JavaScript Developers](http://www.libertyjs.com/speakers/)
@@ -129,7 +131,7 @@ Coverage will include:
 
 Get ahead of the curve with what venture capitalist firm [Andreessen Horowitz](http://a16z.com/2016/06/10/ai-deep-learning-machines/) calls a fundamental technique that is expected to be in products.
 
-**[Heartland Developer Conference 2016](http://careerlink.com/hdc/)**
+**[Heartland Developer Conference 2016](http://careerlink.com/hdc/)**  
 *September 7 - 9, 2016*
 
 **Session:** Node-RED for Faster Development
@@ -144,14 +146,14 @@ What is the price of not knowing? Every day we generate 2.5 quintillion bytes of
 
 This is the dawn of the cognitive era - an inflection point that occurs once about every 40 years - that lends itself to machine learning. In this workshop, join IBM Developer Advocate, Kevin Hoyt, and go hands on with IBM Watson. Learn about APIs such as text-to-speech, and speech-to-text, translation, image recognition, natural language processing (NLP), concept and personality insights, and more. Leave with a new toolkit to help you leverage deep learning, and to solve the problems your industry faces.
 
-**[Windy City Things 2016](https://windycitythings.com/)**
+**[Windy City Things 2016](https://windycitythings.com/)**  
 *June 23 - 24, 2016*
 
 **Session:** [IoT All The Things (An Audit)](https://windycitythings.com/schedule/)
 
 There are no shortage of IoT platforms to launch you next product, but which one is the right one for you? In this session join IBM Developer Advocate, Kevin Hoyt, on an audit of some of the more popular chipsets on the market. This will include overviews of Electric Imp, Photon Particle and Photon Electron, Tessel 2 from Technical Machines, and Intel Edison. Explore GPIO options, wireless pairing, development tooling, physical size and technical specifications (processor, battery, etc), set against a backdrop of real-time data delivery.
 
-**[WebVisions Portland 2016](http://www.webvisionsevent.com/portland/)**
+**[WebVisions Portland 2016](http://www.webvisionsevent.com/portland/)**  
 *May 18 - 20, 2016*
 
 **Workshop:** [On the Verge of Genius](http://www.webvisionsevent.com/portland/workshop/how-to-build-a-crowdsourced-pollution-monitoring-device/?loc=portland-2016)
@@ -166,7 +168,7 @@ This workshop is packed with live demonstrations of a large number of scientific
 
 Built on BLE (Bluetooth Low Energy) beacons get a lot of press, and have seen increasing deployment around the globe, adding value to business and consumers. In this session, join IBM Developer Advocate, Kevin Hoyt, on a journey through beacon opportunities you may not have considered. Practical, real-world, references will be highlighted as we examine innovative use-cases for beacons in your business.
 
-**[Heartland Developer Conference 2015](http://www.heartlanddc.com)**
+**[Heartland Developer Conference 2015](http://www.heartlanddc.com)**  
 *September 9 - 11, 2015*
 
 **Workshop:** [Hands-On IoT](http://www.heartlanddc.com/a3)

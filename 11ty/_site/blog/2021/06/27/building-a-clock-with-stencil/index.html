@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="The intersection of development and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Building a Clock with Stencil</title>
+
+  <link rel="icon" type="image/x-icon" href="/img/edit.svg">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/post.css" />
+  <link rel="stylesheet" href="/style/prism.css" />    
+  <link rel="stylesheet" href="/style/footer.css" />
+
+</head>
+<body>
+  
+  <header id="header">
+
+  <article>
+
+    <kh-follow>
+      <img src="/img/krhoyt.jpg">
+    </kh-follow>
+
+    <nav>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/>
+      </svg>           
+      <select>
+        <option value="/" >Home</option>
+        <option value="/blog" selected>Writing</option>
+        <option value="/about" >About</option>
+        <option value="/events" >Events</option>
+      </select>      
+    </nav>
+
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog">Writing</a></li>    
+      <li><a href="/about">About</a></li>
+      <li><a href="/events">Events</a></li>
+    </ul>  
+
+    <div>
+
+      <!-- Bluesky (not listed)
+      <a href="https://bsky.app/profile/krhoyt.bsky.social" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 11.388c-.906-1.761-3.372-5.044-5.665-6.662c-2.197-1.55-3.034-1.283-3.583-1.033C2.116 3.978 2 4.955 2 5.528c0 .575.315 4.709.52 5.4c.68 2.28 3.094 3.05 5.32 2.803c-3.26.483-6.157 1.67-2.36 5.898c4.178 4.325 5.726-.927 6.52-3.59c.794 2.663 1.708 7.726 6.444 3.59c3.556-3.59.977-5.415-2.283-5.898c2.225.247 4.64-.523 5.319-2.803c.205-.69.52-4.825.52-5.399c0-.575-.116-1.55-.752-1.838c-.549-.248-1.386-.517-3.583 1.033c-2.293 1.621-4.76 4.904-5.665 6.664"/>
+        </svg>
+      </a>
+      -->
+
+      <!-- Twitter (not listed)
+      <a href="https://x.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" fill-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->      
+
+      <!-- GitHub -->
+      <a href="https://github.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+        </svg>
+      </a>      
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/channel/UCSFeFhtLBuzU2UMs7oOL54A" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/>
+        </svg>
+      </a>          
+
+      <!-- RSS feed -->
+      <a href="/feed.xml" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19t.588-1.412T5 17t1.413.588T7 19t-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1T9.138 8.413T4.6 7.1q-.65-.075-1.125-.512T3 5.5t.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337t3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35t-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062t2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/>
+        </svg>
+      </a>      
+
+      <!-- Instagram (not listed)
+      <a href="https://www.instagram.com/parkerkrhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 14">
+          <path fill="currentColor" fill-rule="evenodd" d="M3.39.787A2.604 2.604 0 0 0 .786 3.39v6.944a2.604 2.604 0 0 0 2.604 2.604h6.944a2.604 2.604 0 0 0 2.603-2.604V3.39A2.604 2.604 0 0 0 10.334.787zm7.693 2.607a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m-4.22 1.388a2.08 2.08 0 1 0 0 4.16a2.08 2.08 0 0 0 0-4.16m-3.081 2.08a3.08 3.08 0 1 1 6.16 0a3.08 3.08 0 0 1-6.16 0" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->     
+
+    </div>
+
+  </article>
+
+</header>
+
+
+  
+  
+    <main>
+
+      <div>
+
+        <img src="/img/covers/wall.clock.jpg" alt="Building a Clock with Stencil">
+
+        
+          <figcaption>
+            <p>Photo by <a href="https://unsplash.com/@chuttersnap">CHUTTERSNAP</a> on <a href="https://unsplash.com/photos/T5H17wB55VY">Unsplash</a></p>
+          </figcaption>
+        
+
+      </div>
+
+      <article>
+
+        <h1>Building a Clock with Stencil</h1>
+
+        <time>Jun 27, 2021 · 24 min read</time>
+
+        
+          <aside>
+            
+              <p>Web</p>
+            
+              <p>App Dev</p>
+            
+          </aside>
+                
+        
+        <p>I have not seen a clock in a web-based user interface in a long time. This makes sense — they are pretty redundant these days. You have a clock on your watch, on your mobile device, and on your desktop, and those are just the digital versions available at a glance. Nonetheless, the process of building a clock can reveal a lot about how a platform works.</p>
+<p>In this walkthrough we will take a look at building a clock component using Stencil. We will use SVG for the graphics, look at placement of the clock hands, and then review different ways to animate those hands.</p>
+<p><img src="/img/assets/hands.clock.stencil.png" alt="The pieces and parts that make the clock tick"></p>
+<h3>The Template</h3>
+<p>SVG is useful for the graphics of a clock because they scale without losing quality. This is especially useful in a web component because you may not be sure about the size of the clock in the final display. You can also declaratively design the clock, rendering the necessary SVG as part of the template. You can take this as far as you need to get just the right look and feel.</p>
+<p>In this example, we will use clock graphics that have <a href="https://freesvg.org/classic-roman-pocket-watch-vector-image">already been designed</a> using a vector editing program rather than attempt to draw every last piece declaratively.</p>
+<p>The face of the clock is static — it does not change other than size/scale. For this, SVG gives us an <code>image</code> element. We tell the <code>image</code> element where to find the desired file, and it will be rendered to fit the corresponding placement.</p>
+<p>The hands, on the other hand 🤪, will be rotated independently depending on the time of the day from the user’s machine. By placing the hands in their own SVG file and giving them an <code>id</code> we can reference them with the SVG <code>use</code> element. From there it is a matter of figuring out how far to rotate the elements to match the time of day.</p>
+<pre class="language-ts"><code class="language-ts"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>svg<span class="token operator">></span>
+      <span class="token operator">&lt;</span>g transform<span class="token operator">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        translate( </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>width <span class="token operator">/</span> <span class="token number">2</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>height <span class="token operator">/</span> <span class="token number">2</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> ) 
+        scale( </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>scale<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> )
+      </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>image 
+          height<span class="token operator">=</span><span class="token string">"300"</span>
+          href<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">getAssetPath</span><span class="token punctuation">(</span> <span class="token string">'./assets/watch.svg'</span> <span class="token punctuation">)</span><span class="token punctuation">}</span>
+          width<span class="token operator">=</span><span class="token string">"300"</span>   
+          x<span class="token operator">=</span><span class="token string">"-150"</span> 
+          y<span class="token operator">=</span><span class="token string">"-150"</span> <span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>use 
+          href<span class="token operator">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">getAssetPath</span><span class="token punctuation">(</span> <span class="token string">'./assets/hands.svg'</span> <span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">#second</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span> 
+          transform<span class="token operator">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">translate( 0 70 ) rotate( </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>second<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> )</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>                                    
+        <span class="token operator">&lt;</span>use 
+          href<span class="token operator">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">getAssetPath</span><span class="token punctuation">(</span> <span class="token string">'./assets/hands.svg'</span> <span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">#hour</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span> 
+          transform<span class="token operator">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">rotate( </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>hour<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> )</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>            
+        <span class="token operator">&lt;</span>use 
+          href<span class="token operator">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">getAssetPath</span><span class="token punctuation">(</span> <span class="token string">'./assets/hands.svg'</span> <span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">#minute</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span> 
+          transform<span class="token operator">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">rotate( </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>minute<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> )</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>                        
+      <span class="token operator">&lt;</span><span class="token operator">/</span>g<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>svg<span class="token operator">></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>All the clock parts — the face and the hands — have been grouped using an SVG <code>g</code> element. This allows us to transform the clock on the whole however we please without having to think too much about the coordinate system of the parts within the <code>g</code> element. In this case, that means scaling the clock to fit the available space, and positioning it in the center of that space.</p>
+<p>For rotating the hands of the clock, we will leverage the <code>transform</code> attribute of the <code>use</code> element to specify a <code>rotate()</code> based on the time of day. We will get to the variables that determine the amount of rotation in a moment.</p>
+<blockquote>
+<p>You can do these transforms in CSS as well, but you really need to pick one system and stick to it as the syntax is slightly different. For example, CSS will expect units such as <code>px</code> or <code>deg</code> and also be more picky about comma separators, where SVG will not.</p>
+</blockquote>
+<p>In this case, the rotation of the hands is less about style and more about functionality. For this reason, I will be using the SVG <code>transform</code> attribute directly in the markup. I find this also yields better readability for code maintenance.</p>
+<h3>The Placement</h3>
+<p>In order to know how to place the hands of the clock, we first need to know the time of day. A <code>Date</code> object will give us that information based on a 24-hour clock with sixty (60) minutes and sixty (60) seconds. While that is nice to have when working with time as we generally think of it, it makes for an odd bedfellow when doing tens-based math. For this reason, once we have a <code>Date</code> reference, we will determine the value as a decimal. For example, 10:30 becomes 10.50.</p>
+<p>The next step then is to map 10.50 into the degrees of rotation. There are 360 degrees in a circle. SVG assumes degrees, not radians, in the <code>transform</code> and there are twelve hours on the clock (AM/PM is not displayed). Dividing 360 by twelve (12) gives us thirty (30) degrees rotation for each hour. In the case of 10.50, the hour is ten (10). Ten (10) multiplied by thirty (30) gives us 300 degrees.</p>
+<p>For the minute hand, we are interested in the fractional part of 10.50 which is 0.50. Multiplying 360 by the fractional part of the decimal time of 0.50 gives us 180 degrees.</p>
+<p>There are sixty (60) seconds in a minute. Using <code>Date.getSeconds()</code> will tell us the current seconds value. Dividing the current seconds by the sixty (60) seconds in a minute will give us a fractional value representing the percent of the number of seconds that have passed in the current minute. If thirty (30) seconds have passed, dividing by sixty (60) will give us 0.50, or 50%. We know that there are 360 degrees in a circle, and we want 50% of them to have passed. We multiply 360 by 0.50 and get 180 degrees.</p>
+<pre class="language-ts"><code class="language-ts"><span class="token function">componentWillRender</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> today<span class="token operator">:</span> Date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> decimal<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> 
+    today<span class="token punctuation">.</span><span class="token function">getHours</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> 
+    <span class="token punctuation">(</span> today<span class="token punctuation">.</span><span class="token function">getMinutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">60</span> <span class="token punctuation">)</span> <span class="token operator">+</span> 
+    <span class="token punctuation">(</span> today<span class="token punctuation">.</span><span class="token function">getSeconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">3600</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> hour<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> decimal <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> minute<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token punctuation">(</span> decimal <span class="token operator">-</span> hour <span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> second<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> today<span class="token punctuation">.</span><span class="token function">getSeconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">60</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>hour <span class="token operator">=</span> <span class="token punctuation">(</span> <span class="token number">360</span> <span class="token operator">/</span> <span class="token number">12</span> <span class="token punctuation">)</span> <span class="token operator">*</span> decimal<span class="token punctuation">;</span>    
+  <span class="token keyword">this</span><span class="token punctuation">.</span>minute <span class="token operator">=</span> <span class="token number">360</span> <span class="token operator">*</span> minute<span class="token punctuation">;</span>        
+  <span class="token keyword">this</span><span class="token punctuation">.</span>second <span class="token operator">=</span> <span class="token number">360</span> <span class="token operator">*</span> second<span class="token punctuation">;</span>    
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>host<span class="token punctuation">.</span>clientHeight<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>width <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>host<span class="token punctuation">.</span>clientWidth<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>scale <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>height<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>width <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">300</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">private</span> height<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">300</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span> width<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">300</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span> scale<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span>
+
+<span class="token keyword">private</span> hour<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span> minute<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span> second<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">Element</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> host<span class="token operator">:</span> HTMLElement<span class="token punctuation">;</span></code></pre>
+<p>The scale and position of our clock will depend on the dimensions of the host element. For an exact fit within the host element, we look at which dimension is smaller, and divide it by the 300 pixels that represent the predetermined dimensions of the clock. You can think of this as having the effect of setting <code>contain</code> for <code>background-size</code> in CSS. However the host may be sized, the clock will always be within those bounds.</p>
+<blockquote>
+<p>I have decided ahead of time that the diameter of the clock will be 300 pixels. This is reflected in the static SVG assets, and everything is sized accordingly. Once loaded into our component, we can choose to resize everything to fit as previously described.</p>
+</blockquote>
+<p>All of these corresponding values for rotation, position, and scale are placed in component variables. When the render is performed, these values will be referenced, and the parts of our clock will fall into place accordingly. Now we have a clock that shows the current time... well, it did a second ago. Now the time on the clock is wrong. We need to update these values continuously which brings us to animation.</p>
+<h3>The Animation</h3>
+<p>When we talk about animation, we are talking about a loop occurring somewhere. Doing something like <code>while( true )</code> in JavaScript is synchronous, and blocking, which is going to interfere with just about everything else happening in the browser. Fortunately, the browser figures this is coming and offers us a variety of options.</p>
+<p>Among the choices is <code>window.requestAnimationFrame()</code>. Using <code>window.requestAnimationFrame()</code> we can create a loop that synchronizes with the refresh rate of the screen.</p>
+<p>A call to <code>window.requestAnimationFrame()</code> is effectively asking the browser to let us know when it is going to render an update to the screen. To let us know about that update, <code>window.requestAnimationFrame()</code> takes a callback as an argument. In the callback you can make whatever adjustments you want, usually to the position of things in the DOM, or drawing state of a <code>canvas</code> element. At the end of the callback, if you want to continue the loop, you call <code>window.requestAnimationFrame()</code> again, passing the callback itself again. An animation loop is now established.</p>
+<pre class="language-ts"><code class="language-ts"><span class="token function">componentWillLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">tick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">tick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> today<span class="token operator">:</span> Date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> decimal<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span>
+    today<span class="token punctuation">.</span><span class="token function">getHours</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+    <span class="token punctuation">(</span> today<span class="token punctuation">.</span><span class="token function">getMinutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">60</span> <span class="token punctuation">)</span> <span class="token operator">+</span>
+    <span class="token punctuation">(</span> today<span class="token punctuation">.</span><span class="token function">getSeconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">3600</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> hour<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> decimal <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> minute<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token punctuation">(</span>decimal <span class="token operator">-</span> hour <span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> millis<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> today<span class="token punctuation">.</span><span class="token function">getMilliseconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> second<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token punctuation">(</span> today<span class="token punctuation">.</span><span class="token function">getSeconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> millis <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">60</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>hour <span class="token operator">=</span> <span class="token punctuation">(</span> <span class="token number">360</span> <span class="token operator">/</span> <span class="token number">12</span> <span class="token punctuation">)</span> <span class="token operator">*</span> decimal<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>minute <span class="token operator">=</span> <span class="token number">360</span> <span class="token operator">*</span> minute<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>second <span class="token operator">=</span> <span class="token number">360</span> <span class="token operator">*</span> second<span class="token punctuation">;</span>
+
+  <span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">tick</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span> <span class="token keyword">this</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">private</span> height<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">300</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span> width<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">300</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span> scale<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span>
+
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">State</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> hour<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">State</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> minute<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">State</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> second<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">Element</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> host<span class="token operator">:</span> HTMLElement<span class="token punctuation">;</span></code></pre>
+<p>In order to kick off the loop, we can hook into <code>componentWillLoad()</code>. This method is called only once during the component lifecycle. In the <code>window.requestAnimationFrame()</code> callback, we do our rotation math as before, but include a milliseconds calculation. Capturing the milliseconds allows us to place the second hand between individual tick marks on the clock face.</p>
+<p>Also now changed is that <code>hour</code>, <code>minute</code>, and <code>second</code> are all labeled as <code>@State()</code>. This means that when they change, the component render will be updated. All said and done, the process looks something like the following:</p>
+<ul>
+<li>The component loading process calls <code>componentWillLoad()</code></li>
+<li>The <code>componentWillLoad()</code> handler kicks off the animation loop by calling the <code>tick()</code> function</li>
+<li>The animation loop determines the rotation of the hands and updates the component state</li>
+<li>Before exiting, the animation loop calls <code>window.requestionAnimationFrame()</code> again, passing itself as the callback, thus ensuring the loop continues</li>
+<li>The change in state causes an update to the component render</li>
+<li>The person viewing your clock now sees the updated time 👀🕰️</li>
+</ul>
+<h3>The Alternative</h3>
+<p>When following this flow, I was originally concerned that relying on state changes and diffing out the template changes would cause performance problems. To my surprise, the clock had no problem maintaining 60 frames/second (fps) rate on my laptop. Still, I had to be sure, so I wrote a slightly different version that circumvented state changes and went directly to the DOM elements themselves via references.</p>
+<pre class="language-ts"><code class="language-ts"><span class="token function">tick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>clock_face <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> height <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>host<span class="token punctuation">.</span>clientHeight<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> width <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>host<span class="token punctuation">.</span>clientWidth<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> scale <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span> height<span class="token punctuation">,</span> width <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">300</span><span class="token punctuation">;</span>
+      
+    <span class="token keyword">this</span><span class="token punctuation">.</span>clock_face<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> 
+      <span class="token string">'transform'</span><span class="token punctuation">,</span> 
+      <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">translate( </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>width <span class="token operator">/</span> <span class="token number">2</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>height <span class="token operator">/</span> <span class="token number">2</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> ) scale( </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>scale<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> )</span><span class="token template-punctuation string">`</span></span> 
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>second_hand <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> today<span class="token operator">:</span> Date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> decimal<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span>
+      today<span class="token punctuation">.</span><span class="token function">getHours</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+      <span class="token punctuation">(</span> today<span class="token punctuation">.</span><span class="token function">getMinutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">60</span> <span class="token punctuation">)</span> <span class="token operator">+</span>
+      <span class="token punctuation">(</span> today<span class="token punctuation">.</span><span class="token function">getSeconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">3600</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> hour<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> decimal <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> minute<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token punctuation">(</span>decimal <span class="token operator">-</span> hour <span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> millis<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> today<span class="token punctuation">.</span><span class="token function">getMilliseconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> second<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token punctuation">(</span> today<span class="token punctuation">.</span><span class="token function">getSeconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> millis <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">60</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>hour_hand<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'transform'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">rotate( </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token punctuation">(</span> <span class="token number">360</span> <span class="token operator">/</span> <span class="token number">12</span> <span class="token punctuation">)</span> <span class="token operator">*</span> decimal<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> )</span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>minute_hand<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'transform'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">rotate( </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">360</span> <span class="token operator">*</span> minute<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> )</span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">)</span><span class="token punctuation">;</span>      
+    <span class="token keyword">this</span><span class="token punctuation">.</span>second_hand<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'transform'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        translate( 0 70 )
+        rotate( </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">360</span> <span class="token operator">*</span> second<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> )
+    </span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">)</span><span class="token punctuation">;</span>      
+  <span class="token punctuation">}</span>
+
+  <span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">tick</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span> <span class="token keyword">this</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">private</span> clock_face<span class="token operator">:</span> SVGElement<span class="token punctuation">;</span>
+<span class="token keyword">private</span> hour_hand<span class="token operator">:</span> SVGElement<span class="token punctuation">;</span>
+<span class="token keyword">private</span> minute_hand<span class="token operator">:</span> SVGElement<span class="token punctuation">;</span>
+<span class="token keyword">private</span> second_hand<span class="token operator">:</span> SVGElement<span class="token punctuation">;</span></code></pre>
+<blockquote>
+<p>Typically SVG element attributes are set using <code>setAttributeNS()</code> but only <code>setAttribute()</code> seems to apply the changes from TypeScript.</p>
+</blockquote>
+<p>Now, I am not particularly skilled in the art of performance testing, but I do know my way around. As far as I could tell, the performance was identical. The difference between whatever is happening to update the template based on state changes, and changes directly to the DOM itself, are so minimal as to be insignificant.</p>
+<h3>✋ But What About ...</h3>
+<p>Throughout this example, you may have noticed certain implementation choices that do not match those that you might have seen in similar examples. In any implementation there are such choices. Here are my thoughts on the choices I made, and why I made them.</p>
+<p><strong>CSS Animations</strong></p>
+<p>As far as I am concerned, CSS should be considered your first line of defense for most animations. Leveraging CSS allows the browser to tap into low-level features that we just do not have at the runtime layer (GPU, double-buffering, etc.). So why not use CSS animation in this example?</p>
+<p>The only hand that moves fast enough to really need animation is the second hand. Each iteration in the animation loop would increment the rotation by six (6) degrees (360 degrees in a circle / 60 seconds/stops). At the first iteration then, we have six (6) degrees. Next is twelve (12) degrees. So on and so on until we get to 354 degrees.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.second</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> transform 1s linear<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The next iteration will yield a rotation value of zero (0) degrees. When the CSS is updated, the <code>transition</code> will be applied. Setting rotation from 354 degrees to 0 degrees, means spending the next one (1) second moving counterclockwise back to zero. The transition does not look at the value as cumulative, or see that closing the distance is easier by moving clockwise.</p>
+<p>You could create a variable that is cumulative. You could also remove the <code>transition</code> style, adjust the rotation of the hand, and then put the style back in place. For either approach, you now are writing code just to force a specific path, when both the state approach and reference approach deliver exactly what is desired in a performant manner that is easy to read and maintain.</p>
+<p>In my experience, if you are writing code that feels like it is trying to bend the system to your will, then there is probably a better way to solve the problem.</p>
+<p><strong>setInterval() and setTimeout()</strong></p>
+<p>Despite having <code>window.requestAnimationFrame()</code> which was added specifically to synchronize animation with the refresh rate of the device, I see a lot of <code>setInterval()</code> or <code>setTimeout()</code> when developers talk about animation. The gap between these approaches used to be more significant. The main difference these days is that <code>setTimeout()</code> and <code>setInterval()</code> do not provide predictable intervals.</p>
+<p>A call like <code>setInterval( this.tick, 16 )</code> says that an interval of at least 16 milliseconds must pass before the callback is invoked. If the browser has more going on, however, it may defer the callback for however long it needs. This unreliability makes for a poor basis for any extensive animation.</p>
+<p><strong>Date.now()</strong></p>
+<p>You may have heard in the past that <code>new Date()</code> is slow relative to <code>Date.now()</code>. In this example, however, we are interested in the hours, minutes, and seconds of the day. A call to <code>Date.now()</code> gives you milliseconds since the epoch. To get hours, minutes, and seconds, you then have to perform extra math for the year, month, and day, subtracting them out along the way. With this math in consideration, the difference between <code>new Date()</code> and <code>Date.now()</code> is effectively nullified.</p>
+<h3>Next Steps</h3>
+<p>The post started by reviewing how to leverage and manipulate external SVG assets in our Stencil components. In early drafts of this example I built the clock face itself entirely declaratively, shape by shape. This gives you the ability to expose all fashion of styling, but trades complexity in both design workflow and maintainability. The balance is yours to find.</p>
+<p>We also looked at turning hours, minutes, and seconds into decimal time, and then into degrees. Two different techniques for animating the clock hands were presented — one that relied on templating, and another that used element references, and we contemplated different implementation choices that might have been made.</p>
+<p>Despite the display of the current time being available at a glance just about everywhere, should you ever need a clock component, you now know how to make one. Or if you prefer, <a href="https://github.com/krhoyt/Ionic">check out the complete code for this example on GitHub</a>. There is also a running example if you want to <a href="http://temp.kevinhoyt.com/ionic/clock/">see the clock in action</a>.</p>
+
+        
+      </article>
+
+    </main>
+
+          
+
+  <footer id="footer">
+
+  <p>
+    Made with ❤️ by Kevin Hoyt &copy; 2025 · Published with <a href="https://www.11ty.dev">Eleventy</a>
+  </p>
+  
+</footer>
+
+
+  <script src="/script/menu.js"></script>
+
+</body>
+</html>

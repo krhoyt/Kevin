@@ -5,12 +5,11 @@ unsplash_author_url: https://unsplash.com/@gavinbiesheuvel
 unsplash_photo_url: https://unsplash.com/photos/KfzZYS51x20
 title: Building a Bar Chart with Stencil
 description: Every once in a while you need to roll your own. With a splash of SVG and helping hand from Stencil, you can create a custom chart as a web component.
-permalink: /2021/07/14/building-a-bar-chart-with-stencil/
+permalink: /blog/2021/07/14/building-a-bar-chart-with-stencil/
 tags:
-  - components
-  - stencil  
-  - web
-  - posts
+  - Web
+  - Data
+rating: 99
 ---
 
 There are a number of very robust charting libraries on the market. Some are commercial. Some are free. You should use them. Every once in a while though, you need to roll your own. Not to worry! With a splash of SVG and helping hand from Stencil, you can create a chart as a web component for all to use.

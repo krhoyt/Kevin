@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="The intersection of development and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Building a Bar Chart with Stencil</title>
+
+  <link rel="icon" type="image/x-icon" href="/img/edit.svg">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/post.css" />
+  <link rel="stylesheet" href="/style/prism.css" />    
+  <link rel="stylesheet" href="/style/footer.css" />
+
+</head>
+<body>
+  
+  <header id="header">
+
+  <article>
+
+    <kh-follow>
+      <img src="/img/krhoyt.jpg">
+    </kh-follow>
+
+    <nav>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/>
+      </svg>           
+      <select>
+        <option value="/" >Home</option>
+        <option value="/blog" selected>Writing</option>
+        <option value="/about" >About</option>
+        <option value="/events" >Events</option>
+      </select>      
+    </nav>
+
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog">Writing</a></li>    
+      <li><a href="/about">About</a></li>
+      <li><a href="/events">Events</a></li>
+    </ul>  
+
+    <div>
+
+      <!-- Bluesky (not listed)
+      <a href="https://bsky.app/profile/krhoyt.bsky.social" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 11.388c-.906-1.761-3.372-5.044-5.665-6.662c-2.197-1.55-3.034-1.283-3.583-1.033C2.116 3.978 2 4.955 2 5.528c0 .575.315 4.709.52 5.4c.68 2.28 3.094 3.05 5.32 2.803c-3.26.483-6.157 1.67-2.36 5.898c4.178 4.325 5.726-.927 6.52-3.59c.794 2.663 1.708 7.726 6.444 3.59c3.556-3.59.977-5.415-2.283-5.898c2.225.247 4.64-.523 5.319-2.803c.205-.69.52-4.825.52-5.399c0-.575-.116-1.55-.752-1.838c-.549-.248-1.386-.517-3.583 1.033c-2.293 1.621-4.76 4.904-5.665 6.664"/>
+        </svg>
+      </a>
+      -->
+
+      <!-- Twitter (not listed)
+      <a href="https://x.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" fill-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->      
+
+      <!-- GitHub -->
+      <a href="https://github.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+        </svg>
+      </a>      
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/channel/UCSFeFhtLBuzU2UMs7oOL54A" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/>
+        </svg>
+      </a>          
+
+      <!-- RSS feed -->
+      <a href="/feed.xml" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19t.588-1.412T5 17t1.413.588T7 19t-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1T9.138 8.413T4.6 7.1q-.65-.075-1.125-.512T3 5.5t.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337t3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35t-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062t2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/>
+        </svg>
+      </a>      
+
+      <!-- Instagram (not listed)
+      <a href="https://www.instagram.com/parkerkrhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 14">
+          <path fill="currentColor" fill-rule="evenodd" d="M3.39.787A2.604 2.604 0 0 0 .786 3.39v6.944a2.604 2.604 0 0 0 2.604 2.604h6.944a2.604 2.604 0 0 0 2.603-2.604V3.39A2.604 2.604 0 0 0 10.334.787zm7.693 2.607a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m-4.22 1.388a2.08 2.08 0 1 0 0 4.16a2.08 2.08 0 0 0 0-4.16m-3.081 2.08a3.08 3.08 0 1 1 6.16 0a3.08 3.08 0 0 1-6.16 0" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->     
+
+    </div>
+
+  </article>
+
+</header>
+
+
+  
+  
+    <main>
+
+      <div>
+
+        <img src="/img/covers/light.bars.jpg" alt="Building a Bar Chart with Stencil">
+
+        
+          <figcaption>
+            <p>Photo by <a href="https://unsplash.com/@gavinbiesheuvel">Gavin Biesheuvel</a> on <a href="https://unsplash.com/photos/KfzZYS51x20">Unsplash</a></p>
+          </figcaption>
+        
+
+      </div>
+
+      <article>
+
+        <h1>Building a Bar Chart with Stencil</h1>
+
+        <time>Jul 14, 2021 · 10 min read</time>
+
+        
+          <aside>
+            
+              <p>Web</p>
+            
+              <p>Data</p>
+            
+          </aside>
+                
+        
+        <p>There are a number of very robust charting libraries on the market. Some are commercial. Some are free. You should use them. Every once in a while though, you need to roll your own. Not to worry! With a splash of SVG and helping hand from Stencil, you can create a chart as a web component for all to use.</p>
+<h3>The Array of Data</h3>
+<p>Most charting libraries can get pretty complex. Most of that has to do with abstracting how data is represented. Those abstractions are what make the library so useful in so many cases. In this case however, we are not building a library for all the cases, we are building a bar chart to meet our specific case. This can simplify our work dramatically.</p>
+<p>According to Wikipedia, in a bar chart &quot;One axis of the chart shows the specific categories being compared, and the other axis represents a measured value.&quot; According to me, a bar chart is an array of numbers. Let us start there, with some SVG and an array of numbers.</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> h<span class="token punctuation">,</span> Prop <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@stencil/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">tag</span><span class="token operator">:</span> <span class="token string">'ionx-chart'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">styleUrl</span><span class="token operator">:</span> <span class="token string">'chart.css'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">shadow</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span> <span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Chart</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>320<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>240<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Values to use in the chart</span>
+  @<span class="token function">Prop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> data<span class="token operator">:</span> Array<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>number</span><span class="token punctuation">></span></span><span class="token plain-text"> = [];  
+}
+</span></code></pre>
+<p>Each <code>number</code> in the <code>Array</code> is going to take up the same amount of space along one of the axes. For this example, we will use the horizontal axis. The horizontal axis is <code>320</code> pixels across. If we get ten (10) values in the <code>Array</code>, each bar will take up <code>32</code> pixels.</p>
+<h3>The Maximum Ratio</h3>
+<p>Believe it or not, we are almost there. The last piece of information we need to know before we can render the chart, is the largest (maximum) value (number) in the <code>Array</code>. We need to know the maximum because we are looking to establish a ratio. We want the maximum value in the <code>Array</code> to equal the available number of pixels we have along the vertical axis.</p>
+<pre class="language-ts"><code class="language-ts"><span class="token keyword">private</span> ratio<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span></code></pre>
+<p>For example, if the values in the array are all larger than the <code>240</code> pixels we have along the vertical axis, how do we render the bar? Let us say the maximum value in the <code>Array</code> is <code>1,000</code>. The available space we have <code>240</code> divided by the maximum value of <code>1,000</code> gives us a ratio of <code>240:1,000</code> or <code>0.24</code>. Now we can multiply any <code>number</code> in the <code>Array</code> by <code>0.24</code>, and we will know the height of the bar <strong>and</strong> that bar will fit in our viewable area.</p>
+<blockquote>
+<p>Do not believe me? Let us say that the next <code>number</code> in the <code>Array</code> is <code>500</code>. The value of <code>500</code> is half of <code>1,000</code>. If <code>1,000</code> equals all our vertical pixels (<code>240</code>),  then <code>500</code> should equal half our vertical pixels, or <code>120</code>. Ready for this? <code>500 * 0.24 = 120</code></p>
+</blockquote>
+<h3>The Will Render</h3>
+<p>Before we render the <code>data</code> we will need a place to figure out that maximum value and corresponding ratio. The best place for that from a Stencil perspective is in <code>componentWillRender()</code>, which is called before each render.</p>
+<pre class="language-ts"><code class="language-ts"><span class="token function">componentWillRender</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> maximum<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// Find the largest value</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">let</span> d<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> d <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>length<span class="token punctuation">;</span> d<span class="token operator">++</span> <span class="token punctuation">)</span>
+    maximum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span> maximum<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">[</span>d<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// Round up to nearest whole number</span>
+  <span class="token comment">// Assign the ratio</span>
+  maximum<span class="token punctuation">.</span><span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span> maximum <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>ratio <span class="token operator">=</span> <span class="token number">240</span> <span class="token operator">/</span> maximum<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>It should become pretty clear, pretty quickly, that the limiting factor of our chart, and indeed any chart, is the amount of data to render. Not because rendering takes a long time, but because figuring out the edges of our data does. This is why supercomputers have to be used for weather maps, when all you see is some colored splotches.</p>
+<p>A bar chart however, is not a weather map. We can do all this processing (and a considerable amount more) right here in the browser.</p>
+<h3>The Render</h3>
+<p>Now we have all the pertinent pieces of information, we need to put those bars on the screen! A bar in SVG is a <code>rect</code>. The <code>rect</code> needs to know where it is positioned (<code>x</code>, <code>y</code>)  and its dimensions (<code>width</code>, <code>height</code>).</p>
+<p>The <code>height</code> we already know will be the value (number) in this iteration of the <code>data</code> multiplied by the <code>ratio</code> we calculated earlier. We also talked about how the <code>width</code> of each bar is the amount of space we have along the horizontal axis (<code>320</code>) divided by the number of values in the <code>data</code>. We do not know how many values that will be, so we calculate it inline.</p>
+<p>The <code>x</code> position is almost identical, except we multiply the <code>width</code> by the <code>index</code> of the iteration. If the <code>width</code> is <code>50</code> pixels, the first iteration (<code>index === 0</code>) will result in <code>x</code> being zero (0). Yes, please! The next iteration (<code>index === 1</code>) multiplied by a <code>width</code> of <code>50</code> places <code>x</code> at <code>50</code>. Exactly!</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>320<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>240<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span> <span class="token punctuation">(</span> <span class="token parameter"><span class="token literal-property property">value</span><span class="token operator">:</span> number<span class="token punctuation">,</span> <span class="token literal-property property">index</span><span class="token operator">:</span> number</span> <span class="token punctuation">)</span> <span class="token operator">=></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rect</span> 
+          <span class="token attr-name">fill</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">rgb( 
+            </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, 
+            </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,
+            </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> 
+          )</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span></span>
+          <span class="token attr-name">x</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span> <span class="token number">320</span> <span class="token operator">/</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>length <span class="token punctuation">)</span>  <span class="token operator">*</span> index<span class="token punctuation">}</span></span>
+          <span class="token attr-name">y</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">240</span> <span class="token operator">-</span> <span class="token punctuation">(</span> value <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>ratio <span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+          <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">320</span> <span class="token operator">/</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>length<span class="token punctuation">}</span></span>
+          <span class="token attr-name">height</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>value <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>ratio<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span>
+      <span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The only one that is a little tricky in SVG-land is the <code>y</code> position. When we think of the Web, we generally think of the top-left of the screen as being (<code>0, 0</code>) on the coordinate system.  In the case of SVG however (<code>0, 0</code>) is at the bottom left.</p>
+<p>This means that if we placed <code>y</code> at <code>240</code> and then said the <code>height</code> of the <code>rect</code> was <code>100</code>, the resulting <code>rect</code> would actually be drawn off the SVG viewport (from <code>240</code> to <code>340</code>). In order to offset this, we subtract the calculated <code>height</code> using our <code>ratio</code>, from the <code>height</code> of the viewable area of the SVG.</p>
+<p>In order to see each bar, the <code>fill</code> is a randomly generated CSS <code>rgb()</code> value. This kind of begs the question &quot;Maybe the bar should be abstracted into a class that includes fill color?&quot; Yup! And congratulations on coming full circle - that is exactly what the charting libraries do; abstract all the things. How far you go with it is up to you.</p>
+<h3>✋ But What About ...</h3>
+<p>There are two examples included in the running <a href="http://temp.kevinhoyt.com/ionic/chart/">demonstration</a>, and the GitHub <a href="https://github.com/krhoyt/Ionic/tree/master/chart">repository</a>. One example is the chart that we have just created. The other example is a chart that includes many of the typical considerations you might find in a chart.</p>
+<ul>
+<li>Chart title</li>
+<li>Axis labels</li>
+<li>Value labels</li>
+<li>Dynamic fill</li>
+<li>Rounded corners</li>
+<li>Flexible sizing</li>
+<li>CSS properties</li>
+</ul>
+<p>The code is not abstracted to the point of a library, but it should give you a starting place to consider more sophisticated rendering situations for your own chart component.</p>
+<h3>Next Steps</h3>
+<p>All of these options definitely add complexity to the math and rendering, but it all follows the same pattern. First, figure out the structure of the data. Second, figure out the edges of the data. Third, consider any information you might need to calculate for layout. Finally, iterate over the data to render your output.</p>
+<p>Now the next time you need a custom chart, you will know where to start - with Stencil and web components.</p>
+
+        
+      </article>
+
+    </main>
+
+          
+
+  <footer id="footer">
+
+  <p>
+    Made with ❤️ by Kevin Hoyt &copy; 2025 · Published with <a href="https://www.11ty.dev">Eleventy</a>
+  </p>
+  
+</footer>
+
+
+  <script src="/script/menu.js"></script>
+
+</body>
+</html>

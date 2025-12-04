@@ -5,12 +5,11 @@ unsplash_author_url: https://unsplash.com/@szolkin
 unsplash_photo_url: https://unsplash.com/photos/32YLLwBI8Q4
 title: Reasons to Stencil
 description: Congratulations, you have decided to use one of the many libraries and tools available for building modern web interfaces. Now just do not lock yourself into that decision.
-permalink: /2021/08/16/reasons-to-stencil/
+permalink: /blog/2021/08/16/reasons-to-stencil/
 tags:
-  - components
-  - stencil  
-  - web
-  - posts
+  - Web
+  - App Dev
+rating: 1
 ---
 
 Congratulations, you have decided to use one of the many libraries and tools available for building modern web interfaces. Maybe you have chosen React, and you start through the tutorial. 

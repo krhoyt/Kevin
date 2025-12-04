@@ -5,11 +5,12 @@ unsplash_author: Bolivia Inteligente
 unsplash_author_url: https://unsplash.com/@boliviainteligente
 unsplash_photo_url: https://unsplash.com/photos/a-blue-and-white-object-floating-in-the-air-GH6uTRKPK0Q
 title: Warp Test Drive
-permalink: /2025/10/21/warp-test-drive/
+permalink: /blog/2025/10/21/warp-test-drive/
 tags:
-  - warp
-  - ai
-  - testing
+  - AI/ML
+  - App Dev
+  - Enablement
+rating: 1
 ---
 
 Is it vibe coding or vibe debugging? Is AI assisting you or making you lazy? Is the industry shutting out junior developers or making them more productive more quickly? These are hard, often philosophical questions. Once thing is sure however - AI is here to stay. Refusing to acknowledge AI, and to learn how to use it for your workflow(s), is putting your head in the sand and ignoring the inevitable. 

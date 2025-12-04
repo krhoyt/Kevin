@@ -9,7 +9,7 @@
     "feedUrl": "https://kevinhoyt.com/feed.xml",
     "author": {
       "name": "Kevin Hoyt",
-      "email": "parkerkrhoyt@gmail.com"
+      "email": "kevin@ketnerlake.com"
     }
   }
 }
@@ -20,19 +20,20 @@
   <subtitle>{{ metadata.subtitle }}</subtitle>
   <link href="{{ metadata.feedUrl }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
-  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <updated>{{ collections.postsByDate | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ metadata.url }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {%- for post in collections.posts %}
+  {%- for post in collections.postsByDate.slice(0, 10) %}
     {% set absolutePostUrl %}{{ post.url | url | absoluteUrl( metadata.url ) }}{% endset %}
     <entry>
       <title>{{ post.data.title }}</title>
       <link href="{{ absolutePostUrl }}"/>
       <updated>{{ post.date | dateToRfc3339 }}</updated>
       <id>{{ absolutePostUrl }}</id>
+      <summary>{{ post.templateContent | striptags | truncate(300) }}</summary>
       <content type="html">{{ post.templateContent | htmlToAbsoluteUrls( absolutePostUrl ) }}</content>
     </entry>
   {%- endfor %}

@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="The intersection of development and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Three P Weekly Status Report</title>
+
+  <link rel="icon" type="image/x-icon" href="/img/edit.svg">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/post.css" />
+  <link rel="stylesheet" href="/style/prism.css" />    
+  <link rel="stylesheet" href="/style/footer.css" />
+
+</head>
+<body>
+  
+  <header id="header">
+
+  <article>
+
+    <kh-follow>
+      <img src="/img/krhoyt.jpg">
+    </kh-follow>
+
+    <nav>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/>
+      </svg>           
+      <select>
+        <option value="/" >Home</option>
+        <option value="/blog" selected>Writing</option>
+        <option value="/about" >About</option>
+        <option value="/events" >Events</option>
+      </select>      
+    </nav>
+
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog">Writing</a></li>    
+      <li><a href="/about">About</a></li>
+      <li><a href="/events">Events</a></li>
+    </ul>  
+
+    <div>
+
+      <!-- Bluesky (not listed)
+      <a href="https://bsky.app/profile/krhoyt.bsky.social" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 11.388c-.906-1.761-3.372-5.044-5.665-6.662c-2.197-1.55-3.034-1.283-3.583-1.033C2.116 3.978 2 4.955 2 5.528c0 .575.315 4.709.52 5.4c.68 2.28 3.094 3.05 5.32 2.803c-3.26.483-6.157 1.67-2.36 5.898c4.178 4.325 5.726-.927 6.52-3.59c.794 2.663 1.708 7.726 6.444 3.59c3.556-3.59.977-5.415-2.283-5.898c2.225.247 4.64-.523 5.319-2.803c.205-.69.52-4.825.52-5.399c0-.575-.116-1.55-.752-1.838c-.549-.248-1.386-.517-3.583 1.033c-2.293 1.621-4.76 4.904-5.665 6.664"/>
+        </svg>
+      </a>
+      -->
+
+      <!-- Twitter (not listed)
+      <a href="https://x.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" fill-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->      
+
+      <!-- GitHub -->
+      <a href="https://github.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+        </svg>
+      </a>      
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/channel/UCSFeFhtLBuzU2UMs7oOL54A" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/>
+        </svg>
+      </a>          
+
+      <!-- RSS feed -->
+      <a href="/feed.xml" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19t.588-1.412T5 17t1.413.588T7 19t-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1T9.138 8.413T4.6 7.1q-.65-.075-1.125-.512T3 5.5t.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337t3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35t-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062t2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/>
+        </svg>
+      </a>      
+
+      <!-- Instagram (not listed)
+      <a href="https://www.instagram.com/parkerkrhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 14">
+          <path fill="currentColor" fill-rule="evenodd" d="M3.39.787A2.604 2.604 0 0 0 .786 3.39v6.944a2.604 2.604 0 0 0 2.604 2.604h6.944a2.604 2.604 0 0 0 2.603-2.604V3.39A2.604 2.604 0 0 0 10.334.787zm7.693 2.607a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m-4.22 1.388a2.08 2.08 0 1 0 0 4.16a2.08 2.08 0 0 0 0-4.16m-3.081 2.08a3.08 3.08 0 1 1 6.16 0a3.08 3.08 0 0 1-6.16 0" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->     
+
+    </div>
+
+  </article>
+
+</header>
+
+
+  
+  
+    <main>
+
+      <div>
+
+        <img src="/img/covers/business.jpg" alt="Three P Weekly Status Report">
+
+        
+          <figcaption>
+            <p>Photo by <a href="https://unsplash.com/@freegraphictoday">AbsolutVision</a> on <a href="https://unsplash.com/photos/WYd_PkCa1BY">Unsplash</a></p>
+          </figcaption>
+        
+
+      </div>
+
+      <article>
+
+        <h1>Three P Weekly Status Report</h1>
+
+        <time>Jun 15, 2022 · 11 min read</time>
+
+        
+          <aside>
+            
+              <p>Enablement</p>
+            
+          </aside>
+                
+        
+        <p>What did you do last week? Not down to the minute, but what were the high-level themes of the work you did last week? This is not a trick question, and should be relatively easy to answer. Got it? Cool! Now, what did you do 24 weeks ago (six months)? Is that a little harder to answer? A lot harder? Okay, well, here comes the annual review; are you ready? Or are you going to spend countless hours digging through material to try and justify your existence to the business?</p>
+<blockquote>
+<p>Ug! This is all such a drag. All I really want to do is code/write/anything else!</p>
+</blockquote>
+<p>One of the many techniques I use to solve this problem is what I call the &quot;Three P&quot; weekly status report. Why &quot;Three P&quot;? Because there are three parts to it: progress, priorities, and problems.</p>
+<ul>
+<li><strong>Progress:</strong> Details about the work you completed over the last week</li>
+<li><strong>Priorities:</strong> Work you intend to accomplish in the week ahead</li>
+<li><strong>Problems:</strong> Issues that are slowing you down or preventing progress</li>
+</ul>
+<h2>The First Report</h2>
+<p>Once a week, generally on Monday or Friday, create a new markdown document. Save the file using a name consisting of the current ISO 8601 formatted date, followed by a dash, followed by the word &quot;status&quot; and then the <code>md</code> markdown extension. This results in a file name along the lines of <code>2022-06-06-status.md</code> for <code>June 6, 2022</code>. It does not matter that you use this suggested formatting approach. Whatever you choose - you must be consistent. I use the ISO 8601 approach because it makes the status report files easily sortable whether you are using a command line or GUI finder.</p>
+<p>With our report file created, break out the three sections of progress, priorities, and problems. I generally use an <code>H2</code> heading for the sections. Using an <code>H2</code> provides the flexibility of using an <code>H1</code> for the title should the report need one. An example of where a title might be included is when you spend all week dedicated to a significant event for the company (e.g. AWS re:Invent).</p>
+<pre class="language-md"><code class="language-md"><span class="token title important"><span class="token punctuation">##</span> Progress</span>
+
+<span class="token list punctuation">-</span> Finished meetup presentation 🙌
+<span class="token list punctuation">-</span> Drove social media attention for my session
+  <span class="token list punctuation">-</span> Twitter
+  <span class="token list punctuation">-</span> YouTube preview
+  <span class="token list punctuation">-</span> Blog post
+
+<span class="token title important"><span class="token punctuation">##</span> Priorities</span>
+
+<span class="token list punctuation">-</span> Deliver meetup presentation
+<span class="token list punctuation">-</span> Draft API for v2 architecture meeting
+<span class="token list punctuation">-</span> Fix bug KH-123 once and for all
+
+<span class="token title important"><span class="token punctuation">##</span> Problems</span>
+
+<span class="token list punctuation">-</span> Access to production database
+<span class="token list punctuation">-</span> Plane was delayed - avoid ORD ✈️
+<span class="token list punctuation">-</span> Did not get adequate sleep</code></pre>
+<h3>Progress</h3>
+<p>Next up, review the work you did over the last week and try to summarize it into three-to-five items. Sometimes there are more items that you may want to call out - sometimes many more - and that is fine. Add what you need. Want to embellish? Add a link to a bug you fixed? Great! Markdown is there for you. Have fun. This is <em>your</em> status report after all. The point here is not to detail every waking minute, the point is to record a general sense of how you spent the time.</p>
+<p>If you stop for a moment, take a breath, and think about what you accomplished this past week, certain items will likely surface in your mind. These items, and potentially the items related to those items, are what you are trying to capture.</p>
+<blockquote>
+<p>Be natural. You have nobody to impress here but yourself. This is not the place for self-aggrandizing.</p>
+</blockquote>
+<h3>Priorities</h3>
+<p>With last week in the mirror, take another breath. What are you looking to accomplish in the week ahead? Again, this is relatively high-level with three-to-five bullets (more if you need it). While you should never retroactively go back and change these items once you have finished the report and started the week, these items do not necessarily need to reflect the actual outcome of the week. It is totally acceptable to not complete your priority items - or to end up doing more than you anticipated.</p>
+<p>At this time, in this space, you are trying to capture your intentions. Nobody is going to harass you about what you did not do except for yourself - which is kind of the point, and one of the interesting side-effects of this approach to capturing your work. You may start out the week with one set of intentions, only to find that events took an unexpected twist along the way. Looking back on your reports will show that course clearly, which is exactly the type of detail we want to capture.</p>
+<h3>Problems</h3>
+<p>And finally there are the problems you are currently experiencing that are preventing you from doing something you want. You may not have problems every week, and that is fine. Over the years of using this technique, I will frequently list the problems that are going on outside of work, that impact my productivity while at work. Perhaps the &quot;check engine&quot; light came on in my car, and trying to schedule everything to get it fixed is decreasing my productivity.</p>
+<blockquote>
+<p>It is okay to have fun. Use emojis where they fit the context to capture that extra little bit of emotion around the situation.</p>
+</blockquote>
+<h2>The Second Report</h2>
+<p>As the second week rolls around, and you set aside time to write your second weekly report, the process starts pretty much the same as before. New file, new date, the three parts. Now open the report from the previous week. See those &quot;priorities&quot; you listed? At least some of those are likely &quot;progress&quot; items now, so move them on over to the new report. Congratulations! You are on your way to status report legend.</p>
+<h2>The Magic</h2>
+<p>Now you are taking fifteen minutes, once per week, to put together a weekly status report. A few weeks go by, and you look back at some of the reports. You will start to see the the evolution from problem, to priority, to progress. This becomes even more pronounced with time. It feels very rewarding to see the progress.</p>
+<blockquote>
+<p>I like to schedule time on my calendar to do my weekly status report.</p>
+</blockquote>
+<p>Beyond that, when annual review time comes around, you will have a months (year) long trail of all the work you have done. Reviewing your weekly status reports, you extract the more important points that map to your goals. A little polishing to form a cohesive narrative, and you are done. This time the annual review was not a pain, but actually a kind of enjoyable trip down memory lane.</p>
+<h2>The Scale</h2>
+<p>This useful technique may seem like a nice-to-have at the individual level, but it <em>really</em> starts to shine when it involves a whole team!</p>
+<p>For a manager, your first task is to be able to gather all the weekly status reports. You need to make that process as painless as possible otherwise they will not get written (or at least not submitted). Having managed mostly developers, I want the status reports to work they way that my team works, so I set up a private source control repository to collect the reports. Inside the repository is a folder named after the email alias of each person on the team.</p>
+<p>Everybody on the team has full access to the entire repository - and only those on the team. This means complete transparency between team members. Everybody knows what the others are doing, and how they compare. In many cases, team members will find common threads and proactively reach out to one another. This could be some significant business problem that needs solving, or as small as some helpful travel advice. Whatever it is - it is collaboration which yields dramatic team cohesion and efficiency. All for the low price of fifteen minutes, once per week.</p>
+<p>That last minute one-on-one where your boss interrogates you about that status of your team is now instantly painless. A quick <code>grep</code> of the repository can give you pretty much everything you need to know. The pain of annual reviews becomes a thing of the past as individuals have more direct insight into the work they completed.</p>
+<blockquote>
+<p>I sometimes call this increased agency &quot;write your own annual review&quot; or &quot;write your own promotion&quot;. I encourage individuals to take ownership of their career.</p>
+</blockquote>
+<p>As a manager, you might be inclined to think that the status report does not contain near enough information. This reporting process is not designed to replace other mechanisms that you have in place (or should have in place). If you need a more detailed view into a specific project, then that should be an additional report or meeting.</p>
+<h2>The Markdown?</h2>
+<p>For me, markdown is the magic behind the magic. You might say that markdown is just a file format. These could be Word documents. On a technical level, you are absolutely right. On a practical level, markdown makes the difference... At least for developer-oriented roles.</p>
+<p>When a developer wants to start putting together their weekly status report it is just a <code>Ctrl+C Ctrl+V</code> away. No new process. No new tooling. Not another SaaS login. Works online and offline. Requires no more computing power.</p>
+<p>When it comes to a private source control repository, the effort of writing the weekly status report is again, the same workflow already being used. All done for the week? Toggle to your terminal and use the source control CLI, or whatever you may already have in your IDE/tooling. The &quot;Three P&quot; does not dictate individual workflow - work how you work, use what you use.</p>
+<blockquote>
+<p>The goal is to keep the barrier to entry as low as possible.</p>
+</blockquote>
+<p>Further, markdown, as a text-baed format, makes for easy search. As a manager you often have to locate certain details very quickly, and with markdown, your answers are just a <code>grep</code> away. Markdown is also easy to parse. A splash of your language of choice, and you can post-process weekly reports into a single unified report of everything your team has done for the last week, the last quarter, or even the last year.</p>
+<h2>The Conclusion</h2>
+<p>This concept is not new. The <a href="https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People">Franklin Covey</a> system is very similar in nature. Carry forward the things you need to do that you did not do today. Agile has the Scrum methodology of accomplishments, goals, and blockers - but that is not a fun acronym. This specific variation is rewarding for both the individual, and the manger, and supports a modern developer workflow. Paired with other strategies, which I will cover in future posts, it is a recipe for effortless time management and reporting.</p>
+<p>Have criticisms? Additions? Are there specifics I left out that you need to understand? Post a comment, and let me know!</p>
+<h2>The Addendum</h2>
+<p>Historically, as a manager, I have had pretty solid insight into the work the team is doing - if not outright influence and control. This comment should not surprise anybody. However, I have recently encountered a management scenario where that insight and influence is very low. At the very least, insight matters for annual reviews, promotions, etc. Influence matters for reasons of coaching, mentoring, and &quot;firewall&quot; activities.</p>
+<p>To address this, I have recently started requesting a fourth &quot;P&quot; for &quot;Plan&quot;. I ask for a rolling four-week high-level plan painted with broad brushes. I do not need to know how the team spends every hour of their week. I do need to know what feature(s) or issues they intend to tackle. This is the kind of data that one might use in a rollup report for senior management and/or other stakeholders.</p>
+<p>In keeping with he Markdown approach, I have encouraged the use of the <a href="https://markwhen.com/">Markwhen</a> syntax. Since Markwhen has a parser, I can easily extract the parts of the individual reports that I need for the rollup reports.</p>
+<pre class="language-md"><code class="language-md"><span class="token title important"><span class="token punctuation">##</span> Plan</span>
+
+group Important Project
+2022-07-18/2022-07-22: Start Feature ABC-123
+2022-07-25/2022-07-29: Issued filed by customer  
+<span class="token url">[<span class="token content">Ticket</span>](<span class="token url">link-to-ticket</span>)</span>
+2022-08-08/2022-08-10: Finish feature ABC-123
+2022-08-11/2022-08-12: Transition to Feature 123-ABC
+
+group Vacation/PTO
+2022-08-15/2022-08-19: Kevin on vacation (Oregon Coast)
+
+group Professional Development
+2022-08-01/2022-08-05: Certification training</code></pre>
+<p>Every week, each individual on the team (myself included), add the work for the next week to the &quot;Plan&quot; section, and remove the week that just was just completed (past). I cannot be sure yet just how the team will respond to this work long term, but wanted to document the addition and its motivations.</p>
+
+        
+      </article>
+
+    </main>
+
+          
+
+  <footer id="footer">
+
+  <p>
+    Made with ❤️ by Kevin Hoyt &copy; 2025 · Published with <a href="https://www.11ty.dev">Eleventy</a>
+  </p>
+  
+</footer>
+
+
+  <script src="/script/menu.js"></script>
+
+</body>
+</html>

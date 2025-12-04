@@ -1,0 +1,79 @@
+---
+title: Writing
+permalink: /blog/
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="Reflections on development and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>{{ title }} - Kevin Hoyt</title>
+
+  <link rel="icon" type="image/x-icon" href="/img/edit.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/hero.css" />  
+  <link rel="stylesheet" href="/style/blog.css" />    
+  <link rel="stylesheet" href="/style/footer.css" />
+
+</head>
+<body>
+
+  {% set section = 'Kevin Hoyt · Writing' %}
+  {% set quote = 'Reflections on development and design.' %}
+
+  {% include 'header.njk' %}
+  {% include 'hero.njk' %}
+
+  <main>
+
+    <div>
+
+      {% for post in collections.postsByDate %}
+
+        <article>
+
+          {% if post.data.feature_image %}
+            <a href="{{ post.url }}"><img src="{{ post.data.feature_image }}" alt="{{ post.data.title }}"></a>
+          {% endif %}
+
+          <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+
+          <time><a href="{{ post.url }}">{{ post.date | htmlDateString }} · {{ post.templateContent | getReadingTime }} min read</a></time>
+
+          {% if post.data.description %}
+            <p><a href="{{ post.url }}">{{ post.data.description }}</a></p>
+          {% endif %}
+
+          {% if post.data.tags %}
+            <aside>
+              {% for tag in post.data.tags %}
+                <p>{{ tag }}</p>
+              {% endfor %}
+            </aside>
+          {% endif %}
+
+        </article>
+
+      {% endfor %}
+
+    </div>
+
+  </main>
+
+  {% include 'footer.njk' %}
+
+  <script src="/script/menu.js"></script>
+
+</body>
+</html>

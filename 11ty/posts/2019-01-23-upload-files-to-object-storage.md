@@ -2,11 +2,11 @@
 description: Uploading a file to an IBM Cloud Function takes some consideration. In this post we combine IBM Cloud Object Storage with Web Actions for robust storage.
 feature_image: /img/covers/whisk.jpg
 title: Serverless Upload to Object Storage
-permalink: /2019/01/23/serverless-upload-to-object-storage/
+permalink: /blog/2019/01/23/serverless-upload-to-object-storage/
 tags:
-  - serverless
-  - storage
-  - posts
+  - App Dev
+  - Data
+rating: 1
 ---
 
 So there you are, building the world's next breakthrough social platform. And of course you want to minimize cost, administration, etc. so you use [IBM Cloud Functions](https://console.bluemix.net/openwhisk/) ([Apache OpenWhisk](https://openwhisk.apache.org/)). Then you decide to let users manage their profile picture. Uploading a file to a Cloud Function takes some consideration - and then there is the problem that the environment will destroy itself, and the uploaded content, after execution. In this post, we combine [IBM Cloud Object Storage](https://www.ibm.com/cloud/object-storage) with Web Actions for robust, persistent storage.

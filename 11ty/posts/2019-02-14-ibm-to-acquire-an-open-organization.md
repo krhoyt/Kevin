@@ -2,10 +2,10 @@
 description: A review of Red Hat CEO, Jim Whitehurst's book, The Open Organization, wherein I attempt to distill the why, how, and what contents into my favorite quotes.
 feature_image: /img/covers/red.hat.jpg
 title: IBM and the Open Organization
-permalink: /2019/02/14/ibm-to-acquire-an-open-organization/
+permalink: /blog/2019/02/14/ibm-to-acquire-an-open-organization/
 tags:
-  - ibm
-  - posts
+  - Enablement
+rating: 1
 ---
 
 On October 28, 2018, IBM announced plans to acquire Red Hat. The CEO of Red Hat is Jim Whitehurst, and Mr. Whitehurst released a book titled "[The Open Organization](https://www.amazon.com/Open-Organization-Igniting-Passion-Performance-ebook/dp/B00O92Q6CQ/ref=sr_1_1?crid=1F28T3RNM0UH9&amp;keywords=open+organization&amp;qid=1550107069&amp;s=gateway&amp;sprefix=open+org%2Caps%2C167&amp;sr=8-1)" in 2015. The book details a management philosophy Mr. Whitehurst acquired when he joined Red Hat in 2007. The book is broken down into three parts: why, how, and what. Here I attempt to distill the contents of those sections into my favorite quotes.

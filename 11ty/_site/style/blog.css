@@ -1,0 +1,115 @@
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px 0 48px 0;
+  width: 100%;
+}
+
+main div {
+  display: grid;
+  grid-template-columns: repeat( 3, 1fr );
+  grid-column-gap: 16px;
+  grid-row-gap: 32px;
+  max-width: 900px;
+  width: 80%;
+}
+
+main article {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease;  
+}
+
+main article:hover {
+  transform: scale( 1.03 );
+}
+
+main article img {
+  border-radius: 6px;
+  height: 190px;
+  object-fit: cover;  
+  width: 100%;
+}
+
+main article a {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+main article h3 {
+  color: #1a1a1a; 
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 8px 0 8px 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;  
+  -webkit-font-smoothing: antialiased;         
+}
+
+main article > p {
+  color: #1a1a1a; 
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;  
+  -webkit-font-smoothing: antialiased;         
+}
+
+main aside p {
+  background: #F3F4F6;
+  border: 1px solid #E5E7EB;   
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: inline-block;
+  color: #6B7280;
+  cursor: default;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 8px 6px 0 0;
+  padding: 3px 8px 3px 8px;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;  
+  -webkit-font-smoothing: antialiased;           
+}
+
+main time {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  margin: 0 0 8px 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;  
+  -webkit-font-smoothing: antialiased;             
+}
+
+main time a {
+  color: #94A3B8;
+}
+
+@media only screen and ( max-width: 768px ) { 
+  main div {
+    width: 90%;
+  }   
+}
+
+@media only screen and ( max-width: 640px ) { 
+  main div {
+    grid-template-columns: repeat( 2, 1fr );    
+  }   
+}
+
+@media only screen and ( max-width: 480px ) { 
+  main div {
+    grid-template-columns: repeat( 1, 1fr );  
+  }   
+}

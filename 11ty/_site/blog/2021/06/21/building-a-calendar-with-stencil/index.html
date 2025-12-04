@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="The intersection of development and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Building a Calendar with Stencil</title>
+
+  <link rel="icon" type="image/x-icon" href="/img/edit.svg">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/post.css" />
+  <link rel="stylesheet" href="/style/prism.css" />    
+  <link rel="stylesheet" href="/style/footer.css" />
+
+</head>
+<body>
+  
+  <header id="header">
+
+  <article>
+
+    <kh-follow>
+      <img src="/img/krhoyt.jpg">
+    </kh-follow>
+
+    <nav>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/>
+      </svg>           
+      <select>
+        <option value="/" >Home</option>
+        <option value="/blog" selected>Writing</option>
+        <option value="/about" >About</option>
+        <option value="/events" >Events</option>
+      </select>      
+    </nav>
+
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog">Writing</a></li>    
+      <li><a href="/about">About</a></li>
+      <li><a href="/events">Events</a></li>
+    </ul>  
+
+    <div>
+
+      <!-- Bluesky (not listed)
+      <a href="https://bsky.app/profile/krhoyt.bsky.social" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 11.388c-.906-1.761-3.372-5.044-5.665-6.662c-2.197-1.55-3.034-1.283-3.583-1.033C2.116 3.978 2 4.955 2 5.528c0 .575.315 4.709.52 5.4c.68 2.28 3.094 3.05 5.32 2.803c-3.26.483-6.157 1.67-2.36 5.898c4.178 4.325 5.726-.927 6.52-3.59c.794 2.663 1.708 7.726 6.444 3.59c3.556-3.59.977-5.415-2.283-5.898c2.225.247 4.64-.523 5.319-2.803c.205-.69.52-4.825.52-5.399c0-.575-.116-1.55-.752-1.838c-.549-.248-1.386-.517-3.583 1.033c-2.293 1.621-4.76 4.904-5.665 6.664"/>
+        </svg>
+      </a>
+      -->
+
+      <!-- Twitter (not listed)
+      <a href="https://x.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" fill-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->      
+
+      <!-- GitHub -->
+      <a href="https://github.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+        </svg>
+      </a>      
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/channel/UCSFeFhtLBuzU2UMs7oOL54A" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/>
+        </svg>
+      </a>          
+
+      <!-- RSS feed -->
+      <a href="/feed.xml" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19t.588-1.412T5 17t1.413.588T7 19t-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1T9.138 8.413T4.6 7.1q-.65-.075-1.125-.512T3 5.5t.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337t3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35t-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062t2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/>
+        </svg>
+      </a>      
+
+      <!-- Instagram (not listed)
+      <a href="https://www.instagram.com/parkerkrhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 14">
+          <path fill="currentColor" fill-rule="evenodd" d="M3.39.787A2.604 2.604 0 0 0 .786 3.39v6.944a2.604 2.604 0 0 0 2.604 2.604h6.944a2.604 2.604 0 0 0 2.603-2.604V3.39A2.604 2.604 0 0 0 10.334.787zm7.693 2.607a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m-4.22 1.388a2.08 2.08 0 1 0 0 4.16a2.08 2.08 0 0 0 0-4.16m-3.081 2.08a3.08 3.08 0 1 1 6.16 0a3.08 3.08 0 0 1-6.16 0" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->     
+
+    </div>
+
+  </article>
+
+</header>
+
+
+  
+  
+    <main>
+
+      <div>
+
+        <img src="/img/covers/calendar.jpg" alt="Building a Calendar with Stencil">
+
+        
+          <figcaption>
+            <p>Photo by <a href="https://unsplash.com/@esteejanssens">Estée Janssens</a> on <a href="https://unsplash.com/photos/zni0zgb3bkQ">Unsplash</a></p>
+          </figcaption>
+        
+
+      </div>
+
+      <article>
+
+        <h1>Building a Calendar with Stencil</h1>
+
+        <time>Jun 21, 2021 · 18 min read</time>
+
+        
+          <aside>
+            
+              <p>Web</p>
+            
+              <p>App Dev</p>
+            
+          </aside>
+                
+        
+        <p>Take a look at the month view of a calendar and you will see several rows of numbers. The numbers themselves, increasing in value one after the other, are arranged in columns. HTML and CSS provide us with a number of tools to display content in rows and columns. Making a calendar component should be easy, right? Right?</p>
+<p><img src="/img/assets/calendar.edge.png" alt="You checked the edge cases, right?"></p>
+<p>When we look at the first calendar day in a month, it could fall on any day of the week. This in turn can push the last day of the month to also fall on any day of the week. That variation can mean that there are six weeks (six rows) in some months, but only five weeks (rows) in others. Then of course there are the number of days in the month, and oddities such as leap years.</p>
+<p>When we turn to Stencil (and Web Components in general), all of these variations beg the question &quot;What goes in my template if I do not know what I will need to display?&quot; The answer is to figure out what you will need to display before you display it. We can leverage the Stencil component lifecycle to override <code>componentWillRender()</code> and perform the required calculations.</p>
+<h3>It is About Time!</h3>
+<p>If you think about any single given day on the calendar, you are really taking in several pieces of information at once. First is the integer representing the day of the month - and it is usually plastered in a giant font somewhere in each grid square. The second is that by the time you land on a day of the month, you likely already know the month and year. Finally, as your eyes rest upon a grid square, you are mentally selecting it, and know whether that selection represents today or not.</p>
+<blockquote>
+<p>These implied and inferred pieces of information fall in no particular order, and any correlation is completely made up by me for the purposes of the flow of this blog post. 🤪</p>
+</blockquote>
+<p>These are all important pieces of data we will need when rendering out each day in the calendar, so I like to have a class that represents them which I call <code>Day</code>. You might think &quot;Why not just use the JavaScript <code>Date</code> class? The reason for this decision has to do with the <code>selected</code> and <code>today</code> properties that are <code>boolean</code> values used in helping render the appropriate styles on the calendar grid.</p>
+<pre class="language-ts"><code class="language-ts"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Day</span> <span class="token punctuation">{</span>
+  date<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  month<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  year<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  
+  selected<span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  today<span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3>What Day Is It?</h3>
+<p>From a component perspective, there are a few properties we will need to consider. The first is the desired date to display in the calendar versus the date being displayed in the calendar. The desired date might also be considered the &quot;value&quot; of the calendar, and is exposed as a property (<code>@Prop()</code>). The date being displayed in the calendar is a matter of how the user has interacted with the component to change its state (<code>@State()</code>). We will also need an <code>Array</code> of <code>Day</code> as a component-internal property to hold the days associated with the rendering of the displayed date.</p>
+<pre class="language-ts"><code class="language-ts">  <span class="token decorator"><span class="token at operator">@</span><span class="token function">Prop</span></span><span class="token punctuation">(</span> <span class="token punctuation">{</span>mutable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span> <span class="token punctuation">)</span> value<span class="token operator">:</span> Date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token decorator"><span class="token at operator">@</span><span class="token function">State</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> displayedDate<span class="token operator">:</span> Date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">private</span> days<span class="token operator">:</span> <span class="token builtin">Array</span><span class="token operator">&lt;</span>Day<span class="token operator">></span><span class="token punctuation">;</span></code></pre>
+<p>For this calendar, when the user interacts with a day, that date will be set as the new <code>value</code>. Since <code>value</code> will be modified from inside the component, it will need to be marked as <code>mutable</code>. You may also want to emit an event that the <code>value</code> (selected date) has changed. Another consideration might be emitting an event for changes in the month being displayed.</p>
+<h3>Back to the Beginning</h3>
+<p>As we start implementing <code>componentWillRender()</code>, our first major task is to get back to the first day in the displayed month. The JavaScript <code>Date</code> constructor is perfectly suited for this by setting the third parameter, the day of the month, to one (1). Being at the first day of the month, does not mean you are at the first (upper-left) grid square, so we also need to go back in the calendar until we are at the first day of the week.</p>
+<pre class="language-ts"><code class="language-ts"><span class="token function">componentWillRender</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> today<span class="token operator">:</span> Date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// Calendar used in iteration</span>
+  <span class="token keyword">const</span> calendar<span class="token operator">:</span> Date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>displayedDate<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>displayedDate<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token number">1</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// First day of month may not be first day of week</span>
+  <span class="token comment">// Roll back until first day of week</span>
+  calendar<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span> calendar<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> calendar<span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+  <span class="token comment">// Clear days to be rendered	</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>days <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+
+  <span class="token comment">// ... more ...</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Perhaps not surprisingly, this now sets us up to iterate through the days of the month. Perhaps surprisingly, that is <strong>not</strong> what I like to do.</p>
+<h3>One Day at a Time</h3>
+<p>My preferred approach for this iteration is to count to 42 (6 weeks possible x 7 days per week). If we make it through all 42 iterations, great. If we do not make it through all 42 iterations, we can break out of the loop at any time, and move on to the render. Additionally, it turns out that CSS Grid is perfectly suited for ending the iteration early, and will fill in the &quot;gaps&quot; for us.</p>
+<blockquote>
+<p>Though I have seen various takes on how to manage the iteration through the calendar, this &quot;count to 42&quot; approach leads to the most readable version that I have found. YMMV.</p>
+</blockquote>
+<pre class="language-ts"><code class="language-ts"><span class="token function">componentWillRender</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> today<span class="token operator">:</span> Date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// Calendar used in iteration</span>
+  <span class="token keyword">const</span> calendar<span class="token operator">:</span> Date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>displayedDate<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>displayedDate<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token number">1</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// First day of month may not be first day of week</span>
+  <span class="token comment">// Roll back until first day of week</span>
+  calendar<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span> calendar<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> calendar<span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// Clear days to be rendered</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>days <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">let</span> d<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> d <span class="token operator">&lt;</span> <span class="token number">42</span><span class="token punctuation">;</span> d<span class="token operator">++</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Day to be rendered</span>
+    <span class="token comment">// Seed with current date in iteration</span>
+    <span class="token keyword">const</span> day<span class="token operator">:</span> Day <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Day</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    day<span class="token punctuation">.</span>year <span class="token operator">=</span> calendar<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    day<span class="token punctuation">.</span>month <span class="token operator">=</span> calendar<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Populate day in month</span>
+    <span class="token comment">// Undefined date properties are not rendered</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>
+      calendar<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token keyword">this</span><span class="token punctuation">.</span>displayedDate<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+      calendar<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token keyword">this</span><span class="token punctuation">.</span>displayedDate<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span> day<span class="token punctuation">.</span>date <span class="token operator">=</span> calendar<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+    <span class="token comment">// Check for today</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>
+      calendar<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> today<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+      calendar<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> today<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+      calendar<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> today<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span> day<span class="token punctuation">.</span>today <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  
+    <span class="token comment">// Check for selection</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>
+      calendar<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+      calendar<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+      calendar<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+      calendar<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span> day<span class="token punctuation">.</span>selected <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  
+    <span class="token comment">// Add to days to be rendered</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>days<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span> day <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+    <span class="token comment">// Keep rolling</span>
+    calendar<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span> calendar<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+    <span class="token comment">// Do not render the last week</span>
+    <span class="token comment">// Depending on calendar layout</span>
+    <span class="token comment">// Some months require five weeks</span>
+    <span class="token comment">// Others six weeks (see May 2021)</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>
+      calendar<span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span>
+      calendar<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token keyword">this</span><span class="token punctuation">.</span>displayedDate<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>  </code></pre>
+<p>Within each iteration we seed the <code>Day</code> instance with the month and year, but not necessarily the day of the month. We can use this absence of data in the render. We also check to see if the date in the current iteration is today, or if it matches the <code>value</code> property. These flags will help us style the calendar appropriately.  If we are past the end of the month being displayed, we are done, and can return to the component lifecycle to actually render the calendar.</p>
+<h3>Once More, With Feeling</h3>
+<p>When it comes to the actual rendering of the calendar, I like to separate it semantically from the rest of the calendar. This helps keep the CSS more concise.</p>
+<p>The most interesting part of the CSS is the use of CSS Grid. The <code>grid-template-rows</code> property is specified as <code>repeat( auto-fill, 1fr )</code> which is what allows us to get away without having to complete the week at the end of the month, or outright leave a week off the end of the month if there are only five (5) weeks.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">article</span> <span class="token punctuation">{</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+  <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> 1fr 1fr 1fr 1fr 1fr 1fr 1fr<span class="token punctuation">;</span>
+  <span class="token property">grid-template-rows</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span> auto-fill<span class="token punctuation">,</span> 1fr <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">gap</span><span class="token punctuation">:</span> 0px 0px<span class="token punctuation">;</span>
+  <span class="token property">min-width</span><span class="token punctuation">:</span> 100vw<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0 4px 4px 4px<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>
+
+<span class="token selector">article button</span> <span class="token punctuation">{</span>
+  <span class="token property">appearance</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">-webkit-appearance</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> -apple-system<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>    
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>  
+  <span class="token property">margin</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+  <span class="token property">min-height</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span> <span class="token punctuation">(</span> 100vw / 7 <span class="token punctuation">)</span> - 6px <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">outline</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">-webkit-tap-highlight-color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0 <span class="token punctuation">)</span><span class="token punctuation">;</span>                   
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>
+
+<span class="token selector">article button[disabled]</span> <span class="token punctuation">{</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> default<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">article button.selected</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span> 255<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0.10 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #ff0000<span class="token punctuation">;</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> 600<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">article button.today</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #ff0000<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">article button.selected.today</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #ff0000<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #ffffff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>As you can probably tell from the CSS, each day in the month will be rendered as a <code>button</code> element. On that <code>button</code> element, we can use <code>data</code> attributes to store the day, month, and year that each represents. In the click handler, a reference to the <code>button</code> can be obtained using the <code>target</code> property of the <code>MouseEvent</code>. These values can then be parsed, and a <code>Date</code> object then created to represent the date that was selected.  This keeps us from having to store DOM references to each of the days being rendered. A <code>button</code> marked <code>disabled</code> will not fire the click handler.</p>
+<pre class="language-jsx"><code class="language-jsx">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">></span></span><span class="token plain-text">
+  </span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>days<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span> <span class="token punctuation">(</span> <span class="token parameter"><span class="token literal-property property">day</span><span class="token operator">:</span> Day</span> <span class="token punctuation">)</span> <span class="token operator">=></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span>
+      <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">selected</span><span class="token operator">:</span> day<span class="token punctuation">.</span>selected<span class="token punctuation">,</span>
+        <span class="token literal-property property">today</span><span class="token operator">:</span> day<span class="token punctuation">.</span>today
+      <span class="token punctuation">}</span><span class="token punctuation">}</span></span>
+      <span class="token attr-name">data-date</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>day<span class="token punctuation">.</span>date<span class="token punctuation">}</span></span>
+      <span class="token attr-name">data-month</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>day<span class="token punctuation">.</span>month<span class="token punctuation">}</span></span>
+      <span class="token attr-name">data-year</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>day<span class="token punctuation">.</span>year<span class="token punctuation">}</span></span>
+      <span class="token attr-name">disabled</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>day<span class="token punctuation">.</span>date <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token boolean">true</span> <span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">}</span></span>
+      <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span> <span class="token parameter"><span class="token literal-property property">evt</span><span class="token operator">:</span> MouseEvent</span> <span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">doSelect</span><span class="token punctuation">(</span> evt <span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>day<span class="token punctuation">.</span>date<span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>This whole technique of calculating what needs to be displayed before the actual rendering process is what I call &quot;pre-rendering&quot;. The approach is valuable not only in calendars, but also in any situation where there can be a variable number of elements to be rendered. Dynamic SVG content is another place where this technique comes in handy.</p>
+<blockquote>
+<p>It should be noted that modern calendar designs do not show the dates for the days outside of the month being rendered. This is true for both Material Design and Apple Human Interface Guidelines. You can alter the pre-rendering to meet your requirements should they differ.</p>
+</blockquote>
+<p>Could you forego the pre-rendering, and do all the calculations in the render proper? With enough braces, brackets, and parenthesis, you probably could. This approach however gives us a clean separation between the data to be rendered and the render itself leading to code that is easy to read and maintain.</p>
+<h3>Next Steps</h3>
+<p>There are a number of nuances to calendar rendering which have not been addressed in this article. For example, Sunday is not always the first day of the week depending on your locale. More could also be done to address accessibility. And of course changing the styles for different mobile operating systems would take considerable effort. Does this sound like a lot more work? It is! That is where Ionic Framework can help. The announced Ionic Framework v6 includes modern calendars built to conform to the latest design guidelines, to include accessibility.</p>
+<p>Check out the live <a href="http://temp.kevinhoyt.com/ionic/calendar/">demo</a> and get the complete <a href="https://github.com/krhoyt/Ionic/tree/master/calendar">code</a>.</p>
+
+        
+      </article>
+
+    </main>
+
+          
+
+  <footer id="footer">
+
+  <p>
+    Made with ❤️ by Kevin Hoyt &copy; 2025 · Published with <a href="https://www.11ty.dev">Eleventy</a>
+  </p>
+  
+</footer>
+
+
+  <script src="/script/menu.js"></script>
+
+</body>
+</html>

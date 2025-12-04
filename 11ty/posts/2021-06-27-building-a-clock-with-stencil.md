@@ -5,12 +5,11 @@ unsplash_author_url: https://unsplash.com/@chuttersnap
 unsplash_photo_url: https://unsplash.com/photos/T5H17wB55VY
 title: Building a Clock with Stencil
 description: Building a clock can reveal a lot about how a platform works. In this walkthrough we will take a look at building a clock component using Stencil.
-permalink: /2021/06/27/building-a-clock-with-stencil/
+permalink: /blog/2021/06/27/building-a-clock-with-stencil/
 tags:
-  - components
-  - stencil  
-  - web
-  - posts
+  - Web
+  - App Dev
+rating: 1
 ---
 
 I have not seen a clock in a web-based user interface in a long time. This makes sense — they are pretty redundant these days. You have a clock on your watch, on your mobile device, and on your desktop, and those are just the digital versions available at a glance. Nonetheless, the process of building a clock can reveal a lot about how a platform works.

@@ -5,12 +5,11 @@ unsplash_author_url: https://unsplash.com/@esteejanssens
 unsplash_photo_url: https://unsplash.com/photos/zni0zgb3bkQ
 title: Building a Calendar with Stencil
 description: Learn about calculating content before rendering while building a calendar component with Stencil. Styling allows you to drop the result into your iOS application.
-permalink: /2021/06/21/building-a-calendar-with-stencil/
+permalink: /blog/2021/06/21/building-a-calendar-with-stencil/
 tags:
-  - components
-  - stencil  
-  - web
-  - posts
+  - Web
+  - App Dev
+rating: 1
 ---
 
 Take a look at the month view of a calendar and you will see several rows of numbers. The numbers themselves, increasing in value one after the other, are arranged in columns. HTML and CSS provide us with a number of tools to display content in rows and columns. Making a calendar component should be easy, right? Right?

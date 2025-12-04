@@ -2,11 +2,11 @@
 description: When passed as a transferable object (versus structured clone), the reference to the place in memory where the object resides is being handed off.
 feature_image: /img/covers/needle.thread.jpg
 title: Transferable ImageData
-permalink: /2018/10/31/transferable-imagedata/
+permalink: /blog/2018/10/31/transferable-imagedata/
 tags:
-  - image
-  - web
-  - posts
+  - Web
+  - App Dev
+rating: 1
 ---
 
 In a [previous post](/2018/10/23/image-processing-in-a-web-worker/), I covered sending ImageData from a canvas element, to a Web Worker. This allows for threaded image processing without impacting rendering performance of the browser ... mostly.

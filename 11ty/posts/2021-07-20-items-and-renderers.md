@@ -5,12 +5,11 @@ unsplash_author_url: https://unsplash.com/@glenncarstenspeters
 unsplash_photo_url: https://unsplash.com/photos/RLw-UC03Gwc
 title: Items and Renderers
 description: Consider for a moment the humble list control. In this article we take a closer look at building a list control, and the different ways to render content.
-permalink: /2021/07/20/items-and-renderers/
+permalink: /blog/2021/07/20/items-and-renderers/
 tags:
-  - components
-  - stencil  
-  - web
-  - posts
+  - Web
+  - App Dev
+rating: 1
 ---
 
 Consider for a moment the humble list control. It is everywhere. From the social media feed you check in the morning, to your email inbox on the train to work, to the search results for that old western movie you wanted to stream tonight. The pattern of the list control is instantly recognizable, yet it can have so many variations of what it displays. 

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="The intersection of development and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>{{ title }}</title>
+
+  <link rel="icon" type="image/x-icon" href="/img/edit.svg">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/hero.css" />  
+  <link rel="stylesheet" href="/style/post.css" />
+  <link rel="stylesheet" href="/style/footer.css" />
+
+</head>
+<body>
+  
+  {% include 'header.njk' %}
+  {% include 'hero.njk' %}  
+
+  {% block content %}
+  
+    <main>
+
+      <article>
+        {{ content | safe }}
+        <time>Published on {{ page.date | htmlDateString }}</time>
+      </article>
+
+    </main>
+    
+  {% endblock %}        
+
+  {% include 'footer.njk' %}
+
+  <script src="/script/menu.js"></script>
+
+</body>
+</html>

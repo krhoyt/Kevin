@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="The intersection of development and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Functions, Storage, Watson ... Oh, My!</title>
+
+  <link rel="icon" type="image/x-icon" href="/img/edit.svg">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/post.css" />
+  <link rel="stylesheet" href="/style/prism.css" />    
+  <link rel="stylesheet" href="/style/footer.css" />
+
+</head>
+<body>
+  
+  <header id="header">
+
+  <article>
+
+    <kh-follow>
+      <img src="/img/krhoyt.jpg">
+    </kh-follow>
+
+    <nav>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/>
+      </svg>           
+      <select>
+        <option value="/" >Home</option>
+        <option value="/blog" selected>Writing</option>
+        <option value="/about" >About</option>
+        <option value="/events" >Events</option>
+      </select>      
+    </nav>
+
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog">Writing</a></li>    
+      <li><a href="/about">About</a></li>
+      <li><a href="/events">Events</a></li>
+    </ul>  
+
+    <div>
+
+      <!-- Bluesky (not listed)
+      <a href="https://bsky.app/profile/krhoyt.bsky.social" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 11.388c-.906-1.761-3.372-5.044-5.665-6.662c-2.197-1.55-3.034-1.283-3.583-1.033C2.116 3.978 2 4.955 2 5.528c0 .575.315 4.709.52 5.4c.68 2.28 3.094 3.05 5.32 2.803c-3.26.483-6.157 1.67-2.36 5.898c4.178 4.325 5.726-.927 6.52-3.59c.794 2.663 1.708 7.726 6.444 3.59c3.556-3.59.977-5.415-2.283-5.898c2.225.247 4.64-.523 5.319-2.803c.205-.69.52-4.825.52-5.399c0-.575-.116-1.55-.752-1.838c-.549-.248-1.386-.517-3.583 1.033c-2.293 1.621-4.76 4.904-5.665 6.664"/>
+        </svg>
+      </a>
+      -->
+
+      <!-- Twitter (not listed)
+      <a href="https://x.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" fill-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->      
+
+      <!-- GitHub -->
+      <a href="https://github.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+        </svg>
+      </a>      
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/channel/UCSFeFhtLBuzU2UMs7oOL54A" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/>
+        </svg>
+      </a>          
+
+      <!-- RSS feed -->
+      <a href="/feed.xml" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19t.588-1.412T5 17t1.413.588T7 19t-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1T9.138 8.413T4.6 7.1q-.65-.075-1.125-.512T3 5.5t.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337t3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35t-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062t2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/>
+        </svg>
+      </a>      
+
+      <!-- Instagram (not listed)
+      <a href="https://www.instagram.com/parkerkrhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 14">
+          <path fill="currentColor" fill-rule="evenodd" d="M3.39.787A2.604 2.604 0 0 0 .786 3.39v6.944a2.604 2.604 0 0 0 2.604 2.604h6.944a2.604 2.604 0 0 0 2.603-2.604V3.39A2.604 2.604 0 0 0 10.334.787zm7.693 2.607a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m-4.22 1.388a2.08 2.08 0 1 0 0 4.16a2.08 2.08 0 0 0 0-4.16m-3.081 2.08a3.08 3.08 0 1 1 6.16 0a3.08 3.08 0 0 1-6.16 0" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->     
+
+    </div>
+
+  </article>
+
+</header>
+
+
+  
+  
+    <main>
+
+      <div>
+
+        <img src="/img/covers/whisk.jpg" alt="Functions, Storage, Watson ... Oh, My!">
+
+        
+
+      </div>
+
+      <article>
+
+        <h1>Functions, Storage, Watson ... Oh, My!</h1>
+
+        <time>Apr 8, 2019 · 10 min read</time>
+
+        
+          <aside>
+            
+              <p>App Dev</p>
+            
+              <p>AI/ML</p>
+            
+              <p>Data</p>
+            
+          </aside>
+                
+        
+        <p>I have a love-hate relationship with serverless. My style of development definitely trends towards dropping a function in the cloud and calling it done. But the tooling, integration, and best practices are still maturing. It is however, fun to watch the technology evolve. Recently <a href="https://openwhisk.apache.org/">Apache OpenWhisk</a> (<a href="https://www.ibm.com/cloud/functions">IBM Cloud Functions</a>) released a beta feature around triggers for <a href="https://www.ibm.com/cloud/object-storage">Cloud Object Storage</a>, and I figured I would take it for a spin.</p>
+<blockquote>
+<p>Some IBM Cloud Functions commands can get very lengthy - especially if you have several parameters you need to set. Shell scripts are your friend. I tend to have a few scattered around every function for creating and updating the associated actions, sequences, etc. Do not forget to &quot;chmod +x create-action.sh&quot;. Here is an example of what using the CLI looks like from a shell script. This is a single command. I have seen scripts from other developers that are respectable applications unto themselves.</p>
+</blockquote>
+<pre class="language-bash"><code class="language-bash">ibmcloud fn trigger create store.this <span class="token punctuation">\</span>
+  <span class="token parameter variable">--feed</span> /whisk.system/cos-experimental/changes <span class="token punctuation">\</span>
+  <span class="token parameter variable">--param</span> apikey <span class="token string">"_YOUR_API_KEY_"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">--param</span> bucket <span class="token string">"show-and-tell"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">--param</span> endpoint <span class="token string">"s3.us-east.cloud-object-storage.appdomain.cloud"</span></code></pre>
+<h2>Trigger</h2>
+<p>Triggers allow Cloud Functions to be invoked when something happens on an external system. Cloud Functions provides built-in triggers for Cloudant (<a href="http://couchdb.apache.org/">CouchDB</a>), <a href="https://www.ibm.com/cloud/message-hub">MessageHub</a> (<a href="https://kafka.apache.org/">Apache Kafka</a>), GitHub, and more. Did a document just get added to your database? Invoke an action. Did a message just get placed in a queue? Invoke an action. New code committed? Invoke an action.</p>
+<p>And now, did a file get uploaded to storage? Invoke an action!</p>
+<h2>Storage</h2>
+<p>My <a href="__GHOST_URL__/2019/01/23/upload-files-to/">recent</a><a href="__GHOST_URL__/2019/01/30/serverless-download-from-object-storage/">blog</a><a href="__GHOST_URL__/2019/02/06/serverless-storage-redux/">posts</a> have been around Cloud Object Storage and Cloud Functions, so this particular trigger definitely piqued my interest. As soon as I heard about the feature, a use-case came to mind. I want to upload a file to storage, have a Cloud Function take the file and send it to <a href="https://www.ibm.com/watson/services/visual-recognition">Watson Visual Recognition</a> for classification, and finally put the results in a Cloudant database.</p>
+<h2>Function</h2>
+<p>The <a href="https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-cloud_object_storage#cloud_object_storage">documentation</a> for this feature walks through setting up all the necessary parts. The first step is to create the trigger. The documentation walks you through some additional &quot;binding&quot; steps, but I just went straight to the source. After all, it is not that often you need to adjust the actual trigger itself.</p>
+<pre class="language-bash"><code class="language-bash">ibmcloud fn trigger create store.this 
+  <span class="token parameter variable">--feed</span> /whisk.system/cos-experimental/changes 
+  <span class="token parameter variable">--param</span> apikey _MY_API_KEY_ 
+  <span class="token parameter variable">--param</span> bucket u-betta-recognize 
+  <span class="token parameter variable">--param</span> endpoint s3.us-east.cloud-object-storage.appdomain.cloud</code></pre>
+<p>Next up is to create the action/function that will get invoked when the trigger runs. The trigger is invoke for a variety of reasons - you added a file is the one I am interested in, but it could also be for being deleted. When the function gets called, various details about the Cloud Object Storage are passed as parameters, such as the key (object name) of the resource that changed, and the bucket in which that object resides.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span> <span class="token parameter">params</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> params<span class="token punctuation">.</span>status <span class="token operator">!==</span> <span class="token string">'added'</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// Here we go</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Cloud Functions has an Object Storage library that comes with it, but as I have written about before, I rather prefer the HTTP/REST interface. The first step in interacting with the REST interface is in getting an authorization token. Where parameters are not provided by the trigger, I prefer to define them using the web-based tooling, and label them in uppercase.</p>
+<pre class="language-js"><code class="language-js"><span class="token function">rp</span><span class="token punctuation">(</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'https://iam.ng.bluemix.net/oidc/token'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">form</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">apikey</span><span class="token operator">:</span> params<span class="token punctuation">.</span><span class="token constant">COS_API_KEY</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">response_type</span><span class="token operator">:</span> <span class="token string">'cloud_iam'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">grant_type</span><span class="token operator">:</span> <span class="token string">'urn:ibm:params:oauth:grant-type:apikey'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">json</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>With the token retrieved, I can now go for the file itself. There is a choice to make here. Theoretically, you should be able to get a public URL to a resource on Cloud Object Storage. This is one of the ways we can call Watson - with a URL. However, in this case, I am going to download the file itself to the running function - and keep it in memory.</p>
+<pre class="language-js"><code class="language-js"><span class="token function">rp</span><span class="token punctuation">(</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>params<span class="token punctuation">.</span>endpoint<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>params<span class="token punctuation">.</span>bucket<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>params<span class="token punctuation">.</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'GET'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">headers</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">Authorization</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>authorization<span class="token punctuation">.</span>token_type<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>authorization<span class="token punctuation">.</span>access_token<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    <span class="token string-property property">'ibm-service-instance-id'</span><span class="token operator">:</span> params<span class="token punctuation">.</span><span class="token constant">COS_SERVICE_INSTANCE</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">encoding</span><span class="token operator">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>From there I am going to send the file bytes to Watson for classification. If you are using JavaScript and request/request-promise as I am, then pay particular attention about how the file gets passed. The request documentation shows putting a Buffer, which is the result of downloading the file, directly onto the form. However, you have to use the method that specifies a file name, otherwise the file contents will not be passed.</p>
+<pre class="language-js"><code class="language-js"><span class="token function">rp</span><span class="token punctuation">(</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'https://gateway.watsonplatform.net/visual-recognition/api/v3/classify'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">auth</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">user</span><span class="token operator">:</span> params<span class="token punctuation">.</span><span class="token constant">WATSON_USERNAME</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">pass</span><span class="token operator">:</span> params<span class="token punctuation">.</span><span class="token constant">WATSON_PASSWORD</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">formData</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">images_file</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">value</span><span class="token operator">:</span> contents<span class="token punctuation">,</span>
+      <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">filename</span><span class="token operator">:</span> params<span class="token punctuation">.</span>key
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">qs</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">version</span><span class="token operator">:</span> <span class="token string">'2018-03-19'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">json</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Last but not least, take the results of the Visual Recognition classification, and put it into a Cloudant database. Of course any database could be used, but Cloudant lends itself to this type of scenario. Being REST-based itself, there are no additional dependencies. Cloudant views are also well suited to taking a bunch of specific, nested, data, like what is returned from Watson, and distill it down to something else.</p>
+<pre class="language-js"><code class="language-js">classification<span class="token punctuation">.</span>bucket <span class="token operator">=</span> params<span class="token punctuation">.</span>bucket<span class="token punctuation">;</span>
+classification<span class="token punctuation">.</span>key <span class="token operator">=</span> params<span class="token punctuation">.</span>key<span class="token punctuation">;</span>
+classification<span class="token punctuation">.</span>endpoint <span class="token operator">=</span> params<span class="token punctuation">.</span>endpoint<span class="token punctuation">;</span>
+      
+<span class="token function">rp</span><span class="token punctuation">(</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>params<span class="token punctuation">.</span><span class="token constant">CLOUDANT_ACCOUNT</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.cloudant.com/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>params<span class="token punctuation">.</span><span class="token constant">CLOUDANT_DATABASE</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">auth</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">user</span><span class="token operator">:</span> params<span class="token punctuation">.</span><span class="token constant">CLOUDANT_USERNAME</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">pass</span><span class="token operator">:</span> params<span class="token punctuation">.</span><span class="token constant">CLOUDANT_PASSWORD</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">json</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">body</span><span class="token operator">:</span> classification
+<span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Before I put the classification results into the database, I also put some additional information about the Object Storage changes. Mostly, details I thought might be helpful in creating views down the road. &quot;What are the top classifications for a given bucket?&quot; type of questions. Creating a document in Cloudant returns with an ID, which you can return at the end of your function if you want.</p>
+<pre class="language-bash"><code class="language-bash">ibmcloud fn action create recognize recognize.js</code></pre>
+<h2>Rule</h2>
+<p>We create the trigger (store.this). We created the action to be called by the trigger (recognize). Now we just need to glue the two together using a rule. With the trigger and the rule defined, you can iterate on the function as often as you need, without have to touch either the trigger or the rule.</p>
+<pre class="language-bash"><code class="language-bash">ibmcloud fn rule create store.recognize store.this recognize</code></pre>
+<p>If you change the bucket you want to watch, the storage location, or the frequency of how often the trigger looks for changes (default of once per minute), then you will need to update your trigger. However, the rule and the action can be left untouched.</p>
+<h2>Next Steps</h2>
+<p>In days of old, this type of chain of events in JavaScript would be callback hell. However, with request-promise being included as part of Cloud Functions, it becomes a chain of &quot;then&quot; statements, making the code easier to maintain. If you want to specify a modern version of Node.js for Cloud Functions to use, then you can even use async/await. I implemented both, and have put them in a <a href="https://gist.github.com/krhoyt/50709e6c7322df57f744ecc3bee475ce">GitHub Gist</a>.</p>
+<p>What is more interesting is the function calls made within this Cloud Function/action. Each of the various steps above could be Cloud Functions themselves, and then a sequence could be made that ties them all together. How granular is too granular? I view all the function calls made to be a part of a single body of work, and in that sense consider it a single action. Do you have an opinion on the matter?</p>
+<p>And that brings us full circle to the as of yet maturing best practices. Exciting times ahead.</p>
+<div id="d_YpimHwHeM" class="eleventy-plugin-youtube-embed" style="position:relative;width:100%;padding-top: 56.25%;"><iframe style="position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%;" width="100%" height="100%" frameborder="0" title="Embedded YouTube video" src="https://www.youtube-nocookie.com/embed/d_YpimHwHeM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+
+        
+      </article>
+
+    </main>
+
+          
+
+  <footer id="footer">
+
+  <p>
+    Made with ❤️ by Kevin Hoyt &copy; 2025 · Published with <a href="https://www.11ty.dev">Eleventy</a>
+  </p>
+  
+</footer>
+
+
+  <script src="/script/menu.js"></script>
+
+</body>
+</html>

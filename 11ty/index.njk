@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="The intersection of development and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Kevin Hoyt</title>
+
+  <link rel="icon" type="image/x-icon" href="/img/edit.svg">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/hero.css" />  
+  <link rel="stylesheet" href="/style/skills.css" />  
+  <link rel="stylesheet" href="/style/writing.css" />  
+  <link rel="stylesheet" href="/style/projects.css" />    
+  <link rel="stylesheet" href="/style/contact.css" />      
+  <link rel="stylesheet" href="/style/footer.css" />  
+
+</head>
+<body>
+
+  {% set section = 'Kevin Hoyt' %}
+  {% set quote = 'The intersection of development and design.' %}
+  {% set description = 'Full-stack technologist and lifelong maker who has spent decades building software, exploring data, tinkering with hardware, and helping developers succeed. My work spans UX/UI, web standards, application development, data analytics, AI/ML, and practical problem-solving — and I still love learning something new every day.' %}
+
+  {% include 'header.njk' %}
+  {% include 'hero.njk' %}
+  {% include 'skills.njk' %}  
+  {% include 'writing.njk' %}
+  {% include 'projects.njk' %}  
+  {% include 'contact.njk' %}  
+  {% include 'footer.njk' %}
+
+  <script src="/script/carousel.js" type="module"></script>  
+  <script src="/script/follow.js" type="module"></script>
+
+  <script src="/script/contact.js"></script>
+  <script src="/script/menu.js"></script>
+
+</body>
+</html>

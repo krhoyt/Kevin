@@ -5,12 +5,11 @@ unsplash_author_url: https://unsplash.com/@davidclode
 unsplash_photo_url: https://unsplash.com/photos/5uU8HSpfwkI
 title: AWS Transcribe with Python
 description: Upload an audio file to S3, manage the details of an AWS Transcribe job, and download the results. Include code to clean up after yourself if you are so inclined.
-permalink: /2022/12/02/transcribe-with-python/
+permalink: /blog/2022/12/02/transcribe-with-python/
 tags:
-  - aws
-  - transcribe
-  - python
-  - posts
+  - App Dev
+  - AI/ML
+rating: 98
 ---
 
 Amazon Web Services (AWS) has so many services. A stroll through the catalog will likely yield something useful for just about any project. Sometimes our projects pick us. This week a customer asked for an example of using [AWS Transcribe](https://aws.amazon.com/transcribe/) with Python. Having used other transcription services, I could not pass up the challenge. What follows is my approach to implementing a solution.

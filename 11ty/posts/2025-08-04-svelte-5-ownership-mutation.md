@@ -5,14 +5,11 @@ unsplash_author: Robert Zunikoff
 unsplash_author_url: https://unsplash.com/@rzunikoff
 unsplash_photo_url: https://unsplash.com/photos/closeup-photo-of-brown-rope--yz22gsqAH0
 title: Svelte 5 Ownership Mutation
-permalink: /2025/08/04/svelte-5-ownership-mutation/
+permalink: /blog/2025/08/04/svelte-5-ownership-mutation/
 tags:
-  - svelte
-  - data
-  - binding
-  - owner
-  - mutation
-  - posts
+  - Web
+  - App Dev
+rating: 1
 ---
 
 One of my favorite aspects of [Svelte](https://svelte.dev/) is that it adds robust data binding to the Web, and then gets out of the way. Do not get me wrong, data binding with [Observable](https://github.com/tc39/proposal-observable) and [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) added to the standard is great. I know that is what Svelte is using under the hood - which makes me happy - but the syntactic sugar afforded by the Svelte compiler is pure joy. Until it is not.

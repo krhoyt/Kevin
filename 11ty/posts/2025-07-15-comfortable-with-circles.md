@@ -5,11 +5,11 @@ unsplash_author_url: https://unsplash.com/@lceusebio
 unsplash_photo_url: https://unsplash.com/photos/man-stainding-on-black-concrete-floor-casting-shadow-5SUt9q8jQrQ
 title: Getting Comfortable with Circles
 description: In this post, we put aside the charting libraries, dive into some circle math, and discover that building lightweight custom charts is easier than you think.
-permalink: /2025/07/15/comfort-w-circles/
+permalink: /blog/2025/07/15/comfort-w-circles/
 tags:
-  - visualization
-  - tutorial
-  - posts
+  - Web
+  - Data
+rating: 97
 ---
 
 When is the last time you installed a module or library because you thought the task was too hard (or time consuming) to tackle yourself? On the front end, this scenario can quickly lead to a resulting application that is considerably larger than it needs to be. You might be surprised to discover that some of the tasks that you might think of as hard, such as charts, animation, and date handling, can actually be pretty straightforward - and have a big impact on the size and performance of your application.

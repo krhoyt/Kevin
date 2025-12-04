@@ -1,12 +1,14 @@
 ---
 feature_image: /img/covers/skyhawk.n5327j.jpg
-layout: post.njk
-title: About Me
+layout: section.njk
+title: "About · Kevin Hoyt"
+section: "Kevin Hoyt · About"
+quote: "A journey through development and design."
 ---
 
 ### TL;DR
 
-**Kevin Hoyt** is a **Senior Documentation Manager** with **Amazon Web Services**, focused on AI/ML functionality.
+**Kevin Hoyt** was most recently **Senior Documentation Manager** with **Amazon Web Services**, focused on AI/ML functionality. He is currently open to contract and full-time remote opportunities.
 
 ### Backstory
 

@@ -2,11 +2,11 @@
 description: Web Workers give us a separate thread but they come with a trade-off - no access to the DOM. In the case of image processing however, this does not matter.
 feature_image: /img/covers/needle.thread.jpg
 title: Image Processing in a Web Worker
-permalink: /2018/10/23/image-processing-in-a-web-worker/
+permalink: /blog/2018/10/23/image-processing-in-a-web-worker/
 tags:
-  - image
-  - web
-  - posts
+  - Web
+  - App Dev
+rating: 1
 ---
 
 WebRTC (Real-Time Communication) has many great uses, much of which is still relatively untapped. One of my favorite side effects of WebRTC arriving in browsers is the ability to put a live web camera feed into a video element. Once those two are paired, you can start performing real-time image processing on the content via a canvas element and the ImageData object.

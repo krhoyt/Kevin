@@ -1,0 +1,98 @@
+#projects {
+  align-items: center;
+  background: #f7f7f7;  
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px 0 48px 0;
+  width: 100%;
+}
+
+#projects h2 {
+  color: #1a1a1a;
+  cursor: default;
+  font-family: Roboto, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 32px;
+  margin: 16px 0 16px 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;          
+}
+
+#projects kh-carousel {
+  max-width: 900px;
+  width: 80%;
+}
+
+#projects kh-carousel div {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+#projects kh-carousel div[hidden] {
+  display: none;
+}  
+
+#projects kh-carousel a.visit {
+  color: #3B82F6;
+  cursor: pointer;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 8px 0 16px 0;
+  padding: 0 16px 0 16px;
+  text-decoration: none;
+}
+
+#projects kh-carousel a.visit:hover {
+  color: #2563EB;   
+}
+
+#projects kh-carousel h3 {
+  color: #1a1a1a;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 8px 0 8px 0;
+  padding: 0 16px 0 16px;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;  
+  -webkit-font-smoothing: antialiased;               
+}
+
+#projects kh-carousel img {
+  width: 100%;
+}
+
+#projects kh-carousel p {
+  color: #1a1a1a;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0 16px 0 16px;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;            
+}
+
+#projects kh-carousel p span {
+  color: #94A3B8; 
+  display: inline;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;  
+  -webkit-font-smoothing: antialiased;     
+}   
+
+#projects kh-carousel p span:nth-child( odd ) {
+  font-weight: 600;
+}

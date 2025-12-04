@@ -2,12 +2,11 @@
 description: In previous posts you can read about uploading and download a file with IBM Cloud Functions. In those posts I use an SDK. This time we look at the REST API.
 feature_image: /img/covers/whisk.jpg
 title: Serverless Storage Redux
-permalink: /2019/02/06/serverless-storage-redux/
+permalink: /blog/2019/02/06/serverless-storage-redux/
 tags:
-  - cloud
-  - serverless
-  - storage
-  - posts
+  - App Dev
+  - Data
+rating: 1
 ---
 
 In my previous two posts I wrote about upload a file to [IBM Cloud Functions](https://console.bluemix.net/openwhisk/) (serverless), and then how to download a file from [IBM Cloud Object Storage](https://www.ibm.com/cloud/object-storage) (COS) using serverless. Both of these posts used the the provided [IBM COS SDK for Node.js](https://github.com/ibm/ibm-cos-sdk-js). In this post I will rehash the upload and download process, but using the COS REST API.
