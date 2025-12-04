@@ -96,3 +96,9 @@
 #projects kh-carousel p span:nth-child( odd ) {
   font-weight: 600;
 }
+
+@media only screen and ( max-width: 800px ) {    
+  #projects kh-carousel {
+    width: 90%;
+  }
+}
