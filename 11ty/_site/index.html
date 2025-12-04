@@ -360,10 +360,16 @@
     IoT, and developer experience.
   </p>
 
-  <form data-netlify="true">
+  <form data-netlify="true" netlify-honeypot="bot-field">
+
+    <!-- Honeypot -->
+    <div class="field honeypot">
+      <label for="pot">Do not fill this out if you are human</label>
+      <input id="pot" name="pot" type="text">      
+    </div>
 
     <div class="field">
-      <label for="name">Name</label>
+      <label for="poc">Name</label>
       <input type="text" id="poc" name="name" required>
     </div>
 
