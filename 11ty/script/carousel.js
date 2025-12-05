@@ -212,7 +212,6 @@ export default class HoytCarousel extends HTMLElement {
 
   onDotClick( evt ) {
     const index = parseInt( evt.currentTarget.getAttribute( 'data-index' ) );
-    console.log( 'Dot: ' + index );
     if( index !== this.selectedIndex ) {
       this.selectedIndex = index;
     }
