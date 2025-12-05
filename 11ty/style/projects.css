@@ -37,86 +37,88 @@
   display: none;
 }  
 
-#projects kh-carousel a {
-  color: #1a1a1a;
-  text-decoration: none;
-  width: 100%;
-}
-
-/*
-#projects kh-carousel a.visit {
-  color: #3B82F6;
-  cursor: pointer;
-  font-family: Roboto, sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  margin: 2px 0 16px 0;
-  padding: 0 16px 0 16px;
-  text-decoration: none;
-}
-
-#projects kh-carousel a.visit:hover {
-  color: #2563EB;   
-}
-*/
-
 #projects kh-carousel h3 {
   color: #1a1a1a;
   font-family: Roboto, sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 24px;
-  margin: 8px 0 8px 0;
+  margin: 16px 0 8px 0;
   padding: 0 16px 0 16px;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;  
   -webkit-font-smoothing: antialiased;               
 }
 
+#projects kh-carousel h3 a {
+  align-items: center;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  text-decoration: none;
+}
+
+#projects kh-carousel h3 a:hover {
+  color: #3B82F6;
+}
+
 #projects kh-carousel img {
+  cursor: pointer;
   height: 450px;
   object-fit: cover;
   width: 100%;
 }
 
-#projects kh-carousel p:first-of-type {
-  color: #1a1a1a;
+#projects kh-carousel p {
+  cursor: default;
   font-family: Roboto, sans-serif;
-  font-size: 16px;
   line-height: 24px;
-  margin: 0 0 16px 0;
+  margin: 0 0 4px 0;
   padding: 0 16px 0 16px;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;            
 }
 
-#projects kh-carousel p:first-of-type span {
-  color: #94A3B8;   
+#projects kh-carousel p:first-of-type {
+  color: #1a1a1a;
+  font-size: 16px;
+
+  display: -webkit-box;  
+  line-clamp: 5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;  
 }
 
-/*
 #projects kh-carousel p:last-of-type {
   color: #94A3B8; 
-  display: inline;
-  font-family: Roboto, sans-serif;
   font-size: 14px;
-  font-weight: 400;
-  line-height: 24px;
-  margin: 4px 0 0 16px;
-  padding: 0;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;  
-  -webkit-font-smoothing: antialiased;     
+  margin: 0 0 16px 0;
+  padding: 0 0 0 16px;
 } 
-
-#projects kh-carousel p:last-of-type span {
-  font-weight: 600;
-}
-*/  
 
 @media only screen and ( max-width: 800px ) {    
   #projects kh-carousel {
     width: 90%;
   }
+}
+
+@media only screen and ( max-width: 480px ) {    
+  #projects h2 {
+    margin: 16px 0 0 0;
+  }
+
+  #projects kh-carousel img {
+    height: 320px;
+  }
+}
+
+@media only screen and ( max-width: 430px ) {    
+  #projects kh-carousel img {
+    height: 240px;
+  }  
 }

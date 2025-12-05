@@ -65,26 +65,59 @@ export default class HoytCarousel extends HTMLElement {
         footer {
           display: flex;
           flex-direction: row;
-          gap: 8px;  
+          gap: 8px;
           justify-content: center;
         }
 
         footer button {
+          align-items: center;
           appearance: none;
-          background: #E4E4E7;
+          background: none;
           border: none;
-          border-radius: 10px;
+          box-sizing: border-box;
+          color: #E4E4E7;
           cursor: pointer;
-          height: 10px;
-          transition: 
-            background 200ms ease, 
+          display: flex;
+          justify-content: center;
+          margin: 0;
+          outline: none;
+          padding: 0;
+          transition:
+            color 200ms ease,
             transform 200ms ease;  
+        }
+
+        footer button svg {
+          height: 10px;
           width: 10px;
         }
 
         footer button.active {
-          background: #3B82F6;
+          color: #3B82F6;
           transform: scale( 1.2 );
+        }
+
+        @media only screen and ( max-width: 480px ) {      
+          :host {
+            gap: 16px;
+          }
+          
+          section button {
+            display: none;
+          }
+
+          footer {
+            gap: 0;
+          }
+
+          footer button svg {
+            height: 20px;
+            width: 20px;
+          }          
+
+          footer button {
+            padding: 10px;
+          }
         }
       </style>
       <section>
@@ -115,23 +148,9 @@ export default class HoytCarousel extends HTMLElement {
     // Elements
     this.$footer = this.shadowRoot.querySelector( 'footer' );
     this.$next = this.shadowRoot.querySelector( 'section button:last-of-type' );
-    this.$next.addEventListener( 'click', () => {
-      const index = this.selectedIndex === null ? 0 : this.selectedIndex;
-      if( index === this.children.length - 1 ) {
-        this.selectedIndex = 0;
-      } else {
-        this.selectedIndex = index + 1;
-      }
-    } );    
+    this.$next.addEventListener( 'click', () => this.next() );    
     this.$previous = this.shadowRoot.querySelector( 'section button:first-of-type' );
-    this.$previous.addEventListener( 'click', () => {
-      const index = this.selectedIndex === null ? 0 : this.selectedIndex;
-      if( index === 0 ) {
-        this.selectedIndex = this.children.length - 1;
-      } else {
-        this.selectedIndex = index - 1;
-      }
-    } );
+    this.$previous.addEventListener( 'click', () => this.previous() );
     this.$slot = this.shadowRoot.querySelector( 'slot' );
     this.$slot.addEventListener( 'slotchange', () => {
       const index = this.selectedIndex === null ? 0 : this.selectedIndex;
@@ -148,6 +167,16 @@ export default class HoytCarousel extends HTMLElement {
         const button = document.createElement( 'button' );
         button.addEventListener( 'click', this.onDotClick );
         button.type = 'button';
+
+        const vector = document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' );
+        vector.setAttributeNS( null, 'viewBox', '0 0 24 24' );
+
+        const icon = document.createElementNS( 'http://www.w3.org/2000/svg', 'path' );
+        icon.setAttributeNS( null, 'd', 'M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22' );
+        icon.setAttributeNS( null, 'fill', 'currentColor' );
+        vector.appendChild( icon );
+
+        button.appendChild( vector );
         this.$footer.appendChild( button );
       }
 
@@ -161,6 +190,24 @@ export default class HoytCarousel extends HTMLElement {
         }
       }
     } );
+  }
+
+  next() {
+    const index = this.selectedIndex === null ? 0 : this.selectedIndex;
+    if( index === this.children.length - 1 ) {
+      this.selectedIndex = 0;
+    } else {
+      this.selectedIndex = index + 1;
+    }
+  }
+
+  previous() {
+    const index = this.selectedIndex === null ? 0 : this.selectedIndex;
+    if( index === 0 ) {
+      this.selectedIndex = this.children.length - 1;
+    } else {
+      this.selectedIndex = index - 1;
+    }
   }
 
   onDotClick( evt ) {
