@@ -37,13 +37,20 @@
   display: none;
 }  
 
+#projects kh-carousel a {
+  color: #1a1a1a;
+  text-decoration: none;
+  width: 100%;
+}
+
+/*
 #projects kh-carousel a.visit {
   color: #3B82F6;
   cursor: pointer;
   font-family: Roboto, sans-serif;
   font-size: 14px;
   line-height: 24px;
-  margin: 8px 0 16px 0;
+  margin: 2px 0 16px 0;
   padding: 0 16px 0 16px;
   text-decoration: none;
 }
@@ -51,6 +58,7 @@
 #projects kh-carousel a.visit:hover {
   color: #2563EB;   
 }
+*/
 
 #projects kh-carousel h3 {
   color: #1a1a1a;
@@ -71,33 +79,41 @@
   width: 100%;
 }
 
-#projects kh-carousel p {
+#projects kh-carousel p:first-of-type {
   color: #1a1a1a;
   font-family: Roboto, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  margin: 0;
+  margin: 0 0 16px 0;
   padding: 0 16px 0 16px;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;            
 }
 
-#projects kh-carousel p span {
+#projects kh-carousel p:first-of-type span {
+  color: #94A3B8;   
+}
+
+/*
+#projects kh-carousel p:last-of-type {
   color: #94A3B8; 
   display: inline;
   font-family: Roboto, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
+  margin: 4px 0 0 16px;
+  padding: 0;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;  
   -webkit-font-smoothing: antialiased;     
-}   
+} 
 
-#projects kh-carousel p span:nth-child( odd ) {
+#projects kh-carousel p:last-of-type span {
   font-weight: 600;
 }
+*/  
 
 @media only screen and ( max-width: 800px ) {    
   #projects kh-carousel {
