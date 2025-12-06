@@ -1,7 +1,8 @@
 # Kevin Hoyt
 
-[parkerkrhoyt@gmail.com](parkerkrhoyt@gmail.com) • 303-522-3131  
-[kevinhoyt.com](https://kevinhoyt.com) • [LinkedIn](https://www.linkedin.com/in/parkerkrhoyt/) • [GitHub](https://github.com/krhoyt) • [YouTube](https://www.youtube.com/@krhoyt) • [X](https://x.com/krhoyt)    
+📧 [parkerkrhoyt@gmail.com](parkerkrhoyt@gmail.com) • 📱 303-522-3131  
+🌐 [kevinhoyt.com](https://kevinhoyt.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/parkerkrhoyt/) • [GitHub](https://github.com/krhoyt) • [YouTube](https://www.youtube.com/@krhoyt) • [X](https://x.com/krhoyt)    
 
 
 ## Summary
@@ -115,3 +116,9 @@ Recent work includes leading AI/ML documentation for AWS, building generative-AI
 **DeVry University - Kansas City, MO**  
 B.S. Computer Information Systems (1998)  
 *Magna Cum Laude*
+
+## Relevant Background
+
+- U.S. Army Veteran (10th Mountain Division), with early experience in logistics and operational reporting.
+- Nearly 25 years of experience working with fully remote, globally-distributed teams
+- Long-standing practitioner and educator in Web standards, IoT, and developer tooling, including hands-on workshops from K–12 through enterprise audiences.
