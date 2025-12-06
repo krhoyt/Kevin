@@ -22,12 +22,10 @@ function onSwipe() {
 }
 
 function onTouchStart( evt ) {
-  evt.preventDefault();
   start = evt.changedTouches[0].screenX;
 }
 
 function onTouchEnd( evt ) {
-  evt.preventDefault();
   end = evt.changedTouches[0].screenX;
   onSwipe();
 }
