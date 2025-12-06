@@ -63,7 +63,7 @@ export default class HoytCarousel extends HTMLElement {
         }
 
         footer {
-          display: flex;
+          display: none;
           flex-direction: row;
           gap: 8px;
           justify-content: center;
@@ -101,6 +101,10 @@ export default class HoytCarousel extends HTMLElement {
           :host {
             gap: 16px;
           }
+
+          footer {
+            display: flex;
+          }
           
           section button {
             display: none;
@@ -135,7 +139,7 @@ export default class HoytCarousel extends HTMLElement {
           </svg>      
         </button>
       </section>      
-      <footer></footer>
+      <footer part="footer"></footer>
     `;
     
     // Events

@@ -1,0 +1,254 @@
+/*
+ * 1112
+ * 1024
+ * 800
+ * 768
+ * 640
+ * 600
+ * 480
+ * 430
+ * 330
+ */
+
+
+Developer Enablement: Documentation, samples, developer tooling, education, and DX strategy.
+Web Architecture: Modern UI/UX, Web Components, and standards-based client architecture.
+Application Development: APIs, backend services, automation tools, and production-ready systems.
+Data & Analytics: Database design, real-time telemetry, data pipelines, and insight generation.
+AI & Machine Learning: Model training, computer vision, inference pipelines, and applied ML tooling.
+IoT & Embedded Systems: Sensor design, device integration, and real-time data flows.
+
+
+Header – name, catch phrase, socials
+
+Hero Summary – very short bio + CTA
+
+Skills Snapshot – scannable capabilities
+
+Featured Blog Posts – ~6 posts showing breadth
+
+Featured Projects – with live links / demos
+
+Testimonials (optional)
+
+Metrics / Achievements (optional)
+
+Contact Section – polished and easy to find
+
+
+- Getting Comfortable with Circles
+- Building a Bar Chart with Stencil
+- Internal GenAI tooling
+- AWS Transcribe with Python
+- Real-Time Quadcopter Telemetry
+- Developer Advocacy and the Project Triangle
+
+- Warp Test Drive: AI is coming for your terminal. I spent an afternoon testing Warp's Agentic Development. The results were surprising, humbling, and kind of inspiring.
+
+- Svelte 5 Ownership Mutation: Svelte data binding is a joy, but you can work yourself into a corner if you are not careful. Take a closer look at some edge cases to stay on track.
+
+- Getting Comfortable with Circles: In this post, we put aside the charting libraries, dive into some circle math, and discover that building lightweight custom charts is easier than you think.
+
+- Four D Time Management: Time management is a key "soft" skill for Information Technology professionals. This heavily distilled version of Getting Things Done will help you master your time, and lower your stress.
+
+- AWS Transcribe with Python: Upload an audio file to S3, manage the details of an AWS Transcribe job, and download the results. Include code to clean up after yourself if you are so inclined.
+
+- Three P Weekly Status Report: My term for agile status reports. These weekly reports make a manager's job much easier - and setup employees for success. Let us take a look at how I structure and run my weekly reports.
+
+- Reasons to Stencil: Congratulations, you have decided to use one of the many libraries and tools available for building modern web interfaces. Now just do not lock yourself into that decision.
+
+- Items and Renderers: Consider for a moment the humble list control. In this article we take a closer look at building a list control, and the different ways to render content.
+
+- Building a Bar Chart with Stencil: Every once in a while you need to roll your own. With a splash of SVG and helping hand from Stencil, you can create a custom chart as a web component.
+
+- The Secret Life of Tabs: As user interfaces (UI) go, tabs are a particularly useful pattern. In this example we will look at the mechanics of building a tab component using Stencil.
+
+- Building a Clock with Stencil: Building a clock can reveal a lot about how a platform works. In this walkthrough we will take a look at building a clock component using Stencil.
+
+- Building a Calendar with Stencil: Learn about calculating content before rendering while building a calendar component with Stencil. Styling allows you to drop the result into your iOS application.
+
+- Functions, Storage, Watson ... Oh, My!: Recently Apache OpenWhisk (IBM Cloud Functions) released a beta feature around triggers for Cloud Object Storage, and I figured I would take it for a spin.
+
+- IBM and the Open Organization: A review of Red Hat CEO, Jim Whitehurst's book, The Open Organization, wherein I attempt to distill the why, how, and what contents into my favorite quotes.
+
+- Serverless Storage Redux: In previous posts you can read about uploading and download a file with IBM Cloud Functions. In those posts I use an SDK. This time we look at the REST API.
+
+- Serverless Download from Object Storage: In a previous post, I walked through how to upload a file to an IBM Cloud Function. In this post, we will get it back out, and download it to an HTTP client.
+
+- Serverless Upload to Object Storage: Uploading a file to an IBM Cloud Function takes some consideration. In this post we combine IBM Cloud Object Storage with Web Actions for robust storage.
+
+- What I Install: I have been a Mac user for some time, and really committed to the platform with the release of Mac OS X. Here is what I installed, when I moved to Mojave.
+
+- Transferable ImageData: When passed as a transferable object (versus structured clone), the reference to the place in memory where the object resides is being handed off.
+
+- Image Processing in a Web Worker: Web Workers give us a separate thread but they come with a trade-off - no access to the DOM. In the case of image processing however, this does not matter.
+
+- Teaching Watson to See My Garage: Svelte data binding is a joy, but you can work yourself into a corner if you are not careful. Take a closer look at some edge cases to stay on track.
+
+- Advocate: Getting Started 
+
+- Advocating Conversations
+
+- Developer Advocacy and the Project Triangle
+
+- Developer Advocacy Questions
+
+- Node.js for Java EE Developers
+
+- Tips for IoT in the Cloud(ant)
+
+- Real-Time Quadcopter Telemetry
+
+- Tic Tac Toe Light
+
+- IoT and the New Web
+
+- WidgetX and the Old Web
+
+- WidgetY and the New Web
+
+- Circuit Friday: Thermistor
+
+- Messaging and the New Web
+
+- Arduino Yun to Parse.com
+
+- Circuit Friday: DHT22
+
+- Electric Imp to Parse.com
+
+- Spark Core to Parse.com
+
+- Tessel to Parse.com
+
+- XBee Mesh Networking
+
+- Web Chat Application
+
+- AMQP Breakdown
+
+- Java Chat Application
+
+- Android Chat Application
+
+- First Steps with Intel Edison
+
+- Real-Time Smart Buildings
+
+- Real-Time Engine Telemetry
+
+- Real-Time Barcode Scanner
+
+- Friday Diversion: Dirty Dishes
+
+- Android Barcode Scanner
+
+- Tetris with Virtual Controller
+
+- Publish-Subscribe Everywhere
+
+- Particle Photon
+
+- Upload a Web Camera Image
+
+- Bluemix Web Runtimes
+
+- Weather in Three Flavors
+
+- Bluemix Mobile Runtimes
+
+- Mobile Cloud Weather on Android
+
+- IoT Weather on Cloudant
+
+- Cloudant Continuous Feed
+
+- IBM MobileFirst 7.1 with Android
+
+- IoT Weather on Android
+
+- WebSocket on IBM Bluemix
+
+- Decoupling IoT Rendering
+
+- WebSocket on Android
+
+- Reading Light: Origins
+
+- Reading Light: Dawn of an Iteration
+
+- IBM Cube: Hardware
+
+- Particle Photon on Watson IoT
+
+- Your Browser on Watson IoT
+
+- Electric Imp on Watson IoT
+
+- The 12 Steps of Bluetooth (Swift)
+
+- Discovering Beacons (Swift)
+
+- Evangelist, Advocate, Community
+
+- Measuring Developer Relations
+
+- Tessel on Watson IoT
+
+- Custom Tessel Module
+
+- Tessel I2C Climate
+
+- Tessel Barcode Scanner: Hardware
+
+- Tessel Barcode Scanner: Software
+
+- Web Bluetooth Bean
+
+- Blockchain Vocabulary
+
+- Content Keywords with Watson and Python
+
+- Animated File Upload Button
+
+- Face Detection with Tracking.JS
+
+- Particle and Google Maps Integration
+
+- Preflight Image Hashing
+
+- Watson Conversation System Entities
+
+- Developer Advocates and Ideas
+
+- Async OpenWhisk Web Action with CORS
+
+- HTTP Requests from Server-Side Swift
+
+- Slap Robin with the ZX Gesture Sensor
+
+- Developer Advocates and Content
+
+- Event Notifications from Blockchain
+
+- LightBlue Bean to IBM Cloud
+
+- OCR with Tesseract.JS
+
+- Index Conference
+
+- Teaching Watson to See My Garage
+
+- Image Processing in a Web Worker
+
+- Transferable ImageData
+
+- Serverless Upload to Object Storage
+
+- Serverless Download from Object Storage
+
+- Serverless Storage Redux
+
+- IBM and the Open Organization
+
+- Functions, Storage, Watson ... Oh, My!

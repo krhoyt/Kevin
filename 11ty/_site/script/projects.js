@@ -1,7 +1,9 @@
 const carousel = document.querySelector( 'kh-carousel' );
-const projects = document.querySelectorAll( '#projects div img' );
+const images = document.querySelectorAll( '#projects div img' );
+const descriptions = document.querySelectorAll( '#projects kh-carousel div > p' );
 
 const distance = 50;
+const query = window.matchMedia( '( max-width: 480px )' );
 
 let drag = false;
 let end = 0;
@@ -19,6 +21,27 @@ function onSwipe() {
   }
 }
 
+function onTouchStart( evt ) {
+  evt.preventDefault();
+  start = evt.changedTouches[0].screenX;
+}
+
+function onTouchEnd( evt ) {
+  evt.preventDefault();
+  end = evt.changedTouches[0].screenX;
+  onSwipe();
+}
+
+function onMouseDown( evt ) {
+  evt.preventDefault();
+
+  drag = false;
+  start = evt.screenX;
+
+  document.addEventListener( 'mousemove', onMouseMove );
+  document.addEventListener( 'mouseup', onMouseUp );
+}
+
 function onMouseMove( evt ) {
   evt.preventDefault();
   drag = true;
@@ -33,39 +56,26 @@ function onMouseUp( evt ) {
     onSwipe();
   }
 
-  // Delay to prevent click
-  setTimeout( () => {
-    drag = false;
-  }, 100 );
+  drag = false;
 
   document.removeEventListener( 'mousemove', onMouseMove );
   document.removeEventListener( 'mouseup', onMouseUp );
 }
 
-for( let p = 0; p < projects.length; p++ ) {
-  projects[p].addEventListener( 'click', () => {
-    if( !drag ) {
-      carousel.next();
-    }
-  } );
+if( query.matches ) {
+  for( let i = 0; i < images.length; i++ ) {
+    // Add touch events to images
+    images[i].addEventListener( 'touchstart', onTouchStart );
+    images[i].addEventListener( 'touchend', onTouchEnd );
 
-  // Touch events for mobile
-  projects[p].addEventListener( 'touchstart', ( evt ) => {
-    start = evt.changedTouches[0].screenX;
-  } );
-  projects[p].addEventListener( 'touchend', ( evt ) => {
-    end = evt.changedTouches[0].screenX;
-    onSwipe();
-  } );
+    // Add mouse events to images
+    images[i].addEventListener( 'mousedown', onMouseDown );
 
-  // Mouse events for desktop
-  projects[p].addEventListener( 'mousedown', ( evt ) => {
-    evt.preventDefault();
+    // Add touch events to descriptions
+    descriptions[i].addEventListener( 'touchstart', onTouchStart );
+    descriptions[i].addEventListener( 'touchend', onTouchEnd );
 
-    drag = false;
-    start = evt.screenX;
-
-    document.addEventListener( 'mousemove', onMouseMove );
-    document.addEventListener( 'mouseup', onMouseUp );    
-  } );
+    // Add mouse events to descriptions
+    descriptions[i].addEventListener( 'mousedown', onMouseDown );
+  }
 }
