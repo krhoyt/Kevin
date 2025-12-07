@@ -12,7 +12,6 @@ main div {
   grid-template-columns: repeat( 3, 1fr );
   grid-auto-rows: auto;
   grid-column-gap: 16px;
-  grid-row-gap: 32px;
   max-width: 900px;
   width: 80%;
 }
@@ -44,7 +43,7 @@ main article h3 {
   font-size: 18px;
   font-weight: 600;
   line-height: 24px;
-  margin: 8px 0 8px 0;
+  margin: 8px 0 4px 0;
   padding: 0;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;  
@@ -68,7 +67,7 @@ main article footer {
   align-items: center;
   display: flex;
   flex-direction: row;
-  margin: 8px 0 0 0;
+  margin: 8px 0 32px 0;
 }
 
 main article a {
@@ -124,7 +123,7 @@ main time {
   font-family: Roboto, sans-serif;
   font-size: 14px;
   line-height: 24px;
-  margin: 0;
+  margin: 0 0 4px 0;
   padding: 0;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;  
