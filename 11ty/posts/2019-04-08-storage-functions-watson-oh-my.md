@@ -6,7 +6,6 @@ permalink: /blog/2019/04/06/storage-function-watson-oh-my/
 tags:
   - App Dev
   - AI/ML
-  - Data
 rating: 1
 ---
 

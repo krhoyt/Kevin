@@ -9,7 +9,6 @@ permalink: /blog/2025/10/21/warp-test-drive/
 tags:
   - AI/ML
   - App Dev
-  - Enablement
 rating: 1
 ---
 

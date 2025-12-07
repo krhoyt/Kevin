@@ -33,13 +33,9 @@ main article img {
   width: 100%;
 }
 
-main article a {
-  color: #1a1a1a;
-  text-decoration: none;
-}
-
 main article h3 {
   color: #1a1a1a; 
+  cursor: default;
   font-family: Roboto, sans-serif;
   font-size: 18px;
   font-weight: 600;
@@ -53,6 +49,7 @@ main article h3 {
 
 main article > p {
   color: #1a1a1a; 
+  cursor: default;
   font-family: Roboto, sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -61,6 +58,41 @@ main article > p {
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;  
   -webkit-font-smoothing: antialiased;         
+}
+
+main article footer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin: 8px 0 0 0;
+}
+
+main article a {
+  background: #3B82F6;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 24px;  
+  margin: 0 0 0 auto;
+  padding: 4px 9px 4px 9px;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;  
+}
+
+main article a:hover {
+  background: #2563EB;
+}
+
+main aside {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 }
 
 main aside p {
@@ -75,14 +107,15 @@ main aside p {
   font-size: 12px;
   font-weight: 500;
   line-height: 20px;
-  margin: 8px 6px 0 0;
-  padding: 3px 8px 3px 8px;
+  margin: 0;
+  padding: 5px 8px 5px 8px;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;  
   -webkit-font-smoothing: antialiased;           
 }
 
 main time {
+  cursor: default;
   font-family: Roboto, sans-serif;
   font-size: 14px;
   margin: 0 0 8px 0;
@@ -92,7 +125,7 @@ main time {
   -webkit-font-smoothing: antialiased;             
 }
 
-main time a {
+main time {
   color: #94A3B8;
 }
 

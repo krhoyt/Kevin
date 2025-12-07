@@ -8,22 +8,28 @@
       <article>
 
         {% if post.data.feature_image %}
-          <a aria-label="{{ post.data.title}}" href="{{ post.url }}"><img alt="{{ post.data.title }}" src="{{ post.data.feature_image }}"></a>
+          <img alt="{{ post.data.title }}" src="{{ post.data.feature_image }}">
         {% endif %}
 
-        <h3><a aria-label="{{ post.data.title}}" href="{{ post.url }}">{{ post.data.title }}</a></h3>
+        <h3>{{ post.data.title }}</h3>
 
         {% if post.data.description %}
-          <p><a aria-label="{{ post.data.title}}" href="{{ post.url }}">{{ post.data.description }}</a></p>
+          <p>{{ post.data.description }}</p>
         {% endif %}
 
-        {% if post.data.tags %}
-          <aside>
-            {% for tag in post.data.tags %}
-              <p>{{ tag }}</p>
-            {% endfor %}
-          </aside>
-        {% endif %}
+        <footer>
+
+          {% if post.data.tags %}
+            <aside>
+              {% for tag in post.data.tags %}
+                <p>{{ tag }}</p>
+              {% endfor %}
+            </aside>
+          {% endif %}
+
+          <a aria-label="{{ post.data.title}}" href="{{ post.url }}">Read more</a>
+
+        </footer>
 
       </article>
     {% endfor %}

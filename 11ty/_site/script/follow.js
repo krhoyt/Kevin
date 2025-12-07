@@ -10,6 +10,7 @@ export default class HoytFollow extends HTMLElement {
           display: inline-block;
           position: relative;
           transform-origin: center center;
+          transition: rotate 150ms ease;
         }
       </style>
       <slot></slot>
