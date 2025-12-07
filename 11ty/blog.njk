@@ -49,8 +49,9 @@ permalink: /blog/
 
           <h3>{{ post.data.title }}</h3>
 
+          <stuff>
           <time>{{ post.date | htmlDateString }} · {{ post.templateContent | getReadingTime }} min read</time>
-
+          </stuff>
           {% if post.data.description %}
             <p>{{ post.data.description }}</p>
           {% endif %}
