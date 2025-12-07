@@ -10,6 +10,7 @@ main {
 main div {
   display: grid;
   grid-template-columns: repeat( 3, 1fr );
+  grid-auto-rows: auto;
   grid-column-gap: 16px;
   grid-row-gap: 32px;
   max-width: 900px;
@@ -17,9 +18,12 @@ main div {
 }
 
 main article {
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.25s ease;  
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 5;
+  align-content: start;
+  row-gap: 0;
+  transition: transform 0.25s ease;
 }
 
 main article:hover {
@@ -115,18 +119,16 @@ main aside p {
 }
 
 main time {
+  color: #94A3B8;  
   cursor: default;
   font-family: Roboto, sans-serif;
   font-size: 14px;
-  margin: 0 0 8px 0;
+  line-height: 24px;
+  margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;  
   -webkit-font-smoothing: antialiased;             
-}
-
-main time {
-  color: #94A3B8;
 }
 
 @media only screen and ( max-width: 768px ) { 

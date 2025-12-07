@@ -204,6 +204,15 @@ main li {
   margin: 0 0 30px 0;
 }
 
+#contact {
+  background: #f4f4f4;
+  max-width: none;
+}
+
+#contact > p:first-of-type {
+  max-width: 720px;
+}
+
 @media only screen and ( max-width: 768px ) {     
   main {
     width: 90%;

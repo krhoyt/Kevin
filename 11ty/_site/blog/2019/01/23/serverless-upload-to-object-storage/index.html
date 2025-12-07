@@ -17,6 +17,7 @@
 
   <link rel="stylesheet" href="/style/kevinhoyt.css" />
   <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/contact.css" />    
   <link rel="stylesheet" href="/style/post.css" />
   <link rel="stylesheet" href="/style/prism.css" />    
   <link rel="stylesheet" href="/style/footer.css" />
@@ -313,6 +314,62 @@ exports<span class="token punctuation">.</span>main <span class="token operator"
     </main>
 
           
+
+  <section id="contact">
+
+  <h2>Let's Build Something Together</h2>
+
+  <p>
+    Have a project, collaboration, or opportunity you would like to discuss?
+    I am especially interested in work involving web architecture, data,
+    IoT, and developer experience.
+  </p>
+
+  <form data-netlify="true" netlify-honeypot="bot-field">
+
+    <!-- Honeypot -->
+    <div class="field honeypot">
+      <label for="pot">Do not fill this out if you are human</label>
+      <input id="pot" name="pot" type="text">      
+    </div>
+
+    <div class="field">
+      <label for="poc">Name</label>
+      <input type="text" id="poc" name="name" required>
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="field">
+      <label for="reason">Subject</label>
+      <select id="reason" name="reason">
+        <option value="">Select an option</option>
+        <option value="Feedback">Writing feedback</option>        
+        <option value="Project Collaboration">Project collaboration</option>
+        <option value="Consulting">Consulting</option>
+        <option value="Speaking">Speaking / workshops</option>
+        <option value="Career Opportunity">Career opportunity</option>
+        <option value="Other">Something else</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+    </div>
+
+    <button aria-label="Send Message" type="button">Send Message</button>    
+
+  </form>
+
+  <p class="email">
+    Prefer email? You can reach me at <a aria-label="Email kevin@ketnerlake.com" href="mailto:kevin@ketnerlake.com">kevin@ketnerlake.com</a>.
+  </p>
+
+</section>
 
   <footer id="footer">
 

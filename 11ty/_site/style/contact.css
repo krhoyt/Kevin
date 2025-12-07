@@ -51,7 +51,7 @@
 #contact form select,
 #contact form textarea {
   appearance: none;
-  background: none;
+  background: #ffffff;
   border: solid 1px #e4e4e7;
   border-radius: 6px;
   box-sizing: border-box;
@@ -106,7 +106,7 @@
 
 #contact form textarea {
   appearance: none;
-  background: none;
+  background: #ffffff;
   border: solid 1px #e4e4e7;
   border-radius: 6px;
   box-sizing: border-box;
