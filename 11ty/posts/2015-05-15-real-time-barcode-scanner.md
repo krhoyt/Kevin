@@ -1,16 +1,22 @@
 ---
+feature_image: /img/covers/barcode.jpg
+unsplash_author: D PI
+unsplash_author_url: https://unsplash.com/@d_dandelion
+unsplash_photo_url: https://unsplash.com/photos/a-black-and-white-photo-of-a-metal-structure-_WccNTUvnPU
 title: Real-Time Barcode Scanner
-slug: real-time-barcode-scanner
-date_published: 2015-05-15T16:58:52.000Z
-date_updated: 2015-06-08T00:09:01.000Z
-tags: barcode
+description: I have covered image processing techniques to scan barcodes in the past. This time we break out an actual barcode scanner and attach it to the web in real-time.
+permalink: /blog/2015/05/15/real-time-barcode-scanner/
+tags:
+  - Web
+  - IoT
+rating: 1
 ---
 
 *In a previous post I talked about getting started with Intel Edison, and elaborated a little on a barcode scanner project I used with it.  In this post I will discuss the specific architecture and crawl some code.*
 
----
-
 This is reposted on the [Kaazing Open Source Blog](http://kaazing.org/blog/real-time-barcode-scanner/).
+
+https://youtu.be/l31fECTlus0
 
 The barcode scanner project is interesting because the [Intel Edison](https://www.sparkfun.com/products/13024) has wi-fi built in.  This means I can run the code to communicate with the scanner, lookup UPC (Universal Product Code) data, and then pass the data along the message bus, entirely from the Edison.  This is different than many other of my examples where something like an Arduino passes the data over USB to a computer, that in turn puts the data on the message bus.
 
@@ -18,15 +24,16 @@ The barcode scanner project is interesting because the [Intel Edison](https://ww
 
 The [barcode scanner](https://www.sparkfun.com/products/9166) I picked up from SparkFun has an RS-232 serial communication feature.  Keyboard wedge is the other common means of using a barcode scanner.  The scanner comes with a cable that is a male RJ45 on one side and USB-A on the other.  The Intel Edison [Base Block](https://www.sparkfun.com/products/13045) from SparkFun has a USB Micro port.  To mate the two together, I used an [USB OTG](https://www.sparkfun.com/products/11604) cable with a female USB-A port on one side, and USB Micro on the other.
 
-![Scanner to OTG to Intel Edison, then Edison to USB.](http://images.kevinhoyt.com/real.time.barcode.wiring.jpg)
+![Scanner to OTG to Intel Edison, then Edison to USB.](/img/assets/real.time.barcode.wiring.jpg)
 
 You will need to set the scanner into RS-232 mode by using the provided User's Manual.  The process starts by scanning the "PROGRAM" barcode at the top of any page.  Then scan the "RS-232C" option on the "Interface Selection" section.  The default baud is 9600 with 8 stop bits, no parity, and one data bit (8-N-1).
 
 When connected to the Intel Edison, the scanner will be attached to the serial port at /dev/ttyACM0 by the Yocto Linux OS.  There is no easy way to discover this.  Yocto shows a long list of TTY endpoints on the file system.  I was able to get it by scouring the Intel documentation, and then trial and error against a handful of endpoints using the "cat" command.
 
-    cat /dev/ttyACM0 9600
-    <Scan something>
-    
+``` bash
+cat /dev/ttyACM0 9600
+<Scan something>
+```
 
 ### Java
 
@@ -42,51 +49,52 @@ While the Intel Edison runs Node.js and Python straight out of the box, I chose 
 
 Serial port access consists of two parts.  The first part is to open the port itself.  With the port open, you then need to add an event listener for when data arrives (the barcode in this case).  jSSC requires that a specific interface be implemented in order to handle events.  The respective code blocks look something like the following.
 
-    serial = new SerialPort( port );
-    
+``` java
+serial = new SerialPort( port );
+
+try {
+  // Open serial port
+  // Listen for data
+  serial.openPort();
+  serial.setParams( 
+    SerialPort.BAUDRATE_9600,
+    SerialPort.DATABITS_8,
+    SerialPort.STOPBITS_1,
+    SerialPort.PARITY_NONE
+  );
+  serial.addEventListener( this );			
+} catch( SerialPortException spe ) {
+  spe.printStackTrace();
+}	
+
+
+// Incoming serial data
+@Override
+public void serialEvent( SerialPortEvent event ) {
+  byte[] buffer = null;        	
+      
+  // Receiving
+  if( event.isRXCHAR() ) {
     try {
-      // Open serial port
-      // Listen for data
-      serial.openPort();
-      serial.setParams( 
-        SerialPort.BAUDRATE_9600,
-        SerialPort.DATABITS_8,
-        SerialPort.STOPBITS_1,
-        SerialPort.PARITY_NONE
-      );
-      serial.addEventListener( this );			
+      // Latest bytes
+      buffer = serial.readBytes( event.getEventValue() );
+                
+      for( byte b:buffer ) {
+        // Look for record end
+        if( b == SERIAL_END ) {
+          amazon.search( builder.toString().trim() );                    	
+          builder.setLength( 0 );
+        } else {
+          // Keep adding until complete record
+          builder.append( ( char )b );
+        }
+      }                        
     } catch( SerialPortException spe ) {
       spe.printStackTrace();
-    }	
-    
-
-    // Incoming serial data
-    @Override
-    public void serialEvent( SerialPortEvent event ) {
-      byte[] buffer = null;        	
-        	
-      // Receiving
-      if( event.isRXCHAR() ) {
-        try {
-          // Latest bytes
-          buffer = serial.readBytes( event.getEventValue() );
-                    
-          for( byte b:buffer ) {
-            // Look for record end
-            if( b == SERIAL_END ) {
-              amazon.search( builder.toString().trim() );                    	
-              builder.setLength( 0 );
-            } else {
-              // Keep adding until complete record
-              builder.append( ( char )b );
-            }
-          }                        
-        } catch( SerialPortException spe ) {
-          spe.printStackTrace();
-        }
-      }
     }
-    
+  }
+}
+```    
 
 Processing the incoming data really is just a matter a reading the bytes and appending those bits as character data (in this case) to a StringBuilder object.  I look for a carriage return at the end of the barcode line, and then head off to Amazon to process the UPC.
 
@@ -102,93 +110,95 @@ Since this type of usage of the service is not part of the expected usage, there
 
 At this point we have gotten a UPC from the scanner, and looked up the product information from Amazon.  Once this data is placed on the message bus, it will be headed to a web client for display.  Since the web client can readily leverage JSON (JavaScript Object Notation), we will want to massage the data in Java first.
 
-    // Process serial port data
-    // Send to gateway
-    // Send as JSON
-    private void process( AmazonResult scan ) {
-      JsonObject			result;
-      JsonObjectBuilder	builder;
-      StringWriter		sw;
-    				
-      // Build JSON structure
-      builder = Json.createObjectBuilder();
-      builder.add( KEY_ACTION, ACTION_SHOW );
-      builder.add( KEY_UPC, scan.getUpc() );
-      builder.add( KEY_TITLE, scan.getTitle() );
-      builder.add( KEY_IMAGE, scan.getImage() );
-      builder.add( KEY_PRICE, scan.getPrice() );		
-    		
-      // Encode
-      result = builder.build();
-    		
-      // Stringify
-      sw = new StringWriter();
-    		
-      try( JsonWriter writer = Json.createWriter( sw ) ) {
-        writer.writeObject( result );
-      }
-    		
-      // Publish message
-      // May not be connected yet
-      if( gateway.isConnected() ) {
-        gateway.publish( TOPIC, sw.toString() );
-      }
-    }	
+``` java
+// Process serial port data
+// Send to gateway
+// Send as JSON
+private void process( AmazonResult scan ) {
+  JsonObject			result;
+  JsonObjectBuilder	builder;
+  StringWriter		sw;
+        
+  // Build JSON structure
+  builder = Json.createObjectBuilder();
+  builder.add( KEY_ACTION, ACTION_SHOW );
+  builder.add( KEY_UPC, scan.getUpc() );
+  builder.add( KEY_TITLE, scan.getTitle() );
+  builder.add( KEY_IMAGE, scan.getImage() );
+  builder.add( KEY_PRICE, scan.getPrice() );		
     
+  // Encode
+  result = builder.build();
+    
+  // Stringify
+  sw = new StringWriter();
+    
+  try( JsonWriter writer = Json.createWriter( sw ) ) {
+    writer.writeObject( result );
+  }
+    
+  // Publish message
+  // May not be connected yet
+  if( gateway.isConnected() ) {
+    gateway.publish( TOPIC, sw.toString() );
+  }
+}	
+```    
 
 ### Messaging Bus
 
 This project used the **open source** Kaazing Gateway running for **free** in the cloud - a little feature we call the "Sandbox".  You can use it to test our your own ideas.  It uses the [Qpid](https://qpid.apache.org/) message broker.  I wrote a wrapper for [accessing Sandbox in JavaScript](https://github.com/krhoyt/Kaazing/blob/master/iot/stores/web/gateway.js) and wrote about it in a previous post.  For this example, I ported the [wrapper over to Java](https://github.com/krhoyt/Kaazing/blob/master/iot/stores/java/src/Gateway.java).  The relevant code to use the wrapper looks like the following.
 
-    // Instantiate
-    gateway = new Gateway();
+``` java
+// Instantiate
+gateway = new Gateway();
+
+// Debugging
+gateway.setVerbose( false );
+
+// Event handlers
+gateway.callback = new GatewayListener() {
+
+  ...		
+
+  @Override
+  public void onMessage( String body ) {	
+    Event		e = null;
+    InputStream	stream = null;
+    JsonParser	parser = null;
     
-    // Debugging
-    gateway.setVerbose( false );
+    // String to InputStream
+    stream = new ByteArrayInputStream( 
+      body.getBytes( StandardCharsets.UTF_8 ) 
+    );
+    parser = Json.createParser( stream );				
     
-    // Event handlers
-    gateway.callback = new GatewayListener() {
-    
-      ...		
-    
-      @Override
-      public void onMessage( String body ) {	
-        Event		e = null;
-        InputStream	stream = null;
-        JsonParser	parser = null;
-    		
-        // String to InputStream
-        stream = new ByteArrayInputStream( 
-          body.getBytes( StandardCharsets.UTF_8 ) 
-        );
-        parser = Json.createParser( stream );				
-    		
-        // Iterate through map keys
-        while( parser.hasNext() ) {
-          e = parser.next();
-    			
-          if( e == Event.KEY_NAME ) {
-            switch( parser.getString() ) {
-              case KEY_ACTION:
-                parser.next();
-                break;
-            }
-          }
+    // Iterate through map keys
+    while( parser.hasNext() ) {
+      e = parser.next();
+      
+      if( e == Event.KEY_NAME ) {
+        switch( parser.getString() ) {
+          case KEY_ACTION:
+            parser.next();
+            break;
         }
       }
-    
-      ...
-    
-    };
-    
-    // Connect to gateway
-    gateway.connect( KAAZING_ID );		
-    
-    // Publish message
-    if( gateway.isConnected() ) {
-      gateway.publish( TOPIC, sw.toString() );
     }
-    
+  }
+
+  ...
+
+};
+
+// Connect to gateway
+gateway.connect( KAAZING_ID );		
+
+// Publish message
+if( gateway.isConnected() ) {
+  gateway.publish( TOPIC, sw.toString() );
+}
+```    
 
 All of the action so far happens on the Intel Edison - and it happens pretty quickly.  The code is packaged up into a JAR file and dropped on the Edison via SCP.  It is then run using a modern JRE for Linux.  We can now merrily scan barcodes all day long and send the details out over the message bus.
 
@@ -200,49 +210,50 @@ The web client is probably the simplest part of the entire architecture.  Gettin
 
 By comparison, the web client waits for a message, in JSON format, and adds an element to the DOM.  Handling the messaging in JavaScript uses the aforementioned JavaScript wrapper, making it easy to use and get started.  Here is what handling the message in JavaScript looks like.
 
-    // Connect to Gateway
-    kaazing = Gateway.connect( KAAZING_ID, doGatewayConnect ); 
+``` javascript
+// Connect to Gateway
+kaazing = Gateway.connect( KAAZING_ID, doGatewayConnect ); 
+
+// Called when connected to Gateway
+// Subscribe to topic
+function doGatewayConnect()
+{
+  console.log( 'Client connected.' );
+  
+  // Subscribe
+  kaazing.on( Gateway.EVENT_MESSAGE, doGatewayMessage );
+  kaazing.subscribe( TOPIC );    
+}
+
+// Called when message arrives
+function doGatewayMessage( message )
+{
+  var data = null;
+  
+  // Parse JSON
+  data = JSON.parse( message );
+  
+  // Decision tree for incoming action
+  // Display actual scanner values
+  if( data.action == ACTION_SHOW )
+  {
+    // Add to cart
+    cart.push( data );
     
-    // Called when connected to Gateway
-    // Subscribe to topic
-    function doGatewayConnect()
-    {
-      console.log( 'Client connected.' );
-      
-      // Subscribe
-      kaazing.on( Gateway.EVENT_MESSAGE, doGatewayMessage );
-      kaazing.subscribe( TOPIC );    
-    }
+    // Update user interface
+    line();
+    total();
     
-    // Called when message arrives
-    function doGatewayMessage( message )
-    {
-      var data = null;
-      
-      // Parse JSON
-      data = JSON.parse( message );
-      
-      // Decision tree for incoming action
-      // Display actual scanner values
-      if( data.action == ACTION_SHOW )
-      {
-        // Add to cart
-        cart.push( data );
-        
-        // Update user interface
-        line();
-        total();
-        
-        // Debug
-        console.log( data.upc );
-        console.log( data.title );
-        console.log( data.price );    
-        console.log( data.image );
-      } else if( data.action == ACTION_REMOVE ) {
-        remove( data.upc );  
-      }
-    }
-    
+    // Debug
+    console.log( data.upc );
+    console.log( data.title );
+    console.log( data.price );    
+    console.log( data.image );
+  } else if( data.action == ACTION_REMOVE ) {
+    remove( data.upc );  
+  }
+}
+```
 
 That is it!  Now you have yourself a real-time [IoT] barcode scanner.
 

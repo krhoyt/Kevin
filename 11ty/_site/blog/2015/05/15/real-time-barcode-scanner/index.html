@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="The intersection of development and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Real-Time Barcode Scanner</title>
+
+  <link rel="icon" type="image/x-icon" href="/img/edit.svg">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/contact.css" />    
+  <link rel="stylesheet" href="/style/post.css" />
+  <link rel="stylesheet" href="/style/prism.css" />    
+  <link rel="stylesheet" href="/style/footer.css" />
+
+</head>
+<body>
+  
+  <header id="header">
+
+  <article>
+
+    <kh-follow>
+      <img alt="Kevin Hoyt" src="/img/krhoyt.jpg">
+    </kh-follow>
+
+    <nav>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/>
+      </svg>         
+      <select aria-label="Section">
+        <option value="/" >Home</option>
+        <option value="/blog" selected>Writing</option>
+        <option value="/about" >About</option>
+        <option value="/events" >Events</option>
+      </select>      
+    </nav>
+
+    <ul>
+      <li><a aria-label="Home" href="/">Home</a></li>
+      <li><a aria-label="Writing (Blog)" href="/blog">Writing</a></li>    
+      <li><a aria-label="About" href="/about">About</a></li>
+      <li><a aria-label="Events" href="/events">Events</a></li>
+    </ul>  
+
+    <div>
+
+      <!-- Bluesky (not listed)
+      <a aria-label="Bluesky" href="https://bsky.app/profile/krhoyt.bsky.social" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 11.388c-.906-1.761-3.372-5.044-5.665-6.662c-2.197-1.55-3.034-1.283-3.583-1.033C2.116 3.978 2 4.955 2 5.528c0 .575.315 4.709.52 5.4c.68 2.28 3.094 3.05 5.32 2.803c-3.26.483-6.157 1.67-2.36 5.898c4.178 4.325 5.726-.927 6.52-3.59c.794 2.663 1.708 7.726 6.444 3.59c3.556-3.59.977-5.415-2.283-5.898c2.225.247 4.64-.523 5.319-2.803c.205-.69.52-4.825.52-5.399c0-.575-.116-1.55-.752-1.838c-.549-.248-1.386-.517-3.583 1.033c-2.293 1.621-4.76 4.904-5.665 6.664"/>
+        </svg>
+      </a>
+      -->
+
+      <!-- Twitter (not listed)
+      <a aria-label="Twitter" href="https://x.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" fill-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->      
+
+      <!-- GitHub -->
+      <a aria-label="GitHub" href="https://github.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+        </svg>
+      </a>      
+
+      <!-- YouTube -->
+      <a aria-label="YouTube" href="https://www.youtube.com/channel/UCSFeFhtLBuzU2UMs7oOL54A" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/>
+        </svg>
+      </a>          
+
+      <!-- RSS feed -->
+      <a aria-label="RSS Feed (XML)" href="/feed.xml" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19t.588-1.412T5 17t1.413.588T7 19t-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1T9.138 8.413T4.6 7.1q-.65-.075-1.125-.512T3 5.5t.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337t3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35t-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062t2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/>
+        </svg>
+      </a>      
+
+      <!-- Instagram (not listed)
+      <a aria-label="Instagram" href="https://www.instagram.com/parkerkrhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 14">
+          <path fill="currentColor" fill-rule="evenodd" d="M3.39.787A2.604 2.604 0 0 0 .786 3.39v6.944a2.604 2.604 0 0 0 2.604 2.604h6.944a2.604 2.604 0 0 0 2.603-2.604V3.39A2.604 2.604 0 0 0 10.334.787zm7.693 2.607a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m-4.22 1.388a2.08 2.08 0 1 0 0 4.16a2.08 2.08 0 0 0 0-4.16m-3.081 2.08a3.08 3.08 0 1 1 6.16 0a3.08 3.08 0 0 1-6.16 0" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->     
+
+    </div>
+
+  </article>
+
+</header>
+
+
+  
+  
+    <main>
+
+      <div>
+
+        <img src="/img/covers/barcode.jpg" alt="Real-Time Barcode Scanner">
+
+        
+          <figcaption>
+            <p>Photo by <a href="https://unsplash.com/@d_dandelion">D PI</a> on <a href="https://unsplash.com/photos/a-black-and-white-photo-of-a-metal-structure-_WccNTUvnPU">Unsplash</a></p>
+          </figcaption>
+        
+
+      </div>
+
+      <article>
+
+        <h1>Real-Time Barcode Scanner</h1>
+
+        <time>May 15, 2015 · 18 min read</time>
+
+        
+          <aside>
+            
+              <p>Web</p>
+            
+              <p>IoT</p>
+            
+          </aside>
+                
+        
+        <p><em>In a previous post I talked about getting started with Intel Edison, and elaborated a little on a barcode scanner project I used with it.  In this post I will discuss the specific architecture and crawl some code.</em></p>
+<p>This is reposted on the <a href="http://kaazing.org/blog/real-time-barcode-scanner/">Kaazing Open Source Blog</a>.</p>
+<div id="l31fECTlus0" class="eleventy-plugin-youtube-embed" style="position:relative;width:100%;padding-top: 56.25%;"><iframe style="position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%;" width="100%" height="100%" frameborder="0" title="Embedded YouTube video" src="https://www.youtube-nocookie.com/embed/l31fECTlus0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<p>The barcode scanner project is interesting because the <a href="https://www.sparkfun.com/products/13024">Intel Edison</a> has wi-fi built in.  This means I can run the code to communicate with the scanner, lookup UPC (Universal Product Code) data, and then pass the data along the message bus, entirely from the Edison.  This is different than many other of my examples where something like an Arduino passes the data over USB to a computer, that in turn puts the data on the message bus.</p>
+<h3>Barcode Scanner</h3>
+<p>The <a href="https://www.sparkfun.com/products/9166">barcode scanner</a> I picked up from SparkFun has an RS-232 serial communication feature.  Keyboard wedge is the other common means of using a barcode scanner.  The scanner comes with a cable that is a male RJ45 on one side and USB-A on the other.  The Intel Edison <a href="https://www.sparkfun.com/products/13045">Base Block</a> from SparkFun has a USB Micro port.  To mate the two together, I used an <a href="https://www.sparkfun.com/products/11604">USB OTG</a> cable with a female USB-A port on one side, and USB Micro on the other.</p>
+<p><img src="/img/assets/real.time.barcode.wiring.jpg" alt="Scanner to OTG to Intel Edison, then Edison to USB."></p>
+<p>You will need to set the scanner into RS-232 mode by using the provided User's Manual.  The process starts by scanning the &quot;PROGRAM&quot; barcode at the top of any page.  Then scan the &quot;RS-232C&quot; option on the &quot;Interface Selection&quot; section.  The default baud is 9600 with 8 stop bits, no parity, and one data bit (8-N-1).</p>
+<p>When connected to the Intel Edison, the scanner will be attached to the serial port at /dev/ttyACM0 by the Yocto Linux OS.  There is no easy way to discover this.  Yocto shows a long list of TTY endpoints on the file system.  I was able to get it by scouring the Intel documentation, and then trial and error against a handful of endpoints using the &quot;cat&quot; command.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">cat</span> /dev/ttyACM0 <span class="token number">9600</span>
+<span class="token operator">&lt;</span>Scan something<span class="token operator">></span></code></pre>
+<h3>Java</h3>
+<p>While the Intel Edison runs Node.js and Python straight out of the box, I chose Java for this project.  The open source Kaazing Gateway  includes Java client libraries.  I am also already familiar with serial communication in Java.  Java then made an ideal selection for this project.</p>
+<blockquote>
+<p>I had reservations as to if the Edison would run Java.  In the end, the Edison handled this type of Java load with ease.</p>
+</blockquote>
+<h3>Serial Communication</h3>
+<p><a href="https://github.com/scream3r/java-simple-serial-connector">jSSC</a> (Java Simple Serial Connector) is a library for communicating from Java to serial ports via JNI (Java Native Interface).  The native code for communicating with serial ports is included in the JAR (Java Archive).  This makes deployment and configuration a snap.  So long as the jSSC JAR is in your project, or on the Java path, native serial access is yours!</p>
+<blockquote>
+<p>There is a Java specification for native serial port access, but it has not been implemented in core Java yet.  The jSSC library is also used by Arduino, making the library reliable and robust.</p>
+</blockquote>
+<p>Serial port access consists of two parts.  The first part is to open the port itself.  With the port open, you then need to add an event listener for when data arrives (the barcode in this case).  jSSC requires that a specific interface be implemented in order to handle events.  The respective code blocks look something like the following.</p>
+<pre class="language-java"><code class="language-java">serial <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SerialPort</span><span class="token punctuation">(</span> port <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Open serial port</span>
+  <span class="token comment">// Listen for data</span>
+  serial<span class="token punctuation">.</span><span class="token function">openPort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  serial<span class="token punctuation">.</span><span class="token function">setParams</span><span class="token punctuation">(</span> 
+    <span class="token class-name">SerialPort</span><span class="token punctuation">.</span><span class="token constant">BAUDRATE_9600</span><span class="token punctuation">,</span>
+    <span class="token class-name">SerialPort</span><span class="token punctuation">.</span><span class="token constant">DATABITS_8</span><span class="token punctuation">,</span>
+    <span class="token class-name">SerialPort</span><span class="token punctuation">.</span><span class="token constant">STOPBITS_1</span><span class="token punctuation">,</span>
+    <span class="token class-name">SerialPort</span><span class="token punctuation">.</span><span class="token constant">PARITY_NONE</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  serial<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span> <span class="token keyword">this</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>			
+<span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span> <span class="token class-name">SerialPortException</span> spe <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  spe<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>	
+
+
+<span class="token comment">// Incoming serial data</span>
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">serialEvent</span><span class="token punctuation">(</span> <span class="token class-name">SerialPortEvent</span> event <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buffer <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>        	
+      
+  <span class="token comment">// Receiving</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> event<span class="token punctuation">.</span><span class="token function">isRXCHAR</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Latest bytes</span>
+      buffer <span class="token operator">=</span> serial<span class="token punctuation">.</span><span class="token function">readBytes</span><span class="token punctuation">(</span> event<span class="token punctuation">.</span><span class="token function">getEventValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+                
+      <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">byte</span> b<span class="token operator">:</span>buffer <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Look for record end</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span> b <span class="token operator">==</span> <span class="token constant">SERIAL_END</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          amazon<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span> builder<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>                    	
+          builder<span class="token punctuation">.</span><span class="token function">setLength</span><span class="token punctuation">(</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          <span class="token comment">// Keep adding until complete record</span>
+          builder<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span> <span class="token punctuation">(</span> <span class="token keyword">char</span> <span class="token punctuation">)</span>b <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>                        
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span> <span class="token class-name">SerialPortException</span> spe <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      spe<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Processing the incoming data really is just a matter a reading the bytes and appending those bits as character data (in this case) to a StringBuilder object.  I look for a carriage return at the end of the barcode line, and then head off to Amazon to process the UPC.</p>
+<h3>Amazon</h3>
+<p>Unless you have been living under a rock for the past decade, chances are that you know Amazon provides a massive variety of developer services.  One of those services is the ability to lookup products by a number of criteria - including UPC.  This service used to be part of AWS (Amazon Web Services).  It has since been moved under the Amazon Affiliate Program.</p>
+<blockquote>
+<p>My usage of the service in this manner is not technically covered by the EULA.  The service is designed to be used in conjunction with selling Amazon products on affiliate web sites, and is licensed as such.</p>
+</blockquote>
+<p>Since this type of usage of the service is not part of the expected usage, there was a little digging around the documentation needed to figure out how to lookup information.  Oddly enough, I found a snippet of code doing exactly that, in Java, from an Amazon employee, in the support forum.  I encapsulated this code in <a href="https://github.com/krhoyt/Kaazing/blob/master/iot/stores/java/src/Amazon.java">my own wrapper</a> for this project.</p>
+<h3>JSON</h3>
+<p>At this point we have gotten a UPC from the scanner, and looked up the product information from Amazon.  Once this data is placed on the message bus, it will be headed to a web client for display.  Since the web client can readily leverage JSON (JavaScript Object Notation), we will want to massage the data in Java first.</p>
+<pre class="language-java"><code class="language-java"><span class="token comment">// Process serial port data</span>
+<span class="token comment">// Send to gateway</span>
+<span class="token comment">// Send as JSON</span>
+<span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">process</span><span class="token punctuation">(</span> <span class="token class-name">AmazonResult</span> scan <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">JsonObject</span>			result<span class="token punctuation">;</span>
+  <span class="token class-name">JsonObjectBuilder</span>	builder<span class="token punctuation">;</span>
+  <span class="token class-name">StringWriter</span>		sw<span class="token punctuation">;</span>
+        
+  <span class="token comment">// Build JSON structure</span>
+  builder <span class="token operator">=</span> <span class="token class-name">Json</span><span class="token punctuation">.</span><span class="token function">createObjectBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  builder<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span> <span class="token constant">KEY_ACTION</span><span class="token punctuation">,</span> <span class="token constant">ACTION_SHOW</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  builder<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span> <span class="token constant">KEY_UPC</span><span class="token punctuation">,</span> scan<span class="token punctuation">.</span><span class="token function">getUpc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  builder<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span> <span class="token constant">KEY_TITLE</span><span class="token punctuation">,</span> scan<span class="token punctuation">.</span><span class="token function">getTitle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  builder<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span> <span class="token constant">KEY_IMAGE</span><span class="token punctuation">,</span> scan<span class="token punctuation">.</span><span class="token function">getImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  builder<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span> <span class="token constant">KEY_PRICE</span><span class="token punctuation">,</span> scan<span class="token punctuation">.</span><span class="token function">getPrice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>		
+    
+  <span class="token comment">// Encode</span>
+  result <span class="token operator">=</span> builder<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+  <span class="token comment">// Stringify</span>
+  sw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+  <span class="token keyword">try</span><span class="token punctuation">(</span> <span class="token class-name">JsonWriter</span> writer <span class="token operator">=</span> <span class="token class-name">Json</span><span class="token punctuation">.</span><span class="token function">createWriter</span><span class="token punctuation">(</span> sw <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    writer<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span> result <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+    
+  <span class="token comment">// Publish message</span>
+  <span class="token comment">// May not be connected yet</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> gateway<span class="token punctuation">.</span><span class="token function">isConnected</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    gateway<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span> <span class="token constant">TOPIC</span><span class="token punctuation">,</span> sw<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>	</code></pre>
+<h3>Messaging Bus</h3>
+<p>This project used the <strong>open source</strong> Kaazing Gateway running for <strong>free</strong> in the cloud - a little feature we call the &quot;Sandbox&quot;.  You can use it to test our your own ideas.  It uses the <a href="https://qpid.apache.org/">Qpid</a> message broker.  I wrote a wrapper for <a href="https://github.com/krhoyt/Kaazing/blob/master/iot/stores/web/gateway.js">accessing Sandbox in JavaScript</a> and wrote about it in a previous post.  For this example, I ported the <a href="https://github.com/krhoyt/Kaazing/blob/master/iot/stores/java/src/Gateway.java">wrapper over to Java</a>.  The relevant code to use the wrapper looks like the following.</p>
+<pre class="language-java"><code class="language-java"><span class="token comment">// Instantiate</span>
+gateway <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Gateway</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Debugging</span>
+gateway<span class="token punctuation">.</span><span class="token function">setVerbose</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Event handlers</span>
+gateway<span class="token punctuation">.</span>callback <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GatewayListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>		
+
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onMessage</span><span class="token punctuation">(</span> <span class="token class-name">String</span> body <span class="token punctuation">)</span> <span class="token punctuation">{</span>	
+    <span class="token class-name">Event</span>		e <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token class-name">InputStream</span>	stream <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token class-name">JsonParser</span>	parser <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// String to InputStream</span>
+    stream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ByteArrayInputStream</span><span class="token punctuation">(</span> 
+      body<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span> <span class="token class-name">StandardCharsets</span><span class="token punctuation">.</span><span class="token constant">UTF_8</span> <span class="token punctuation">)</span> 
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    parser <span class="token operator">=</span> <span class="token class-name">Json</span><span class="token punctuation">.</span><span class="token function">createParser</span><span class="token punctuation">(</span> stream <span class="token punctuation">)</span><span class="token punctuation">;</span>				
+    
+    <span class="token comment">// Iterate through map keys</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span> parser<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      e <span class="token operator">=</span> parser<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+      <span class="token keyword">if</span><span class="token punctuation">(</span> e <span class="token operator">==</span> <span class="token class-name">Event</span><span class="token punctuation">.</span><span class="token constant">KEY_NAME</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">switch</span><span class="token punctuation">(</span> parser<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">case</span> <span class="token constant">KEY_ACTION</span><span class="token operator">:</span>
+            parser<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Connect to gateway</span>
+gateway<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span> <span class="token constant">KAAZING_ID</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>		
+
+<span class="token comment">// Publish message</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span> gateway<span class="token punctuation">.</span><span class="token function">isConnected</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  gateway<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span> <span class="token constant">TOPIC</span><span class="token punctuation">,</span> sw<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>All of the action so far happens on the Intel Edison - and it happens pretty quickly.  The code is packaged up into a JAR file and dropped on the Edison via SCP.  It is then run using a modern JRE for Linux.  We can now merrily scan barcodes all day long and send the details out over the message bus.</p>
+<p>What is listening for those messages is up to you.  That is part of the beauty of the decoupling that using a message bus brings to the table.  In this case, I wanted to display the messages on a web client that would act as my shopping cart.</p>
+<h3>Web Client</h3>
+<p>The web client is probably the simplest part of the entire architecture.  Getting started with Intel Edison can take some time.  Learning serial port access also takes some practice (especially going into a device).  JSON is pretty common, but you might be new to messaging.</p>
+<p>By comparison, the web client waits for a message, in JSON format, and adds an element to the DOM.  Handling the messaging in JavaScript uses the aforementioned JavaScript wrapper, making it easy to use and get started.  Here is what handling the message in JavaScript looks like.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Connect to Gateway</span>
+kaazing <span class="token operator">=</span> Gateway<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span> <span class="token constant">KAAZING_ID</span><span class="token punctuation">,</span> doGatewayConnect <span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+<span class="token comment">// Called when connected to Gateway</span>
+<span class="token comment">// Subscribe to topic</span>
+<span class="token keyword">function</span> <span class="token function">doGatewayConnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token string">'Client connected.'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// Subscribe</span>
+  kaazing<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span> Gateway<span class="token punctuation">.</span><span class="token constant">EVENT_MESSAGE</span><span class="token punctuation">,</span> doGatewayMessage <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  kaazing<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span> <span class="token constant">TOPIC</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>    
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Called when message arrives</span>
+<span class="token keyword">function</span> <span class="token function">doGatewayMessage</span><span class="token punctuation">(</span> <span class="token parameter">message</span> <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// Parse JSON</span>
+  data <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span> message <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// Decision tree for incoming action</span>
+  <span class="token comment">// Display actual scanner values</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> data<span class="token punctuation">.</span>action <span class="token operator">==</span> <span class="token constant">ACTION_SHOW</span> <span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    <span class="token comment">// Add to cart</span>
+    cart<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span> data <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// Update user interface</span>
+    <span class="token function">line</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">total</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// Debug</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> data<span class="token punctuation">.</span>upc <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> data<span class="token punctuation">.</span>title <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> data<span class="token punctuation">.</span>price <span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> data<span class="token punctuation">.</span>image <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span> data<span class="token punctuation">.</span>action <span class="token operator">==</span> <span class="token constant">ACTION_REMOVE</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">remove</span><span class="token punctuation">(</span> data<span class="token punctuation">.</span>upc <span class="token punctuation">)</span><span class="token punctuation">;</span>  
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>That is it!  Now you have yourself a real-time [IoT] barcode scanner.</p>
+<h3>Next Steps</h3>
+<p>From here I supposed you might wire the web client back into the Amazon Affiliate program to make it a legitimate use of the UPC lookup service per the license.</p>
+<p>I originally envisioned the results of this project in two parts.</p>
+<p>The first and most obvious part is modernization of PoS (Point of Sale) systems.  The days of needing large scale PoS deployments (usually through the likes of IBM) are quickly coming to a close.  There is also a cost savings as the security of Kaazing Gateway would allow retailers to use the open Internet instead of costly dedicated private lines.</p>
+<p>The second less obvious result is a real-time supply chain.  At this point the retailers internal systems can track items being sold in real-time.  They can then in turn load up trucks accordingly.  Or perhaps they offer specials for high demand items in real-time with digital signage.  Even further might be rolling this into a frequency program to better understand consumer purchasing behaviors.</p>
+<p>I have already started building a Java Android application that scans UPC barcodes and pushes messages into this same system.  A unified PoS where the shoppers are the cashiers might make for an interesting application as well.  Where will you go with it?  Let me  know on <a href="http://twitter.com/krhoyt">Twitter</a>.</p>
+
+        
+      </article>
+
+    </main>
+
+          
+
+  <section id="contact">
+
+  <h2>Let's Build Something Together</h2>
+
+  <p>
+    Have a project, collaboration, or opportunity you would like to discuss?
+    I am especially interested in work involving web architecture, data,
+    IoT, and developer experience.
+  </p>
+
+  <form data-netlify="true" netlify-honeypot="bot-field">
+
+    <!-- Honeypot -->
+    <div class="field honeypot">
+      <label for="pot">Do not fill this out if you are human</label>
+      <input id="pot" name="pot" type="text">      
+    </div>
+
+    <div class="field">
+      <label for="poc">Name</label>
+      <input type="text" id="poc" name="name" required>
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="field">
+      <label for="reason">Subject</label>
+      <select id="reason" name="reason">
+        <option value="">Select an option</option>
+        <option value="Feedback">Writing feedback</option>        
+        <option value="Project Collaboration">Project collaboration</option>
+        <option value="Consulting">Consulting</option>
+        <option value="Speaking">Speaking / workshops</option>
+        <option value="Career Opportunity">Career opportunity</option>
+        <option value="Other">Something else</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+    </div>
+
+    <button aria-label="Send Message" type="button">Send Message</button>    
+
+  </form>
+
+  <p class="email">
+    Prefer email? You can reach me at <a aria-label="Email kevin@ketnerlake.com" href="mailto:kevin@ketnerlake.com">kevin@ketnerlake.com</a>.
+  </p>
+
+</section>
+
+  <footer id="footer">
+
+  <p>
+    Made with ❤️ by Kevin Hoyt &copy; 2025 · Published with <a aria-label="Eleventy" href="https://www.11ty.dev">Eleventy</a>
+  </p>
+  
+</footer>
+
+
+  <script src="/script/menu.js"></script>
+
+</body>
+</html>

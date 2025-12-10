@@ -1,14 +1,18 @@
 ---
-title: Tic Tac Toe Light
-slug: tic-tac-toe-light
-date_published: 2014-06-04T14:00:00.000Z
-date_updated: 2020-06-29T17:30:58.000Z
-tags: arduino, kaazing, projects, cross
+feature_image: /img/covers/tic-tac-toe.jpg
+unsplash_author: Matthew Davis
+unsplash_author_url: https://unsplash.com/@treatzone
+unsplash_photo_url: https://unsplash.com/photos/white-and-green-box-on-table-iCp8p7wVXS0
+title: Tic-Tac-Toe Light
+description: WebSockets and IoT are a performant and efficient pairing, and I asked the audience at HTML5 Developer Conference to prove. A tiny Arduino vs. an audience of well over 100 developers just waiting to break things.
+permalink: /blog/2020/06/29/tic-tac-toe/
+tags:
+  - Web
+  - IoT
+rating: 1
 ---
 
 *I had the great privilege of being a speaker at [HTML5 Developer Conference](http://html5devconf.com/) in San Francisco recently.  It was the second HTML5 Dev Conf I have presented at, with the first one being October 2013.  This time, I paired with [Frank Greco](https://twitter.com/frankgreco) to present a session entitled "[WebSockets: Past, Present and Future](http://html5devconf.com/speakers/frank_greco.html#session)".  Frank took the stage for the first half of the session, and I followed up with some hands-on Internet of Things (IoT) demonstrations that were integrated with [Kaazing Gateway](http://kaazing.com/).*
-
----
 
 This is reposted on the Kaazing corporate [blog](http://blog.kaazing.com/2014/06/04/real-time-tic-tac-toe-light/).
 
@@ -16,11 +20,11 @@ This is reposted on the Kaazing corporate [blog](http://blog.kaazing.com/2014/06
 
 My personal favorite demonstration was a project I called the "Tic Tac Toe Light".  I called it this because the custom-built enclosure houses nine (9) [Adafuit NeoPixels](http://www.adafruit.com/products/1312) in a three-by-three (3×3) grid.  The enclosure, made using [foam core board](https://flic.kr/p/nNeFJz) and a hot knife, also contained an Arduino Yun.  I have grown to be a big fan of the [Arduino Yun](http://arduino.cc/en/Main/ArduinoBoardYun) for real-time IoT/web projects.  The board is the same profile as an Arduino Uno, but includes integrated wireless (802.11 b/g/n), an ATmega32u4 (similar to the Arduino Leonardo), and a Linux system on a chip (SoC).
 
-![Tic Tac Toe Light in action](http://images.kevinhoyt.com/tic.tac.toe.action.jpg)
+![Tic Tac Toe Light in action](/img/assets/tic.tac.toe.action.jpg)
 
-![Inner-workings of the Tic Tac Toe Light](http://images.kevinhoyt.com/tic.tac.toe.guts.jpg)
+![Inner-workings of the Tic Tac Toe Light](/img/assets/tic.tac.toe.guts.jpg)
 
-![Tic Tac Toe Light on the Web](http://images.kevinhoyt.com/tic.tac.toe.web.png)
+![Tic Tac Toe Light on the Web](/img/assets/tic.tac.toe.web.png)
 
 Using a [web-based user interface](http://tictactoe.kevinhoyt.com/), attendees of the HTM5 Dev Conf session could use their laptop, tablet or smartphone to control each NeoPixel (RGB LED) in the enclosure.  At the same time, the web user interface kept in sync with all the attendees selections – across all screens.  The Arduino Yun was also listening on a real-time connection for color change messages, which is how it knew what lights to change to what colors.
 
@@ -28,7 +32,7 @@ Using a [web-based user interface](http://tictactoe.kevinhoyt.com/), attendees o
 
 I think the bigger question here is "Why real-time?"  Although I do not know the exact count, I would say that the session had nearly 200 attendees.  The ATmega32u4 has a clock speed of 16 MHz with 32 KB of RAM.  If all those attendees were selecting light colors at anywhere near the same time using HTTP, the Arduino would be crushed under the load.  In a real-time scenario however, there is but one connection, and about twenty (20) bytes of data for each color change.  The end result was a far more scalable solution.
 
-![Tic Tac Toe Light live on stage.](http://images.kevinhoyt.com/tic.tac.toe.live.png)
+![Tic Tac Toe Light live on stage.](/img/assets/tic.tac.toe.live.png)
 
 And it had to scale too!  The lights on the Tic Tac Toe box were [blinking wildly](https://vine.co/v/MwaYH6EqUBL) for the duration of the time I had it plugged in (before I had to move on to my next demonstration).
 

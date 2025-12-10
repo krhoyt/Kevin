@@ -1,9 +1,14 @@
 ---
-title: "Advocate: Getting Started"
-slug: advocate-getting-started
-date_published: 1970-01-01T00:00:00.000Z
-date_updated: 2017-04-01T18:37:11.000Z
-draft: true
+feature_image: /img/covers/start.jpg
+unsplash_author: 12photostory
+unsplash_author_url: https://unsplash.com/@12photography
+unsplash_photo_url: https://unsplash.com/photos/a-close-up-of-a-game-board-with-two-cones--nDIecoK1nQ
+title: Getting Started in Developer Advocacy
+description: Many Developer Advocates evolve into the role; many come to it new. This post is for those new to the field who are looking for some general guidance on where to start. Based on first-hand experience. 
+permalink: /blog/2017/04/01/devrel-getting-started/
+tags:
+  - Enablement
+rating: 1
 ---
 
 The field of Developer Relations is still relatively young. I first got into the field in 2007, after seven years in Technical Sales. As a sales guy, I started attending conferences to work the show floor (drum up sales). Then I started presenting, and was humbled by the feeling of being able to help people. When the opportunity came up to move from Sales to Developer Relations, I made the jump and never looked back.
@@ -22,7 +27,7 @@ I have worked with countless technologies in my twenty (20) years of IT experien
 
 At the core of much of what follows is a business/statistics concept known as "the long tail." This term refers to a distribution of numbers. When you publish content, it will get the most views right up front. Over time, the number of views will taper off significantly.
 
-![The long tail](http://images.kevinhoyt.com/the.long.tail.png)
+![The long tail](/img/assets/the.long.tail.png)
 
 Many marketers will focus on getting that distribution as close to the front, and as steep as possible. I would argue that for an advocate, the long tail is what really matters. The release schedules and timelines of your employer are not necessarily the project timelines of your audience. It may be a year or more before your audience finally gets a chance to implement new technologies. By minding the long tail, you are there when they need you.
 
@@ -55,7 +60,7 @@ You might consider foregoing a blog and using an outlet such a Medium. Another p
 
 If you get a chance to write a book, you should strongly consider it. Having written a book on Adobe AIR, I can tell you that the workload is immense. You need to be prepared for the impact of this on your schedule.
 
-![Adobe AIR for JavaScript Developers](http://images.kevinhoyt.com/adobe.air.book.jpg)
+![Adobe AIR for JavaScript Developers](/img/assets/adobe.air.book.jpg)
 
 Authoring a book puts an exclamation point on your personal brand. It is one of those things that not everybody has done, or even can do. You can hand them out at presentations, and attend signing opportunities. They make you more desirable as a speaker.
 
