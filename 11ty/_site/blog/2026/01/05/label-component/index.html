@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="The intersection of development and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>The Unsung UI Control: Label</title>
+
+  <link rel="icon" type="image/x-icon" href="/img/edit.svg">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/contact.css" />    
+  <link rel="stylesheet" href="/style/post.css" />
+  <link rel="stylesheet" href="/style/prism.css" />    
+  <link rel="stylesheet" href="/style/footer.css" />
+
+</head>
+<body>
+  
+  <header id="header">
+
+  <article>
+
+    <kh-follow>
+      <img alt="Kevin Hoyt" src="/img/krhoyt.jpg">
+    </kh-follow>
+
+    <nav>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/>
+      </svg>         
+      <select aria-label="Section">
+        <option value="/" >Home</option>
+        <option value="/blog" selected>Writing</option>
+        <option value="/about" >About</option>
+        <option value="/events" >Events</option>
+      </select>      
+    </nav>
+
+    <ul>
+      <li><a aria-label="Home" href="/">Home</a></li>
+      <li><a aria-label="Writing (Blog)" href="/blog">Writing</a></li>    
+      <li><a aria-label="About" href="/about">About</a></li>
+      <li><a aria-label="Events" href="/events">Events</a></li>
+    </ul>  
+
+    <div>
+
+      <!-- LinkedIn -->
+      <a aria-label="LinkedIn" href="https://www.linkedin.com/in/parkerkrhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/>
+        </svg>
+      </a>      
+
+      <!-- GitHub -->
+      <a aria-label="GitHub" href="https://github.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+        </svg>
+      </a>      
+
+      <!-- X -->
+      <a aria-label="Twitter" href="https://x.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" fill-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+
+      <!-- Bluesky (not listed)
+      <a aria-label="Bluesky" href="https://bsky.app/profile/krhoyt.bsky.social" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 11.388c-.906-1.761-3.372-5.044-5.665-6.662c-2.197-1.55-3.034-1.283-3.583-1.033C2.116 3.978 2 4.955 2 5.528c0 .575.315 4.709.52 5.4c.68 2.28 3.094 3.05 5.32 2.803c-3.26.483-6.157 1.67-2.36 5.898c4.178 4.325 5.726-.927 6.52-3.59c.794 2.663 1.708 7.726 6.444 3.59c3.556-3.59.977-5.415-2.283-5.898c2.225.247 4.64-.523 5.319-2.803c.205-.69.52-4.825.52-5.399c0-.575-.116-1.55-.752-1.838c-.549-.248-1.386-.517-3.583 1.033c-2.293 1.621-4.76 4.904-5.665 6.664"/>
+        </svg>
+      </a>
+      -->      
+
+      <!-- YouTube (not listed)
+      <a aria-label="YouTube" href="https://www.youtube.com/channel/UCSFeFhtLBuzU2UMs7oOL54A" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/>
+        </svg>
+      </a>          
+      -->
+
+      <!-- RSS feed -->
+      <a aria-label="RSS Feed (XML)" href="/feed.xml" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19t.588-1.412T5 17t1.413.588T7 19t-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1T9.138 8.413T4.6 7.1q-.65-.075-1.125-.512T3 5.5t.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337t3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35t-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062t2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/>
+        </svg>
+      </a>      
+
+      <!-- Instagram (not listed)
+      <a aria-label="Instagram" href="https://www.instagram.com/parkerkrhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 14">
+          <path fill="currentColor" fill-rule="evenodd" d="M3.39.787A2.604 2.604 0 0 0 .786 3.39v6.944a2.604 2.604 0 0 0 2.604 2.604h6.944a2.604 2.604 0 0 0 2.603-2.604V3.39A2.604 2.604 0 0 0 10.334.787zm7.693 2.607a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m-4.22 1.388a2.08 2.08 0 1 0 0 4.16a2.08 2.08 0 0 0 0-4.16m-3.081 2.08a3.08 3.08 0 1 1 6.16 0a3.08 3.08 0 0 1-6.16 0" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->     
+
+    </div>
+
+  </article>
+
+</header>
+
+
+  
+  
+    <main>
+
+      <div>
+
+        <img src="/img/covers/label.jpg" alt="The Unsung UI Control: Label">
+
+        
+          <figcaption>
+            <p>Photo by <a href="https://unsplash.com/@personal_graphic">personalgraphic.com</a> on <a href="https://unsplash.com/photos/a-white-lamp-shade-R_A21r7ZiP4">Unsplash</a></p>
+          </figcaption>
+        
+
+      </div>
+
+      <article>
+
+        <h1>The Unsung UI Control: Label</h1>
+
+        <time>Jan 6, 2026 · 27 min read</time>
+
+        
+          <aside>
+            
+              <p>Web</p>
+            
+          </aside>
+                
+        
+        <p>Whenever I start designing a new UI, inevitably, one of the first components I create is a <code>Label</code> component. You might think that the <code>Label</code> is unnecessary because that is what the paragraph element (<code>p</code>) does. And you would be partly correct. But then you have likely seen an <code>Input</code> element or a <code>Checkbox</code> element, and those are HTML native types as well (<code>input type=&quot;text&quot;</code>, <code>input type=&quot;checkbox&quot;</code>). Same with <code>Button</code>,  <code>TextArea</code>, and others.</p>
+<p>When you think about wrapper components like <code>Input</code>, at a minimum they are adding functionality. In many cases component wrappers around native HTML elements will also be enforcing styling to the design system itself. With that in mind, let us take a look at how I approach building a <code>Label</code> component.</p>
+<blockquote>
+<p>The only design system I have seen do this implicitly is <a href="https://cloudscape.design/">Amazon Cloudscape</a> with it's <a href="https://cloudscape.design/components/box/">Box</a> component.</p>
+</blockquote>
+<h2>Foundations</h2>
+<p>I think Web Components have gotten a bad rap for being especially verbose and/or complex. This can certainly be true when you have data binding in frameworks such as Svelte, but you still need the basics in both - the CSS and the root element. From there it is a matter of extending the <code>HTMLElement</code> class, and attaching the template to the DOM of the element.</p>
+<blockquote>
+<p>This is the Shadow DOM approach. The alternative Light DOM approach also needs the root element and the CSS, though they will appear in different places. This is not an article about which is better. Context is key. For this example however, I will be focused on the Shadow DOM approach.</p>
+</blockquote>
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">HoytLabel</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> template <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span> <span class="token string">'template'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    template<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token comment">/* template */</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      &lt;style>
+        :host {
+          box-sizing: border-box;
+          display: inline-block;
+          position: relative;
+        }
+
+        p {
+          color: var( --label-color, #161616 );
+          font-family: 'Open Sans', sans-serif;
+          font-size: var( --label-font-size, 16px );
+          font-weight: var( --label-font-weight, 400 );
+          letter-spacing: var( --label-letter-spacing, 0.10px );
+          line-height: var( --label-line-height, 24px );
+          margin: var( --label-margin, 0 );
+          padding: var( --label-padding, 0 );
+          width: var( --label-width, 100% );
+        }
+      &lt;/style>
+      &lt;p part="label">
+        &lt;slot>&lt;/slot>
+      &lt;/p>
+    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// Root</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">attachShadow</span><span class="token punctuation">(</span> <span class="token punctuation">{</span><span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'open'</span><span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>shadowRoot<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span> template<span class="token punctuation">.</span>content<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+window<span class="token punctuation">.</span>customElements<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span> <span class="token string">'kh-label'</span><span class="token punctuation">,</span> HoytLabel <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>I have included CSS variables for the paragraph element. Each of these set a default value for their respective style property. This is my approach. You might alternatively be inclined to use CSS <code>:root</code> in your main CSS file, and define these variables there.</p>
+<p>When I think of a Svelte component, as an example, the styles are included in the same <code>*.svelte</code> file. I like that the element and the styles are together, so I keep that approach in my components. I also like my styles to be closer to the component so that I do not have to go looking around to other files. I have also found that when using components, I want to nudge them slightly here or there. I like to do that nudging closer to the declaration to avoid inadvertant cascading.</p>
+<blockquote>
+<p>Some design systems lock down the styles that can be used to force consistency across a large organization (again, see Amazon Cloudscape).</p>
+</blockquote>
+<p>The component implementation here includes a <code>slot</code> element. Anything placed inside the component declaration will show up there - between the <code>p</code> tags. The component is used (at this point) as follows.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kh-label</span><span class="token punctuation">></span></span>Hello world!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kh-label</span><span class="token punctuation">></span></span></code></pre>
+<h2>Adding Functionality</h2>
+<p>For almost every component I implement, I include a <code>hidden</code> attribute. The <code>hidden</code> attribute already exists in HTML, but when you are building custom elements, you need to decide how (or if) it should be implemented. When I use <code>hidden</code>, I want the element to be removed from the DOM. In CSS terms, that is the <code>display: none</code> property.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">HoytLabel</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> template <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span> <span class="token string">'template'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    template<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token comment">/* template */</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      &lt;style>
+        :host {
+          box-sizing: border-box;
+          display: inline-block;
+          position: relative;
+        }
+
+        :host( [hidden] ) {
+          display: none;
+        }
+
+        p {
+          color: var( --label-color, #161616 );
+          font-family: 'Open Sans', sans-serif;
+          font-size: var( --label-font-size, 16px );
+          font-weight: var( --label-font-weight, 400 );
+          letter-spacing: var( --label-letter-spacing, 0.10px );
+          line-height: var( --label-line-height, 24px );
+          margin: var( --label-margin, 0 );
+          padding: var( --label-padding, 0 );
+        }
+      &lt;/style>
+      &lt;p part="label">
+        &lt;slot>&lt;/slot>
+      &lt;/p>
+    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// Root</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">attachShadow</span><span class="token punctuation">(</span> <span class="token punctuation">{</span><span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'open'</span><span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>shadowRoot<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span> template<span class="token punctuation">.</span>content<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+window<span class="token punctuation">.</span>customElements<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span> <span class="token string">'kh-label'</span><span class="token punctuation">,</span> HoytLabel <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>In the style block of the component, we use the <code>:host()</code> selector to apply styling when a <code>hidden</code> attribute is present in the component instance. We can then make the component hidden using:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kh-label</span> <span class="token attr-name">hidden</span><span class="token punctuation">></span></span>Hello world.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kh-label</span><span class="token punctuation">></span></span></code></pre>
+<p>Easy enough. Another attribute I like to add is <code>concealed</code> which toggles the CSS <code>visibility</code> property for the times I do not want to remove the element from the DOM, but just make it invisible.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">:host( [concealed] )</span> <span class="token punctuation">{</span>
+  <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kh-label</span> <span class="token attr-name">concealed</span><span class="token punctuation">></span></span>Hello world.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kh-label</span><span class="token punctuation">></span></span></code></pre>
+<p>Sometimes you want text to be truncated with an ellipsis (by default in this configuration text will wrap). For this, we can implement a <code>truncate</code> attribute, that gets applied to the contained paragraph element.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">:host( [truncate] ) p</span> <span class="token punctuation">{</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">text-overflow</span><span class="token punctuation">:</span> ellipsis<span class="token punctuation">;</span>  
+  <span class="token property">white-space</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kh-label</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span> <span class="token attr-name">truncate</span><span class="token punctuation">></span></span>Hello world, or some other really long greeting.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kh-label</span><span class="token punctuation">></span></span></code></pre>
+<p>Nice! Now we are having some fun. Let us keep going.</p>
+<p>While you can style the <code>Label</code> component using the CSS variables, some design systems may not want to leave the options that wide open. They still recognize that there will be different style choices in different contexts, but they do not want developers departing from the system (prescribed look and feel). A happy middle ground here is to supply attributes that style the element, but do so within a range of fixed possibilities.</p>
+<p>Take the font color for example. Design systems will have already decided what the default color will be (usually slightly off-black). What if you want to use the <code>Label</code> component in an error situation? You will most likely want to change the font color to some variation of red. In a design system, that variation of red will already have been determined for you. In this fashion, any time an error is presented, across any of the applications using the design system, will show the same color of red. This means that rather than add a <code>color</code> attribute that takes any color value, that color reflects usage. It is that usage that is assigned to the <code>color</code> attribute - and by extension helps to describe the usage of the component instance in the code.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">:host( [disabled] ) p, :host( [color=disabled] ) p</span> <span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span> #656871<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">:host( [color=error] ) p</span> <span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span> #db0000<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">:host( [color=info] ) p</span> <span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span> #006ce0<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">:host( [color=success] ) p</span> <span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span> #00802f<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">:host( [color=warning] ) p</span> <span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span> #855900<span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kh-label</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>error<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hello world.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kh-label</span><span class="token punctuation">></span></span></code></pre>
+<p>The same approach is often used for font sizing and font-weight.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">:host( [size='body-xs'] ) p</span> <span class="token punctuation">{</span><span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span> <span class="token property">line-height</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">:host( [size='body-sm'] ) p</span> <span class="token punctuation">{</span><span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span> <span class="token property">line-height</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">:host( [size='heading-xs'] ) p</span> <span class="token punctuation">{</span><span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span> <span class="token property">line-height</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">:host( [size='heading-sm'] ) p</span> <span class="token punctuation">{</span><span class="token property">font-size</span><span class="token punctuation">:</span> 18px<span class="token punctuation">;</span> <span class="token property">line-height</span><span class="token punctuation">:</span> 22px<span class="token punctuation">;</span><span class="token punctuation">}</span>
+
+<span class="token selector">:host( [weight=light] ) p</span> <span class="token punctuation">{</span><span class="token property">font-weight</span><span class="token punctuation">:</span> 300<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">:host( [weight=bold] ) p</span> <span class="token punctuation">{</span><span class="token property">font-weight</span><span class="token punctuation">:</span> 700<span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kh-label</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>error<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>body-xs<span class="token punctuation">"</span></span> <span class="token attr-name">weight</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bold<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hello world.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kh-label</span><span class="token punctuation">></span></span></code></pre>
+<p>This is where having a <code>Label</code> component in your design system really starts to shine as compared to using a paragraph element. The API of the component can inform developers of the expected usage, while at the same time ensuring consistency. Think of the 200+ products offerred by Amazon Web Services. Each has it's own team of developers. Each has it's own UX/UI needs. Yet (like them or not) they all look the same.</p>
+<h2>Extending Functionality</h2>
+<p>Up to this point we have been adding attributes and applying corresponding styles all with CSS - no additional JavaScript code needed. With this approach, if you want an attribute to be updated dynamically, you would have to use the <code>setAttribute()</code> method.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> label <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span> <span class="token string">'kh-label'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+label<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'weight'</span><span class="token punctuation">,</span> <span class="token string">'bold'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Or to remove</span>
+label<span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'weight'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>If you directly set <code>label.weight = 'bold'</code>, then no changes to the label will appear to take place. There is work being done - a property called <code>weight</code> is being set on the <code>Label</code> instance. Just like any JavaScript object, you can apply random properties all you want. They will not do anything, but you can apply them.</p>
+<p>To get at the root cause of this behavior, we have to think a little more critically about what it is that we are trying to accomplish with the use of <code>label.weight = 'bold'</code>. What we really want to happen is for the attribute <code>weight</code> to be added to the component instance, and the value of <code>bold</code> to be assigned to that attribute. This will in turn trigger the CSS styles.</p>
+<blockquote>
+<p>Note the distinction here between setting a property and setting an attribute.</p>
+</blockquote>
+<p>When we want a Web Component property and attribute to have the same behavior, that is called reflection. To get basic reflection, we add access methods (get/set) to the component, and have those methods update the attributes accordingly.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">HoytLabel</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> template <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span> <span class="token string">'template'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    template<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token comment">/* template */</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      &lt;style>
+        :host {
+          box-sizing: border-box;
+          display: inline-block;
+          position: relative;
+        }
+
+        :host( [concealed] ) {
+          visibility: hidden;
+        }
+
+        :host( [hidden] ) {
+          display: none;
+        }
+
+        :host( [truncate] ) p {
+          overflow: hidden;
+          text-overflow: ellipsis;          
+          white-space: nowrap;
+        }
+
+        p {
+          color: var( --label-color, #161616 );
+          font-family: 'Open Sans', sans-serif;
+          font-size: var( --label-font-size, 16px );
+          font-weight: var( --label-font-weight, 400 );
+          letter-spacing: var( --label-letter-spacing, 0.10px );
+          line-height: var( --label-line-height, 24px );
+          margin: var( --label-margin, 0 );
+          padding: var( --label-padding, 0 );
+        }
+
+        :host( [disabled] ) p, :host( [color=disabled] ) p {color: #656871;}
+        :host( [color=error] ) p {color: #db0000;}
+        :host( [color=info] ) p {color: #006ce0;}
+        :host( [color=success] ) p {color: #00802f;}
+        :host( [color=warning] ) p {color: #855900;}
+        
+        :host( [size='body-xs'] ) p {font-size: 12px; line-height: 16px;}
+        :host( [size='body-sm'] ) p {font-size: 14px; line-height: 20px;}
+        :host( [size='heading-xs'] ) p {font-size: 16px; line-height: 20px;}
+        :host( [size='heading-sm'] ) p {font-size: 18px; line-height: 22px;}
+
+        :host( [weight=light] ) p {font-weight: 300;}
+        :host( [weight=bold] ) p {font-weight: 600;}        
+        :host( [weight=heavy] ) p {font-weight: 700;}        
+      &lt;/style>
+      &lt;p part="label">
+        &lt;slot>&lt;/slot>
+      &lt;/p>
+    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// Root</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">attachShadow</span><span class="token punctuation">(</span> <span class="token punctuation">{</span><span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'open'</span><span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>shadowRoot<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span> template<span class="token punctuation">.</span>content<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">get</span> <span class="token function">weight</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasAttribute</span><span class="token punctuation">(</span> <span class="token string">'weight'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span> <span class="token string">'weight'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">set</span> <span class="token function">weight</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> value <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'weight'</span><span class="token punctuation">,</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'weight'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+
+window<span class="token punctuation">.</span>customElements<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span> <span class="token string">'kh-label'</span><span class="token punctuation">,</span> HoytLabel <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>It is not as slick as data binding with a Svelte rune, but it also does not add much complexity. One set of access methods per reflected property. You can also add a bit of syntactic sugar in these accessors to handle primitive types more gracefully.</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Boolean</span>
+<span class="token keyword">get</span> <span class="token function">aBoolean</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-boolean'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">set</span> <span class="token function">aBoolean</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> value <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'boolean'</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      value <span class="token operator">=</span> value<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span> value <span class="token operator">===</span> <span class="token string">'false'</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-boolean'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-boolean'</span><span class="token punctuation">,</span> <span class="token string">''</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-boolean'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Float</span>
+<span class="token keyword">get</span> <span class="token function">aFloat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-float'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-float'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">set</span> <span class="token function">aFloat</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> value <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-float'</span><span class="token punctuation">,</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-float'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Integer</span>
+<span class="token keyword">get</span> <span class="token function">anInteger</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasAttribute</span><span class="token punctuation">(</span> <span class="token string">'an-integer'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">parseInt</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span> <span class="token string">'an-integer'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">set</span> <span class="token function">anInteger</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> value <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'an-integer'</span><span class="token punctuation">,</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'an-integer'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>These also have the nice side effect of presenting a <code>null</code> value when the attribute/property is not set.</p>
+<p>Web Component attributes cannot be complex objects, but that does not mean that properties cannot. If you want to handle a <code>Date</code> object for example, you can add access methods. The implementation of those methods will change the internal state, and update the component.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">get</span> <span class="token function">aDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_aDate<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">set</span> <span class="token function">aDate</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_aDate <span class="token operator">=</span> value <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span> value<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>For now though, let us get back to our label.</p>
+<p>Web Components having slots is important for composition of content - just as most HTML elements can contain other markup. In the case of a <code>Label</code> the content might be a long form description. An actual paragraph would be hard to read as an attribute. There are times however when the content you want the label to display is relatively short - most application labels come to mind.</p>
+<p>If you are inclined to add an access method for a <code>text</code> attribute, then you are on the right path.</p>
+<p>We also need to observe the changes to that attribute using the Web Components API, and apply changes where we want. In the case of the paragraph element, that looks something like:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">static</span> <span class="token keyword">get</span> <span class="token function">observedAttributes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">[</span>
+    <span class="token string">'text'</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">attributeChangedCallback</span><span class="token punctuation">(</span> <span class="token parameter">name<span class="token punctuation">,</span> old<span class="token punctuation">,</span> value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span><span class="token punctuation">(</span> name <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">'text'</span><span class="token operator">:</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$label<span class="token punctuation">.</span>textContent <span class="token operator">=</span> value <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token string">''</span> <span class="token operator">:</span> value<span class="token punctuation">;</span>        
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> </code></pre>
+<p>You have to be careful here, though. If <code>this.$label</code> points to the <code>p</code> element, setting the <code>textContent</code> will remove the <code>slot</code> element. While that works, it is not particularly friendly. We want to allow developers to use <code>text</code> as an attribute and a property, but also compose the content should they so desire.</p>
+<p>What I like to do here is put a <code>span</code> inside the <code>p</code>, and have <code>this.$label</code> point to the <code>span</code>. If you want things really tidy, you can even add a splash more CSS to hide the <code>span</code> if there is no <code>text</code> property.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">:host( :not( [text] ) ) span</span> <span class="token punctuation">{</span><span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre>
+<p>Okay, but what does all of this have to do with a <code>Label</code> component in a design system?</p>
+<p>If I set the <code>text</code> property, I treat that as a signal that the component will be updated dynamically at runtime. If the text content is composed (inside the component markup), then that is a signal that the content will not change at runtime.</p>
+<pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- Will not change --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kh-label</span><span class="token punctuation">></span></span>Hello world.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kh-label</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- Will change at runtime --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kh-label</span> <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Hello world.<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kh-label</span><span class="token punctuation">></span></span></code></pre>
+<p>This becomes manifest in the code as well. I am never thinking &quot;Should I be using <code>textContent</code> here?&quot; Programmatically, it is always <code>label.text</code>.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> label <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span> <span class="token string">'kh-label'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+label<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">'Hello, Kevin.'</span><span class="token punctuation">;</span></code></pre>
+<p>I use this pattern throughout my components. I lean on composability where possible, but if an element is going to change at runtime, I provide a means to use a property (without damaging slotted content if I can help it). With a <code>Button</code> component as an example, I provide a <code>label</code> property that can be set dynamically at runtime. If I am reading the markup, and the <code>Button</code> component has text content between the opening and closing tags, then the label of that button will not be changing at runtime. When I am updating the label of a button at runtime, I always use <code>Button.label</code>.</p>
+<h2>Next Steps</h2>
+<p>Where this really starts to get interesting is in more complex controls such as a list. Differentiating a <code>Button</code> from a <code>Link</code> and presenting an anchor element in place of the button element when an <code>href</code> attribute is present is another fun example. I will cover these in future posts. Until then, feel free to check out my complete Web Component template on <a href="https://gist.github.com/krhoyt/c0fbb7ad1fbb1bdf8e808115e6d62487">GitHub</a>.</p>
+
+        
+      </article>
+
+    </main>
+
+          
+
+  <section id="contact">
+
+  <h2>Let's Build Something Together</h2>
+
+  <p>
+    Have a project, collaboration, or opportunity you would like to discuss?
+    I am especially interested in work involving web architecture, data,
+    IoT, and developer experience.
+  </p>
+
+  <form data-netlify="true" netlify-honeypot="bot-field">
+
+    <!-- Honeypot -->
+    <div class="field honeypot">
+      <label for="pot">Do not fill this out if you are human</label>
+      <input id="pot" name="pot" type="text">      
+    </div>
+
+    <div class="field">
+      <label for="poc">Name</label>
+      <input type="text" id="poc" name="name" required>
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="field">
+      <label for="reason">Subject</label>
+      <select id="reason" name="reason">
+        <option value="">Select an option</option>
+        <option value="Feedback">Writing feedback</option>        
+        <option value="Project Collaboration">Project collaboration</option>
+        <option value="Consulting">Consulting</option>
+        <option value="Speaking">Speaking / workshops</option>
+        <option value="Career Opportunity">Career opportunity</option>
+        <option value="Other">Something else</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+    </div>
+
+    <button aria-label="Send Message" type="button">Send Message</button>    
+
+  </form>
+
+  <p class="email">
+    Prefer email? You can reach me at <a aria-label="Email kevin@ketnerlake.com" href="mailto:kevin@ketnerlake.com">kevin@ketnerlake.com</a>.
+  </p>
+
+</section>
+
+  <footer id="footer">
+
+  <p>
+    Made with ❤️ by Kevin Hoyt &copy; 2025 · Published with <a aria-label="Eleventy" href="https://www.11ty.dev">Eleventy</a>
+  </p>
+  
+</footer>
+
+
+  <script src="/script/menu.js"></script>
+
+</body>
+</html>
