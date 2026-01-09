@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="The intersection of development and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Web Component Template</title>
+
+  <link rel="icon" type="image/x-icon" href="/img/edit.svg">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/contact.css" />    
+  <link rel="stylesheet" href="/style/post.css" />
+  <link rel="stylesheet" href="/style/prism.css" />    
+  <link rel="stylesheet" href="/style/footer.css" />
+
+</head>
+<body>
+  
+  <header id="header">
+
+  <article>
+
+    <kh-follow>
+      <img alt="Kevin Hoyt" src="/img/krhoyt.jpg">
+    </kh-follow>
+
+    <nav>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/>
+      </svg>         
+      <select aria-label="Section">
+        <option value="/" >Home</option>
+        <option value="/blog" selected>Writing</option>
+        <option value="/about" >About</option>
+        <option value="/events" >Events</option>
+      </select>      
+    </nav>
+
+    <ul>
+      <li><a aria-label="Home" href="/">Home</a></li>
+      <li><a aria-label="Writing (Blog)" href="/blog">Writing</a></li>    
+      <li><a aria-label="About" href="/about">About</a></li>
+      <li><a aria-label="Events" href="/events">Events</a></li>
+    </ul>  
+
+    <div>
+
+      <!-- LinkedIn -->
+      <a aria-label="LinkedIn" href="https://www.linkedin.com/in/parkerkrhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/>
+        </svg>
+      </a>      
+
+      <!-- GitHub -->
+      <a aria-label="GitHub" href="https://github.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+        </svg>
+      </a>      
+
+      <!-- X -->
+      <a aria-label="Twitter" href="https://x.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" fill-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+
+      <!-- Bluesky (not listed)
+      <a aria-label="Bluesky" href="https://bsky.app/profile/krhoyt.bsky.social" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 11.388c-.906-1.761-3.372-5.044-5.665-6.662c-2.197-1.55-3.034-1.283-3.583-1.033C2.116 3.978 2 4.955 2 5.528c0 .575.315 4.709.52 5.4c.68 2.28 3.094 3.05 5.32 2.803c-3.26.483-6.157 1.67-2.36 5.898c4.178 4.325 5.726-.927 6.52-3.59c.794 2.663 1.708 7.726 6.444 3.59c3.556-3.59.977-5.415-2.283-5.898c2.225.247 4.64-.523 5.319-2.803c.205-.69.52-4.825.52-5.399c0-.575-.116-1.55-.752-1.838c-.549-.248-1.386-.517-3.583 1.033c-2.293 1.621-4.76 4.904-5.665 6.664"/>
+        </svg>
+      </a>
+      -->      
+
+      <!-- YouTube (not listed)
+      <a aria-label="YouTube" href="https://www.youtube.com/channel/UCSFeFhtLBuzU2UMs7oOL54A" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/>
+        </svg>
+      </a>          
+      -->
+
+      <!-- RSS feed -->
+      <a aria-label="RSS Feed (XML)" href="/feed.xml" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19t.588-1.412T5 17t1.413.588T7 19t-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1T9.138 8.413T4.6 7.1q-.65-.075-1.125-.512T3 5.5t.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337t3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35t-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062t2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/>
+        </svg>
+      </a>      
+
+      <!-- Instagram (not listed)
+      <a aria-label="Instagram" href="https://www.instagram.com/parkerkrhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 14">
+          <path fill="currentColor" fill-rule="evenodd" d="M3.39.787A2.604 2.604 0 0 0 .786 3.39v6.944a2.604 2.604 0 0 0 2.604 2.604h6.944a2.604 2.604 0 0 0 2.603-2.604V3.39A2.604 2.604 0 0 0 10.334.787zm7.693 2.607a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m-4.22 1.388a2.08 2.08 0 1 0 0 4.16a2.08 2.08 0 0 0 0-4.16m-3.081 2.08a3.08 3.08 0 1 1 6.16 0a3.08 3.08 0 0 1-6.16 0" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->     
+
+    </div>
+
+  </article>
+
+</header>
+
+
+  
+  
+    <main>
+
+      <div>
+
+        <img src="/img/covers/template.jpg" alt="Web Component Template">
+
+        
+          <figcaption>
+            <p>Photo by <a href="https://unsplash.com/@joannakosinska">Joanna Kosinska</a> on <a href="https://unsplash.com/photos/two-gray-pencils-on-yellow-surface-1_CMoFsPfso">Unsplash</a></p>
+          </figcaption>
+        
+
+      </div>
+
+      <article>
+
+        <h1>Web Component Template</h1>
+
+        <time>Jan 9, 2026 · 34 min read</time>
+
+        
+          <aside>
+            
+              <p>Web</p>
+            
+          </aside>
+                
+        
+        <p>Web Components get a bad rap. They are often described as too long, too verbose, or burdened with boilerplate. I recently had ChatGPT migrate the “label” component from the previous <a href="https://kevinhoyt.com/blog/2026/01/05/label-component/">post</a> to React. The result was less readable and nearly twice as long. Between recurring React security issues and the latest &quot;Tailwind is dead&quot; discourse, the ecosystem feels noisier than ever.</p>
+<p>While there are a number of different ways to leverage the various standards that make up Web Components, I like a Shadow DOM implementation that leans on composability wherever possible - especially via slots, parts, and predictable APIs. My component template is pretty dialed in. I have built hundreds of components this way, and it is the approach I keep coming back to.</p>
+<blockquote>
+<p>I have implemented applications with Light DOM as well, and never quite developed a workflow I liked. Perhaps as somebody that has built applications with technologies like Java Swing and Visual Basic, the Shadow DOM approach just resonates more with me.</p>
+</blockquote>
+<h2>Top and Bottom</h2>
+<p>The opening line of the template extends the <code>HTMLElement</code> class. This is standard for Web Components. For the name of the subclass, I like to use the prefix I intend to use for the component, followed by a name that describes the component. For example, a button component with the <code>kh-</code> prefix would become <code>KhButton</code>. In this post, we will use <code>KhTemplate</code> as a generic example.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">KhTemplate</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+
+window<span class="token punctuation">.</span>customElements<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span> <span class="token string">'kh-template'</span><span class="token punctuation">,</span> KhTemplate <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The last line of the template wires up the subclass to the element name. The prefix must be present. The most common prefix is generally two or three letters, but I have seen complete words, and even multiple words used as a prefix (for example <code>solar-system-sun</code>, <code>solar-system-earth</code>). My guidance would be to use whatever makes resulting code most readable. Consistency is key.</p>
+<h2>Constructor</h2>
+<p>The first part of the constructor defines the styles and markup that make up the component. I generally include a <code>:host</code> CSS block that contains at least <code>box-sizing: border-box</code>, <code>display: inline-block</code>, and <code>position: relative</code>.</p>
+<p>The <code>box-sizing</code> model helps make the layout more predictable. The <code>display</code> can be whatever you need, I prefer to specify it for consistency and maintainability. The relative <code>position</code> comes in handy when you need to absolutely position something inside the component like a tooltip or <code>::after</code> content.</p>
+<pre class="language-js"><code class="language-js"><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> template <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span> <span class="token string">'template'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  template<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token comment">/* template */</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    &lt;style>
+      :host {
+        box-sizing: border-box;
+        display: inline-block;
+        position: relative;
+      }
+    &lt;/style>
+    &lt;p part="label">Hello world!&lt;/p>
+  </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span></code></pre>
+<p>I also like to include the <code>part</code> attribute whenever I think the element may need to be styled by the developer. I find that if I am reaching for <code>id</code> or <code>class</code> to be able to reference the element, then I should probably just use a <code>part</code> name. This makes the part stylable, and easy to reference with <code>querySelector()</code>.</p>
+<p>The second part of the constructor is declaring everything the component needs. I start with properties, and have specific default values I like to use. I also use the underscore (<code>_</code>) character to denote that these are &quot;private&quot;.</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Properties</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>_anArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>_aDate <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>_anObject <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    
+<span class="token comment">// Events</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>onComponentClick <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">onComponentClick</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span> <span class="token keyword">this</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Root</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">attachShadow</span><span class="token punctuation">(</span> <span class="token punctuation">{</span><span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'open'</span><span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>shadowRoot<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span> template<span class="token punctuation">.</span>content<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Elements</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$label <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>shadowRoot<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span> <span class="token string">'p[part=label]'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Most components handle some form of events internally. Here is where we declare those events. I use <code>bind()</code> so that they are also easily removed. Events get wired up later in the <code>connectedCallback()</code> method.</p>
+<p>Next, we stamp out the template by attaching it to the component’s <code>shadowRoot</code>.</p>
+<p>Finally, any element references you will need during the life of the component. I like to use <code>$</code> to indicate that this property refers to an element. This allows me to have a property <code>this._label</code> align with an element <code>this.$label</code> to make things more readable.</p>
+<h2>Event Handlers</h2>
+<p>After the constructor, I will define any of the events I referenced inside the constructor.</p>
+<pre class="language-js"><code class="language-js"><span class="token function">onComponentClick</span><span class="token punctuation">(</span> <span class="token parameter">evt</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span> <span class="token keyword">new</span> <span class="token class-name">CustomEvent</span><span class="token punctuation">(</span> <span class="token string">'kh-event'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">bubbles</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">cancelable</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">composed</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">detail</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string-property property">'abc'</span><span class="token operator">:</span> <span class="token number">123</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>I do not generally like to rely on bubbling - either of native events or events that my components dispatch. If there is a <code>button</code> element inside my component, I will attach a click handler inside the component and in turn have the component dispatch something more relevant - even if it is just an <code>kh-click</code>. Whenever I use my components then, I always listen for the component specific event.</p>
+<blockquote>
+<p>I like to think that this makes the event handling easier to follow, and that it avoids any collision with other components I may be using (especially in a composable manner). In practice, I have never encountered any problems getting the right event from the right component.</p>
+</blockquote>
+<h2>Rendering Content</h2>
+<p>The <code>_render()</code> method is where I update the elements within the component based on changes to attributes or properties. If the changes come from attribute changes, I will reference those access methods directly. If the changes are coming from property changes, then I will reference the internal property such as <code>this._value</code> directly.</p>
+<p><strong>Never set an attribute or property of the component itself from inside the <code>_render()</code> method. This will result in an infinite loop.</strong></p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// When attributes change</span>
+<span class="token function">_render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$label<span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>aString <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token string">''</span> <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>aString<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>In the case of something like a calendar component, where there are ~50 elements inside the component, this method definition can get pretty lengthy. Think of this as working with a scalpel, not a virtual DOM. You can set the <code>textContent</code> of the <code>this.$label</code> instance repeatedly without a performance impact.</p>
+<h2>The Upgrade</h2>
+<p>Depending on how your component is used, property values may be assigned before the component has had a chance to initialize. If this happens, any property values that were assigned will become <code>undefined</code>. To get around this, as part of the initialization, I leverage a method named <code>_upgrade()</code>. We will see this more in a moment.</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Promote properties</span>
+<span class="token comment">// Values may be set before module load</span>
+<span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token parameter">property</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span> property <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> value <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">[</span>property<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">delete</span> <span class="token keyword">this</span><span class="token punctuation">[</span>property<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">[</span>property<span class="token punctuation">]</span> <span class="token operator">=</span> value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The <code>_upgrade()</code> method checks for the existence of a property value. If it exists, that property is referenced to a local value. The property value itself is then deleted, and then immediately set with the local value. This ensures that any properties assigned before upgrade are properly re-applied once the component is fully initialized.</p>
+<h2>Connect and Disconnect</h2>
+<p>When a component is attached to the DOM, it calls the <code>connectedCallback()</code> method. This is where you can wire up your events, and perform an initial render. When the component is removed from the DOM, it calls the <code>disconnectedCallback()</code> method. This is where you want to remove any event handlers.</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Setup</span>
+<span class="token function">connectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$label<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span> <span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onComponentClick <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token string">'anArray'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>      
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token string">'aBoolean'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token string">'aDate'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>    
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token string">'aFloat'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>      
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token string">'anInteger'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>            
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token string">'anObject'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>    
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token string">'aString'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Set down</span>
+<span class="token function">disconnectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$label<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span> <span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onComponentClick <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Here is where the <code>_upgrade()</code> method shows up. You should apply the upgrade to all attribute and property values that are exposed externally. Now that we are sure the state of the component is what the developer expected, we can call <code>_render()</code> to place all the values in the component DOM.</p>
+<h2>Attributes</h2>
+<p>We are almost done implementing our web component. We have attributes and properties remaining.</p>
+<p>The <code>observedAttributes()</code> method is part of the specification that tells the component what attributes might change at runtime. This means that if you set a <code>data-id</code> attribute on the element at runtime, and the <code>data-id</code> attribute is not declared in <code>observedAttributes()</code>, then no updates will happen to the component - the attribute is not registered - and that may be what is desired.</p>
+<p>A &quot;label&quot; component on the other hand will likely have a <code>text</code> attribute. We expect the internal DOM of the component to be updated when that attribute is added, changed, or removed. For this change to happen, we need to tell the component about the attribute.</p>
+<blockquote>
+<p>We do not need to list properties here - they are handled directly via their setters.</p>
+</blockquote>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Watched attributes</span>
+<span class="token keyword">static</span> <span class="token keyword">get</span> <span class="token function">observedAttributes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">[</span>
+    <span class="token string">'a-boolean'</span><span class="token punctuation">,</span>
+    <span class="token string">'a-float'</span><span class="token punctuation">,</span>    
+    <span class="token string">'an-integer'</span><span class="token punctuation">,</span>    
+    <span class="token string">'a-string'</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Observed attribute has changed</span>
+<span class="token comment">// Update render</span>
+<span class="token function">attributeChangedCallback</span><span class="token punctuation">(</span> <span class="token parameter">name<span class="token punctuation">,</span> old<span class="token punctuation">,</span> value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> </code></pre>
+<p>When an attribute is changed, the <code>_render()</code> method is called to update the DOM. This may look different than some other component implementations you may have seen. This is because in this implementation, some property changes may change the DOM as well. Rather than have that code in multiple places, it gets centralized in the <code>_render()</code> method.</p>
+<h2>Properties</h2>
+<p>Technically attributes can only be strings. We will add some syntactic sugar in a moment to be able to handle basic types such as integers, floats, and booleans. There are times however when you really need to pass an object to the component. That is where properties come into play.</p>
+<blockquote>
+<p>I have specific signatures I like to use for my properties. I will declare them in the constructor with a default value, and assign them there for any runtime changes.</p>
+</blockquote>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Properties</span>
+<span class="token comment">// Not reflected</span>
+<span class="token comment">// Array, Date, Object, null</span>
+<span class="token keyword">get</span> <span class="token function">anArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_anArray<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_anArray<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">set</span> <span class="token function">anArray</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_anArray <span class="token operator">=</span> value <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token punctuation">[</span><span class="token operator">...</span> value<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">get</span> <span class="token function">aDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_aDate<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">set</span> <span class="token function">aDate</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_aDate <span class="token operator">=</span> value <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span> value<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">get</span> <span class="token function">anObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_anObject<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">set</span> <span class="token function">anObject</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_anObject <span class="token operator">=</span> value <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> <span class="token function">structuredClone</span><span class="token punctuation">(</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>    </code></pre>
+<p>Properties are defined using access methods. When working with them at runtime, they take on the same look at when working with attributes (<code>label.text = 'Hello world.'</code>). Regardless of properties or attributes, I force the default to <code>null</code> for consistency (with the exception of boolean attributes). I also assign by value, and return by reference by convention across all of my components. These conventions keep everything consistent.</p>
+<p>In order to keep the consistency for attributes, and in order to add that syntactic sugar to handle specific data types, we also implement access methods for attributes.</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Attributes</span>
+<span class="token comment">// Reflected</span>
+<span class="token comment">// Boolean, Float, Integer, String, null</span>
+<span class="token keyword">get</span> <span class="token function">aBoolean</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-boolean'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">set</span> <span class="token function">aBoolean</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> value <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'boolean'</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      value <span class="token operator">=</span> value<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span> value <span class="token operator">===</span> <span class="token string">'false'</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-boolean'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-boolean'</span><span class="token punctuation">,</span> <span class="token string">''</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-boolean'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">get</span> <span class="token function">aFloat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-float'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-float'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">set</span> <span class="token function">aFloat</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> value <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-float'</span><span class="token punctuation">,</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-float'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">get</span> <span class="token function">anInteger</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasAttribute</span><span class="token punctuation">(</span> <span class="token string">'an-integer'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">parseInt</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span> <span class="token string">'an-integer'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">set</span> <span class="token function">anInteger</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> value <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'an-integer'</span><span class="token punctuation">,</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'an-integer'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">get</span> <span class="token function">aString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-string'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-string'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">set</span> <span class="token function">aString</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> value <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-string'</span><span class="token punctuation">,</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-string'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>        </code></pre>
+<p>These attribute access methods handle the updates to the attributes themselves (a technique commonly called &quot;attribute reflection&quot;). When the attribute access methods are invoked, they will in turn trigger the <code>attributeChangedCallback()</code> method, which will in turn call the <code>_render()</code> function to update the internal DOM as necessary.</p>
+<blockquote>
+<p>Note that the naming convention used in these code snippets is designed to indicate a specific data type. You will want to update/use these snippets to map to your specific API surface. For example, if you have <code>text</code> attribute, then you would implement the <code>aString()</code> access methods, but name the methods <code>text()</code>.</p>
+</blockquote>
+<h2>Next Steps</h2>
+<p>I will place the entire template below for reference. You can also find it as a <a href="https://gist.github.com/krhoyt/c0fbb7ad1fbb1bdf8e808115e6d62487">GitHub Gist</a>. I have implemented hundreds of components using this approach, and deployed them in production applications such as <a href="https://annoawesome.com/">Anno Awesome</a> and <a href="https://flavorawesome.com/">Flavor Awesome</a>. If you are looking for more examples, check out my Vanilla JS implementations of <a href="https://github.com/krhoyt/Rainforest">Amazon Cloudscape</a> and <a href="https://github.com/krhoyt/Graphene">IBM Carbon</a> for more examples.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">KhTemplate</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> template <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span> <span class="token string">'template'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    template<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token comment">/* template */</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      &lt;style>
+        :host {
+          box-sizing: border-box;
+          display: inline-block;
+          position: relative;
+        }
+
+        :host( [a-boolean] ) {
+          display: none;
+        }
+        
+        hoyt-component::part( inner ) {
+          --component-stylet: var( --my-component-style, #123456 );
+        }
+      &lt;/style>
+      &lt;hoyt-component exportparts="inner: outer" part="also-outer">&lt;/hoyt-component>
+    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// Properties</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_anArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_aDate <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_anObject <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// Consider for mobile</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_touch <span class="token operator">=</span> <span class="token punctuation">(</span> <span class="token string">'ontouchstart'</span> <span class="token keyword">in</span> document<span class="token punctuation">.</span>documentElement <span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">'touchstart'</span> <span class="token operator">:</span> <span class="token string">'click'</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Events</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>onComponentClick <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">onComponentClick</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span> <span class="token keyword">this</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Root</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">attachShadow</span><span class="token punctuation">(</span> <span class="token punctuation">{</span><span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'open'</span><span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>shadowRoot<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span> template<span class="token punctuation">.</span>content<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Elements</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$component <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>shadowRoot<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span> <span class="token string">'element-name'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token function">onComponentClick</span><span class="token punctuation">(</span> <span class="token parameter">evt</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span> <span class="token keyword">new</span> <span class="token class-name">CustomEvent</span><span class="token punctuation">(</span> <span class="token string">'kh-event'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">bubbles</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">cancelable</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">composed</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">detail</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string-property property">'abc'</span><span class="token operator">:</span> <span class="token number">123</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+   <span class="token comment">// When attributes change</span>
+  <span class="token function">_render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$component<span class="token punctuation">.</span>aBoolean <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>aInteger <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token boolean">false</span> <span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Promote properties</span>
+  <span class="token comment">// Values may be set before module load</span>
+  <span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token parameter">property</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span> property <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> value <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">[</span>property<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token keyword">delete</span> <span class="token keyword">this</span><span class="token punctuation">[</span>property<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">[</span>property<span class="token punctuation">]</span> <span class="token operator">=</span> value<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Setup</span>
+  <span class="token function">connectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$component<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span> <span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onComponentClick <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token string">'anArray'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>      
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token string">'aBoolean'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token string">'aDate'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token string">'aFloat'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>      
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token string">'anInteger'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>            
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token string">'anObject'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_upgrade</span><span class="token punctuation">(</span> <span class="token string">'aString'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// Set down</span>
+  <span class="token function">diconnectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$component<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span> <span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onComponentClick <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Watched attributes</span>
+  <span class="token keyword">static</span> <span class="token keyword">get</span> <span class="token function">observedAttributes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>
+      <span class="token string">'a-boolean'</span><span class="token punctuation">,</span>
+      <span class="token string">'a-float'</span><span class="token punctuation">,</span>    
+      <span class="token string">'an-integer'</span><span class="token punctuation">,</span>    
+      <span class="token string">'a-string'</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Observed attribute has changed</span>
+  <span class="token comment">// Update render</span>
+  <span class="token function">attributeChangedCallback</span><span class="token punctuation">(</span> <span class="token parameter">name<span class="token punctuation">,</span> old<span class="token punctuation">,</span> value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> 
+  
+  <span class="token comment">// Properties</span>
+  <span class="token comment">// Not reflected</span>
+  <span class="token comment">// Array, Date, Object, null</span>
+  <span class="token keyword">get</span> <span class="token function">anArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_anArray<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_anArray<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">set</span> <span class="token function">anArray</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_anArray <span class="token operator">=</span> value <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token punctuation">[</span><span class="token operator">...</span> value<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">get</span> <span class="token function">aDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_aDate<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">set</span> <span class="token function">aDate</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_aDate <span class="token operator">=</span> value <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span> value<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">get</span> <span class="token function">anObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_anObject<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">set</span> <span class="token function">anObject</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_anObject <span class="token operator">=</span> value <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> <span class="token function">structuredClone</span><span class="token punctuation">(</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>    
+
+  <span class="token comment">// Attributes</span>
+  <span class="token comment">// Reflected</span>
+  <span class="token comment">// Boolean, Float, Integer, String, null</span>
+  <span class="token keyword">get</span> <span class="token function">aBoolean</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-boolean'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">set</span> <span class="token function">aBoolean</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> value <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'boolean'</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        value <span class="token operator">=</span> value<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">if</span><span class="token punctuation">(</span> value <span class="token operator">===</span> <span class="token string">'false'</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-boolean'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-boolean'</span><span class="token punctuation">,</span> <span class="token string">''</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-boolean'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">get</span> <span class="token function">aFloat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-float'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-float'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">set</span> <span class="token function">aFloat</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> value <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-float'</span><span class="token punctuation">,</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-float'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">get</span> <span class="token function">anInteger</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasAttribute</span><span class="token punctuation">(</span> <span class="token string">'an-integer'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">parseInt</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span> <span class="token string">'an-integer'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">set</span> <span class="token function">anInteger</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> value <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'an-integer'</span><span class="token punctuation">,</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'an-integer'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">get</span> <span class="token function">aString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-string'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-string'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">set</span> <span class="token function">aString</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> value <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-string'</span><span class="token punctuation">,</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span> <span class="token string">'a-string'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>        
+<span class="token punctuation">}</span>
+
+window<span class="token punctuation">.</span>customElements<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span> <span class="token string">'kh-template'</span><span class="token punctuation">,</span> KhTemplate <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+        
+      </article>
+
+    </main>
+
+          
+
+  <section id="contact">
+
+  <h2>Let's Build Something Together</h2>
+
+  <p>
+    Have a project, collaboration, or opportunity you would like to discuss?
+    I am especially interested in work involving web architecture, data,
+    IoT, and developer experience.
+  </p>
+
+  <form data-netlify="true" netlify-honeypot="bot-field">
+
+    <!-- Honeypot -->
+    <div class="field honeypot">
+      <label for="pot">Do not fill this out if you are human</label>
+      <input id="pot" name="pot" type="text">      
+    </div>
+
+    <div class="field">
+      <label for="poc">Name</label>
+      <input type="text" id="poc" name="name" required>
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="field">
+      <label for="reason">Subject</label>
+      <select id="reason" name="reason">
+        <option value="">Select an option</option>
+        <option value="Feedback">Writing feedback</option>        
+        <option value="Project Collaboration">Project collaboration</option>
+        <option value="Consulting">Consulting</option>
+        <option value="Speaking">Speaking / workshops</option>
+        <option value="Career Opportunity">Career opportunity</option>
+        <option value="Other">Something else</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+    </div>
+
+    <button aria-label="Send Message" type="button">Send Message</button>    
+
+  </form>
+
+  <p class="email">
+    Prefer email? You can reach me at <a aria-label="Email kevin@ketnerlake.com" href="mailto:kevin@ketnerlake.com">kevin@ketnerlake.com</a>.
+  </p>
+
+</section>
+
+  <footer id="footer">
+
+  <p>
+    Made with ❤️ by Kevin Hoyt &copy; 2025 · Published with <a aria-label="Eleventy" href="https://www.11ty.dev">Eleventy</a>
+  </p>
+  
+</footer>
+
+
+  <script src="/script/menu.js"></script>
+
+</body>
+</html>
