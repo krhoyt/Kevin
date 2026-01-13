@@ -14,11 +14,13 @@ export default function( config ) {
 
   config.addCollection( 'postsByRating', ( collection ) => {
     return collection.getFilteredByGlob( 'posts/*.md' )
+      .filter( post => !post.data.draft )
       .sort( ( a, b ) => b.data.rating - a.data.rating );
   } );
 
   config.addCollection( 'postsByDate', ( collection ) => {
     return collection.getFilteredByGlob( 'posts/*.md' )
+      .filter( post => !post.data.draft )
       .sort( ( a, b ) => b.date - a.date );
   } );  
 

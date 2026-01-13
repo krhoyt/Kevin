@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="The intersection of development and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Managing Tech: People</title>
+
+  <link rel="icon" type="image/x-icon" href="/img/edit.svg">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/contact.css" />    
+  <link rel="stylesheet" href="/style/post.css" />
+  <link rel="stylesheet" href="/style/prism.css" />    
+  <link rel="stylesheet" href="/style/footer.css" />
+
+</head>
+<body>
+  
+  <header id="header">
+
+  <article>
+
+    <kh-follow>
+      <img alt="Kevin Hoyt" src="/img/krhoyt.jpg">
+    </kh-follow>
+
+    <nav>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/>
+      </svg>         
+      <select aria-label="Section">
+        <option value="/" >Home</option>
+        <option value="/blog" selected>Writing</option>
+        <option value="/about" >About</option>
+        <option value="/events" >Events</option>
+      </select>      
+    </nav>
+
+    <ul>
+      <li><a aria-label="Home" href="/">Home</a></li>
+      <li><a aria-label="Writing (Blog)" href="/blog">Writing</a></li>    
+      <li><a aria-label="About" href="/about">About</a></li>
+      <li><a aria-label="Events" href="/events">Events</a></li>
+    </ul>  
+
+    <div>
+
+      <!-- LinkedIn -->
+      <a aria-label="LinkedIn" href="https://www.linkedin.com/in/parkerkrhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/>
+        </svg>
+      </a>      
+
+      <!-- GitHub -->
+      <a aria-label="GitHub" href="https://github.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+        </svg>
+      </a>      
+
+      <!-- X -->
+      <a aria-label="Twitter" href="https://x.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" fill-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+
+      <!-- Bluesky (not listed)
+      <a aria-label="Bluesky" href="https://bsky.app/profile/krhoyt.bsky.social" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 11.388c-.906-1.761-3.372-5.044-5.665-6.662c-2.197-1.55-3.034-1.283-3.583-1.033C2.116 3.978 2 4.955 2 5.528c0 .575.315 4.709.52 5.4c.68 2.28 3.094 3.05 5.32 2.803c-3.26.483-6.157 1.67-2.36 5.898c4.178 4.325 5.726-.927 6.52-3.59c.794 2.663 1.708 7.726 6.444 3.59c3.556-3.59.977-5.415-2.283-5.898c2.225.247 4.64-.523 5.319-2.803c.205-.69.52-4.825.52-5.399c0-.575-.116-1.55-.752-1.838c-.549-.248-1.386-.517-3.583 1.033c-2.293 1.621-4.76 4.904-5.665 6.664"/>
+        </svg>
+      </a>
+      -->      
+
+      <!-- YouTube (not listed)
+      <a aria-label="YouTube" href="https://www.youtube.com/channel/UCSFeFhtLBuzU2UMs7oOL54A" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/>
+        </svg>
+      </a>          
+      -->
+
+      <!-- RSS feed -->
+      <a aria-label="RSS Feed (XML)" href="/feed.xml" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19t.588-1.412T5 17t1.413.588T7 19t-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1T9.138 8.413T4.6 7.1q-.65-.075-1.125-.512T3 5.5t.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337t3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35t-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062t2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/>
+        </svg>
+      </a>      
+
+      <!-- Instagram (not listed)
+      <a aria-label="Instagram" href="https://www.instagram.com/parkerkrhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 14">
+          <path fill="currentColor" fill-rule="evenodd" d="M3.39.787A2.604 2.604 0 0 0 .786 3.39v6.944a2.604 2.604 0 0 0 2.604 2.604h6.944a2.604 2.604 0 0 0 2.603-2.604V3.39A2.604 2.604 0 0 0 10.334.787zm7.693 2.607a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m-4.22 1.388a2.08 2.08 0 1 0 0 4.16a2.08 2.08 0 0 0 0-4.16m-3.081 2.08a3.08 3.08 0 1 1 6.16 0a3.08 3.08 0 0 1-6.16 0" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->     
+
+    </div>
+
+  </article>
+
+</header>
+
+
+  
+  
+    <main>
+
+      <div>
+
+        <img src="/img/covers/people.jpg" alt="Managing Tech: People">
+
+        
+          <figcaption>
+            <p>Photo by <a href="https://unsplash.com/@ryoji__iwata">Ryoji Iwata</a> on <a href="https://unsplash.com/photos/aerial-view-of-people-walking-on-raod-IBaVuZsJJTo">Unsplash</a></p>
+          </figcaption>
+        
+
+      </div>
+
+      <article>
+
+        <h1>Managing Tech: People</h1>
+
+        <time>Jan 12, 2026 · 5 min read</time>
+
+        
+          <aside>
+            
+              <p>Enablement</p>
+            
+          </aside>
+                
+        
+        <p>This is part of a series:</p>
+<ul>
+<li>Managing Tech: People (you are here)</li>
+<li>Managing Tech: <a href="/blog/2026/01/14/managing-heroes/">Heroes</a></li>
+</ul>
+<p>You are good at your job. You come into work, consistently deliver results, and keep learning more about the business and your craft. Eventually, your abilities are noticed and you are promoted to manager. Congratulations!</p>
+<p>There is just one problem: the skills that made you successful as an individual contributor (IC) no longer serve you as a manager. You struggle for a while, then eventually decide to return to your previous role.</p>
+<p>There is no shame in that. I have seen this happen time and again.</p>
+<p>The other day, I was talking to a friend who had gone through this exact process. After years of being comfortably back in his IC role, he is once again being formally nudged toward management. Knowing that I have managed technical teams for nearly 20 years, he asked me for some advice.</p>
+<p>I took a deep breath, sat with the question for a moment, and suggested...</p>
+<h2>People</h2>
+<p>When it comes to managing people - especially in tech - my first thought is simple: remember that your employees are people.</p>
+<p>This sounds obvious, but tech cultures are often tuned to extract as much value from employees as possible. If you are not careful, those employees can start to look like cogs. Cogs are replaceable when they stop working. People are not.</p>
+<p>Every employee brings a full life with them to work every day: desires, goals, problems, stresses, emotions - everything from the journey that led them to this role. When you interact with your employees, interact with them as people.</p>
+<p>When you have a 1:1, ask, &quot;How are you?&quot; Mean it. Listen - not just hear - the response. Ask follow-up questions. Try to understand their perspective in that moment. What is motivating them? What is weighing on them? Is there anything you need to do?</p>
+<p>Sometimes the answer is no. Most of the time, it is. But if you listen closely enough, you will occasionally find moments where you can change the trajectory of an employee’s work—and sometimes their experience at the company.</p>
+<h2>No Free Pass</h2>
+<p>You might be thinking this is ridiculous.</p>
+<p>You pay these people to show up and do a job. What happens outside of work is n0t your concern. Just deliver. Deal with your baggage on your own time.</p>
+<p>The problem with this mindset is that humans are social animals. Even introverts - even the shy - need social interaction (just the right kind). By ignoring who your employees are as people, you are ignoring the very interactions that shape who they are at work.</p>
+<blockquote>
+<p>The social contract between employee and employer has changed dramatically over the past twenty years - especially in tech.</p>
+</blockquote>
+<p>If there are 24 hours in a day and an employee works an eight-hour shift, that leaves 16 other hours influencing how they show up. Ignoring that reality means ignoring roughly 66% of what makes your employee your employee.</p>
+<p>Would you ignore 66% of your business?<br>
+Would you leave 66% of your revenue on the table?</p>
+<p>This is not a free pass. It is compassion. It is empathy for another human being. It is not a &quot;get out of jail free&quot; card.</p>
+<p>As a manager, you still need results. Deadlines still exist. The company is looking to you to deliver. Treating employees as people does not change that - it gives you a better way to lead through it.</p>
+<p>If an employee wakes up with a flat tire and arrives late, the key question is not &quot;Why are you late?&quot; It is &quot;Will this impact deliverables?&quot;</p>
+<p>If it will, how can you reallocate resources to keep things on track? Maybe another employee has been looking for a chance to stretch. Maybe someone else wants exposure to a different project. You can only make those decisions if you understand your people.</p>
+<p>Now think about the employee with the flat tire. It is stressful. It is frustrating. You would probably appreciate a little flexibility to fix the problem and move on. Offer that time. Let them resolve the issue quickly so they can return focused and productive.</p>
+<p>That is what you actually want: problems resolved in a way that still allows the team to deliver.</p>
+<blockquote>
+<p>A welcome side effect of this approach is trust. Trust leads to loyalty - to you, to the team, and sometimes to the company. And the next time someone else needs help, that employee is far more likely to pay it forward.</p>
+</blockquote>
+<h2>A Word of Caution</h2>
+<p>Treating employees as people is critical - but remember that you are still the manager.</p>
+<p>You will write performance reviews. You will adjust compensation. You may have to let someone go. There may be reorganizations that move people across teams. If you get too close, these moments can create real legal and organizational risk.</p>
+<p>You are not their friend. You are their manager.</p>
+<p>Empathy and humanity will help you lead through change, but crossing fully into the &quot;friend zone&quot; should be avoided. You do not need to enforce hierarchy - but you do need to maintain a healthy, professional distance.</p>
+
+        
+      </article>
+
+    </main>
+
+          
+
+  <section id="contact">
+
+  <h2>Let's Build Something Together</h2>
+
+  <p>
+    Have a project, collaboration, or opportunity you would like to discuss?
+    I am especially interested in work involving web architecture, data,
+    IoT, and developer experience.
+  </p>
+
+  <form data-netlify="true" netlify-honeypot="bot-field">
+
+    <!-- Honeypot -->
+    <div class="field honeypot">
+      <label for="pot">Do not fill this out if you are human</label>
+      <input id="pot" name="pot" type="text">      
+    </div>
+
+    <div class="field">
+      <label for="poc">Name</label>
+      <input type="text" id="poc" name="name" required>
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="field">
+      <label for="reason">Subject</label>
+      <select id="reason" name="reason">
+        <option value="">Select an option</option>
+        <option value="Feedback">Writing feedback</option>        
+        <option value="Project Collaboration">Project collaboration</option>
+        <option value="Consulting">Consulting</option>
+        <option value="Speaking">Speaking / workshops</option>
+        <option value="Career Opportunity">Career opportunity</option>
+        <option value="Other">Something else</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+    </div>
+
+    <button aria-label="Send Message" type="button">Send Message</button>    
+
+  </form>
+
+  <p class="email">
+    Prefer email? You can reach me at <a aria-label="Email kevin@ketnerlake.com" href="mailto:kevin@ketnerlake.com">kevin@ketnerlake.com</a>.
+  </p>
+
+</section>
+
+  <footer id="footer">
+
+  <p>
+    Made with ❤️ by Kevin Hoyt &copy; 2025 · Published with <a aria-label="Eleventy" href="https://www.11ty.dev">Eleventy</a>
+  </p>
+  
+</footer>
+
+
+  <script src="/script/menu.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+:root {
+  --button-align-items: center;
+  --button-background: #0a0a0a;
+  --button-border-radius: 8px;
+  --button-color: #ffffff;
+  --button-cursor: default;
+  --button-font-family: 'Geist', sans-serif;
+  --button-font-size: 14px;
+  --button-font-weight: 500;
+  --button-justify-content: center;
+  --button-line-height: 20px;
+  --button-margin: 0;
+  --button-overflow: hidden;
+  --button-padding: 8px 16px 8px 16px;
+  --button-text-align: center;
+  --button-text-overflow: ellipsis;
+  --button-white-space: nowrap;
+  --button-width: 100%;
+
+  --button-hover-background: #171717e5;
+  --button-hover-color: #fafafa;
+}
