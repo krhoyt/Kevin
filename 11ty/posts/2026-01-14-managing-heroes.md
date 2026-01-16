@@ -9,13 +9,13 @@ permalink: /blog/2026/01/14/managing-heroes/
 tags: 
  - Enablement
 rating: 1
-draft: true
 ---
 
 This is part of a series:
 
 - Managing Tech: [People](/blog/2026/01/12/managing-people/)
 - Managing Tech: Heroes (you are here)
+- Managing Tech: [Professionals](/blog/2026/01/20/managing-professionals/)
 
 Have you ever heard the term "*elevator pitch*"? You usually hear it in the context of pitching an idea to senior management or to investors. The idea is that the pitch for your idea or business should take no longer than an elevator ride - because that is all the time you might get.
 
@@ -25,7 +25,7 @@ From that point on, I always made sure to finish the phrase.
 
 ## Heroes
 
-In my last post, [Managing Tech: People](), I mentioned that people bring their own desires and goals to work. As a manager, you should make it a priority to understand what those desires and goals are for your employees - **to make people heroes for what it is that they want to achieve.**
+In my last post, [Managing Tech: People](/blog/2026/01/12/managing-people/), I mentioned that people bring their own desires and goals to work. As a manager, you should make it a priority to understand what those desires and goals are for your employees - **to make people heroes for what it is that they want to achieve.**
 
 This is awkward at first. You will get the standard "Where do you want to be in five years?" type of dialogue. The kind of dialogue that carries hints of fear and reservation. A dialogue that is truthful, but not honest. That is a fine place to start, but you want to go deeper.
 

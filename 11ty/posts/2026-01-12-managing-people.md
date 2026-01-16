@@ -9,13 +9,13 @@ permalink: /blog/2026/01/12/managing-people/
 tags: 
  - Enablement
 rating: 1
-draft: true
 ---
 
 This is part of a series:
 
 - Managing Tech: People (you are here)
 - Managing Tech: [Heroes](/blog/2026/01/14/managing-heroes/)
+- Managing Tech: [Professionals](/blog/2026/01/20/managing-professionals/)
 
 You are good at your job. You come into work, consistently deliver results, and keep learning more about the business and your craft. Eventually, your abilities are noticed and you are promoted to manager. Congratulations!
 
@@ -47,7 +47,7 @@ You pay these people to show up and do a job. What happens outside of work is n0
 
 The problem with this mindset is that humans are social animals. Even introverts - even the shy - need social interaction (just the right kind). By ignoring who your employees are as people, you are ignoring the very interactions that shape who they are at work.
 
-> The social contract between employee and employer has changed dramatically over the past twenty years - especially in tech.
+> The social contract between employee and employer has changed dramatically over the past several decades - especially in tech.
 
 If there are 24 hours in a day and an employee works an eight-hour shift, that leaves 16 other hours influencing how they show up. Ignoring that reality means ignoring roughly 66% of what makes your employee your employee.
 
