@@ -5,7 +5,7 @@ unsplash_author_url: https://unsplash.com/@ruthson_zimmerman
 unsplash_photo_url: https://unsplash.com/photos/man-wearing-watch-with-black-suit-Ws4wd-vJ9M0
 title: "Managing Tech: Professionals"
 description: "What professionalism means in modern tech - and the contract of trust, ownership, and shared responsibility that both employees and managers must uphold."
-permalink: /blog/2026/01/20/managing-professionals/
+permalink: /blog/2026/01/16/managing-professionals/
 tags: 
  - Enablement
 rating: 1
