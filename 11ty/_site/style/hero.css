@@ -24,6 +24,12 @@
   min-height: 400px;
 }
 
+#hero div {
+  display: flex; 
+  flex-direction: row; 
+  gap: 16px;  
+}
+
 #hero h2 {
   color: #ffffff;
   cursor: default;
@@ -99,8 +105,17 @@
 }
 
 @media only screen and ( max-width: 640px ) {    
-  #hero a {
-    margin: 16px 0 0 0;
+  #hero a:first-of-type {
+    margin: 0;
+  }
+
+  #hero a:last-of-type {
+    margin: 0 0 16px 0;
+    text-align: center;
+  }
+
+  #hero div {
+    flex-direction: column;
   }
 
   #hero h3 {
@@ -116,10 +131,6 @@
   #hero {
     min-height: unset;
     padding: 32px 0 32px 0;
-  }
-
-  #hero a {
-    margin: 0;
   }
 
   #hero h2 {
