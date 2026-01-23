@@ -1,6 +1,6 @@
 # Kevin Hoyt
 
-📧 [parkerkrhoyt@gmail.com](parkerkrhoyt@gmail.com) • 📱 303-522-3131  
+📧 [parkerkrhoyt@gmail.com](mailto:parkerkrhoyt@gmail.com) • 📱 303-522-3131  
 🌐 [kevinhoyt.com](https://kevinhoyt.com)  
 🔗 [LinkedIn](https://www.linkedin.com/in/parkerkrhoyt/) • [GitHub](https://github.com/krhoyt) • [YouTube](https://www.youtube.com/@krhoyt) • [X](https://x.com/krhoyt)    
 

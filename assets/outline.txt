@@ -1,0 +1,325 @@
+1. Identity & Orientation (Ground Truth)
+
+“Who is this person, and how should I interpret everything else?”
+
+1.1 Professional Identity
+
+One-paragraph synthesis of how you describe your career
+
+Explicitly name your archetype(s): builder, educator, systems thinker, etc.
+
+What you’re not trying to be seen as
+
+Why it matters
+This anchors tone and prevents contradictory summaries.
+
+1.2 Career Through-Lines (Meta-Patterns)
+
+Repeating roles you end up in
+
+Types of problems you keep solving
+
+Why certain domains recur (DX, docs, tooling, enablement)
+
+Used to answer
+
+“What defines Kevin’s career?”
+“What kind of problems does he naturally gravitate toward?”
+
+2. Experience & Evidence (STAR-Compatible Core)
+
+“What has this person actually done?”
+
+2.1 Role Index
+
+For each role:
+
+Context (company, era, constraints)
+
+Mission as you understood it
+
+What success actually meant (not the job description)
+
+2.2 STAR Narratives (Atomic Units)
+
+Each bullet becomes:
+
+Situation
+
+Task
+
+Action
+
+Result
+
+Reflection ← critical addition
+
+Reflection answers:
+
+What you learned
+
+What you’d do differently now
+
+What this says about how you work
+
+This is where personality quietly leaks in.
+
+3. Skills & Capability Depth (How, Not Just What)
+
+“What does ‘experienced’ actually mean here?”
+
+This section is hugely valuable and rarely done well.
+
+3.1 Skill Index (Canonical List)
+
+Each skill gets its own node:
+
+JavaScript
+
+Svelte
+
+Web Components
+
+Python
+
+DevRel
+
+Documentation
+
+Leadership
+
+etc.
+
+3.2 Per-Skill Deep Dive Schema
+
+For each skill, include:
+
+How I learned it
+
+When
+
+Why
+
+Under what constraints
+
+How I’ve used it
+
+Production vs experimentation
+
+Solo vs team
+
+Scale and longevity
+
+What I’m strong at
+
+What I avoid or delegate
+
+How I evaluate my level
+
+Beginner / Proficient / Advanced / Expert (define these!)
+
+Linked evidence
+
+Blog posts
+
+Code
+
+Talks
+
+Docs
+
+Demos
+
+Used to answer
+
+“How deep is Kevin’s JavaScript experience?”
+“Has he used Svelte in production or just demos?”
+
+4. How I Work (Behavioral & Interpersonal)
+
+“What is it like to work with this person?”
+
+This is where recruiters actually get personality.
+
+4.1 Decision-Making Style
+
+How you approach ambiguity
+
+Speed vs rigor tradeoffs
+
+When you stop gathering information
+
+4.2 Collaboration Style
+
+Separate subsections:
+
+With managers
+
+With peers
+
+With reports
+
+With cross-functional partners
+
+Include:
+
+What earns your trust
+
+What frustrates you
+
+How you handle disagreement
+
+4.3 Feedback & Conflict
+
+How you give feedback
+
+How you receive it
+
+What you do when there’s tension
+
+4.4 Boundaries & Non-Negotiables
+
+Work patterns you won’t repeat
+
+Cultural red flags
+
+Conditions where you do your best work
+
+Used to answer
+
+“Would Kevin be a good fit for a fast-moving startup?”
+“How does he handle conflict?”
+
+5. Growth, Change, and Self-Awareness
+
+“Is this person reflective and adaptable?”
+
+5.1 Changed Beliefs
+
+Things you believed earlier that you don’t anymore
+
+Why those beliefs changed
+
+5.2 Mistakes & Regrets
+
+Not performative failure
+
+Real judgment calls you’d revise
+
+5.3 Learning & Staying Current
+
+How you assess new tech
+
+How you avoid hype
+
+How you ramp into unfamiliar domains
+
+6. Practical Hiring Logistics (Explicit Answers)
+
+“Answer the questions recruiters always ask.”
+
+Make these explicit, boring, and canonical so the AI never guesses.
+
+6.1 Salary Expectations
+
+Range
+
+What affects flexibility
+
+What matters more than raw number (if applicable)
+
+6.2 Availability & Start Date
+
+Earliest start
+
+Constraints
+
+Willingness to overlap/consult
+
+6.3 Role Preferences
+
+Roles you’re actively seeking
+
+Roles you’d consider
+
+Roles you’re not interested in
+
+7. Semi-Personal / Human Context (Safe Personality)
+
+“Make the answers feel human without crossing boundaries.”
+
+This is smart—and safe—if scoped correctly.
+
+7.1 Light Personal Preferences
+
+Favorite foods
+
+Colors
+
+Places
+
+Cat/dog/both
+
+Coffee/tea
+
+Introvert/extrovert tendencies (behavioral, not identity)
+
+Rules
+
+Preference, not identity
+
+No health, politics, religion, etc.
+
+Frame as “often” or “tends to,” not absolutes
+
+7.2 Outside-of-Work Interests (Optional)
+
+Only include things that:
+
+Influence how you think
+
+Tie back to curiosity, learning, or creativity
+
+8. Writing, Thinking, and Public Artifacts
+
+“Show, don’t tell.”
+
+8.1 Blog Index
+
+For each post:
+
+One-paragraph summary
+
+Why you wrote it
+
+What it demonstrates (skill, value, judgment)
+
+Relevant skills/topics
+
+8.2 Canonical Examples
+
+Explicitly mark:
+
+“Best example of technical depth”
+
+“Best example of leadership thinking”
+
+“Best example of teaching”
+
+This allows answers like:
+
+“Here’s a post where Kevin explains exactly how he approaches X.”
+
+9. How to Use This Knowledge Base (Instructions)
+
+“Tell the AI how to behave.”
+
+Include:
+
+What this document is optimized for
+
+What it should not be used to infer
+
+Tone preferences for answers
+
+When to cite examples vs summarize

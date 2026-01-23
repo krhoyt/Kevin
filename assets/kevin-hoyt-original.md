@@ -1,5 +1,8 @@
-**Kevin Hoyt**  
-[parkerkrhoyt@gmail.com](mailto:parkerkrhoyt@gmail.com) • 303-522-3131 • @krhoyt
+**Kevin Hoyt**
+
+📧 [parkerkrhoyt@gmail.com](mailto:parkerkrhoyt@gmail.com) • 📱 303-522-3131  
+🌐 [kevinhoyt.com](https://kevinhoyt.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/parkerkrhoyt/) • [GitHub](https://github.com/krhoyt) • [YouTube](https://www.youtube.com/@krhoyt) • [X](https://x.com/krhoyt)    
 
 **Summary**
 
@@ -70,7 +73,7 @@ Principal Evangelist
 Principal Evangelist   
 *November 2012 \- November 2013*
 
-* Research and curate relationships with developers,vendors around IoT/Maker  
+* Research and curate relationships with developers, vendors around IoT/Maker  
 * Educate creative professionals on integrating maker-oriented tooling with their workflows  
 * Foster the next generation of professionals by teaching IoT to K-12 students  
 * Work closely with product engineering to refine the development of new products
