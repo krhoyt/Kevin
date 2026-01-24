@@ -1,7 +1,6 @@
 # Kevin Hoyt
 
-📧 [parkerkrhoyt@gmail.com](mailto:parkerkrhoyt@gmail.com)  
-📱 303-522-3131  
+📧 [parkerkrhoyt@gmail.com](mailto:kevin@ketnerlake.com)  
 🌐 [kevinhoyt.com](https://kevinhoyt.com)  
 🔗 [LinkedIn](https://www.linkedin.com/in/parkerkrhoyt/)  
 💾 [GitHub](https://github.com/krhoyt)  
