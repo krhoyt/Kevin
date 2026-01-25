@@ -65,49 +65,6 @@ export default class HoytAsk extends HTMLElement {
           transform: scale( 1.0 );
         }
 
-        div.empty {
-          align-items: center;
-          border: 1px solid #e4e4e7;          
-          border-radius: 6px;
-          box-sizing: border-box;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          min-height: 300px;
-          padding: 0 24px 0 24px;
-        }
-
-        div.empty p {
-          color: #1a1a1a; 
-          cursor: default;
-          font-family: Roboto, sans-serif;
-          font-size: 16px;
-          line-height: 24px;
-          margin: 0;
-          padding: 0;
-          text-align: center;
-          text-rendering: optimizeLegibility;
-          -moz-osx-font-smoothing: grayscale;  
-          -webkit-font-smoothing: antialiased;                   
-        }
-
-        div.history {
-          border: 1px solid #e4e4e7;          
-          border-radius: 6px;          
-          box-sizing: border-box;
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-          max-height: 300px;
-          min-height: 300px;
-          overflow: auto;
-          padding: 16px 16px 0 0;
-        }
-
-        div.history:empty {
-          display: none;
-        }                
-
         form {
           align-items: center;
           box-sizing: border-box;
@@ -193,78 +150,111 @@ export default class HoytAsk extends HTMLElement {
           --spinner-indicator-color: #6B7280;
         }
 
-        p {
-          text-rendering: optimizeLegibility;  
-          -moz-osx-font-smoothing: grayscale;      
-          -webkit-font-smoothing: antialiased;                            
-        }
-
-        p.warning {
-          color: #666666; 
-          cursor: default;
-          font-family: Roboto, sans-serif;
-          font-size: 14px;
-          line-height: 24px;
-          margin: 0;
-          padding: 0;
-          text-align: center;
-          text-rendering: optimizeLegibility;
-          -moz-osx-font-smoothing: grayscale;  
-          -webkit-font-smoothing: antialiased;                             
-        }
-
-        p.warning a {
-          color: #3B82F6;
-          cursor: pointer;
-          display: inline;
-          font-family: Roboto, sans-serif;
-          font-size: 14px;
-          font-weight: 400;
-          line-height: 24px;
-          margin: 0;
-          padding: 0;
-          text-rendering: optimizeLegibility;  
-          transition: color 0.25s ease;
-          -moz-osx-font-smoothing: grayscale;      
-          -webkit-font-smoothing: antialiased;                             
-        }
-
-        p.warning a:hover {
-          color: #2563EB;
-        }
-
-        div.history:not( :empty ) ~ div.empty {
-          display: none;
-        }
-
         p.question {
-          background: #e4e4e7;
-          border-radius: 6px;
           color: #1a1a1a; 
           cursor: default;
           font-family: Roboto, sans-serif;
           font-size: 16px;
+          font-weight: 500;
           line-height: 24px;
-          margin: 0 0 0 auto;
-          max-width: 60%;
+          margin: 0;
           padding: 8px 16px 8px 16px;
           text-rendering: optimizeLegibility;
           -moz-osx-font-smoothing: grayscale;  
           -webkit-font-smoothing: antialiased;
         }        
 
-        div.answer {
+        p.title {
           color: #1a1a1a; 
           cursor: default;
           font-family: Roboto, sans-serif;
-          font-size: 16px;
+          font-size: 14px;
+          font-weight: 400;
           line-height: 24px;
           margin: 0;
+          opacity: 0.60;
           padding: 8px 16px 8px 16px;
           text-rendering: optimizeLegibility;
+          text-transform: uppercase;
           -moz-osx-font-smoothing: grayscale;  
           -webkit-font-smoothing: antialiased;
-        }      
+        }
+
+        div.answer {
+          background: rgba( from #3B82F6 r g b / 0.04 );
+          border-left: solid 3px #3B82F6;
+          border-radius: 8px;
+          box-shadow:
+            0 1px 1px rgba(0, 0, 0, 0.04),
+            0 2px 4px rgba(0, 0, 0, 0.05);
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          max-height: 450px;     
+          position: relative;
+          transition: opacity 0.25s ease;
+        }
+
+        div.answer button {
+          align-items: center;
+          appearance: none;
+          background: #3B82F6;
+          border: none;
+          border-radius: 20px;
+          bottom: -4px;
+          color: #ffffff;
+          display: flex;
+          height: 40px;
+          justify-content: center;
+          left: calc( 50% - 20px );
+          position: absolute;
+          width: 40px;
+        }
+
+        /*
+        div.response.scrollable::after {
+          background: linear-gradient(
+            to bottom,
+          rgba( 248, 250, 252, 0 ),
+          rgba( 248, 250, 252, 1 )
+          );          
+          bottom: 0;          
+          content: '';
+          display: block;          
+          height: 32px;          
+          position: sticky;
+          pointer-events: none;   
+          z-index: 100;       
+        }
+        */
+
+        div.response {
+          background: #ffffff;
+          border-radius: 8px;
+          box-shadow:
+            0 1px 1px rgba( 0, 0, 0, 0.04 ),
+            0 2px 4px rgba( 0, 0, 0, 0.05 );
+          color: #1a1a1a;
+          font-family: Roboto, sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;            
+          margin: 0 16px 16px 16px;
+          overflow: auto;
+          padding: 4px 16px 4px 16px;
+          position: relative;
+          text-rendering: optimizeLegibility;
+          -moz-osx-font-smoothing: grayscale;  
+          -webkit-font-smoothing: antialiased;          
+        }
+
+        div.answer[hidden] {
+          display: none;
+        }
+
+        :host( [loading] ) div.answer {
+          opacity: 0.60;
+        }
 
         :host( [loading] ) form button {
           padding: 11px 16px 11px 16px;
@@ -292,28 +282,14 @@ export default class HoytAsk extends HTMLElement {
             max-width: unset;
             padding: 0 16px 0 16px;                        
           }
-
-          div.empty {
-            gap: 16px;
-          }
-          
-          p.question {
-            margin: 0 0 0 16px;                        
-            max-width: unset;
-          }
         }        
 
         @media only screen and ( max-width: 429px ) {      
           :host {
-            padding: 0 16px 0 16px;
+           padding: 0 16px 0 16px;
           }
         }        
       </style>
-      <div class="history"></div>      
-      <div class="empty">
-        <p>This assistant is trained on my public work and resume.</p>
-        <p>It answers like I would in an interview.</p>
-      </div>
       <form>
         <input placeholder="Type your question here" type="text">
         <button disabled type="button">
@@ -327,7 +303,13 @@ export default class HoytAsk extends HTMLElement {
         <button data-index="2" type="button">Notable achievements</button>        
         <button data-index="3" type="button">Ideal role for me</button>        
       </div>
-      <p class="warning">This tool is helpful, but not perfect. For nuance or a real conversation, <a href="#contact">contact me</a>.</p>
+      <div class="answer" hidden>
+        <p class="title">AI generated response</p>
+        <p class="question"></p>
+        <div class="response">
+          <p></p>
+        </div>
+      </div>
     `;
 
     this._conversation = {
@@ -350,12 +332,12 @@ export default class HoytAsk extends HTMLElement {
     this.shadowRoot.appendChild( template.content.cloneNode( true ) );
 
     // Elements
+    this.$answer = this.shadowRoot.querySelector( 'div.answer' );    
     this.$ask = this.shadowRoot.querySelector( 'form button' );
     this.$ask.addEventListener( 'click', async () => {
       this.generate( this.$input.value );
     } );
     this.$chips = this.shadowRoot.querySelectorAll( 'div.chips button' );
-    this.$history = this.shadowRoot.querySelector( 'div.history' );
     this.$input = this.shadowRoot.querySelector( 'form input' );
     this.$input.addEventListener( 'keydown', ( evt ) => {
       if( evt.key === 'Enter' ) {
@@ -366,6 +348,8 @@ export default class HoytAsk extends HTMLElement {
     this.$input.addEventListener( 'input', () => {
       this.$ask.disabled = this.$input.value.trim().length === 0 ? true : false;
     } );
+    this.$response = this.shadowRoot.querySelector( 'div.response' );        
+    this.$question = this.shadowRoot.querySelector( 'div.answer p.question' );
 
     for( let c = 0; c < this.$chips.length; c++ ) {
       this.$chips[c].addEventListener( 'click', this.onChipClick );
@@ -373,11 +357,11 @@ export default class HoytAsk extends HTMLElement {
   }
 
   async generate( question = null ) {
-    this.makeQuestion( question );
+    this.$question.textContent = question;
 
     this.loading = true;
     this.$input.disabled = true;
-    this.$input.value = null;          
+    this.$input.value = question;          
     this.$ask.disabled = true;
     this.$chips.forEach( ( button ) => button.disabled = true );
 
@@ -389,7 +373,6 @@ export default class HoytAsk extends HTMLElement {
       } )
     } );
 
-    const answer = this.makeAnswer();
     const reader = response.body.getReader();
     const decoder = new TextDecoder();
     let text = '';
@@ -401,14 +384,21 @@ export default class HoytAsk extends HTMLElement {
 
       text += decoder.decode( value, { stream: true } );
 
-      answer.innerHTML = marked.parse( text );
-      this.$history.scrollTo( {
-        top: this.$history.scrollHeight,
-        behavior: 'smooth'
-      } );      
+      this.$response.innerHTML = marked.parse( text );
+      this.$answer.hidden = false;
+
+      /*
+      const scrollable = this.$response.scrollHeight > this.$response.clientHeight;
+      if( scrollable ) {
+        this.$response.classList.add( 'scrollable' );
+      } else {
+        this.$response.classList.remove( 'scrollable' );        
+      }
+      */
     }
 
     this.loading = false;
+    this.$input.value = null;
     this.$input.disabled = false;
     this.$input.focus();
     this.$ask.disabled = false;
@@ -419,25 +409,6 @@ export default class HoytAsk extends HTMLElement {
       question,
       text
     );    
-  }
-
-  makeAnswer() {
-    const content = document.createElement( 'div' );
-    content.classList.add( 'answer' );
-    this.$history.appendChild( content );    
-    return content;
-  }
-
-  makeQuestion( text ) {
-    const p = document.createElement( 'p' );
-    p.classList.add( 'question' );
-    p.textContent = text;
-    this.$history.appendChild( p );
-
-    this.$history.scrollTo( {
-      top: this.$history.scrollHeight,
-      behavior: 'smooth'
-    } );          
   }
 
   onChipClick( evt ) {

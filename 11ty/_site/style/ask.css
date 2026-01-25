@@ -21,3 +21,50 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;          
 }
+
+#ask p {
+  color: #1a1a1a; 
+  cursor: default;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;  
+  -webkit-font-smoothing: antialiased;           
+}
+
+#ask p.warning {
+  color: #666666; 
+  cursor: default;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;  
+  -webkit-font-smoothing: antialiased;                             
+}
+
+#ask p.warning a {
+  color: #3B82F6;
+  cursor: pointer;
+  display: inline;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;  
+  transition: color 0.25s ease;
+  -moz-osx-font-smoothing: grayscale;      
+  -webkit-font-smoothing: antialiased;                             
+}
+
+#ask p.warning a:hover {
+  color: #2563EB;
+}
