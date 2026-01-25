@@ -158,7 +158,7 @@ export default class HoytAsk extends HTMLElement {
           font-weight: 500;
           line-height: 24px;
           margin: 0;
-          padding: 8px 16px 8px 16px;
+          padding: 4px 16px 10px 16px;
           text-rendering: optimizeLegibility;
           -moz-osx-font-smoothing: grayscale;  
           -webkit-font-smoothing: antialiased;
@@ -173,7 +173,7 @@ export default class HoytAsk extends HTMLElement {
           line-height: 24px;
           margin: 0;
           opacity: 0.60;
-          padding: 8px 16px 8px 16px;
+          padding: 10px 16px 0 16px;
           text-rendering: optimizeLegibility;
           text-transform: uppercase;
           -moz-osx-font-smoothing: grayscale;  
