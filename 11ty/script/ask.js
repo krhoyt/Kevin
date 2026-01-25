@@ -357,8 +357,6 @@ export default class HoytAsk extends HTMLElement {
   }
 
   async generate( question = null ) {
-    this.$question.textContent = question;
-
     this.loading = true;
     this.$input.disabled = true;
     this.$input.value = question;          
@@ -384,6 +382,7 @@ export default class HoytAsk extends HTMLElement {
 
       text += decoder.decode( value, { stream: true } );
 
+      this.$question.textContent = question;      
       this.$response.innerHTML = marked.parse( text );
       this.$answer.hidden = false;
 
