@@ -37,7 +37,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/>
       </svg>         
-      <select aria-label="Section">
+      <select name="section" aria-label="Section">
         <option value="/" >Home</option>
         <option value="/blog" selected>Writing</option>
         <option value="/about" >About</option>
@@ -301,12 +301,12 @@ navigator<span class="token punctuation">.</span>mediaDevices<span class="token 
 
     <div class="field">
       <label for="poc">Name</label>
-      <input type="text" id="poc" name="name" required>
+      <input autocomplete="name" type="text" id="poc" name="name" required>
     </div>
 
     <div class="field">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+      <input autocomplete="email" type="email" id="email" name="email" required>
     </div>
 
     <div class="field">

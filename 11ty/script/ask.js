@@ -291,7 +291,7 @@ export default class HoytAsk extends HTMLElement {
         }        
       </style>
       <form>
-        <input placeholder="Type your question here" type="text">
+        <input name="question" placeholder="Type your question here" type="text">
         <button disabled type="button">
           <span>Ask</span>
           <kh-spinner></kh-spinner>
