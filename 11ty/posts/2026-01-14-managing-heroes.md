@@ -16,6 +16,7 @@ This is part of a series:
 - Managing Tech: [People](/blog/2026/01/12/managing-people/)
 - Managing Tech: Heroes (you are here)
 - Managing Tech: [Professionals](/blog/2026/01/16/managing-professionals/)
+- Managing Tech: [Time](/blog/2026/01/26/managing-time/)
 
 Have you ever heard the term "*elevator pitch*"? You usually hear it in the context of pitching an idea to senior management or to investors. The idea is that the pitch for your idea or business should take no longer than an elevator ride - because that is all the time you might get.
 

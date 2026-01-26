@@ -4,7 +4,7 @@
   <subtitle>The intersection of development and design.</subtitle>
   <link href="https://kevinhoyt.com/feed.xml" rel="self"/>
   <link href="https://kevinhoyt.com/"/>
-  <updated>2026-01-16T00:00:00Z</updated>
+  <updated>2026-01-26T00:00:00Z</updated>
   <id>https://kevinhoyt.com/</id>
   <author>
     <name>Kevin Hoyt</name>
@@ -12,16 +12,103 @@
   </author>
     
     <entry>
+      <title>Managing Tech: Time</title>
+      <link href="https://kevinhoyt.com/blog/2026/01/26/managing-time/"/>
+      <updated>2026-01-26T00:00:00Z</updated>
+      <id>https://kevinhoyt.com/blog/2026/01/26/managing-time/</id>
+      <summary>This is part of a series: Managing Tech: People Managing Tech: Heroes Managing Tech: Professionals Managing Tech: Time (you are here) If there is one skill I most commonly see underrepresented—among both individual contributors and managers alike - it is time management. As an individual...</summary>
+      <content type="html">&lt;p&gt;This is part of a series:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Managing Tech: &lt;a href=&quot;https://kevinhoyt.com/blog/2026/01/12/managing-people/&quot;&gt;People&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Managing Tech: &lt;a href=&quot;https://kevinhoyt.com/blog/2026/01/14/managing-heroes/&quot;&gt;Heroes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Managing Tech: &lt;a href=&quot;https://kevinhoyt.com/blog/2026/01/16/managing-professionals/&quot;&gt;Professionals&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Managing Tech: Time (you are here)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If there is one skill I most commonly see underrepresented—among both individual contributors and managers alike - it is time management. As an individual contributor, weak time management makes it difficult to scale across the responsibilities that your &lt;a href=&quot;https://kevinhoyt.com/blog/2026/01/16/managing-professionals/&quot;&gt;business&lt;/a&gt; requires of you. As a manager, poor time management means you will represent neither your employer nor your employees particularly well.&lt;/p&gt;
+&lt;p&gt;In this post, I will review a range of time management approaches along a spectrum. You can compare these options, identify which best reflects your current approach, and explore alternatives. This post is intended for both individual contributors and managers.&lt;/p&gt;
+&lt;h2&gt;Organization&lt;/h2&gt;
+&lt;p&gt;The &amp;quot;why&amp;quot; of time management is straightforward: the more information you try to keep in your head, the less successful you will be at any one thing. The most basic approach to time management, then, is simply to get commitments out of your head.&lt;/p&gt;
+&lt;p&gt;This might be as simple as a paper calendar where you write down a task for a given day. If you prefer a digital workflow (as I do), you can use a calendar application and create an appointment for the day you intend to work on a task.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you are going the digital route, I generally recommend placing the task at the time you usually start work or arrive at the office. That way, you are confronted with it immediately and can plan accordingly.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If you have multiple tasks scheduled for the same day, you can arrange them in an order that works for the project. This is basic prioritization, which I will return to later in the post.&lt;/p&gt;
+&lt;h2&gt;Time Blocking&lt;/h2&gt;
+&lt;p&gt;Once you are consistently putting tasks on your calendar, the next step is to account for how long those tasks will actually take - blocking off sections of time accordingly. Early on, you will almost certainly underestimate how long tasks take. Over time, you will develop better estimation skills.&lt;/p&gt;
+&lt;p&gt;A common misstep is forgetting to block time for tasks people take for granted: checking email, reviewing plans, or even eating lunch. I generally block the first 30 minutes of each day for email and planning.&lt;/p&gt;
+&lt;p&gt;It is easy to become overly precise and try to block time down to the minute. Instead, I suggest choosing a minimum block - 15 or 30 minutes - and sticking with it. Even if a task only takes 10 minutes, you might still allocate a 30-minute block. This gives you time to context switch and provides some buffer for unexpected changes.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Time blocking is useful not only for planning, but also for tracking past work. This can be invaluable during performance reviews when you need to recall what you’ve accomplished over the past year.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Eventually, you will find yourself with a fully blocked day - and then a new meeting request arrives. What now? This is where prioritization becomes essential.&lt;/p&gt;
+&lt;h2&gt;Prioritization&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;...or learning to say “no.”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;When a meeting request comes in for a day that’s already fully blocked, you need to decide what action to take. Which task takes priority?&lt;/p&gt;
+&lt;p&gt;My preferred approach comes from the Getting Things Done (GTD) system, which I’ve written about in &lt;a href=&quot;https://kevinhoyt.com/blog/2022/06/15/four-d/&quot;&gt;another post&lt;/a&gt;. I will summarize it here for completeness:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Do It:&lt;/strong&gt; If you can complete the task now, do it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Defer It:&lt;/strong&gt; You cannot do the task right now, so schedule time to do it later.
+&lt;strong&gt;Delegate It:&lt;/strong&gt; If someone else can move the task forward, delegate it - and block time to follow up.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Drop It:&lt;/strong&gt; Some tasks do not actually need to be done. These are often informational and can be offloaded to another system (for example, a notes or knowledge base tool).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Learning to say &amp;quot;no&amp;quot; is a critical part of time management. Having a clear framework for prioritization makes this easier—and less personal.&lt;/p&gt;
+&lt;h2&gt;A Word About Context Switching&lt;/h2&gt;
+&lt;p&gt;For the &lt;strong&gt;individual contributor&lt;/strong&gt;, meetings are often a distraction from deep work. Keeping email and corporate chat open throughout the day introduces constant interruptions. This is why I prefer to block time specifically for these systems and keep them closed otherwise. Context switching is expensive, cognitively speaking.&lt;/p&gt;
+&lt;p&gt;For the &lt;strong&gt;manager&lt;/strong&gt;, meetings are your currency. Still, if you feel the urge to email or message a direct report, pause for a moment and consider the impact of that interruption. Is this truly the best time? Is it urgent?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I try to set clear expectations with my direct reports around response times. My general rule of thumb is that they can expect a response from me within 24 hours - and I expect the same from them. I make it explicit that I do not expect anyone to be &amp;quot;on&amp;quot; all the time.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As a manager, you also need to be mindful of how you communicate. A message with the subject line &amp;quot;Can we talk?&amp;quot; can trigger unnecessary anxiety. It can sound like a termination conversation when all you wanted to ask about next week’s vacation plans. Whenever possible, be explicit about your intent and provide guidance such as &amp;quot;not urgent&amp;quot; or &amp;quot;when you have time.&amp;quot;&lt;/p&gt;
+&lt;p&gt;Likewise, talk with your team about preferred communication channels. Some people favor email; others prefer chat. Knowing how your direct reports prefer to communicate reduces the chance that important messages get lost - or ignored.&lt;/p&gt;
+&lt;h2&gt;A Word About Systems&lt;/h2&gt;
+&lt;p&gt;There are as many time management systems as there are stars in the night sky. I have not counted, but you get the idea. Over my 25 years in technology, I have studied and used many different systems. Below are a few that have stood out to me.&lt;/p&gt;
+&lt;h3&gt;Patterns vs. Systems&lt;/h3&gt;
+&lt;p&gt;The key is to avoid treating any single system as the final answer. Time management is a skill. A system - understood as an explanation of an approach - can help you develop that skill. The real value lies in understanding why the system is structured the way it is.&lt;/p&gt;
+&lt;p&gt;When a system is treated as the solution itself, it can box you into a rigid way of thinking and limit growth. Look for the patterns underneath.&lt;/p&gt;
+&lt;h3&gt;Benjamin Franklin&lt;/h3&gt;
+&lt;p&gt;Benjamin Franklin used a daily schedule with a column of numbers down the center of the page: 5 through 12, then 1 through 12, and finally 1 through 4. This represented each hour of the day. On either side of the numbers, he recorded what he planned to do and what he actually did.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://kevinhoyt.com/img/assets/franklin-schedule.jpg&quot; alt=&quot;Franklin Schedule&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Franklin started his day at 5 a.m. and went to bed at a consistent time, allowing for seven hours of sleep.&lt;/p&gt;
+&lt;p&gt;That was his system. Does that mean you should start your day at 5 a.m.? Or sleep exactly seven hours? If you’re systematizing blindly, you might say yes. But the real lesson is the pattern: he started and ended his day consistently.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There are additional lessons in Franklin’s approach that are beyond the scope of this post, but well worth exploring.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Bullet Journal&lt;/h3&gt;
+&lt;p&gt;For a long time, I preferred paper to digital. There was something satisfying about opening a notebook, uncapping a quality pen, and putting ink on the page. I still have notebooks from my time as a sales engineer (2000–2007), and I occasionally enjoy flipping through them to see what I was doing on this day years ago.&lt;/p&gt;
+&lt;p&gt;When I wanted more structure, I turned to the &lt;a href=&quot;https://bulletjournal.com/&quot;&gt;Bullet Journal&lt;/a&gt; system.&lt;/p&gt;
+&lt;h3&gt;Getting Things Done&lt;/h3&gt;
+&lt;p&gt;I have already referenced Getting Things Done. It is the system that resonated most strongly with me and the one that informs most of my current practices.&lt;/p&gt;
+&lt;h3&gt;Franklin Covey&lt;/h3&gt;
+&lt;p&gt;The original time management powerhouse, &lt;a href=&quot;https://www.franklincovey.com/&quot;&gt;Franklin Covey&lt;/a&gt; once had physical stores in shopping malls where you could buy planners and stationery preconfigured for their system.&lt;/p&gt;
+&lt;p&gt;The key takeaway for me was simple: list the tasks you need to accomplish for the day. Cross off what you complete. Carry unfinished tasks forward to the next day.&lt;/p&gt;
+&lt;h2&gt;What About Agile?&lt;/h2&gt;
+&lt;p&gt;Agile approaches such as Scrum and Kanban are vast enough to warrant certifications. They are powerful tools, but in my experience, they are often overkill when mentoring or developing basic time management skills.&lt;/p&gt;
+&lt;p&gt;All you really need is a notebook or the calendar application that comes with your operating system. Anything more can distract from the core objective: building good habits. The best time management system is the one that works for you - whether that is a well-known framework or a custom blend of techniques.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I have had direct reports successfully use Agile systems for personal time management. That is fine if it works for them. However, it can become a blocker when everyone - including the company - is running a different interpretation of the same system.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Closing Thoughts&lt;/h2&gt;
+&lt;p&gt;Time management is not something you &amp;quot;set up&amp;quot; once and then forget. It is a skill you practice, refine, and occasionally relearn as your role, responsibilities, and life change.&lt;/p&gt;
+&lt;p&gt;The mistake I see most often is treating a system as the solution. Systems are scaffolding. They help you learn the patterns - externalizing commitments, estimating time realistically, prioritizing intentionally, and protecting focus. Once you internalize those patterns, the specific tools matter far less.&lt;/p&gt;
+&lt;p&gt;For &lt;strong&gt;individual contributors&lt;/strong&gt;, good time management creates space for deep work, learning, and sustained delivery. It reduces stress by making trade-offs explicit rather than implicit.&lt;/p&gt;
+&lt;p&gt;For &lt;strong&gt;managers&lt;/strong&gt;, time management is leverage. How you manage your own time directly shapes how your team experiences work. Poor time management shows up as unnecessary interruptions, unclear priorities, and reactive leadership. Strong time management builds trust, predictability, and psychological safety.&lt;/p&gt;
+&lt;p&gt;You do not need a perfect system. You need an honest one - one that reflects how you actually work, not how you wish you worked. Start simple. Observe what breaks. Adjust. Repeat.&lt;/p&gt;
+&lt;p&gt;The goal is not to fill every minute of your day. The goal is to spend your time intentionally, on the work that actually matters.&lt;/p&gt;
+</content>
+    </entry>
+    
+    <entry>
       <title>Managing Tech: Professionals</title>
       <link href="https://kevinhoyt.com/blog/2026/01/16/managing-professionals/"/>
       <updated>2026-01-16T00:00:00Z</updated>
       <id>https://kevinhoyt.com/blog/2026/01/16/managing-professionals/</id>
-      <summary>This is part of a series: Managing Tech: People Managing Tech: Heroes Managing Tech: Professionals (you are here) In my post, Managing Tech: People, I mentioned that the social contract between employee and employer has changed over the past several decades. At IBM in 2016 (just one decade ago), it...</summary>
+      <summary>This is part of a series: Managing Tech: People Managing Tech: Heroes Managing Tech: Professionals (you are here) Managing Tech: Time In my post, Managing Tech: People, I mentioned that the social contract between employee and employer has changed over the past several decades. At IBM in 2016 (just...</summary>
       <content type="html">&lt;p&gt;This is part of a series:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Managing Tech: &lt;a href=&quot;https://kevinhoyt.com/blog/2026/01/12/managing-people/&quot;&gt;People&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Managing Tech: &lt;a href=&quot;https://kevinhoyt.com/blog/2026/01/14/managing-heroes/&quot;&gt;Heroes&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Managing Tech: Professionals (you are here)&lt;/li&gt;
+&lt;li&gt;Managing Tech: &lt;a href=&quot;https://kevinhoyt.com/blog/2026/01/26/managing-time/&quot;&gt;Time&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In my post, &lt;a href=&quot;https://kevinhoyt.com/blog/2026/01/12/managing-people/&quot;&gt;Managing Tech: People&lt;/a&gt;, I mentioned that the social contract between employee and employer has changed over the past several decades. At IBM in 2016 (just one decade ago), it was common to encounter people who had been with the company for twenty years or more. I myself spent almost fifteen years at Adobe (2000–2013).&lt;/p&gt;
 &lt;p&gt;By 2026, it is far more common to move between employers every few years. The reasons for this are many. The question then becomes: if the old contract is no longer relevant, what is the new contract?&lt;/p&gt;
@@ -70,12 +157,13 @@
       <link href="https://kevinhoyt.com/blog/2026/01/14/managing-heroes/"/>
       <updated>2026-01-14T00:00:00Z</updated>
       <id>https://kevinhoyt.com/blog/2026/01/14/managing-heroes/</id>
-      <summary>This is part of a series: Managing Tech: People Managing Tech: Heroes (you are here) Managing Tech: Professionals Have you ever heard the term &amp;quot;elevator pitch&amp;quot;? You usually hear it in the context of pitching an idea to senior management or to investors. The idea is that the pitch for your...</summary>
+      <summary>This is part of a series: Managing Tech: People Managing Tech: Heroes (you are here) Managing Tech: Professionals Managing Tech: Time Have you ever heard the term &amp;quot;elevator pitch&amp;quot;? You usually hear it in the context of pitching an idea to senior management or to investors. The idea is that...</summary>
       <content type="html">&lt;p&gt;This is part of a series:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Managing Tech: &lt;a href=&quot;https://kevinhoyt.com/blog/2026/01/12/managing-people/&quot;&gt;People&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Managing Tech: Heroes (you are here)&lt;/li&gt;
 &lt;li&gt;Managing Tech: &lt;a href=&quot;https://kevinhoyt.com/blog/2026/01/16/managing-professionals/&quot;&gt;Professionals&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Managing Tech: &lt;a href=&quot;https://kevinhoyt.com/blog/2026/01/26/managing-time/&quot;&gt;Time&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Have you ever heard the term &amp;quot;&lt;em&gt;elevator pitch&lt;/em&gt;&amp;quot;? You usually hear it in the context of pitching an idea to senior management or to investors. The idea is that the pitch for your idea or business should take no longer than an elevator ride - because that is all the time you might get.&lt;/p&gt;
 &lt;p&gt;One morning, I happened to be sharing an elevator ride with a vice president at the company. It was just the two of us. He asked, &amp;quot;What is your team up to these days?&amp;quot; Feeling witty, I responded, &amp;quot;Making heroes.&amp;quot; A few days later, I heard the VP use that same phrase on a conference call - in a completely different way than I had intended.&lt;/p&gt;
@@ -114,12 +202,13 @@
       <link href="https://kevinhoyt.com/blog/2026/01/12/managing-people/"/>
       <updated>2026-01-12T00:00:00Z</updated>
       <id>https://kevinhoyt.com/blog/2026/01/12/managing-people/</id>
-      <summary>This is part of a series: Managing Tech: People (you are here) Managing Tech: Heroes Managing Tech: Professionals You are good at your job. You come into work, consistently deliver results, and keep learning more about the business and your craft. Eventually, your abilities are noticed and you are...</summary>
+      <summary>This is part of a series: Managing Tech: People (you are here) Managing Tech: Heroes Managing Tech: Professionals Managing Tech: Time You are good at your job. You come into work, consistently deliver results, and keep learning more about the business and your craft. Eventually, your abilities are...</summary>
       <content type="html">&lt;p&gt;This is part of a series:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Managing Tech: People (you are here)&lt;/li&gt;
 &lt;li&gt;Managing Tech: &lt;a href=&quot;https://kevinhoyt.com/blog/2026/01/14/managing-heroes/&quot;&gt;Heroes&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Managing Tech: &lt;a href=&quot;https://kevinhoyt.com/blog/2026/01/16/managing-professionals/&quot;&gt;Professionals&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Managing Tech: &lt;a href=&quot;https://kevinhoyt.com/blog/2026/01/26/managing-time/&quot;&gt;Time&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You are good at your job. You come into work, consistently deliver results, and keep learning more about the business and your craft. Eventually, your abilities are noticed and you are promoted to manager. Congratulations!&lt;/p&gt;
 &lt;p&gt;There is just one problem: the skills that made you successful as an individual contributor (IC) no longer serve you as a manager. You struggle for a while, then eventually decide to return to your previous role.&lt;/p&gt;
@@ -1367,183 +1456,6 @@ svg&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
 &lt;h2&gt;Next Steps&lt;/h2&gt;
 &lt;p&gt;Do it. Defer it. Delegate it. Drop it. The &amp;quot;Four D&amp;quot; system of time management thanks to a heavily distilled Getting Things Done. This requires no new tools. Only a calendar, and the occasional Markdown file are needed. You do not need to subscribe to some new service. You do not need to memorize shorthand symbols. You just put time on your calendar, and stick to it.&lt;/p&gt;
 &lt;p&gt;Done effectively, with practice, people will begin to wonder just how it is that you get so much work done. You will be &amp;quot;that person&amp;quot; that always seems to be a step ahead of the curve. Meanwhile your cognitive load has declined significantly, you sleep better, your do not miss opportunities, and you generally feel less stressed. If that sounds good, then I encourage you to give it a try.&lt;/p&gt;
-</content>
-    </entry>
-    
-    <entry>
-      <title>AWS Transcribe with Python</title>
-      <link href="https://kevinhoyt.com/blog/2022/12/02/transcribe-with-python/"/>
-      <updated>2022-12-02T00:00:00Z</updated>
-      <id>https://kevinhoyt.com/blog/2022/12/02/transcribe-with-python/</id>
-      <summary>Amazon Web Services (AWS) has so many services. A stroll through the catalog will likely yield something useful for just about any project. Sometimes our projects pick us. This week a customer asked for an example of using AWS Transcribe with Python. Having used other transcription services, I could...</summary>
-      <content type="html">&lt;p&gt;Amazon Web Services (AWS) has so many services. A stroll through the catalog will likely yield something useful for just about any project. Sometimes our projects pick us. This week a customer asked for an example of using &lt;a href=&quot;https://aws.amazon.com/transcribe/&quot;&gt;AWS Transcribe&lt;/a&gt; with Python. Having used other transcription services, I could not pass up the challenge. What follows is my approach to implementing a solution.&lt;/p&gt;
-&lt;h2&gt;Prerequisites&lt;/h2&gt;
-&lt;p&gt;There is a little setup required to get all this going. I have tried to stick to the absolute minimum amount of setup. While walking through each of these setup steps is beyond the scope of this post, I will give you some pointers along the way.&lt;/p&gt;
-&lt;h3&gt;Access and Identity&lt;/h3&gt;
-&lt;p&gt;To use AWS, you will obviously need an account. With your account in hand, you can get the credentials you will need to access the AWS services. The danger with doing this is that if you are using the root account credentials, then those credentials have access to everything in your account. If you let those credentials slip into malicious hands - say, by accidentally committing them to a public GitHub account - then those hands can really cause you a lot of pain.&lt;/p&gt;
-&lt;p&gt;Rather than use the root account credentials directly, I recommend heading over to the Identity Management (IAM) service and creating a group with specific permissions for the services you will be using. In this case, those permissions are &amp;quot;Transcribe&amp;quot; and &amp;quot;S3&amp;quot;. Then create a user and generate credentials for that user. Finally, assign that user to the group that has the appropriate permissions. Now should those credentials fall into malicious hands, the only access they have is to those services specified for the group. If you suspect malicious activity, you can log into the root account and disable the user and/or group with a few clicks.&lt;/p&gt;
-&lt;h3&gt;S3&lt;/h3&gt;
-&lt;p&gt;In order to provide the audio file for Transcribe to use, you will need a place in AWS to put that file; namely an S3 bucket. If you already have an S3 Bucket setup, you can use that, or even create a folder inside of that bucket if you do not want your Transcribe content to co-mingle with other content you may have in the bucket. However you go about it, note the region in which the bucket resides. You will need this piece of information to use both Transcribe and S3.&lt;/p&gt;
-&lt;h3&gt;Python&lt;/h3&gt;
-&lt;p&gt;There are a few moving pieces on the Python side of this solution. The first is a file to put your environment variables. What environment variables? Namely, those all so precious access keys. You want to avoid putting those access keys directly into your Python code (or any language you may be using). There are also some other variables that are used throughout this solution that go nicely into that environment file. In a file named &lt;code&gt;transcribe.env&lt;/code&gt; I have placed the following variable details.&lt;/p&gt;
-&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token assign-left variable&quot;&gt;AWS_ACCESS_KEY&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;_YOUR_ACCESS_KEY_
-&lt;span class=&quot;token assign-left variable&quot;&gt;AWS_SECRET_KEY&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;_YOUR_SECRET_KEY_
-&lt;span class=&quot;token assign-left variable&quot;&gt;AWS_REGION&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;_S3_REGION_
-&lt;span class=&quot;token assign-left variable&quot;&gt;LOCAL_AUDIO&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;hello-world.m4a
-&lt;span class=&quot;token assign-left variable&quot;&gt;S3_BUCKET&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;_S3_BUCKET_NAME_
-&lt;span class=&quot;token assign-left variable&quot;&gt;S3_OBJECT&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;_PATH_TO_AUDIO_IN_BUCKET_
-&lt;span class=&quot;token assign-left variable&quot;&gt;SLEEP_TIME&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;
-&lt;span class=&quot;token assign-left variable&quot;&gt;TRANSCRIPTION_JOB&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;hello-world&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I will talk about these environment variables in more detail as we get into the specific Python code.&lt;/p&gt;
-&lt;p&gt;Secondly, you will need to install two Python libraries. Again, I have tried to keep this pretty minimal.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://boto3.amazonaws.com/v1/documentation/api/latest/index.html&quot;&gt;Boto3&lt;/a&gt;&lt;/strong&gt;: This is the AWS library for Python. While AWS is mostly REST under the covers, trying to manage the headers and structure of the requests yourself can be very overwhelming. While I am not a fan of adding libraries for the sake of adding libraries, this is one case where it absolutely makes sense.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://pypi.org/project/python-dotenv/&quot;&gt;DotEnv&lt;/a&gt;&lt;/strong&gt;: You have externalized key pieces of data into an environment variable file. That is great! Now we need a way to pull them into our main logic, parse them, and make use of them. Like anything Python, there are a dozen ways to do this, but I find this little helper worth the value to have along for the ride.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Installing libraries will look something like &lt;code&gt;pip install boto3&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Everything else used in this solution is a part of the standard Python runtime. Oh, and it is worth mentioning that this is all Python 3 code.&lt;/p&gt;
-&lt;h2&gt;Ready, Set...&lt;/h2&gt;
-&lt;p&gt;This solution uses a variety of libraries, both third-party as mentioned above, and from the Python runtime.&lt;/p&gt;
-&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; boto3
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; io
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; json
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; os
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; sys
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; time
-
-&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dotenv &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; load_dotenv
-&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; pathlib &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Path&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;boto3&lt;/strong&gt;: As previously mentioned, this is the Python AWS library.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;io&lt;/strong&gt;: Allows reading the Transcribe results directly into memory.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;json&lt;/strong&gt;: Provides a means to parse and read the JSON data that often results from interacting with AWS.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;os&lt;/strong&gt;: Used for access the environment variables once read and parsed by the supporting &lt;code&gt;dotenv&lt;/code&gt; library.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;sys&lt;/strong&gt;: Access to command-line arguments.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;time&lt;/strong&gt;: Can pause execution while we poll the Transcribe service to see if it has completed its work.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;from dotenv import load_dotenv&lt;/strong&gt;: Reads and parses the environment variable file.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;from pathlib import Path&lt;/strong&gt;: Helps specify where the environment variable file lives on the local file system.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Go!&lt;/h2&gt;
-&lt;p&gt;Our first lines of code should be to read and parse the environment variables file so they can be used throughout the solution.&lt;/p&gt;
-&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;dotenv_path &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Path&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;transcribe.env&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-load_dotenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; dotenv_path &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Path&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;transcribe.env&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Clients&lt;/h2&gt;
-&lt;p&gt;To access an AWS service, we must for instantiate a &amp;quot;client&amp;quot; for services we want to access. Client instantiation includes parameters specific to that service. We will need two clients since we are accessing two different services.&lt;/p&gt;
-&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;storage &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; boto3&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;client&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; 
-  &lt;span class=&quot;token string&quot;&gt;&quot;s3&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  aws_access_key_id &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;AWS_ACCESS_KEY&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  aws_secret_access_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;AWS_SECRET_KEY&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  region_name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;AWS_REGION&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-transcribe &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; boto3&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;client&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-  &lt;span class=&quot;token string&quot;&gt;&quot;transcribe&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  aws_access_key_id &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;AWS_ACCESS_KEY&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  aws_secret_access_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;AWS_SECRET_KEY&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  region_name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;AWS_REGION&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here you can see those environment variables in action as referenced by &lt;code&gt;os.getenv( &amp;quot;variable_name&amp;quot; )&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;Audio File&lt;/h2&gt;
-&lt;p&gt;AWS Transcribe works from an audio file placed on S3. Here we will check S3 to see if our desired audio file already exists. If it does not, we will upload an audio file from the local file system to S3 for later use by Transcribe.&lt;/p&gt;
-&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-  response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; storage&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_object_attributes&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-    Bucket &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;S3_BUCKET&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    Key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;S3_OBJECT&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    ObjectAttributes &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;ETag&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; response &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 
-  storage&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;upload_file&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; 
-    Filename &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;LOCAL_AUDIO&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
-    Bucket &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;S3_BUCKET&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
-    Key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;S3_OBJECT&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Transcribe&lt;/h2&gt;
-&lt;p&gt;In order to tell AWS Transcribe to work on a specific audio file, we create a &amp;quot;job&amp;quot;. That job is asynchronous. That is to say that when we make the call to create a job, that call will kick off the job and return. It will not hold up execution of the logic while waiting for the job to complete. In order to find out if the job has completed, we will need to repeatedly ask Transcribe about the status of the job (polling).&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Many parts of &lt;code&gt;Boto3&lt;/code&gt; include &lt;code&gt;waiters&lt;/code&gt;. &lt;code&gt;Waiters&lt;/code&gt; are a means of &lt;em&gt;waiting&lt;/em&gt; for the work on AWS to complete. Transcribe does not support &lt;code&gt;waiters&lt;/code&gt; at this time, so polling it is.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;completed &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;False&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 
-  response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; transcribe&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_transcription_job&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-    TranscriptionJobName &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;TRANSCRIPTION_JOB&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; response &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;      
-  
-&lt;span class=&quot;token keyword&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-  response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; transcribe&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;start_transcription_job&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-    TranscriptionJobName &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;TRANSCRIPTION_JOB&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    LanguageCode &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;en-US&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    OutputBucketName &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;S3_BUCKET&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    OutputKey &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;S3_OBJECT&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;.json&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    Media &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;token string&quot;&gt;&quot;MediaFileUri&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;s3://&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;S3_BUCKET&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;S3_OBJECT&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; response &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;    
-  
-&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;TranscriptionJob&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;TranscriptionJobStatus&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;IN_PROGRESS&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-  completed &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;  
-  
-&lt;span class=&quot;token comment&quot;&gt;# Job status&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; completed &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-  response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; transcribe&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_transcription_job&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-    TranscriptionJobName &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;TRANSCRIPTION_JOB&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; response &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  
-  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;TranscriptionJob&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;TranscriptionJobStatus&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;IN_PROGRESS&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    completed &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;break&lt;/span&gt;
-    
-  time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sleep&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;SLEEP_TIME&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;That is a lot to take in at once. Let us review what is going on in the above snippet. First, we create a variable to track if the job is complete. Since it is not complete when we first create the job, the value of &lt;code&gt;completed&lt;/code&gt; is &lt;code&gt;False&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Second, we ask Transcribe for the status of the job. The job may not exist yet. If the job does not exist, we start a new job using the &lt;code&gt;start_transcription_job()&lt;/code&gt; function call. Among the parameters passed to the &lt;code&gt;start_transcription_job()&lt;/code&gt; includes the path to our audio file sitting on S3. Also specified is the path where Transcribe should place the results.&lt;/p&gt;
-&lt;p&gt;Third, after either of those calls are made, we check the progress in the resulting JSON dictionary. There are different values that might come back from checking on the job status. One of those might be an error. Another might be a failure to transcribe the content. In either of those cases, as well as in the case of the status being &lt;code&gt;COMPLETE&lt;/code&gt; we want to stop polling and move on to the next phase.&lt;/p&gt;
-&lt;p&gt;Fourth, is to continue checking on the job status - polling. We do not want to poll too aggressively here (DDoS), so we pause execution of the logic for a few seconds before checking again. The time that Transcribe will take to complete the job depends on the size of the audio file. Eventually the job will complete. Transcribe will then place the JSON formatted results in the bucket we specified when we started the job.&lt;/p&gt;
-&lt;h2&gt;Results&lt;/h2&gt;
-&lt;p&gt;In the case of this solution, we want to download the Transcribe results JSON file, and place it on the local file system so we can open it up with a text editor and learn about the various pieces of data that are included with the results.&lt;/p&gt;
-&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;dir_index &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;S3_OBJECT&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;index&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-file_name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;S3_OBJECT&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;dir_index&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;.json&quot;&lt;/span&gt;
-storage&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;download_file&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-  Filename &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; file_name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  Bucket &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;S3_BUCKET&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  Key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;S3_OBJECT&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;.json&quot;&lt;/span&gt;      
-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; file_name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;r&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; local_file&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-  response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; json&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;load&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; local_file &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;results&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;transcripts&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;transcript&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  
-  local_file&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;close&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Our &lt;code&gt;S3_OBJECT&lt;/code&gt; environment variable includes some path information (&amp;quot;transcribe&amp;quot;). If we keep this as-is, then the download from S3 will try to put the results into a &amp;quot;transcribe&amp;quot; folder in our project on the local file system. I just want to put the results in the same folder as the Python program itself, so I take a few steps to parse out the file name from the rest of the path.&lt;/p&gt;
-&lt;p&gt;Heading over to our S3 client instance, we then download the file. We can then open the file, and read the contents as JSON data, yielding a Python dictionary.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;In the Gist, I also include a version of downloading the results file from S3, directly into memory.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;For any given transcription, there may be multiple results. I good next step might be to dig deeper into the results to determine the confidence of the various transcriptions, and then select a specific result. In this case, I am getting, and displaying, the first result only.&lt;/p&gt;
-&lt;h2&gt;Cleanup&lt;/h2&gt;
-&lt;p&gt;This solution takes into account that you may want to reuse the audio file on S3, or just plain keep it around for archival purposes. If you have no intention of reusing any of the associated parts and pieces of the process, it is a good idea to clean up after ourselves.&lt;/p&gt;
-&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;-c&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; sys&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;argv&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-  transcribe&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;delete_transcription_job&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-    TranscriptionJobName &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;TRANSCRIPTION_JOB&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  
-  response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; storage&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;delete_object&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-    Bucket &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;S3_BUCKET&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    Key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;S3_OBJECT&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;To account for this, you can add a command-line argument of &lt;code&gt;-c&lt;/code&gt; when you run the Python program. There is no significance to the &lt;code&gt;-c&lt;/code&gt;. It is made up by me. The &amp;quot;c&amp;quot; stands for &amp;quot;cleanup&amp;quot;. If the &lt;code&gt;-c&lt;/code&gt; argument is included, we delete the Transcribe job, and then delete the audio file from S3.&lt;/p&gt;
-&lt;h2&gt;Next Steps&lt;/h2&gt;
-&lt;p&gt;All said and done, this solution is a little over 100 lines of code. Depending on how you fit this solution into your project, those lines of code could be much less or much more. This really all depends on how robust you need the code to be. Thanks to judicious use of the &lt;code&gt;boto3&lt;/code&gt; library however, you are on your way to using AWS Transcribe.&lt;/p&gt;
-&lt;p&gt;I absolutely appreciate these types of questions from AWS customers, and hope this example serves to answer questions around using AWS Transcribe with Python. For reference, I have placed the environment variable file (with security-specific values redacted), and the entirety of the Python program in a &lt;a href=&quot;https://gist.github.com/krhoyt/46a8fac60cb25c44eaad9447e4c4685a&quot;&gt;GitHub Gist&lt;/a&gt; for your reference. Or copy and paste. Whatever. Enjoy!&lt;/p&gt;
 </content>
     </entry>
 </feed>
