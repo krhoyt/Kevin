@@ -21,7 +21,7 @@ This is part of a series:
 
 I have mentioned before that a manager's currency is meetings. This is markedly different from the individual contributor, whose currency is focus time. As a manager at Amazon, it was not uncommon for me to sit down at my desk on Monday morning and find that I already had 20 hours of meetings scheduled for the week. How could that possibly be the case?
 
-In this post, I will walk through the meetings that should be on a manager's calendar, along with recommended timing and cadence. I will also discuss - at a high level—the purpose of each meeting and why it matters. Future posts will dive deeper into agendas and specific considerations for each meeting type.
+In this post, I will walk through the meetings that should be on a manager's calendar, along with recommended timing and cadence. I will also discuss - at a high level - the purpose of each meeting and why it matters. Future posts will dive deeper into agendas and specific considerations for each meeting type.
 
 ## Direct Report 1:1  
 *Weekly, 30 minutes*
@@ -131,7 +131,7 @@ Always ask: "How are we doing?" If there are concerns, this is the moment to sur
 ## Skip-Level Manager Meeting  
 *Quarterly, 30 minutes*
 
-Encourage skip-level meetings—both for your employees and for yourself. These conversations remove narrative bias and provide fresh perspective. They help individuals understand how objectives connect across the organization and why certain decisions are being made.
+Encourage skip-level meetings - both for your employees and for yourself. These conversations remove narrative bias and provide fresh perspective. They help individuals understand how objectives connect across the organization and why certain decisions are being made.
 
 ## In-Person Direct Report Meeting  
 *Quarterly, all day*
