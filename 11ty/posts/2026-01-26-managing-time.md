@@ -17,6 +17,7 @@ This is part of a series:
 - Managing Tech: [Heroes](/blog/2026/01/14/managing-heroes/)
 - Managing Tech: [Professionals](/blog/2026/01/16/managing-professionals/) 
 - Managing Tech: Time (you are here)
+- Managing Tech: [Cadence](/blog/2026/02/02/managing-cadence/)
 
 If there is one skill I most commonly see underrepresented—among both individual contributors and managers alike - it is time management. As an individual contributor, weak time management makes it difficult to scale across the responsibilities that your [business](/blog/2026/01/16/managing-professionals/) requires of you. As a manager, poor time management means you will represent neither your employer nor your employees particularly well.
 

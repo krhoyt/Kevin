@@ -17,6 +17,7 @@ This is part of a series:
 - Managing Tech: [Heroes](/blog/2026/01/14/managing-heroes/)
 - Managing Tech: [Professionals](/blog/2026/01/16/managing-professionals/)
 - Managing Tech: [Time](/blog/2026/01/26/managing-time/)
+- Managing Tech: [Cadence](/blog/2026/02/26/managing-cadence/)
 
 You are good at your job. You come into work, consistently deliver results, and keep learning more about the business and your craft. Eventually, your abilities are noticed and you are promoted to manager. Congratulations!
 
