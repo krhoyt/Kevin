@@ -13,6 +13,7 @@
       <select name="section" aria-label="Section">
         <option value="/" {% if page.url == "/" %}selected{% endif %}>Home</option>
         <option value="/blog" {% if page.url.startsWith("/blog") %}selected{% endif %}>Writing</option>
+        <option value="/status" {% if page.url.startsWith("/status") %}selected{% endif %}>Status</option>        
         <option value="/about" {% if page.url.startsWith("/about") %}selected{% endif %}>About</option>
         <option value="/events" {% if page.url.startsWith("/events") %}selected{% endif %}>Events</option>
       </select>      
@@ -21,6 +22,7 @@
     <ul>
       <li><a aria-label="Home" href="/">Home</a></li>
       <li><a aria-label="Writing (Blog)" href="/blog">Writing</a></li>    
+      <li><a aria-label="Status" href="/status">Status</a></li>          
       <li><a aria-label="About" href="/about">About</a></li>
       <li><a aria-label="Events" href="/events">Events</a></li>
     </ul>  

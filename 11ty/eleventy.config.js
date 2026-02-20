@@ -22,6 +22,12 @@ export default function( config ) {
     return collection.getFilteredByGlob( 'posts/*.md' )
       .filter( post => !post.data.draft )
       .sort( ( a, b ) => b.date - a.date );
+  } );
+  
+  config.addCollection( 'statusByDate', ( collection ) => {
+    return collection.getFilteredByGlob( 'status/*.md' )
+      .filter( post => !post.data.draft )
+      .sort( ( a, b ) => b.date - a.date );
   } );  
 
   config.addFilter( 'htmlDateString', ts => {

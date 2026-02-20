@@ -1,0 +1,70 @@
+---
+title: Status
+permalink: /status/
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="Dispatches from development and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>{{ title }} - Kevin Hoyt</title>
+
+  <link rel="icon" type="image/x-icon" href="/img/edit.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/hero.css" />  
+  <link rel="stylesheet" href="/style/prism.css" />
+  <link rel="stylesheet" href="/style/status.css" />    
+  <link rel="stylesheet" href="/style/footer.css" />
+
+</head>
+<body>
+
+  {% set section = 'Kevin Hoyt · Status' %}
+  {% set quote = 'Dispatches from development and design.' %}
+
+  {% include 'header.njk' %}
+  {% include 'hero.njk' %}
+
+  <section id="status">
+
+    {% for update in collections.statusByDate %}
+
+      <article>
+
+        <img src="/img/krhoyt.jpg" />
+
+        <div>
+          <header>
+            <p>Kevin Hoyt</p>
+            <p>
+              <span>@krhoyt</span> 
+              · 
+              <span>{{ update.date | htmlDateString }}</span>
+            </p>
+          </header>
+          {{ update.templateContent | safe }}          
+        </div>
+
+      </article>
+
+    {% endfor %}
+
+  </section>
+
+  {% include 'footer.njk' %}
+
+  <script src="/script/menu.js"></script>
+
+</body>
+</html>
