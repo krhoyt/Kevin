@@ -1,17 +1,12 @@
----
-title: Status
-permalink: /status/
----
-
 <!doctype html>
 <html lang="en">
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="Dispatches from development and design." />
+  <meta name="description" content="{{ excerpt }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <title>{{ title }} - Kevin Hoyt</title>
+  <title>Kevin Hoyt · Notes</title>
 
   <link rel="icon" type="image/x-icon" href="/img/edit.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,48 +17,50 @@ permalink: /status/
 
   <link rel="stylesheet" href="/style/kevinhoyt.css" />
   <link rel="stylesheet" href="/style/header.css" />
-  <link rel="stylesheet" href="/style/hero.css" />  
   <link rel="stylesheet" href="/style/prism.css" />
-  <link rel="stylesheet" href="/style/status.css" />    
+  <link rel="stylesheet" href="/style/note.css" />
   <link rel="stylesheet" href="/style/footer.css" />
 
 </head>
 <body>
 
-  {% set section = 'Kevin Hoyt · Status' %}
-  {% set quote = 'Dispatches from development and design.' %}
-
   {% include 'header.njk' %}
-  {% include 'hero.njk' %}
 
-  <section id="status">
+  <main>
 
-    {% for update in collections.statusByDate %}
+    <!-- <a href="/notes">Back to Notes</a> -->
 
-      <article>
+    <h1>{{ page.date | htmlDateString }}</h1>
 
-        <img src="/img/krhoyt.jpg" />
+    <aside>
 
-        <div>
-          <header>
-            <p>Kevin Hoyt</p>
-            <p>
-              <span>@krhoyt</span> 
-              · 
-              <span>{{ update.date | htmlDateString }}</span>
-            </p>
-          </header>
-          {{ update.templateContent | safe }}          
-        </div>
+      {% if link === true %}
+        <p class="tag">Link</p>
+      {% endif %}
 
-      </article>
+      {% if code === true %}
+        <p class="tag">Code</p>
+      {% endif %}
 
-    {% endfor %}
+      {% if image === true %}
+        <p class="tag">Image</p>
+      {% endif %}
 
-  </section>
+      {% if video === true %}
+        <p class="tag">Video</p>
+      {% endif %}  
+
+    </aside>
+
+    {{ content | safe }}
+
+    <a href="/notes">Back to Notes</a>
+
+  </main>
 
   {% include 'footer.njk' %}
 
+  <script src="/script/avatar.js" type="module"></script>
   <script src="/script/menu.js"></script>
 
 </body>

@@ -11,9 +11,9 @@
         <path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/>
       </svg>         
       <select name="section" aria-label="Section">
-        <option value="/" {% if page.url == "/" %}selected{% endif %}>Home</option>
+        <option value="/" {% if page.url === "/" %}selected{% endif %}>Home</option>
         <option value="/blog" {% if page.url.startsWith("/blog") %}selected{% endif %}>Writing</option>
-        <option value="/status" {% if page.url.startsWith("/status") %}selected{% endif %}>Status</option>        
+        <option value="/notes" {% if page.url.startsWith("/notes") %}selected{% endif %}>Notes</option>        
         <option value="/about" {% if page.url.startsWith("/about") %}selected{% endif %}>About</option>
         <option value="/events" {% if page.url.startsWith("/events") %}selected{% endif %}>Events</option>
       </select>      
@@ -22,7 +22,7 @@
     <ul>
       <li><a aria-label="Home" href="/">Home</a></li>
       <li><a aria-label="Writing (Blog)" href="/blog">Writing</a></li>    
-      <li><a aria-label="Status" href="/status">Status</a></li>          
+      <li><a aria-label="Notes (Status)" href="/notes">Notes</a></li>          
       <li><a aria-label="About" href="/about">About</a></li>
       <li><a aria-label="Events" href="/events">Events</a></li>
     </ul>  

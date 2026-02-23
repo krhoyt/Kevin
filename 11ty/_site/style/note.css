@@ -1,0 +1,131 @@
+html, body {
+  height: 100%;
+}
+
+main {
+  box-sizing: border-box;
+  display: flex;
+  flex-basis: 0;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  margin: 56px auto 18px auto;
+  max-width: 600px;
+  width: 90%;
+}
+
+main > div {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin: 50px 0 16px 0;
+}
+
+main > div time {
+  color: #1a1a1a;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  opacity: 0.80;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+main > div aside {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin: 0 0 0 auto;
+  opacity: 0.50;
+}
+
+main > aside p {
+  background: #F3F4F6;
+  border: 1px solid #E5E7EB;   
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: inline-block;
+  color: #6B7280;
+  cursor: default;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0 0 12px 0;
+  padding: 3px 8px 3px 8px;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;  
+  -webkit-font-smoothing: antialiased;            
+}
+
+main a {
+  color: #26a8ed;
+  text-decoration: none;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+main h1 {
+  color: #1a1a1a;
+  font-family: Roboto, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 50px 0 12px 0;  
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;              
+}
+
+main p {
+  box-sizing: border-box;
+  color: #1a1a1a;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  line-height: 34px;
+  margin: 0 0 16px 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+main p img {
+  border: solid 1px #00000020;
+  border-radius: 16px;
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: auto;
+}
+
+main pre {
+  border-radius: 16px;
+  margin: 0 0 16px 0;
+}
+
+code {
+  background-color: #f4f4f4;
+}
+
+main > a {
+  align-self: flex-start;
+  color: #94A3B8;
+  display: inline;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0 0 30px 0;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+main > a:hover {
+  text-decoration: underline;
+}

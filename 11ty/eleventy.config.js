@@ -24,8 +24,8 @@ export default function( config ) {
       .sort( ( a, b ) => b.date - a.date );
   } );
   
-  config.addCollection( 'statusByDate', ( collection ) => {
-    return collection.getFilteredByGlob( 'status/*.md' )
+  config.addCollection( 'notesByDate', ( collection ) => {
+    return collection.getFilteredByGlob( 'notes/*.md' )
       .filter( post => !post.data.draft )
       .sort( ( a, b ) => b.date - a.date );
   } );  
