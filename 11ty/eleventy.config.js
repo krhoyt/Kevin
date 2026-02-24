@@ -32,10 +32,18 @@ export default function( config ) {
 
   config.addFilter( 'htmlDateString', ts => {
     return DateTime.fromJSDate( ts, {zone: 'utc'} ).toLocaleString( DateTime.DATE_MED );
-  } );  
+  } );
   config.addFilter( 'getReadingTime', text => {
     const wordsPerMinute = 200;
     const numberOfWords = text.split(/\s/g).length;
     return Math.ceil( numberOfWords / wordsPerMinute );
-  } );  
+  } );
+  config.addFilter( 'prevNote', ( collection, url ) => {
+    const index = collection.findIndex( n => n.url === url );
+    return index > 0 ? collection[index - 1] : null;
+  } );
+  config.addFilter( 'nextNote', ( collection, url ) => {
+    const index = collection.findIndex( n => n.url === url );
+    return index < collection.length - 1 ? collection[index + 1] : null;
+  } );
 };
