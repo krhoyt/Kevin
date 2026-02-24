@@ -152,6 +152,28 @@
   filter: saturate( 100% ) contrast( 100% );
 }
 
+@media only screen and ( max-width: 764px ) { 
+  #notes h2 {
+    font-size: 28px;
+  }
+
+  #notes header {
+    padding: 0 0 32px 0;
+    width: 90%;
+  }
+
+  #notes > div {
+    grid-template-columns: repeat( 2, 1fr );    
+    width: 90%;
+  }   
+}
+
+@media only screen and ( max-width: 480px ) { 
+  #notes > div {
+    grid-template-columns: repeat( 1, 1fr );  
+  }   
+}
+
 /*
 #notes {
   align-items: center;
