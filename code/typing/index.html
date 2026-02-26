@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Typing</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <p>A long time ago, in a galaxy, <kh-typing>far, far away</kh-typing>...</p>
+
+  <script src="./typing.js" type="module"></script>
+
+  <script>
+    const typing = document.querySelector( 'kh-typing' );
+    typing.messages = [
+      'far, far, away',
+      'just down the street',
+      'next door'
+    ]
+  </script>
+
+</body>
+</html>
