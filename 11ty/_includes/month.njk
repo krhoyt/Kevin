@@ -1,26 +1,10 @@
-{% set notes = collections.notesByDate.slice( 0, 60 ) %}
-
-{% if page.url === "/" %}
-  {% set notes = notes.slice( 0, 3 ) %}
-{% endif %}
-
 <section id="notes">
-
-  {% if page.url === "/" %}
-    <header>
-      <h2>Notes</h2>
-      <a href="/notes">
-        <span>View all</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg>      
-      </a>
-    </header>
-  {% endif %}
 
   {% include 'notebook-nav.njk' %}
 
   <div>
 
-    {% for note in notes %}
+    {% for note in monthData.notes %}
 
       <a href="{{ note.data.permalink }}">
 
@@ -41,13 +25,13 @@
                     <path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199a2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/>
                     <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/>
                   </g>
-                </svg>              
+                </svg>
               {% endif %}
 
               {% if note.data.code === true %}
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                   <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>   
+                </svg>
               {% endif %}
 
               {% if note.data.image === true %}
@@ -62,8 +46,8 @@
               {% if note.data.video === true %}
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                   <path fill="#1a1a1a" fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2zm11.5 5.175l3.5 1.556V4.269l-3.5 1.556zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1z"/>
-                </svg>     
-              {% endif %}  
+                </svg>
+              {% endif %}
 
             </aside>
 
@@ -72,9 +56,9 @@
           <p>{{ note.data.excerpt }}</p>
 
         </article>
-      
+
       </a>
-      
+
     {% endfor %}
 
   </div>

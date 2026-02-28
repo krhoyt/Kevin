@@ -7,7 +7,7 @@
 }
 
 #notes:not( :has( header ) ) {
-  padding: 32px 0 48px 0;
+  padding: 0 0 48px 0;
 }
 
 #notes > div {
@@ -152,6 +152,62 @@
   filter: saturate( 100% ) contrast( 100% );
 }
 
+#notes nav {
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 0 32px 0;
+  width: 100%;
+}
+
+#notes nav div {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: flex-start;
+  max-width: 900px;
+  width: 100%;  
+}
+
+#notes nav a {
+  color: rgba( 255, 255, 255, 0.75 );
+  display: inline-block;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding: 12px 8px 12px 8px;
+  position: relative;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;   
+}
+
+#notes nav a.current::after {
+  background: #3B82F6;
+  bottom: 0;
+  content: '';
+  height: 3px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+#notes nav p {
+  color: rgba( 255, 255, 255, 0.60 );
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding: 12px 8px 12px 0;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;   
+}
+
 @media only screen and ( max-width: 764px ) { 
   #notes h2 {
     font-size: 28px;
@@ -166,6 +222,10 @@
     grid-template-columns: repeat( 2, 1fr );    
     width: 90%;
   }   
+
+  #notes nav div {  
+    width: 90%;
+  }
 }
 
 @media only screen and ( max-width: 480px ) { 

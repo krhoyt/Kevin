@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,7 +6,7 @@
   <meta name="description" content="Dispatches from development and design." />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <title>Notes - Kevin Hoyt</title>
+  <title>February 2026 - Kevin Hoyt</title>
 
   <link rel="icon" type="image/x-icon" href="/img/edit.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,9 +17,9 @@
 
   <link rel="stylesheet" href="/style/kevinhoyt.css" />
   <link rel="stylesheet" href="/style/header.css" />
-  <link rel="stylesheet" href="/style/hero.css" />  
+  <link rel="stylesheet" href="/style/hero.css" />
   <link rel="stylesheet" href="/style/prism.css" />
-  <link rel="stylesheet" href="/style/notebook.css" />    
+  <link rel="stylesheet" href="/style/notebook.css" />
   <link rel="stylesheet" href="/style/footer.css" />
 
 </head>
@@ -136,13 +135,7 @@
 
 </section>
 
-  
-
-
-
-<section id="notes">
-
-  
+  <section id="notes">
 
   
   <nav>
@@ -155,7 +148,7 @@
         <a href="/notes/2026/01/">Jan</a>
       
         
-        <a href="/notes/2026/02/">Feb</a>
+        <a href="/notes/2026/02/" class="current">Feb</a>
       
     </div>
   </nav>
@@ -185,18 +178,18 @@
                     <path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199a2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/>
                     <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/>
                   </g>
-                </svg>              
+                </svg>
               
 
               
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                   <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>   
+                </svg>
               
 
               
 
-                
+              
 
             </aside>
 
@@ -205,9 +198,9 @@
           <p>I am a huge SVG fan. It is vastly underappreciated and underused on the modern web. I was excited then to run across this video by Loris Sigrist on SVG Filters. Loris does a great job with a gentle, yet awe-inspiring introduction. Also, check out SVGFM by Chris Kirk-Nielsen.</p>
 
         </article>
-      
+
       </a>
-      
+
     
 
       <a href="/notes/2026/02/26/">
@@ -229,18 +222,18 @@
                     <path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199a2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/>
                     <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/>
                   </g>
-                </svg>              
+                </svg>
               
 
               
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                   <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>   
+                </svg>
               
 
               
 
-                
+              
 
             </aside>
 
@@ -249,9 +242,9 @@
           <p>A client that wanted an animated typing effect on their website. A word would be typed out. Pause. The word would be deleted (backspace). Iterate an array of options. Claude went with setTimeout(). I prefer requestAnimationFrame() and a state machine. Full code in a Gist.</p>
 
         </article>
-      
+
       </a>
-      
+
     
 
       <a href="/notes/2026/02/25/">
@@ -273,7 +266,7 @@
 
               
 
-                
+              
 
             </aside>
 
@@ -282,9 +275,9 @@
           <p>I am usually able to avoid viruses that my family brings home. Not this time. After a trip to visit family in Omaha, my wife says &quot;I should have worn a mask&quot; and proceeds to develop a cold. Few days later, my turn. Meanwhile work is all about the early AM meetings.</p>
 
         </article>
-      
+
       </a>
-      
+
     
 
       <a href="/notes/2026/02/24/">
@@ -305,12 +298,12 @@
               
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                   <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>   
+                </svg>
               
 
               
 
-                
+              
 
             </aside>
 
@@ -319,9 +312,9 @@
           <p>One last CSS snippet for good measure. Yes, this site required a lot of complex gradients. This CSS rule will fill the background of a container element with a linear gradient. On the diagonal. Based on solid colors, but nearly transparent. Thanks again color-mix function!</p>
 
         </article>
-      
+
       </a>
-      
+
     
 
       <a href="/notes/2026/02/23/">
@@ -342,12 +335,12 @@
               
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                   <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>   
+                </svg>
               
 
               
 
-                
+              
 
             </aside>
 
@@ -356,9 +349,9 @@
           <p>Not perhaps as equally as impressive as the color-mix function, but sometimes you need to fill a span of text with a gradient color. Not the background; the text itself. The tricky part here is in getting the clipping properties set correctly. CSS is so powerful these days.</p>
 
         </article>
-      
+
       </a>
-      
+
     
 
       <a href="/notes/2026/02/22/">
@@ -379,12 +372,12 @@
               
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                   <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>   
+                </svg>
               
 
               
 
-                
+              
 
             </aside>
 
@@ -393,9 +386,9 @@
           <p>Needed to fill the background of a website hero section with a complex gradient. Two large radial gradients, one in the top-right area, and one in the bottom-left area. Large enough to overlap considerably. Nearly transparent, but based on solid colors. I give you, color-mix.</p>
 
         </article>
-      
+
       </a>
-      
+
     
 
       <a href="/notes/2026/02/21/">
@@ -424,7 +417,7 @@
                 </svg>
               
 
-                
+              
 
             </aside>
 
@@ -433,9 +426,9 @@
           <p>Came out of a store in a strip mall today, only to find a car parked next to mine. It was parked so close that I could not get into my car. Went back into the store and wandered. Checked on the situation every ten minutes or so. Finally gone after an hour.</p>
 
         </article>
-      
+
       </a>
-      
+
     
 
       <a href="/notes/2026/02/19/">
@@ -457,7 +450,7 @@
                     <path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199a2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/>
                     <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/>
                   </g>
-                </svg>              
+                </svg>
               
 
               
@@ -471,7 +464,7 @@
                 </svg>
               
 
-                
+              
 
             </aside>
 
@@ -480,9 +473,9 @@
           <p>I enjoy recommendations from Mike&#39;s Book Reviews. Mystic River came out on top last year. It is a good enough book, but without any fantasy or hard science to keep me interested, I feel like I am reading a transcript of a 48 Hours murder mystery. Tough to keep turning the page.</p>
 
         </article>
-      
+
       </a>
-      
+
     
 
       <a href="/notes/2026/02/02/">
@@ -511,7 +504,7 @@
                 </svg>
               
 
-                
+              
 
             </aside>
 
@@ -520,82 +513,9 @@
           <p>I was setting up an LLC for software development services and management coaching until ... I needed to select the date the business was created. Apparently Jan 29, 2026 is not in the past enough. 😂 It is 2026 y&#39;all. Check your validation algorithms.</p>
 
         </article>
-      
+
       </a>
-      
-    
 
-      <a href="/notes/2026/01/30/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="link" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Jan 30, 2026</time>
-
-            <aside>
-
-              
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <g fill="currentColor">
-                    <path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199a2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/>
-                    <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/>
-                  </g>
-                </svg>              
-              
-
-              
-
-              
-
-                
-
-            </aside>
-
-          </div>
-
-          <p>Think about your job as a business you own. There is more to it than writing code (product). Sales and marketing (comms), HR (continuing education), IT (reporting), and more.</p>
-
-        </article>
-      
-      </a>
-      
-    
-
-      <a href="/notes/2026/01/14/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="Kevin Hoyt" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Jan 14, 2026</time>
-
-            <aside>
-
-              
-
-              
-
-              
-
-                
-
-            </aside>
-
-          </div>
-
-          <p>It is worth spending time learning at least a handful of cognitive biases. This was required learning for managers and anyone involved in hiring at AWS. It sharpens critical thinking and helps you communicate ideas more effectively.</p>
-
-        </article>
-      
-      </a>
-      
     
 
   </div>

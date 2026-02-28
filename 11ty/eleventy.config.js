@@ -28,7 +28,34 @@ export default function( config ) {
     return collection.getFilteredByGlob( 'notes/*.md' )
       .filter( post => !post.data.draft )
       .sort( ( a, b ) => b.date - a.date );
-  } );  
+  } );
+
+  config.addCollection( 'notesByMonth', ( collection ) => {
+    const notes = collection.getFilteredByGlob( 'notes/*.md' )
+      .filter( post => !post.data.draft )
+      .sort( ( a, b ) => b.date - a.date );
+
+    const monthMap = {};
+    notes.forEach( note => {
+      const d = DateTime.fromJSDate( note.date, { zone: 'utc' } );
+      const key = d.toFormat( 'yyyy-MM' );
+      if ( !monthMap[key] ) {
+        monthMap[key] = {
+          year: d.year,
+          month: d.toFormat( 'MM' ),
+          abbr: d.toFormat( 'MMM' ),
+          label: d.toFormat( 'MMMM yyyy' ),
+          notes: []
+        };
+      }
+      monthMap[key].notes.push( note );
+    } );
+
+    return Object.values( monthMap ).sort( ( a, b ) => {
+      if ( a.year !== b.year ) return b.year - a.year;
+      return parseInt( a.month ) - parseInt( b.month );
+    } );
+  } );
 
   config.addFilter( 'htmlDateString', ts => {
     return DateTime.fromJSDate( ts, {zone: 'utc'} ).toLocaleString( DateTime.DATE_MED );
