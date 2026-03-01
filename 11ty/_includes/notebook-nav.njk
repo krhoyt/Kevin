@@ -2,11 +2,11 @@
   <nav>
     <div>
       <a class="home" href="/notes">Notes</a>
-      <p style="margin-left: 10px;">|</p>              
+      <p>|</p>              
       {% for entry in collections.notesByMonth %}
         {% if loop.first or entry.year !== collections.notesByMonth[loop.index0 - 1].year %}
           <p>{{ entry.year }}</p>
-          <p style="margin-left: 10px;">|</p>
+          <p>|</p>
         {% endif %}
         <a href="/notes/{{ entry.year }}/{{ entry.month }}/"{% if monthData and monthData.year === entry.year and monthData.month === entry.month %} class="current"{% endif %}>{{ entry.abbr }}</a>
       {% endfor %}

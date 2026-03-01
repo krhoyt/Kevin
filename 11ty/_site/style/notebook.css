@@ -202,10 +202,14 @@
   font-size: 16px;
   line-height: 24px;
   margin: 0;
-  padding: 12px 8px 12px 0;
+  padding: 12px 8px 12px 8px;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;   
+}
+
+#notes nav a.home {
+  padding: 12px 8px 12px 0;
 }
 
 @media only screen and ( max-width: 764px ) { 
