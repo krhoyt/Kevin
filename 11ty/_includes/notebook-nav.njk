@@ -1,6 +1,8 @@
 {% if page.url.startsWith( '/notes' ) %}
   <nav>
     <div>
+      <a class="home" href="/notes">Notes</a>
+      <p style="margin-left: 10px;">|</p>              
       {% for entry in collections.notesByMonth %}
         {% if loop.first or entry.year !== collections.notesByMonth[loop.index0 - 1].year %}
           <p>{{ entry.year }}</p>
