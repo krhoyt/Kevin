@@ -3,10 +3,10 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="Dispatches from development and design." />
+  <meta name="description" content="I am not sure if this is considered old-school or modern, but you can also use span elements to control wrapping with a good degree of precision. Toggle from display: inline to display: block as needed at media query break points. This also works well in i18n situations." />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <title>March 2026 - Kevin Hoyt</title>
+  <title>Kevin Hoyt · Notes</title>
 
   <link rel="icon" type="image/x-icon" href="/img/edit.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,16 +17,12 @@
 
   <link rel="stylesheet" href="/style/kevinhoyt.css" />
   <link rel="stylesheet" href="/style/header.css" />
-  <link rel="stylesheet" href="/style/hero.css" />
   <link rel="stylesheet" href="/style/prism.css" />
-  <link rel="stylesheet" href="/style/notebook.css" />
+  <link rel="stylesheet" href="/style/note.css" />
   <link rel="stylesheet" href="/style/footer.css" />
 
 </head>
 <body>
-
-  
-  
 
   <header id="header">
 
@@ -117,163 +113,79 @@
 
 </header>
 
-  <section id="hero" fetchpriority="high">
 
-  <article>
+  <main>
 
-    
-      <h2>Kevin Hoyt · Notes</h2>
-    
+    <!-- <a href="/notes">Back to Notes</a> -->
 
     
-      <h3>Dispatches from development and design.</h3>
     
 
-    
-
-  </article>
-
-</section>
-
-  <section id="notes">
-
-  
-  <nav>
-    <div>
-      <a class="home" href="/notes">Notes</a>
-      <p>|</p>              
+    <header>
+      <h1>Mar 4, 2026</h1>
       
-        
-          <p>2026</p>
-          <p>|</p>
-        
-        <a href="/notes/2026/01/">Jan</a>
       
-        
-        <a href="/notes/2026/02/">Feb</a>
+        <a href="/notes/2026/03/03/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8L4.646 2.354a.5.5 0 0 1 0-.708"/></svg>
+        </a>
       
-        
-        <a href="/notes/2026/03/" class="current">Mar</a>
+    </header>
+
+    <aside>
+
       
-    </div>
-  </nav>
+
+      
+        <p class="tag">Code</p>
+      
+
+      
+
+        
+
+    </aside>
+
+    <p>I am not sure if this is considered old-school or modern, but you can also use <code>span</code> elements to control wrapping with a good degree of precision. Toggle from <code>display: inline</code> to <code>display: block</code> as needed at media query break points. This also works well in i18n situations.</p>
+<pre class="language-html"><code class="language-html">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>Modern Design.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>AI Enabled.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>Robust Tooling.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-css"><code class="language-css">  <span class="token comment">/* Inline until does not fit */</span>
+  <span class="token selector">h1 span</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> inline<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span> <span class="token property">max-width</span><span class="token punctuation">:</span> 640px <span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+    <span class="token comment">/* Move last span to new line */</span>
+    <span class="token selector">h1 span:last-of-type</span> <span class="token punctuation">{</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> block
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>    
+
+  <span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span> <span class="token property">max-width</span><span class="token punctuation">:</span> 480px <span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+    <span class="token comment">/* First span on own line */</span>
+    <span class="token selector">h1 span:first-of-type</span> <span class="token punctuation">{</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> block
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/* Remaining spans on second line */</span>
+    <span class="token selector">h1 span:last-of-type</span> <span class="token punctuation">{</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> inline<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>      
+
+  <span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span> <span class="token property">max-width</span><span class="token punctuation">:</span> 375px <span class="token punctuation">)</span></span> <span class="token punctuation">{</span>  
+    <span class="token comment">/* Put all spans on new line */</span>
+    <span class="token selector">h1 span</span> <span class="token punctuation">{</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span></code></pre>
 
 
+    <a href="/notes">Back to Notes</a>
 
-  <div>
-
-    
-
-      <a href="/notes/2026/03/04/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="code" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Mar 4, 2026</time>
-
-            <aside>
-
-              
-
-              
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>
-              
-
-              
-
-              
-
-            </aside>
-
-          </div>
-
-          <p>I am not sure if this is considered old-school or modern, but you can also use span elements to control wrapping with a good degree of precision. Toggle from display: inline to display: block as needed at media query break points. This also works well in i18n situations.</p>
-
-        </article>
-
-      </a>
-
-    
-
-      <a href="/notes/2026/03/03/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="code" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Mar 3, 2026</time>
-
-            <aside>
-
-              
-
-              
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>
-              
-
-              
-
-              
-
-            </aside>
-
-          </div>
-
-          <p>If you want to emphasize to the browser where to best break/wrap text, you can use the special character &amp;#8203; or the &lt;wbr&gt; element. Useful for breaking at sentences - especially on mobile viewports. Also consider text-wrap, overflow-wrap, hyphens and word-break.</p>
-
-        </article>
-
-      </a>
-
-    
-
-      <a href="/notes/2026/03/02/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="Kevin Hoyt" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Mar 2, 2026</time>
-
-            <aside>
-
-              
-
-              
-
-              
-
-              
-
-            </aside>
-
-          </div>
-
-          <p>AI in action today as I am building sales assets from existing video demonstrations. Upload video to S3. Create an AWS Transcribe job that points to the video. Run transcription. Feed resulting transcript into ChatGPT for outline and sales demo script. Up next: build decks.</p>
-
-        </article>
-
-      </a>
-
-    
-
-  </div>
-
-</section>
+  </main>
 
   <footer id="footer">
 
@@ -284,6 +196,7 @@
 </footer>
 
 
+  <script src="/script/avatar.js" type="module"></script>
   <script src="/script/menu.js"></script>
 
 </body>
