@@ -3,10 +3,10 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="Dispatches from development and design." />
+  <meta name="description" content="A honey pot is a means to prevent bots from submitting forms. A seemingly valid input field is hidden by CSS. Bots will read the code, and put content into the field - humans will not. Validation checks for content in the field. If there is content, then a bot is using the form." />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <title>March 2026 - Kevin Hoyt</title>
+  <title>Kevin Hoyt · Notes</title>
 
   <link rel="icon" type="image/x-icon" href="/img/edit.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,16 +17,12 @@
 
   <link rel="stylesheet" href="/style/kevinhoyt.css" />
   <link rel="stylesheet" href="/style/header.css" />
-  <link rel="stylesheet" href="/style/hero.css" />
   <link rel="stylesheet" href="/style/prism.css" />
-  <link rel="stylesheet" href="/style/notebook.css" />
+  <link rel="stylesheet" href="/style/note.css" />
   <link rel="stylesheet" href="/style/footer.css" />
 
 </head>
 <body>
-
-  
-  
 
   <header id="header">
 
@@ -117,233 +113,52 @@
 
 </header>
 
-  <section id="hero" fetchpriority="high">
 
-  <article>
+  <main>
 
-    
-      <h2>Kevin Hoyt · Notes</h2>
-    
+    <!-- <a href="/notes">Back to Notes</a> -->
 
     
-      <h3>Dispatches from development and design.</h3>
     
 
-    
-
-  </article>
-
-</section>
-
-  <section id="notes">
-
-  
-  <nav>
-    <div>
-      <a class="home" href="/notes">Notes</a>
-      <p>|</p>              
+    <header>
+      <h1>Mar 12, 2026</h1>
       
-        
-          <p>2026</p>
-          <p>|</p>
-        
-        <a href="/notes/2026/01/">Jan</a>
+        <a href="/notes/2026/03/13/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>
+        </a>
       
-        
-        <a href="/notes/2026/02/">Feb</a>
       
-        
-        <a href="/notes/2026/03/" class="current">Mar</a>
+        <a href="/notes/2026/03/04/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8L4.646 2.354a.5.5 0 0 1 0-.708"/></svg>
+        </a>
       
-    </div>
-  </nav>
+    </header>
 
+    <aside>
 
+      
 
-  <div>
+      
+        <p class="tag">Code</p>
+      
 
-    
+      
 
-      <a href="/notes/2026/03/13/">
+        
 
-        <article>
+    </aside>
 
-          <div>
+    <p>A honey pot is a means to prevent bots from submitting forms. A seemingly valid <code>input</code> field is hidden by CSS. Bots will read the code, and put content into the field - humans will not. Validation checks for content in the field. If there is content, then a bot is using the form.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>honey<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>company_name<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Company name<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">#honey</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="Kevin Hoyt" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Mar 13, 2026</time>
 
-            <aside>
+    <a href="/notes">Back to Notes</a>
 
-              
-
-              
-
-              
-
-              
-
-            </aside>
-
-          </div>
-
-          <p>Honey pot fields can and should also be checked on the server. This is in case the bot is going to the server directly, and bypassing the form. The honey pot value from the form is submitted to the server. It should be null when it arrives. If there is content, there is a bot.</p>
-
-        </article>
-
-      </a>
-
-    
-
-      <a href="/notes/2026/03/12/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="code" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Mar 12, 2026</time>
-
-            <aside>
-
-              
-
-              
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>
-              
-
-              
-
-              
-
-            </aside>
-
-          </div>
-
-          <p>A honey pot is a means to prevent bots from submitting forms. A seemingly valid input field is hidden by CSS. Bots will read the code, and put content into the field - humans will not. Validation checks for content in the field. If there is content, then a bot is using the form.</p>
-
-        </article>
-
-      </a>
-
-    
-
-      <a href="/notes/2026/03/04/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="code" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Mar 4, 2026</time>
-
-            <aside>
-
-              
-
-              
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>
-              
-
-              
-
-              
-
-            </aside>
-
-          </div>
-
-          <p>I am not sure if this is considered old-school or modern, but you can also use span elements to control wrapping with a good degree of precision. Toggle from display: inline to display: block as needed at media query break points. This also works well in i18n situations.</p>
-
-        </article>
-
-      </a>
-
-    
-
-      <a href="/notes/2026/03/03/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="code" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Mar 3, 2026</time>
-
-            <aside>
-
-              
-
-              
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>
-              
-
-              
-
-              
-
-            </aside>
-
-          </div>
-
-          <p>If you want to emphasize to the browser where to best break/wrap text, you can use the special character &amp;#8203; or the &lt;wbr&gt; element. Useful for breaking at sentences - especially on mobile viewports. Also consider text-wrap, overflow-wrap, hyphens and word-break.</p>
-
-        </article>
-
-      </a>
-
-    
-
-      <a href="/notes/2026/03/02/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="Kevin Hoyt" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Mar 2, 2026</time>
-
-            <aside>
-
-              
-
-              
-
-              
-
-              
-
-            </aside>
-
-          </div>
-
-          <p>AI in action today as I am building sales assets from existing video demonstrations. Upload video to S3. Create an AWS Transcribe job that points to the video. Run transcription. Feed resulting transcript into ChatGPT for outline and sales demo script. Up next: build decks.</p>
-
-        </article>
-
-      </a>
-
-    
-
-  </div>
-
-</section>
+  </main>
 
   <footer id="footer">
 
@@ -354,6 +169,7 @@
 </footer>
 
 
+  <script src="/script/avatar.js" type="module"></script>
   <script src="/script/menu.js"></script>
 
 </body>
