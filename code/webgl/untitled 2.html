@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WebGL Transition Library</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #111;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .controls {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 10;
+      display: flex;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.45);
+      color: white;
+      flex-wrap: wrap;
+      align-items: center;
+      max-width: calc(100vw - 24px);
+    }
+
+    button,
+    input {
+      font: 14px/1.2 sans-serif;
+    }
+
+    label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    input[type="number"] {
+      width: 90px;
+    }
+  </style>
+</head>
+<body>
+  <div class="controls" id="controls">
+    <label>
+      Duration (ms)
+      <input id="duration-input" type="number" min="1" step="100" value="2000" />
+    </label>
+    <button id="play-button" type="button">Play</button>
+  </div>
+
+  <canvas id="glcanvas"></canvas>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
