@@ -213,6 +213,40 @@ main li {
   max-width: 720px;
 }
 
+table {
+  /* General table styling */
+  border-collapse: collapse;
+  margin: 1rem 0;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.5;
+  color: #24292e; /* GitHub text color */
+}
+
+table th, table td {
+  /* Cell padding and borders */
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #dfe2e5; /* GitHub border color */
+}
+
+table th {
+  /* Header specific styling */
+  font-weight: 600;
+  background-color: #f6f8fa; /* GitHub header background color */
+  text-align: left; /* Markdown alignment attributes handle alignment */
+}
+
+table tbody tr:nth-child(2n) {
+  /* Zebra striping for rows */
+  background-color: #f6f8fa;
+}
+
+table tbody tr:hover {
+  /* Optional hover effect */
+  background-color: #e6ebf1;
+}
+
 @media only screen and ( max-width: 768px ) {     
   main {
     width: 90%;
