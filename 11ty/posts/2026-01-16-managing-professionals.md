@@ -18,6 +18,7 @@ This is part of a series:
 - Managing Tech: Professionals (you are here)
 - Managing Tech: [Time](/blog/2026/01/26/managing-time/)
 - Managing Tech: [Cadence](/blog/2026/02/02/managing-cadence/)
+- Managing Tech: [1:1](/blog/2026/03/23/managing-1-on-1/)
 
 In my post, [Managing Tech: People](/blog/2026/01/12/managing-people/), I mentioned that the social contract between employee and employer has changed over the past several decades. At IBM in 2016 (just one decade ago), it was common to encounter people who had been with the company for twenty years or more. I myself spent almost fifteen years at Adobe (2000–2013).
 

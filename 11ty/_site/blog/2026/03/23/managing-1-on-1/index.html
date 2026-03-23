@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="The intersection of development and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Managing Tech: 1:1</title>
+
+  <link rel="icon" type="image/x-icon" href="/img/edit.svg">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="alternate" type="application/rss+xml" title="Kevin Hoyt" href="/feed.xml" />  
+
+  <link rel="stylesheet" href="/style/kevinhoyt.css" />
+  <link rel="stylesheet" href="/style/header.css" />
+  <link rel="stylesheet" href="/style/prism.css" />    
+  <link rel="stylesheet" href="/style/post.css" />      
+  <link rel="stylesheet" href="/style/contact.css" />      
+  <link rel="stylesheet" href="/style/footer.css" />
+
+</head>
+<body>
+  
+  <header id="header">
+
+  <article>
+
+    <kh-follow>
+      <img alt="Kevin Hoyt" src="/img/krhoyt.jpg">
+    </kh-follow>
+
+    <nav>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/>
+      </svg>         
+      <select name="section" aria-label="Section">
+        <option value="/" >Home</option>
+        <option value="/blog" selected>Writing</option>
+        <option value="/notes" >Notes</option>        
+        <option value="/about" >About</option>
+        <option value="/events" >Events</option>
+      </select>      
+    </nav>
+
+    <ul>
+      <li><a aria-label="Home" href="/">Home</a></li>
+      <li><a aria-label="Writing (Blog)" href="/blog">Writing</a></li>    
+      <li><a aria-label="Notes (Status)" href="/notes">Notes</a></li>          
+      <li><a aria-label="About" href="/about">About</a></li>
+      <li><a aria-label="Events" href="/events">Events</a></li>
+    </ul>  
+
+    <div>
+
+      <!-- LinkedIn -->
+      <a aria-label="LinkedIn" href="https://www.linkedin.com/in/parkerkrhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/>
+        </svg>
+      </a>      
+
+      <!-- GitHub -->
+      <a aria-label="GitHub" href="https://github.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+        </svg>
+      </a>      
+
+      <!-- X -->
+      <a aria-label="Twitter" href="https://x.com/krhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" fill-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+
+      <!-- Bluesky (not listed)
+      <a aria-label="Bluesky" href="https://bsky.app/profile/krhoyt.bsky.social" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 11.388c-.906-1.761-3.372-5.044-5.665-6.662c-2.197-1.55-3.034-1.283-3.583-1.033C2.116 3.978 2 4.955 2 5.528c0 .575.315 4.709.52 5.4c.68 2.28 3.094 3.05 5.32 2.803c-3.26.483-6.157 1.67-2.36 5.898c4.178 4.325 5.726-.927 6.52-3.59c.794 2.663 1.708 7.726 6.444 3.59c3.556-3.59.977-5.415-2.283-5.898c2.225.247 4.64-.523 5.319-2.803c.205-.69.52-4.825.52-5.399c0-.575-.116-1.55-.752-1.838c-.549-.248-1.386-.517-3.583 1.033c-2.293 1.621-4.76 4.904-5.665 6.664"/>
+        </svg>
+      </a>
+      -->      
+
+      <!-- YouTube (not listed)
+      <a aria-label="YouTube" href="https://www.youtube.com/channel/UCSFeFhtLBuzU2UMs7oOL54A" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/>
+        </svg>
+      </a>          
+      -->
+
+      <!-- RSS feed -->
+      <a aria-label="RSS Feed (XML)" href="/feed.xml" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19t.588-1.412T5 17t1.413.588T7 19t-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1T9.138 8.413T4.6 7.1q-.65-.075-1.125-.512T3 5.5t.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337t3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35t-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062t2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/>
+        </svg>
+      </a>      
+
+      <!-- Instagram (not listed)
+      <a aria-label="Instagram" href="https://www.instagram.com/parkerkrhoyt" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 14">
+          <path fill="currentColor" fill-rule="evenodd" d="M3.39.787A2.604 2.604 0 0 0 .786 3.39v6.944a2.604 2.604 0 0 0 2.604 2.604h6.944a2.604 2.604 0 0 0 2.603-2.604V3.39A2.604 2.604 0 0 0 10.334.787zm7.693 2.607a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m-4.22 1.388a2.08 2.08 0 1 0 0 4.16a2.08 2.08 0 0 0 0-4.16m-3.081 2.08a3.08 3.08 0 1 1 6.16 0a3.08 3.08 0 0 1-6.16 0" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      -->     
+
+    </div>
+
+  </article>
+
+</header>
+
+
+  
+  
+    <main>
+
+      <div>
+
+        <img src="/img/covers/conversation.jpg" alt="Managing Tech: 1:1">
+
+        
+          <figcaption>
+            <p>Photo by <a href="https://unsplash.com/@priscilladupreez">Priscilla Du Preez</a> on <a href="https://unsplash.com/photos/woman-in-black-long-sleeve-shirt-holding-black-ceramic-mug-K8XYGbw4Ahg">Unsplash</a></p>
+          </figcaption>
+        
+
+      </div>
+
+      <article>
+
+        <h1>Managing Tech: 1:1</h1>
+
+        <time>Mar 23, 2026 · 9 min read</time>
+
+        
+          <aside>
+            
+              <p>Enablement</p>
+            
+          </aside>
+                
+        
+        <p>This is part of a series:</p>
+<ul>
+<li>Managing Tech: <a href="/blog/2026/01/12/managing-people/">People</a></li>
+<li>Managing Tech: <a href="/blog/2026/01/14/managing-heroes/">Heroes</a></li>
+<li>Managing Tech: <a href="/blog/2026/01/16/managing-professionals/">Professionals</a></li>
+<li>Managing Tech: <a href="/blog/2026/01/26/managing-time/">Time</a></li>
+<li>Managing Tech: <a href="/blog/2026/02/02/managing-cadence/">Cadence</a></li>
+<li>Managing Tech: 1:1 (you are here)</li>
+</ul>
+<p>If you read the post in this series about meeting <a href="/blog/2026/02/02/managing-cadence/">cadence</a> and felt overwhelmed, I get it—it is a lot. In this post, I will dial it back and return focus to the people. As I have said before, without people, there is no manager. Making people heroes should be a primary goal of your leadership style. Let us focus on the people, and how to make them heroes. It starts with the 1:1.</p>
+<h2>What Is a 1:1?</h2>
+<p>The 1:1 meeting is exactly what it sounds like—a one-on-one meeting between you and one of your direct reports. On the surface, this sounds easy. You set up a meeting, show up, and talk about what is going on at work. Congratulations—you are halfway there. You are also halfway off the rails.</p>
+<p>If you show up just to talk about the business, then you are missing the point of the meeting in the first place: the person.</p>
+<blockquote>
+<p>One-on-one meetings should be people-focused, not operationally focused.</p>
+</blockquote>
+<h2>The First 1:1</h2>
+<p>When I get a new team or a new team member, my first one-on-one meeting is a little different from the ones that follow. At this point, we do not know one another yet. It would be presumptuous to launch into operational behavior.</p>
+<p>You only get one chance to make that first impression. You can never have your first one-on-one again.</p>
+<p>I may have handoff notes from a previous manager, but those come with bias. The direct report may have heard about me from others, but again, bias and hearsay shape that perception. The place to start, then, is to get to know one another.</p>
+<blockquote>
+<p>When scheduling the first one-on-one meeting, include a general outline of what you will cover. As a rule, never send a blank meeting invite. In this case: introductions, what is working, what is not working, what they want from their employment, and their contact preferences.</p>
+</blockquote>
+<h3>Introductions</h3>
+<p>I generally start my first one-on-one meeting with introductions. To remove social pressure and give the person time to consider how they want to introduce themselves, I begin. It gives the direct report a pattern to follow.</p>
+<p>I start with my broader industry experience—how I got here. Then I move to my experience within the company (if any). From there, I talk about my leadership style and expectations. I close with a few personal notes—where I live, why I chose to live there, my family, a book I am reading, or a movie I recently saw.</p>
+<p>Then it is their turn.</p>
+<p>This differs from a casual conversation in one key way: you should take notes. The facts the individual chooses to share are important to them, and therefore should be important to you. When ideas matter, you write them down. This is how they present themselves—the narrative of their work life. The only bias here is their own, and that is the bias you want to understand.</p>
+<blockquote>
+<p>Let us say you hear that a direct report is into Star Trek. Capturing that detail may help you form analogies later. Imagine saying, “You know when Captain Picard did…”</p>
+</blockquote>
+<h3>What Is Working?</h3>
+<p>Now that you know a bit about each other, you can start building a broader narrative. I like to be direct here and ask what they think is working in the business today.</p>
+<p>This gives the direct report space to express positive thoughts and emotions, and it helps establish an authentic relationship. Again, take notes. These are cues for what not to disrupt in your first 30 days.</p>
+<p>If this is a new employee, you can still ask this question. You might focus on the hiring or onboarding process—useful input for improving how you build your team. You can also ask what they liked at previous employers. If something worked well before, it may be worth exploring.</p>
+<h3>What Is Not Working?</h3>
+<p>Now comes the harder pivot—what is not working.</p>
+<p>Depending on the seniority of the direct report, you will get different levels of depth. Again, take notes. These are potential action items.</p>
+<p>If a direct report is frustrated day after day but does not tell you, you miss your first opportunity to help them succeed. Some processes exist for good reason, in which case it is your job to investigate and report back. If they are broken, you can begin charting a path toward improvement and communicate that plan.</p>
+<blockquote>
+<p>To be clear, what you are hearing is: “This is how you can make me a hero.” Do not squander that opportunity.</p>
+</blockquote>
+<p>If this is a new employee, you can still ask this question. They likely left their previous role for a reason. Understanding those reasons can help you avoid repeating them. What brought them to your team?</p>
+<h3>Contact Preferences</h3>
+<p>Not everyone prefers the same communication style. Some want meetings. Others prefer email or chat.</p>
+<p>Take time to understand their preferences, and share your own. For example, I let employees know that regardless of how they contact me, they can expect a response within 24 hours. It may not be a full answer, but it will be a response. I also expect the same in return.</p>
+<p>This shared understanding is critical.</p>
+<blockquote>
+<p>Your direct reports know how they work best—when they are most productive and under what conditions. Respect that. Interrupting deep work with urgent messages can break that productivity.</p>
+</blockquote>
+<p>Since this is your first one-on-one, you likely scheduled the meeting based on what worked best for you. That is fine. Close by asking what time they would prefer going forward, and schedule the recurring meeting together.</p>
+<h2>A Word on Notes</h2>
+<p>You should always take notes in your one-on-one meetings, and those notes should be shared with the direct report.</p>
+<p>This allows the employee to see how you interpret their communication. The shared document should be linked in the recurring meeting invite. As topics arise throughout the week, add them to the document so both of you can prepare in advance.</p>
+<p>This approach creates a clear history and progression. Nothing is left to guesswork. Transparency builds trust.</p>
+<p>When performance reviews come around, you both have a record to reference. In cases where performance coaching is needed, that history becomes even more valuable.</p>
+<p>These notes should remain confidential between you and the employee. You can summarize themes when needed, but the document itself should remain private.</p>
+<h2>The Heart of the 1:1</h2>
+<p>Before going deeper, it is important to have the right mindset: 1:1 time is employee time.</p>
+<p>While you may have updates, this time should be focused on the individual. Team meetings are for broader communication.</p>
+<p>The structure of your 1:1 may evolve, but a useful starting point includes wellness, readiness, obstacles, recognition, and feedback.</p>
+<h3>Wellness</h3>
+<p>Think of this as work-life balance.</p>
+<p>There is no need for employees to share personal details, but giving them the option matters. In some cases, serious issues may surface. You are not HR, and you are not expected to solve everything, but you are there to listen and guide them toward appropriate resources if needed.</p>
+<p>You also need to ensure psychological safety. Not everyone participates in meetings the same way. Some may want space to speak, while others may prefer not to be put on the spot. There are no bad questions, and no one should feel humiliated or ignored for speaking up.</p>
+<p>Watch for signs of burnout. If someone is consistently overextended, the 1:1 is where you catch it and correct course.</p>
+<blockquote>
+<p>There will be times when extra effort is required. Make sure balance returns when those periods pass.</p>
+</blockquote>
+<h3>Readiness</h3>
+<p>I like each direct report to have one to three personal goals. These should be reviewed regularly.</p>
+<p>Sometimes goals need to be adjusted. Sometimes they are not the right fit. That is fine.</p>
+<p>These goals should align with where the employee wants to go and what the business needs. Finding that balance takes time.</p>
+<blockquote>
+<p>Consider the SMART framework: specific, measurable, actionable, relevant, and time-bound.</p>
+</blockquote>
+<p>Once goals are defined, make sure the employee has what they need to succeed. This may include training, mentorship, tools, or additional support. Your role is to identify gaps and help close them.</p>
+<h3>Obstacles</h3>
+<p>Where readiness is broad, obstacles focus on the present.</p>
+<p>What is slowing them down right now?</p>
+<p>If they are blocked by another team or process, step in. Your role is to bridge those gaps. These become your action items to track and resolve.</p>
+<p>The outcome may not always be what you expect, but addressing obstacles improves the system for everyone.</p>
+<h3>Recognition</h3>
+<p>After the heavier topics, this is my favorite part of the conversation.</p>
+<p>What has your direct report accomplished that they feel good about?</p>
+<p>Celebrate those wins. If they do not have one, share what you see.</p>
+<p>Recognition does not have to be limited to work. Personal achievements matter as well. There is far too little praise in the world—take the opportunity to add some.</p>
+<blockquote>
+<p>Keep recognition shared in 1:1s confidential unless given permission to share more broadly.</p>
+</blockquote>
+<h3>Feedback</h3>
+<p>This is uncomfortable, but necessary.</p>
+<p>How are you doing as a manager?</p>
+<p>Feedback should go both ways and should happen regularly. When performance reviews arrive, there should be no surprises.</p>
+<blockquote>
+<p>Taking feedback well takes practice. Avoiding it only creates problems later.</p>
+</blockquote>
+<h2>Tuning the 1:1</h2>
+<p>Over time, you may adapt your approach.</p>
+<p>During my time at Amazon, these principles evolved into a more structured format aligned with broader business conversations and expectations.</p>
+<h2>Improving the 1:1</h2>
+<p>The 1:1 belongs to the employee. They should feel comfortable rescheduling when needed.</p>
+<p>Preparation matters. Review your notes before the meeting. Form a point of view. Update the document in advance when appropriate.</p>
+<p>Know the details. Be aware of time-off balance, training requirements, and upcoming milestones.</p>
+<blockquote>
+<p>I typically schedule 30-minute 1:1s, but I leave buffer time afterward. Nothing signals that someone is unimportant like rushing out of their meeting.</p>
+</blockquote>
+<h2>Next Steps</h2>
+<p>The one-on-one meeting is likely your most important meeting of the week.</p>
+<p>These conversations will generate action items beyond your day-to-day work—and that is the point. This is how you help people become heroes in their careers.</p>
+<p>Take the time. Make the time. Be prepared. Keep shared notes. Build trust. Make heroes.</p>
+
+        
+      </article>
+
+    </main>
+
+          
+
+  <section id="contact">
+
+  <h2>Let's Build Something Together</h2>
+
+  <p>
+    Have a project, collaboration, or opportunity you would like to discuss?
+    I am especially interested in work involving web architecture, data,
+    IoT, and developer experience.
+  </p>
+
+  <form data-netlify="true" netlify-honeypot="bot-field">
+
+    <!-- Honeypot -->
+    <div class="field honeypot">
+      <label for="pot">Do not fill this out if you are human</label>
+      <input id="pot" name="pot" type="text">      
+    </div>
+
+    <div class="field">
+      <label for="poc">Name</label>
+      <input autocomplete="name" type="text" id="poc" name="name" required>
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input autocomplete="email" type="email" id="email" name="email" required>
+    </div>
+
+    <div class="field">
+      <label for="reason">Subject</label>
+      <select id="reason" name="reason">
+        <option value="">Select an option</option>
+        <option value="Feedback">Writing feedback</option>        
+        <option value="Project Collaboration">Project collaboration</option>
+        <option value="Consulting">Consulting</option>
+        <option value="Speaking">Speaking / workshops</option>
+        <option value="Career Opportunity">Career opportunity</option>
+        <option value="Other">Something else</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+    </div>
+
+    <button aria-label="Send Message" type="button">Send Message</button>    
+
+  </form>
+
+  <p class="email">
+    Prefer email? You can reach me at <a aria-label="Email kevin@ketnerlake.com" href="mailto:kevin@ketnerlake.com">kevin@ketnerlake.com</a>.
+  </p>
+
+</section>
+
+  <footer id="footer">
+
+  <p>
+    Made with ❤️ by Kevin Hoyt &copy; 2026 · Published with <a aria-label="Eleventy" href="https://www.11ty.dev">Eleventy</a>
+  </p>
+  
+</footer>
+
+
+  <script src="/script/menu.js"></script>
+
+</body>
+</html>

@@ -18,6 +18,7 @@ This is part of a series:
 - Managing Tech: [Professionals](/blog/2026/01/16/managing-professionals/) 
 - Managing Tech: [Time](/blog/2026/01/26/managing-time/)
 - Managing Tech: Cadence (you are here)
+- Managing Tech: [1:1](/blog/2026/03/23/managing-1-on-1/)
 
 I have mentioned before that a manager's currency is meetings. This is markedly different from the individual contributor, whose currency is focus time. As a manager at Amazon, it was not uncommon for me to sit down at my desk on Monday morning and find that I already had 20 hours of meetings scheduled for the week. How could that possibly be the case?
 
