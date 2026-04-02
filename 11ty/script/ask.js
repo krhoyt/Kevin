@@ -378,8 +378,7 @@ export default class HoytAsk extends HTMLElement {
         viewport_height: window.innerHeight,
         viewport_width: window.innerWidth
       } )
-    } )
-    .then( ( response ) => response.json() );    
+    } );    
 
     const response = await fetch( 'https://ketnerlake.com/api/about', {
       method: 'POST',

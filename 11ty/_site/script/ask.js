@@ -363,6 +363,23 @@ export default class HoytAsk extends HTMLElement {
     this.$ask.disabled = true;
     this.$chips.forEach( ( button ) => button.disabled = true );
 
+    fetch( 'https://ketnerlake.com/api/pixel', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify( {
+        event_name: 'ask',
+        event_time: new Date(),
+        event_details: question,
+        screen_name: 'kevinhoyt',
+        screen_height: screen.height,
+        screen_width: screen.width,
+        viewport_height: window.innerHeight,
+        viewport_width: window.innerWidth
+      } )
+    } );    
+
     const response = await fetch( 'https://ketnerlake.com/api/about', {
       method: 'POST',
       body: JSON.stringify( {
