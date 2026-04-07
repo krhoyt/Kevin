@@ -7,29 +7,33 @@
     {% for post in collections.postsByRating.slice( 0, 6 ) %}
       <article>
 
-        {% if post.data.feature_image %}
-          <img alt="{{ post.data.title }}" src="{{ post.data.feature_image }}">
-        {% endif %}
+        <a aria-label="{{ post.data.title}}" href="{{ post.url }}">
 
-        <h3>{{ post.data.title }}</h3>
-
-        {% if post.data.description %}
-          <p>{{ post.data.description }}</p>
-        {% endif %}
-
-        <footer>
-
-          {% if post.data.tags %}
-            <aside>
-              {% for tag in post.data.tags %}
-                <p>{{ tag }}</p>
-              {% endfor %}
-            </aside>
+          {% if post.data.feature_image %}
+            <div>
+              <img alt="{{ post.data.title }}" src="{{ post.data.feature_image }}">
+            </div>
           {% endif %}
 
-          <a aria-label="{{ post.data.title}}" href="{{ post.url }}">Read more</a>
+          <h3>{{ post.data.title }}</h3>
 
-        </footer>
+          {% if post.data.description %}
+            <p>{{ post.data.description }}</p>
+          {% endif %}
+
+          <footer>
+
+            {% if post.data.tags %}
+              <aside>
+                {% for tag in post.data.tags %}
+                  <p>{{ tag }}</p>
+                {% endfor %}
+              </aside>
+            {% endif %}
+
+          </footer>
+
+        </a>
 
       </article>
     {% endfor %}

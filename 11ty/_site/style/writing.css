@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-#writing div {
+#writing > div {
   display: grid;
   grid-template-columns: repeat( 3, 1fr );
   grid-column-gap: 16px;
@@ -18,7 +18,6 @@
 
 #writing h2 {
   color: #1a1a1a;
-  cursor: default;
   font-family: Roboto, sans-serif;
   font-size: 32px;
   font-weight: 600;
@@ -34,13 +33,18 @@
   display: grid;
   grid-template-rows: subgrid;
   grid-row: span 4;
-  align-content: start;
-  row-gap: 0;
-  transition: transform 0.25s ease;
 }
 
-#writing article:hover {
-  transform: scale( 1.03 );
+#writing article > a {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+  row-gap: 0;
+  text-decoration: none;
+}
+
+#writing article > a:hover img {
+  transform: scale( 1.10 );
 }
 
 #writing article footer {
@@ -50,10 +54,9 @@
   margin: 8px 0 0 0;
 }
 
-#writing article a {
+#writing article footer > p {
   background: #3B82F6;
   border-radius: 6px;
-  cursor: pointer;
   color: #ffffff;
   font-family: Roboto, sans-serif;
   font-size: 12px;
@@ -67,20 +70,25 @@
   -webkit-font-smoothing: antialiased;  
 }
 
-#writing article a:hover {
+#writing article footer > p:hover {
   background: #2563EB;
 }
 
-#writing article img {
+#writing article a > div {
   border-radius: 6px;
   height: 190px;
+  overflow: hidden;
+  width: 100%;  
+}
+
+#writing article img {
   object-fit: cover;  
+  transition: transform 0.25s ease;    
   width: 100%;
 }
 
 #writing article h3 {
   color: #1a1a1a;
-  cursor: default; 
   font-family: Roboto, sans-serif;
   font-size: 18px;
   font-weight: 600;
@@ -92,9 +100,8 @@
   -webkit-font-smoothing: antialiased;         
 }
 
-#writing article > p {
+#writing article a > p {
   color: #1a1a1a; 
-  cursor: default;
   font-family: Roboto, sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -119,7 +126,6 @@
   box-sizing: border-box;
   display: inline-block;
   color: #6B7280;
-  cursor: default;
   font-family: Roboto, sans-serif;
   font-size: 12px;
   font-weight: 500;
@@ -137,14 +143,14 @@
     margin: 16px 0 0 0;    
   }
 
-  #writing div {
+  #writing > div {
     grid-template-columns: repeat( 2, 1fr );    
     width: 90%;
   }   
 }
 
 @media only screen and ( max-width: 480px ) { 
-  #writing div {
+  #writing > div {
     grid-template-columns: repeat( 1, 1fr );  
   }   
 }

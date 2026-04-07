@@ -43,32 +43,36 @@ permalink: /blog/
 
         <article>
 
-          {% if post.data.feature_image %}
-            <img src="{{ post.data.feature_image }}" alt="{{ post.data.title }}">
-          {% endif %}
+          <a aria-label="{{ post.data.title}}" href="{{ post.url }}">
 
-          <h3>{{ post.data.title }}</h3>
+            {% if post.data.feature_image %}
+              <div>
+                <img src="{{ post.data.feature_image }}" alt="{{ post.data.title }}">
+              </div>
+            {% endif %}
 
-          <stuff>
-          <time>{{ post.date | htmlDateString }} · {{ post.templateContent | getReadingTime }} min read</time>
-          </stuff>
-          {% if post.data.description %}
-            <p>{{ post.data.description }}</p>
-          {% endif %}
+            <h3>{{ post.data.title }}</h3>
 
-          <footer>
+            <stuff>
+            <time>{{ post.date | htmlDateString }} · {{ post.templateContent | getReadingTime }} min read</time>
+            </stuff>
+            {% if post.data.description %}
+              <p>{{ post.data.description }}</p>
+            {% endif %}
 
-            {% if post.data.tags %}
-              <aside>
-                {% for tag in post.data.tags %}
-                  <p>{{ tag }}</p>
-                {% endfor %}
-              </aside>
-            {% endif %}            
+            <footer>
 
-            <a aria-label="{{ post.data.title}}" href="{{ post.url }}">Read more</a>
+              {% if post.data.tags %}
+                <aside>
+                  {% for tag in post.data.tags %}
+                    <p>{{ tag }}</p>
+                  {% endfor %}
+                </aside>
+              {% endif %}            
 
-          </footer>
+            </footer>
+
+          </a>
 
         </article>
 
