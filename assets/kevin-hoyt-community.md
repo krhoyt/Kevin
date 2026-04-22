@@ -4,99 +4,119 @@
 🌐 [kevinhoyt.com](https://kevinhoyt.com)  
 🔗 [LinkedIn](https://www.linkedin.com/in/parkerkrhoyt/) • [GitHub](https://github.com/krhoyt) • [YouTube](https://www.youtube.com/@krhoyt) • [X](https://x.com/krhoyt)    
 
-
 ## Summary
 
-Developer-focused community builder with deep hands-on experience working with APIs, SDKs, and developer platforms. Proven at engaging directly with developers, creating clear technical content, validating code examples, and acting as a trusted bridge between community needs and internal product teams.
+Forward Deployed Engineer–style full-stack builder with 20+ years of experience delivering production systems across web, cloud, and AI/ML.
 
-Known for meeting developers where they are - GitHub, forums, docs, and demos - and translating real-world usage into actionable insights for engineering, product, and marketing teams.
+Expert at embedding with customers, rapidly prototyping solutions, and taking ideas from 0 → production. Hands-on experience building GenAI applications using LLMs, RAG pipelines, embeddings, and Pinecone, as well as deploying browser-based computer vision systems at national scale.
+
+Trusted by engineering teams, product leaders, and executives to design solutions, de-risk initiatives, and deliver measurable outcomes.
 
 ## Core Skills
 
-**Developer Community & Advocacy**
-- Developer engagement & support
-- Community listening & feedback loops
-- Developer success stories & use cases
-- Online community participation (GitHub, forums, issue trackers)
+**Full Stack Engineering:** JavaScript, Node.js, Python, REST APIs, Web Components, serverless architectures.
 
-**API & Technical Enablement**
-- REST APIs & SDK workflows
-- Email, messaging, and event-driven architectures
-- API onboarding & integration guidance
-- Code review & example validation
+**Generative AI Systems:** LLMs (OpenAI, Claude), RAG pipelines, embeddings, Pinecone, prompt engineering, agent workflows.
 
-**Programming & Technical Tools**
-- JavaScript, Python, Node.js
-- API clients, SDKs, and sample applications
-- Cloud-native & serverless architectures
-- Debugging real-world integrations
+**Cloud & DevOps:** AWS (ECS, serverless), Docker, CI/CD, distributed systems.
 
-**Content & Communication**
-- How-to guides & FAQs
-- Technical documentation & tutorials
-- Clear explanations for technical & non-technical audiences
-- Developer-first writing and editing
+**Customer-Facing Engineering:** Solution architecture, technical workshops, executive communication, rapid prototyping.
+
+**AI-Native Workflow:** Daily use of AI coding tools (Copilot, Claude, etc.), automation, agent-driven development.
+
+## Selected AI Systems & Customer Engagements
+
+### RAG Knowledge System — Hunting Regulations
+
+- Built a **RAG system** to make complex state hunting regulations queryable via natural language.
+- Transformed **dense PDF documents (tables, rule matrices)** into structured Markdown using AI-assisted workflows.
+- Designed **embedding + vector search architecture (Pinecone)** across species, geography, and seasonality
+- Developed chat interface enabling queries like: *"Where can I hunt deer in March?"*
+- **Iterated weekly with customer** to refine accuracy and usability
+- Evaluated retrieval strategies:
+  - Full-context prompting vs. chunked retrieval.
+  - Chunk sizing for tabular/semi-structured data.
+  - Explored graph-based approaches for relational queries.
+- Optimized for **cost, latency, and accuracy tradeoffs** under high-volume usage scenarios.
+
+### Computer Vision System — COVID Testing Application (UK National Deployment)
+
+- Developed and deployed a **browser-based computer vision system** for a nationally used COVID testing application.
+- Designed **mobile-first architecture using WebAssembly (WASM)** for in-browser image processing.
+- Leveraged **service workers to offload compute**, enabling performance on low-powered devices.
+- Built pipeline to detect test placement, extract regions of interest, and interpret results in real time.
+- Delivered a **production system used by non-technical consumers at scale** under real-world conditions.
+- **Iterated daily with product teams** to refine accuracy, UX, and reliability.
+
+### Generative AI Applications (Multiple Engagements)
+
+- Built **"Ask AI About Me"** system using **RAG + embeddings + Pinecone**.
+- Designed and developed **intent-driven generative AI application**: 
+  - Prompt architecture and intent classification.
+  - Serverless backend integrating OpenAI APIs.
+  - Full-stack UI for user interaction.
+- Built **AI/agent-driven workflows** for content translation, localization, and automation.
+- Applied GenAI to real-world workflows with focus on usability and scalability.
+
+### Customer Strategy & Embedded Engineering
+
+- Advised sales leadership on **go-to-market pricing strategy**, including deal sizing and subscription models.
+- Designed executive engagement strategy to **retain ~$10M in enterprise revenue** during leadership transition.
+- Regularly embed with customers to define problems, prototype solutions, and iterate in real time.
 
 ## Professional Experience
 
 ### Amazon Web Services  
 
-**Senior Documentation Manager**  
-*May 2022 - March 2025*
+**Senior Documentation Manager (AI/ML)**  
+*2022 - 2025*
 
-- Authored and maintained **developer-facing documentation** for AI/ML and data services, working directly with engineers to validate APIs and SDK behavior.
-- Reviewed and corrected **code examples** to ensure accuracy, usability, and real-world relevance for developers.
-- Built internal tooling using **Python, Flask, Docker, and AWS services** to streamline technical content workflows.
-- Regularly incorporated **developer feedback** from issues, questions, and support channels into documentation improvements.
-- Acted as a developer advocate internally, ensuring content reflected how developers actually integrate and use APIs.
+- Built and deployed **internal generative AI tooling** (Python/Flask, DocumentDB, Docker, AWS ECS) used by 200+ users.
+- Designed **LLM-powered workflows** for structured content generation and developer enablement.
+- Improved content velocity, consistency, and usability through AI-driven systems.
+- Partnered with engineering and product teams to validate APIs and real-world usage patterns.
+- Rapidly prototyped and iterated based on user feedback.
 
 ### Ionic
 
 **Sales Engineer**  
-*January 2021 - January 2022*
+*2021 - 2022*
 
-- Worked directly with developers integrating **Web Component–based SDKs** into production applications.
-- Created example projects and architecture guides to explain API usage patterns.
-- Helped surface common developer pain points and integration challenges back to product teams.
-- Translated technical feedback into clearer onboarding materials and messaging.
+- Embedded with enterprise customers to **co-design and prototype solutions**.
+- Built working implementations demonstrating real-world architectures.
+- Translated technical systems into business value for engineers and executives.
 
 ### IBM
 
-**Developer Advocate**  
-*July 2015 - January 2017*
+**Developer Advocate/Program Manager**  
+*2015 - 2020*
 
-- Engaged directly with developers using **APIs and SDKs** across machine learning, IoT, and blockchain platforms.
-- Built and maintained **sample applications** in JavaScript, Python, Node.js, and Java.
-- Validated pre-release SDKs and documentation, filing actionable feedback with engineering teams.
-- Participated in developer communities through talks, forums, and hands-on workshops.
+- Built **full-stack applications** across ML, blockchain, and IoT systems.
+- Delivered hands-on workshops building solutions directly with customers.
+- Validated SDKs and contributed feedback into product development.
+- Created reusable architectures adopted across teams.
 
 ### Kaazing
 
 **Principal Evangelist**  
-*March 2014 - June 2015*
 
-- Supported developers implementing **real-time messaging APIs** and event-driven architectures.
-- Built proof-of-concept applications demonstrating practical API usage.
-- Acted as a conduit between developer feedback and internal product direction.
+- Built real-time distributed systems using WebSockets and messaging infrastructure.
+- Developed customer-facing proof-of-concepts for enterprise adoption
 
 ### Adobe
 
-**Platform Evangelist**  
-*2005 - 2013*
+**Principal/Platform Evangelist**  
 
-- Worked directly with developers integrating creative and web APIs.
-- Built demos, tutorials, and documentation to support developer adoption.
-- Supported major platform transitions by educating and reassuring developer communities.
+- Built cross-platform applications across web, mobile, and IoT
+- Worked directly with enterprise customers to design and implement solutions
+- Deep experience with creative tooling ecosystems
 
 ## Education
 
-**DeVry University - Kansas City, MO**  
-B.S. Computer Information Systems (1998)  
-*Magna Cum Laude*
+**B.S. Computer Information Systems**
+DeVry University - Kansas City, MO
 
 ## Additional Notes
 
-- 20+ years working directly with developers and developer platforms
-- Extensive remote collaboration experience
-- Comfortable engaging with developers asynchronously via issues, docs, and community channels
-- Strong belief in **developer trust, clarity, and follow-through**
+- U.S. Army Veteran (10th Mountain Division)
+- 20+ years working with distributed and remote teams

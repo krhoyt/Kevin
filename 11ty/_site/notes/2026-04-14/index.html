@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="Given that you often want to label an SVG chart, you can set alignment-baseline and text-anchor on a text element to get fine-grained control. Setting both to middle will make the anchor the center of the element. Useful to adjust on charts with spokes such as radar." />
+  <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <title>Kevin Hoyt · Notes</title>
@@ -122,14 +122,10 @@
     
 
     <header>
-      <h1>Apr 1, 2026</h1>
-      
-        <a href="/notes/2026/04/03/">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>
-        </a>
+      <h1>Apr 14, 2026</h1>
       
       
-        <a href="/notes/2026/03/31/">
+        <a href="/notes/2026/04/06/">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8L4.646 2.354a.5.5 0 0 1 0-.708"/></svg>
         </a>
       
@@ -140,58 +136,14 @@
       
 
       
-        <p class="tag">Code</p>
-      
 
-      
-        <p class="tag">Image</p>
       
 
         
 
     </aside>
 
-    <p><img src="/img/assets/svg.dominant.baseline.jpg" alt="Dominant Baseline"></p>
-<p><img src="/img/assets/svg.text.anchor.png" alt="Text Anchor"></p>
-<p>Given that you often want to label an SVG chart, you can set <code>alignment-baseline</code> and <code>text-anchor</code> on a <code>text</code> element to get fine-grained control. Setting both to <code>middle</code> will make the anchor the center of the element. Useful to adjust on charts with spokes such as radar.</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>320<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>320<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-
-  <span class="token comment">&lt;!-- Track --></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>circle</span> 
-    <span class="token attr-name">cx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>160<span class="token punctuation">"</span></span> 
-    <span class="token attr-name">cy</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>160<span class="token punctuation">"</span></span> 
-    <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>none<span class="token punctuation">"</span></span> 
-    <span class="token attr-name">r</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>150<span class="token punctuation">"</span></span> 
-    <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#1a1a1a1a<span class="token punctuation">"</span></span> 
-    <span class="token attr-name">stroke-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>12<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-
-  <span class="token comment">&lt;!-- Line --></span>
-  <span class="token comment">&lt;!-- Dash array === Circumference === 2 * Math.PI * Radius --></span>
-  <span class="token comment">&lt;!-- Dash offset === Circumference * ( 1 - Progress ) --></span>
-  <span class="token comment">&lt;!-- Transform (not CSS) puts start at noon --></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>circle</span> 
-    <span class="token attr-name">cx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>160<span class="token punctuation">"</span></span> 
-    <span class="token attr-name">cy</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>160<span class="token punctuation">"</span></span> 
-    <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>none<span class="token punctuation">"</span></span> 
-    <span class="token attr-name">r</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>150<span class="token punctuation">"</span></span> 
-    <span class="token attr-name">stroke-dasharray</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>943<span class="token punctuation">"</span></span>
-    <span class="token attr-name">stroke-dashoffset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>330<span class="token punctuation">"</span></span>
-    <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#1a1a1a<span class="token punctuation">"</span></span> 
-    <span class="token attr-name">stroke-linecap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>round<span class="token punctuation">"</span></span>      
-    <span class="token attr-name">stroke-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>12<span class="token punctuation">"</span></span>
-    <span class="token attr-name">transform</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rotate( -90 160 160 )<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> 
-
-  <span class="token comment">&lt;!-- Label --></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> 
-    <span class="token attr-name">x</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>50%<span class="token punctuation">"</span></span> 
-    <span class="token attr-name">y</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>50%<span class="token punctuation">"</span></span> 
-    <span class="token attr-name">alignment-baseline</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>middle<span class="token punctuation">"</span></span> 
-    <span class="token attr-name">text-anchor</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>middle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    00:00:00
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span></code></pre>
-
+    
 
     <a href="/notes">Back to Notes</a>
 
