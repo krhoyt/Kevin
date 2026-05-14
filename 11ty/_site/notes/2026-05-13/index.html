@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="Python ships on MacOS, which makes it very handy. Sometimes I need a quick, simple web server to work from. This script lets me do just that. I drop it in my user root, and can spin it up with one line from any directory - turning that directory into a web server instantly." />
+  <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <title>Kevin Hoyt · Notes</title>
@@ -122,14 +122,10 @@
     
 
     <header>
-      <h1>May 4, 2026</h1>
-      
-        <a href="/notes/2026/05/13/">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>
-        </a>
+      <h1>May 13, 2026</h1>
       
       
-        <a href="/notes/2026/05/03/">
+        <a href="/notes/2026/05/04/">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8L4.646 2.354a.5.5 0 0 1 0-.708"/></svg>
         </a>
       
@@ -140,8 +136,6 @@
       
 
       
-        <p class="tag">Code</p>
-      
 
       
 
@@ -149,24 +143,7 @@
 
     </aside>
 
-    <p>Python ships on MacOS, which makes it very handy. Sometimes I need a quick, simple web server to work from. This script lets me do just that. I drop it in my user root, and can spin it up with one line from any directory - turning that directory into a web server instantly.</p>
-<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> http<span class="token punctuation">.</span>server <span class="token keyword">import</span> HTTPServer<span class="token punctuation">,</span> SimpleHTTPRequestHandler<span class="token punctuation">,</span> test
-<span class="token keyword">import</span> sys
-
-<span class="token keyword">class</span> <span class="token class-name">CORSRequestHandler</span> <span class="token punctuation">(</span>SimpleHTTPRequestHandler<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  <span class="token keyword">def</span> <span class="token function">end_headers</span> <span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    self<span class="token punctuation">.</span>send_header<span class="token punctuation">(</span><span class="token string">'Access-Control-Allow-Origin'</span><span class="token punctuation">,</span> <span class="token string">'*'</span><span class="token punctuation">)</span>
-        
-    self<span class="token punctuation">.</span>send_header<span class="token punctuation">(</span><span class="token string">'Cache-Control'</span><span class="token punctuation">,</span> <span class="token string">'no-cache, no-store, must-revalidate'</span><span class="token punctuation">)</span>
-    self<span class="token punctuation">.</span>send_header<span class="token punctuation">(</span><span class="token string">'Pragma'</span><span class="token punctuation">,</span> <span class="token string">'no-cache'</span><span class="token punctuation">)</span>
-    self<span class="token punctuation">.</span>send_header<span class="token punctuation">(</span><span class="token string">'Expires'</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">)</span>
     
-    SimpleHTTPRequestHandler<span class="token punctuation">.</span>end_headers<span class="token punctuation">(</span>self<span class="token punctuation">)</span>
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-  test<span class="token punctuation">(</span>CORSRequestHandler<span class="token punctuation">,</span> HTTPServer<span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span> <span class="token keyword">else</span> <span class="token number">8000</span><span class="token punctuation">)</span></code></pre>
-<pre class="language-bash"><code class="language-bash">python3 ~/server.py</code></pre>
-
 
     <a href="/notes">Back to Notes</a>
 
