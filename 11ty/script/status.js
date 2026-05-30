@@ -85,16 +85,16 @@ export default class HoytStatus extends HTMLElement {
     fetch( 'https://ketnerlake.com/api/status' )
     .then( ( response ) => response.json() )
     .then( ( data ) => {
-      data.map( ( value ) => {
+      const items = data.map( ( value ) => {
         value.started = new Date( value.started );
         return value;
       } );
-      data.sort( ( a, b ) => {
-        if( a.getTime() < b.getTime() ) return -1;
-        if( a.getTime() > b.getTime() ) return 1;        
+      items.sort( ( a, b ) => {
+        if( a.started.getTime() < b.started.getTime() ) return -1;
+        if( a.started.getTime() > b.started.getTime() ) return 1;        
         return 0;
       } );
-      this._history = [... data];
+      this._history = [... items];
       this._render();
     } );
   }
@@ -127,15 +127,24 @@ export default class HoytStatus extends HTMLElement {
   _render() {
     if( this._history.length === 0 ) return;
 
-    const formatter = new Intl.DateTimeFormat( navigator.language, {
-      dateStyle: "full",
-      timeStyle: "long"
+    const date = new Intl.DateTimeFormat( navigator.language, {
+      day: 'numeric',
+      month: 'short',
+      weekday: 'short',
+      year: 'numeric'
     } );
+    const time = new Intl.DateTimeFormat( navigator.language, {
+      hour: 'numeric',
+      minute: '2-digit'
+    } );    
 
     const activity = this._history[this._index].activity.toLowerCase();
     const subject = this._history[this._index].subject.toLowerCase();
     this.$status.textContent = `${activity} ${this.article( subject )} ${subject}.`;
-    this.$started.textContent = formatter.format( this._history[this._index].started );
+    this.$started.textContent = 
+      date.format( this._history[this._index].started ) +
+      ' @ ' + 
+      time.format( this._history[this._index].started );
   }
 
   // Promote properties
