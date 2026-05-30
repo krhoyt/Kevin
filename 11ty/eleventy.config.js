@@ -8,6 +8,9 @@ export default function( config ) {
   config.addPassthroughCopy( 'style' );  
   config.addPassthroughCopy( 'script' );    
 
+  config.addPassthroughCopy( {'admin/_app': 'admin/_app'} );
+  config.addPassthroughCopy( {'admin/index.html': 'admin/index.html'} );  
+
   config.addPlugin( pluginRss );    
 	config.addPlugin( syntaxHighlight );
 	config.addPlugin( youTube );  

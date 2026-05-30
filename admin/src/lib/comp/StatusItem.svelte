@@ -63,7 +63,7 @@
     <circle cx="8" cy="8" r="8" fill="currentColor" />
   </svg>
   <div>
-    <p>{activity} {article( subject )} {subject.toLowerCase()}.</p>
+    <p>{activity} {article( subject )} {subject}.</p>
     <p class="tag">{activity}</p>
     <p>{date} @ {time}</p>
   </div>
@@ -91,7 +91,9 @@
   }
 
   button div {
+    display: flex;
     flex-basis: 0;
+    flex-direction: column;
     flex-grow: 1;
   }
 
@@ -130,12 +132,12 @@
   }
 
   .tag {
+    align-self: flex-start;
     background: color-mix( in srgb, #165ff2 10%, transparent );
     border: solid 1px #165ff2;
     border-radius: 6px;
     color: #165ff2;
     font-size: 14px;
-    justify-self: flex-start;
     margin: 8px 0 8px 0;
     padding: 2px 8px 2px 8px;
     text-transform: lowercase;
