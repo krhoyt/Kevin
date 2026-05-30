@@ -66,8 +66,8 @@ export default class HoytStatus extends HTMLElement {
         }        
       </style>
       <p part="now"><span>$</span> now</p>
-      <p part="status">Building an AI orchestration prototype.</p>
-      <p part="started">Started on May 29, 2026</p>
+      <p part="status"></p>
+      <p part="started"></p>
     `;
 
     // Properties
@@ -125,6 +125,8 @@ export default class HoytStatus extends HTMLElement {
 
   // When attributes change
   _render() {
+    if( this._history.length === 0 ) return;
+
     const formatter = new Intl.DateTimeFormat( navigator.language, {
       dateStyle: "full",
       timeStyle: "long"
