@@ -90,8 +90,8 @@ export default class HoytStatus extends HTMLElement {
         return value;
       } );
       items.sort( ( a, b ) => {
-        if( a.started.getTime() < b.started.getTime() ) return -1;
-        if( a.started.getTime() > b.started.getTime() ) return 1;        
+        if( a.started.getTime() < b.started.getTime() ) return 1;
+        if( a.started.getTime() > b.started.getTime() ) return -1;        
         return 0;
       } );
       this._history = [... items];
