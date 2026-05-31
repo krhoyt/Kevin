@@ -1,10 +1,10 @@
 <script>
   let {
-    activity = null,
     id = null,
     onitem = null,
-    subject = null,
-    started = null
+    started = null,
+    tags = null,    
+    text = null    
   } = $props();
 
   let date = $derived.by( () => {
@@ -28,30 +28,6 @@
     return formatter.format( started );
   } );  
 
-  function article( phrase ) {
-    if (!phrase) return '';
-
-    const word = phrase.trim().split(/\s+/)[0].toLowerCase();
-
-    // No article for acronyms/initialisms that sound vowel-led.
-    // AI => "an AI prototype"
-    if( /^[aeiou]/i.test( word ) ) {
-      return "an";
-    }
-
-    // Common vowel-sound exceptions.
-    if( /^(honest|hour|heir|honor)/.test( word ) ) {
-      return "an";
-    }
-
-    // Common consonant-sound exceptions.
-    if( /^(user|university|unique|unit|one|once)/.test( word ) ) {
-      return "a";
-    }
-
-    return "a";
-  }  
-
   function onItemClick() {
     onitem?.( id );
   }
@@ -63,8 +39,12 @@
     <circle cx="8" cy="8" r="8" fill="currentColor" />
   </svg>
   <div>
-    <p>{activity} {article( subject )} {subject}.</p>
-    <p class="tag">{activity}</p>
+    <p>{text}</p>
+    <div class="tags">
+      {#each tags as tag}
+        <p>{tag}</p>
+      {/each}
+    </div>
     <p>{date} @ {time}</p>
   </div>
   <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
@@ -90,18 +70,14 @@
     width: 100%;
   }
 
-  button div {
+  button > div {
     display: flex;
     flex-basis: 0;
     flex-direction: column;
     flex-grow: 1;
   }
 
-  button div p:first-of-type::first-letter {
-    text-transform: uppercase;
-  }
-
-  button div p:last-of-type {
+  button > div > p:last-of-type {
     font-size: 14px;
     opacity: 0.70;
   }
@@ -120,18 +96,13 @@
     width: 20px;
   }
 
-  p {
-    color: #f4f4f4;
-    font-family: 'Open Sans Variable', sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-rendering: optimizeLegibility;
+  div.tags {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
   }
 
-  .tag {
+  div.tags p {
     align-self: flex-start;
     background: color-mix( in srgb, #165ff2 10%, transparent );
     border: solid 1px #165ff2;
@@ -141,5 +112,16 @@
     margin: 8px 0 8px 0;
     padding: 2px 8px 2px 8px;
     text-transform: lowercase;
+  }
+
+  p {
+    color: #f4f4f4;
+    font-family: 'Open Sans Variable', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-rendering: optimizeLegibility;
   }
 </style>

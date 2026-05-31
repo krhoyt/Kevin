@@ -1,13 +1,15 @@
 <script>
   let {
     id = null,
-    activity = null,
     oncancel = null,
     ondelete = null,
     onsave = null,
     started = new Date(),
-    subject = null
+    tags = [],
+    text = null
   } = $props();
+
+  let textarea = $state();
 
   let date = $derived.by( () => {
     if( started === null ) return '';
@@ -23,8 +25,13 @@
   let detail = $derived.by( () => {
     return `${id === null ? 'New' : 'Edit'} Status`;
   } );
-  let save = $derived.by( () => {
-    return `Save ${id === null ? 'status' : 'changes'}`;
+  let status = $derived.by( () => {
+    if( tags.length === 0 ) {
+      return text;
+    }
+
+    const social = tags.join( ' #' );
+    return `${text} #${social}`;
   } );
   let time = $derived.by( () => {
     if( started === null ) return '';
@@ -35,10 +42,6 @@
     } );
     return formatter.format( started );
   } );      
-
-  function onActivityChange( evt ) {
-    activity = evt.target.value;
-  }
 
   function onBackClick() {
     oncancel?.();
@@ -66,24 +69,31 @@
   }
 
   function onSaveClick() {
+    const hashtags = new Set();
+
+    for( const match of textarea.value.trim().matchAll( /#([\w-]+)/g ) ) {
+      hashtags.add( match[1].toLowerCase() );
+    }
+
+    const status = textarea.value.trim()
+      .replace( /#([\w-]+)/g, '' )
+      .replace( /\s+/g, ' ' )
+      .trim();
+
     if( id === null ) {
       onsave?.( {
-        activity,
+        tags: [... hashtags],
         started,        
-        subject
+        text: status
       } );
     } else {
       onsave?.( {
         id,
-        activity,
+        tags: [... hashtags],
         started,        
-        subject
+        text: status
       } );
     }
-  }
-
-  function onSubjectChange( evt ) {
-    subject = evt.target.value;
   }
 
   function onTimeChange( evt ) {
@@ -108,21 +118,22 @@
       </button>
     </div>
     <h2>{detail}</h2>
-    <div style="width: 40px;"></div>    
+    <div>
+      <button 
+        aria-label="Add status" 
+        onclick={onSaveClick} 
+        type="button">
+        Save
+      </button>
+    </div>    
   </header>
 
   <article>
 
-    <label>
-      <p>Activity</p>
-      <p>Enter the type of activity.</p>      
-      <input onchange={onActivityChange} type="text" value={activity} />
-    </label>
-
-    <label>
-      <p>Subject</p>
+    <label class="status">
+      <p>Status</p>
       <p>What are you working on?</p>      
-      <textarea onchange={onSubjectChange}>{subject}</textarea>
+      <textarea bind:this={textarea}>{status}</textarea>
     </label>  
 
     <label>
@@ -156,8 +167,6 @@
 
   </article>
 
-  <button onclick={onSaveClick} type="button">{save}</button>
-
   {#if id !== null}
     <button 
       class="remove" 
@@ -171,9 +180,10 @@
 
 <style>
   article {
+    display: flex;
     flex-basis: 0;
+    flex-direction: column;
     flex-grow: 1;
-    overflow: auto;
   }
 
   div.field {
@@ -247,6 +257,14 @@
     text-rendering: optimizeLegibility;
   }
 
+  header > div:first-of-type button {
+    justify-self: start;
+  }
+
+  header > div:last-of-type button {
+    justify-self: end;
+  }
+
   header button svg {
     height: 20px;
     width: 20px;
@@ -266,6 +284,11 @@
     display: flex;
     flex-direction: column;
     margin: 16px;
+  }
+
+  label.status {
+    flex-basis: 0;
+    flex-grow: 1;
   }
 
   label input {

@@ -99,30 +99,6 @@ export default class HoytStatus extends HTMLElement {
     } );
   }
 
-  article( phrase ) {
-    if (!phrase) return '';
-
-    const word = phrase.trim().split(/\s+/)[0].toLowerCase();
-
-    // No article for acronyms/initialisms that sound vowel-led.
-    // AI => "an AI prototype"
-    if( /^[aeiou]/i.test( word ) ) {
-      return "an";
-    }
-
-    // Common vowel-sound exceptions.
-    if( /^(honest|hour|heir|honor)/.test( word ) ) {
-      return "an";
-    }
-
-    // Common consonant-sound exceptions.
-    if( /^(user|university|unique|unit|one|once)/.test( word ) ) {
-      return "a";
-    }
-
-    return "a";
-  }
-
   // When attributes change
   _render() {
     if( this._history.length === 0 ) return;
@@ -138,9 +114,7 @@ export default class HoytStatus extends HTMLElement {
       minute: '2-digit'
     } );    
 
-    const activity = this._history[this._index].activity.toLowerCase();
-    const subject = this._history[this._index].subject.toLowerCase();
-    this.$status.textContent = `${activity} ${this.article( subject )} ${subject}.`;
+    this.$status.textContent = this._history[this._index].text;
     this.$started.textContent = 
       date.format( this._history[this._index].started ) +
       ' @ ' + 
