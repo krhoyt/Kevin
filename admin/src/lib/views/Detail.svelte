@@ -69,6 +69,16 @@
   }
 
   function onSaveClick() {
+    if( textarea.value.trim().length === 0 ) {
+      alert( 'Status content is empty - required content.' );
+      return;
+    }
+
+    if( textarea.value.indexOf( '#' ) < 0 ) {
+      alert( 'At least one hashtag must be present.' );
+      return;
+    }
+
     const hashtags = new Set();
 
     for( const match of textarea.value.trim().matchAll( /#([\w-]+)/g ) ) {

@@ -1,12 +1,22 @@
+import { execFileSync } from "child_process";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
 import { DateTime } from "luxon";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import youTube from "eleventy-plugin-youtube-embed";
 
+const __dirname = dirname( fileURLToPath( import.meta.url ) );
+
 export default function( config ) {
+  config.on( 'eleventy.before', () => {
+    execFileSync( 'python3', [join( __dirname, 'index_notes.py' )], { stdio: 'inherit' } );
+  } );
+
   config.addPassthroughCopy( 'img' );
-  config.addPassthroughCopy( 'style' );  
-  config.addPassthroughCopy( 'script' );    
+  config.addPassthroughCopy( 'style' );
+  config.addPassthroughCopy( 'script' );
+  config.addPassthroughCopy( {'notes/search-index.json': 'notes/search-index.json'} );
 
   config.addPassthroughCopy( {'admin/_app': 'admin/_app'} );
   config.addPassthroughCopy( {'admin/index.html': 'admin/index.html'} );  
