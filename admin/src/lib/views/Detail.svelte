@@ -1,6 +1,8 @@
 <script>
   let {
     id = null,
+    latitude = null,
+    longitude = null,
     oncancel = null,
     ondelete = null,
     onsave = null,
@@ -101,7 +103,9 @@
         id,
         tags: [... hashtags],
         started,        
-        text: status
+        text: status,
+        latitude,
+        longitude
       } );
     }
   }

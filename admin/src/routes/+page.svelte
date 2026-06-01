@@ -14,6 +14,8 @@
   let item = $state( null );
   let screen = $state( 'NONE' );
   
+  let latitude = null;
+  let longitude = null;
   let password = null;
 
   async function browseStatus() {
@@ -131,6 +133,8 @@
     if( item.id ) {
       await updateStatus( item );
     } else {
+      item.latitude = latitude;
+      item.longitude = longitude;
       await createStatus( item );
     }
 
@@ -158,6 +162,17 @@
       await browseStatus();
       screen = 'BROWSE';
     }
+    
+    navigator.geolocation.getCurrentPosition( ( position ) => {
+      latitude = position.coords.latitude;
+      longitude = position.coords.longitude;
+    }, ( error ) => {
+      console.log( error );
+    }, {
+      enableHighAccuracy: true,
+      timeout: 10000,
+      maximumAge: 0         
+    } );    
   } );
 </script>
 
