@@ -1,10 +1,13 @@
 <script>
+  import Button from "$lib/comp/Button.svelte";
+  import Header from "./Header.svelte";
+
   let {
     id = null,
-    latitude = null,
-    longitude = null,
+    location = null,
     oncancel = null,
     ondelete = null,
+    onlocation = null,
     onsave = null,
     started = new Date(),
     tags = [],
@@ -71,6 +74,11 @@
   }
 
   function onSaveClick() {
+    if( location === null ) {
+      alert( 'Specific location details are required.' );
+      return;      
+    }
+
     if( textarea.value.trim().length === 0 ) {
       alert( 'Status content is empty - required content.' );
       return;
@@ -96,7 +104,11 @@
       onsave?.( {
         tags: [... hashtags],
         started,        
-        text: status
+        text: status,
+        latitude: location.latitude,
+        longitude: location.longitude,
+        place: location.place,
+        place_id: location.place_id
       } );
     } else {
       onsave?.( {
@@ -104,8 +116,10 @@
         tags: [... hashtags],
         started,        
         text: status,
-        latitude,
-        longitude
+        latitude: location.latitude,
+        longitude: location.longitude,
+        place: location.place,
+        place_id: location.place_id        
       } );
     }
   }
@@ -121,28 +135,42 @@
 
 <section>
 
-  <header>
-    <div>
-      <button aria-label="Add status" onclick={onBackClick} type="button">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-          <path d="M0 0h16v16H0z" fill="none" />
-          <path fill="currentColor" fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
-        </svg>
-        <span>Back</span>
-      </button>
-    </div>
-    <h2>{detail}</h2>
-    <div>
-      <button 
-        aria-label="Add status" 
-        onclick={onSaveClick} 
-        type="button">
-        Save
-      </button>
-    </div>    
-  </header>
+  <Header title={detail}>
+    {#snippet left()}
+      <Button label="Back" onclick={onBackClick}>
+        {#snippet prefix()}
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path d="M0 0h16v16H0z" fill="none" />
+            <path fill="currentColor" fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+          </svg>          
+        {/snippet}
+      </Button>
+    {/snippet}
+    {#snippet right()}
+      <Button label="Save" onclick={onSaveClick} />
+    {/snippet}
+  </Header>
 
   <article>
+
+    <label>
+      <p>Location</p>
+      <p>Where are you at?</p>      
+      <Button 
+        label={location === null ? 'Find a place' : location.place} 
+        outline={true} 
+        onclick={onlocation}>
+        {#snippet suffix()}
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path d="M0 0h16v16H0z" fill="none" />
+            <g fill="currentColor">
+              <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+              <path d="M8 8a2 2 0 1 1 0-4a2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6a3 3 0 0 0 0 6" />
+            </g>
+          </svg>
+        {/snippet}
+      </Button>
+    </label>  
 
     <label class="status">
       <p>Status</p>
@@ -244,60 +272,10 @@
     width: 20px;
   }
 
-  header {
-    align-items: center;
-    display: grid;
-    grid-template-columns: 100px 1fr 100px;
-    padding: 16px;
-  }
-
-  header button {
-    align-items: center;
-    appearance: none;
-    background: none;
-    border: none;
-    border-radius: 6px;
-    color: #165ff2;
-    cursor: pointer;
-    display: flex;
-    font-family: 'Open Sans Variable', sans-serif;
-    font-size: 16px;
-    gap: 8px;
-    height: 40px;
-    justify-content: center;
-    margin: 0;
-    outline: none;
-    padding: 0;
-    text-rendering: optimizeLegibility;
-  }
-
-  header > div:first-of-type button {
-    justify-self: start;
-  }
-
-  header > div:last-of-type button {
-    justify-self: end;
-  }
-
-  header button svg {
-    height: 20px;
-    width: 20px;
-  }
-
-  header h2 {
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 28px;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    text-rendering: optimizeLegibility;
-  }
-
   label {
     display: flex;
     flex-direction: column;
-    margin: 16px;
+    margin: 0 16px 16px 16px;
   }
 
   label.status {
@@ -397,5 +375,10 @@
     background: #11181f;
     color: crimson;
     margin: 16px 16px 0 16px;
+  }
+
+  svg.icon {
+    height: 20px;
+    width: 20px;
   }
 </style>

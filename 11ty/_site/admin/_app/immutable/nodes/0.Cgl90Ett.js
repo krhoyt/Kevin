@@ -1,0 +1,1 @@
+import{P as e,p as t,v as n,y as r}from"../chunks/C33O1Ps_.js";import"../chunks/DilxxEwg.js";function i(i,a){var o=r();t(e(o),()=>a.children),n(i,o)}export{i as component};

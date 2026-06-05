@@ -1,31 +1,40 @@
 <script>
+  import Button from "$lib/comp/Button.svelte";
   import StatusItem from "$lib/comp/StatusItem.svelte";
+
+  import Header from "$lib/views/Header.svelte";  
 
   let {
     items = [],
     onadd = null,
-    onitem = null
+    onitem = null,
+    onlogout = null
   } = $props();
 
   function onAddClick() {
     onadd?.();
   }
+
+  function onLogoutClick() {
+    onlogout?.();
+  }
 </script>
 
 <section>
 
-  <header>
-    <div style="width: 40px;"></div>
-    <h2>Status Updates</h2>
-    <div>
+  <Header title="Status Updates">
+    {#snippet left()}
+      <Button label="Logout" onclick={onLogoutClick} />
+    {/snippet}
+    {#snippet right()}
       <button aria-label="Add status" onclick={onAddClick} type="button">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
           <path d="M0 0h16v16H0z" fill="none" />
           <path fill="currentColor" fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
         </svg>
-      </button>
-    </div>
-  </header>
+      </button>    
+    {/snippet}    
+  </Header>
 
   <p class="message">Manage, edit, and organize your status updates.</p>
 
@@ -40,14 +49,7 @@
 </section>
 
 <style>
-  header {
-    align-items: center;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    padding: 16px;
-  }
-
-  header button {
+  button {
     align-items: center;
     appearance: none;
     background: #165ff2;
@@ -64,19 +66,9 @@
     width: 40px;
   }
 
-  header button svg {
+  button svg {
     height: 20px;
     width: 20px;
-  }
-
-  header h2 {
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 28px;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    text-rendering: optimizeLegibility;
   }
 
   section {
