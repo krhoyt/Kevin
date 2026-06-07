@@ -345,7 +345,7 @@
   }
 
   :global( body ) {
-    background: #080e15;
+    background: #111111;
     color: #f4f4f4;
     display: flex;
     flex-direction: row;

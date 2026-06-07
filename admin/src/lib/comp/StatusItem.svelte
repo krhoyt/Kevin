@@ -84,7 +84,7 @@
 
   button svg:first-of-type {
     align-self: flex-start;
-    color: #165ff2;
+    color: #345bf8;
     height: 16px;
     margin: 4px 0 0 0;
     width: 16px;
@@ -104,18 +104,18 @@
 
   div.tags p {
     align-self: flex-start;
-    background: color-mix( in srgb, #165ff2 10%, transparent );
-    border: solid 1px #165ff2;
-    border-radius: 6px;
-    color: #165ff2;
-    font-size: 14px;
+    background: #4c4c4c;
+    border-radius: 8px;
+    color: #dbdbdb;
+    font-size: 16px;
+    line-height: 24px;
     margin: 8px 0 8px 0;
-    padding: 2px 8px 2px 8px;
+    padding: 8px 16px 8px 16px;
     text-transform: lowercase;
   }
 
   p {
-    color: #f4f4f4;
+    color: #dbdbdb;
     font-family: 'Open Sans Variable', sans-serif;
     font-size: 16px;
     line-height: 24px;

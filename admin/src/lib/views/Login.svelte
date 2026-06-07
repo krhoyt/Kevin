@@ -113,9 +113,13 @@
 
 <style>
   article {
-    background: #11181f;
-    border: solid 1px #1e252d;
-    border-radius: 12px;
+    background: #1b1b1b;
+    background: #222222;
+    border-radius: 16px;
+    box-shadow: 
+      0 2px 8px #0000003d, 
+      0 1px 4px #0000001f,
+      0 0 1px #0000003d;
     display: flex;
     flex-direction: column;
     margin: 16px 16px 0 16px;
@@ -149,10 +153,10 @@
 
   button.primary {
     appearance: none;
-    background: #165ff2;
+    background: #345bf8;
     border: none;
-    border-radius: 6px;
-    color: #f4f4f4;
+    border-radius: 40px;
+    color: #ffffff;
     cursor: pointer;
     font-family: 'Open Sans Variable', sans-serif;
     font-size: 16px;
@@ -166,7 +170,10 @@
 
   footer {
     align-items: center;
-    border-top: solid 1px #1e252d;
+    background: #1b1b1b;
+    /* border-top: solid 1px #393939; */
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
     display: flex;
     flex-direction: row;
     gap: 16px;
@@ -212,9 +219,9 @@
 
   label div {
     align-items: center;
-    background: #0b1017;
-    border: solid 1px #41474e;
-    border-radius: 6px;
+    background: #111111;
+    border: solid 2px #393939;
+    border-radius: 9px;
     display: flex;
     flex-direction: row;
     padding: 0 12px 0 16px;
@@ -226,7 +233,7 @@
     background: none;
     border: none;
     box-sizing: border-box;
-    color: #f4f4f4;
+    color: #dbdbdb;
     flex-basis: 0;
     flex-grow: 1;
     font-family: 'Open Sans Variable', sans-serif;
@@ -240,7 +247,7 @@
   }
 
   label p {
-    color: #f4f4f4;
+    color: #afafaf;
     font-size: 16px;
     line-height: 24px;
     margin: 0 0 6px 0;
@@ -256,7 +263,7 @@
   }
 
   label:focus-within div {
-    border: solid 1px #f4f4f4;
+    border: solid 2px #f2f2f2;
   }
 
   section {

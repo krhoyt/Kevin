@@ -52,10 +52,10 @@
   button {
     align-items: center;
     appearance: none;
-    background: #165ff2;
+    background: #345bf8;
     border: none;
-    border-radius: 6px;
-    color: #f4f4f4;
+    border-radius: 40px;
+    color: #ffffff;
     cursor: pointer;
     display: flex;
     height: 40px;
@@ -78,16 +78,16 @@
   }
 
   ul {
-    background: #11181f;
-    border: solid 1px #1e252d;
-    border-radius: 12px;
+    background: #1b1b1b;
+    border: solid 1px #393939;
+    border-radius: 16px;
     list-style: none;
     margin: 32px 16px 0 16px;
     padding: 0;
   }
 
   ul li {
-    border-bottom: solid 1px #1e252d;
+    border-bottom: solid 1px #393939;
   }
 
   ul li:last-of-type {

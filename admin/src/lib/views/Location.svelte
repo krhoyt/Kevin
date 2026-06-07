@@ -112,7 +112,7 @@
     appearance: none;
     background: none;
     border: none;
-    color: #f4f4f4;
+    color: #dbdbdb;
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -166,7 +166,7 @@
     appearance: none;
     background: none;
     border: none;
-    color: #f4f4f4;
+    color: #dbdbdb;
     cursor: pointer;
     display: flex;
     height: 40px;
@@ -183,7 +183,7 @@
   }
 
   p {
-    color: #f4f4f4;
+    color: #dbdbdb;
     font-family: 'Open Sans Variable', sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -201,16 +201,16 @@
   }  
 
   ul {
-    background: #11181f;
-    border: solid 1px #1e252d;
-    border-radius: 12px;    
+    background: #1b1b1b;
+    border: solid 1px #393939;
+    border-radius: 16px;    
     list-style: none;
     margin: 0 16px 0 16px;
     padding: 0;
   }
 
   ul li {
-    border-bottom: solid 1px #1e252d;
+    border-bottom: solid 1px #393939;
   }
 
   ul li:last-of-type {

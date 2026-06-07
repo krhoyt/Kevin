@@ -91,7 +91,7 @@
     appearance: none;
     background: none;
     border: none;
-    color: #f4f4f4;
+    color: #dbdbdb;
     cursor: pointer;
     display: flex;
     height: 36px;
@@ -109,9 +109,9 @@
 
   div {
     align-items: center;
-    background: #0b1017;
-    border: solid 1px #41474e;
-    border-radius: 6px;
+    background: #111111;
+    border: solid 2px #393939;
+    border-radius: 9px;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -124,7 +124,7 @@
     appearance: none;
     background: none;
     border: none;    
-    color: #f4f4f4;
+    color: #dbdbdb;
     font-family: 'Open Sans Variable', sans-serif;
     font-size: 16px;
     line-height: 24px;
@@ -136,7 +136,7 @@
   }
 
   input::placeholder {
-    color: #f4f4f4;
+    color: #dbdbdb;
     opacity: 0.70;
   }
 
@@ -150,11 +150,11 @@
   }
 
   label:focus-within div {
-    border: solid 1px #f4f4f4;    
+    border: solid 2px #f2f2f2;    
   }
 
   p {
-    color: #f4f4f4;
+    color: #dbdbdb;
     flex-basis: 0;
     flex-grow: 1;
     font-size: 16px;

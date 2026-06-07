@@ -230,11 +230,11 @@
 
   div.field {
     align-items: center;
-    background: #0b1017;
-    border: solid 1px #41474e;
-    border-radius: 6px;
+    background: #111111;
+    border: solid 2px #393939;
+    border-radius: 9px;
     box-sizing: border-box;
-    color: #f4f4f4;
+    color: #dbdbdb;
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -256,7 +256,7 @@
   }
 
   div.field p {
-    color: #f4f4f4;
+    color: #dbdbdb;
     flex-basis: 0;
     flex-grow: 1;
     font-size: 16px;
@@ -285,11 +285,11 @@
 
   label input {
     appearance: none;
-    background: #0b1017;
-    border: solid 1px #41474e;
-    border-radius: 6px;
+    background: #111111;
+    border: solid 1px #393939;
+    border-radius: 9px;
     box-sizing: border-box;
-    color: #f4f4f4;
+    color: #dbdbdb;
     flex-basis: 0;
     flex-grow: 1;
     font-family: 'Open Sans Variable', sans-serif;
@@ -322,11 +322,11 @@
 
   label textarea {
     appearance: none;
-    background: #0b1017;
-    border: solid 1px #41474e;
-    border-radius: 6px;
+    background: #111111;
+    border: solid 2px #393939;
+    border-radius: 9px;
     box-sizing: border-box;
-    color: #f4f4f4;
+    color: #dbdbdb;
     flex-basis: 0;
     flex-grow: 1;
     font-family: 'Open Sans Variable', sans-serif;
@@ -344,7 +344,7 @@
 
   label:focus-within input,
   label:focus-within textarea {
-    border: solid 1px #f4f4f4;    
+    border: solid 2px #f2f2f2;    
   }
 
   section {
