@@ -3,10 +3,10 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="Dispatches from development and design." />
+  <meta name="description" content="When building workflows, consider the pipeline pattern. This pattern is an array of step functions that leverage the same context object. The context is created with all the necessary keys, then passed to a step which may/not modify it, and then returns it. Repeat for each step." />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <title>January 2026 - Kevin Hoyt</title>
+  <title>Kevin Hoyt · Notes</title>
 
   <link rel="icon" type="image/x-icon" href="/img/edit.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,16 +17,12 @@
 
   <link rel="stylesheet" href="/style/kevinhoyt.css" />
   <link rel="stylesheet" href="/style/header.css" />
-  <link rel="stylesheet" href="/style/hero.css" />
   <link rel="stylesheet" href="/style/prism.css" />
-  <link rel="stylesheet" href="/style/notebook.css" />
+  <link rel="stylesheet" href="/style/note.css" />
   <link rel="stylesheet" href="/style/footer.css" />
 
 </head>
 <body>
-
-  
-  
 
   <header id="header">
 
@@ -117,138 +113,70 @@
 
 </header>
 
-  <section id="hero" fetchpriority="high">
 
-  <article>
+  <main>
 
-    
-      <h2>Kevin Hoyt · Notes</h2>
-    
+    <!-- <a href="/notes">Back to Notes</a> -->
 
     
-      <h3>Dispatches from development and design.</h3>
     
 
-    
-
-  </article>
-
-</section>
-
-  <section id="notes">
-
-  
-  <nav>
-    <div>
-      <a class="home" href="/notes">Notes</a>
-      <p>|</p>              
+    <header>
+      <h1>Jun 9, 2026</h1>
       
-        
-          <p>2026</p>
-          <p>|</p>
-        
-        <a href="/notes/2026/01/" class="current">Jan</a>
       
-        
-        <a href="/notes/2026/02/">Feb</a>
+        <a href="/notes/2026/05/29/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8L4.646 2.354a.5.5 0 0 1 0-.708"/></svg>
+        </a>
       
-        
-        <a href="/notes/2026/03/">Mar</a>
+    </header>
+
+    <aside>
+
       
-        
-        <a href="/notes/2026/04/">Apr</a>
+
       
-        
-        <a href="/notes/2026/05/">May</a>
+        <p class="tag">Code</p>
       
-        
-        <a href="/notes/2026/06/">Jun</a>
+
       
-    </div>
-  </nav>
+
+        
+
+    </aside>
+
+    <p>When building workflows, consider the pipeline pattern. This pattern is an array of step functions that leverage the same context object. The context is created with all the necessary keys, then passed to a step which may/not modify it, and then returns it. Repeat for each step.</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Main</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> one <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./steps/one.js"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> two <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./steps/two.js"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> three <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./steps/three.js"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> steps <span class="token operator">=</span> <span class="token punctuation">[</span>one<span class="token punctuation">,</span> two<span class="token punctuation">,</span> three<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> context <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">inputs</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">outputs</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">file</span><span class="token operator">:</span> <span class="token string">'./some/file.txt'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">errors</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">warnings</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">const</span> step <span class="token keyword">of</span> steps <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> <span class="token function">step</span><span class="token punctuation">(</span> context <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span><span class="token punctuation">(</span> context<span class="token punctuation">.</span>errors <span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Step function</span>
+<span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">one</span><span class="token punctuation">(</span> <span class="token parameter">context</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Do some work</span>
+  <span class="token comment">// Modify context if needed by later steps</span>
+  <span class="token keyword">return</span> context<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 
 
+    <a href="/notes">Back to Notes</a>
 
-  <div>
-
-    
-
-      <a href="/notes/2026/01/30/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="link" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Jan 30, 2026</time>
-
-            <aside>
-
-              
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <g fill="currentColor">
-                    <path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199a2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/>
-                    <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/>
-                  </g>
-                </svg>
-              
-
-              
-
-              
-
-              
-
-            </aside>
-
-          </div>
-
-          <p>Think about your job as a business you own. There is more to it than writing code (product). Sales and marketing (comms), HR (continuing education), IT (reporting), and more.</p>
-
-        </article>
-
-      </a>
-
-    
-
-      <a href="/notes/2026/01/14/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="Kevin Hoyt" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Jan 14, 2026</time>
-
-            <aside>
-
-              
-
-              
-
-              
-
-              
-
-            </aside>
-
-          </div>
-
-          <p>It is worth spending time learning at least a handful of cognitive biases. This was required learning for managers and anyone involved in hiring at AWS. It sharpens critical thinking and helps you communicate ideas more effectively.</p>
-
-        </article>
-
-      </a>
-
-    
-
-  </div>
-
-</section>
+  </main>
 
   <footer id="footer">
 
@@ -259,6 +187,7 @@
 </footer>
 
 
+  <script src="/script/avatar.js" type="module"></script>
   <script src="/script/menu.js"></script>
 
 </body>

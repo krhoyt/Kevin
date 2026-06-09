@@ -1,5 +1,16 @@
 [
   {
+    "uuid": "abf41d8d-05fc-4694-9b04-182e70199641",
+    "date": "2026-06-09",
+    "url": "/notes/2026/06/09/",
+    "excerpt": "When building workflows, consider the pipeline pattern. This pattern is an array of step functions that leverage the same context object. The context is created with all the necessary keys, then passed to a step which may/not modify it, and then returns it. Repeat for each step.",
+    "body": "When building workflows, consider the pipeline pattern. This pattern is an array of step functions that leverage the same context object. The context is created with all the necessary keys, then passed to a step which may/not modify it, and then returns it. Repeat for each step.\n\n// Main\nimport { one } from \"./steps/one.js\";\nimport { two } from \"./steps/two.js\";\nimport { three } from \"./steps/three.js\";\n\nconst steps = [one, two, three];\n\nconst context = {\n  inputs: null,\n  outputs: null,\n  file: './some/file.txt',\n  errors: [],\n  warnings: []\n};\n\nfor( const step of steps ) {\n  await step( context );\n\n  if( context.errors ) break;\n}\n\n// Step function\nexport async function one( context ) {\n  // Do some work\n  // Modify context if needed by later steps\n  return context;\n}",
+    "code": true,
+    "image": false,
+    "link": false,
+    "video": false
+  },
+  {
     "uuid": "5d3c37c8-a2e3-4da6-b917-85b36fb37c6b",
     "date": "2026-05-29",
     "url": "/notes/2026/05/29/",
