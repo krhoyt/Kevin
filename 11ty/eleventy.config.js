@@ -9,6 +9,8 @@ import youTube from "eleventy-plugin-youtube-embed";
 const __dirname = dirname( fileURLToPath( import.meta.url ) );
 
 export default function( config ) {
+  config.watchIgnores.add( 'notes/search-index.json' );
+
   config.on( 'eleventy.before', () => {
     execFileSync( 'python3', [join( __dirname, 'index_notes.py' )], { stdio: 'inherit' } );
   } );
