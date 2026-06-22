@@ -1,5 +1,16 @@
 [
   {
+    "uuid": "d28ed3c1-2577-46c6-ae64-68ec360cc4d0",
+    "date": "2026-06-19",
+    "url": "/notes/2026/06/19/",
+    "excerpt": "When exporting SVG from Illustrator, individual tspan elements will be created for text blocks with font changes. The spans include coordinate attributes, preventing the natural flow of the text. This can create unwanted spacing between words. These attributes can be removed.",
+    "body": "When exporting SVG from Illustrator, individual tspan elements will be created for text blocks with font changes. The spans include coordinate attributes, preventing the natural flow of the text. This can create unwanted spacing between words. These attributes can be removed.\n\nfunction stripPosition( tag ) {\n  return tag\n    .replace( /\\s+x=\"-?[\\d.]+\"/g, '' )\n    .replace( /\\s+y=\"-?[\\d.]+\"/g, '' )\n    .replace( /\\s+xml:space=\"[^\"]*\"/g, '' );\n}",
+    "code": true,
+    "image": false,
+    "link": false,
+    "video": false
+  },
+  {
     "uuid": "abf41d8d-05fc-4694-9b04-182e70199641",
     "date": "2026-06-09",
     "url": "/notes/2026/06/09/",

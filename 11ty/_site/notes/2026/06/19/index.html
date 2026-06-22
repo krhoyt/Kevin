@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="When building workflows, consider the pipeline pattern. This pattern is an array of step functions that leverage the same context object. The context is created with all the necessary keys, then passed to a step which may/not modify it, and then returns it. Repeat for each step." />
+  <meta name="description" content="When exporting SVG from Illustrator, individual tspan elements will be created for text blocks with font changes. The spans include coordinate attributes, preventing the natural flow of the text. This can create unwanted spacing between words. These attributes can be removed." />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <title>Kevin Hoyt · Notes</title>
@@ -122,14 +122,10 @@
     
 
     <header>
-      <h1>Jun 9, 2026</h1>
-      
-        <a href="/notes/2026/06/19/">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>
-        </a>
+      <h1>Jun 19, 2026</h1>
       
       
-        <a href="/notes/2026/05/29/">
+        <a href="/notes/2026/06/09/">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8L4.646 2.354a.5.5 0 0 1 0-.708"/></svg>
         </a>
       
@@ -149,32 +145,12 @@
 
     </aside>
 
-    <p>When building workflows, consider the pipeline pattern. This pattern is an array of step functions that leverage the same context object. The context is created with all the necessary keys, then passed to a step which may/not modify it, and then returns it. Repeat for each step.</p>
-<pre class="language-js"><code class="language-js"><span class="token comment">// Main</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> one <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./steps/one.js"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> two <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./steps/two.js"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> three <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./steps/three.js"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> steps <span class="token operator">=</span> <span class="token punctuation">[</span>one<span class="token punctuation">,</span> two<span class="token punctuation">,</span> three<span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> context <span class="token operator">=</span> <span class="token punctuation">{</span>
-  <span class="token literal-property property">inputs</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">outputs</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">file</span><span class="token operator">:</span> <span class="token string">'./some/file.txt'</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">errors</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">warnings</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">const</span> step <span class="token keyword">of</span> steps <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">await</span> <span class="token function">step</span><span class="token punctuation">(</span> context <span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-  <span class="token keyword">if</span><span class="token punctuation">(</span> context<span class="token punctuation">.</span>errors <span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class="language-js"><code class="language-js"><span class="token comment">// Step function</span>
-<span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">one</span><span class="token punctuation">(</span> <span class="token parameter">context</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment">// Do some work</span>
-  <span class="token comment">// Modify context if needed by later steps</span>
-  <span class="token keyword">return</span> context<span class="token punctuation">;</span>
+    <p>When exporting SVG from Illustrator, individual tspan elements will be created for text blocks with font changes. The spans include coordinate attributes, preventing the natural flow of the text. This can create unwanted spacing between words. These attributes can be removed.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">stripPosition</span><span class="token punctuation">(</span> <span class="token parameter">tag</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> tag
+    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s+x="-?[\d.]+"</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s+y="-?[\d.]+"</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s+xml:space="[^"]*"</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 
 
