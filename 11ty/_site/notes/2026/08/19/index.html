@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="When exporting SVG from Illustrator, individual tspan elements will be created for text blocks with font changes. The spans include coordinate attributes, preventing the natural flow of the text. This can create unwanted spacing between words. These attributes can be removed." />
+  <meta name="description" content="A lot of setup guides make their job easy by making your job hard. They do so by having you install all manner of additional dependencies before you even know what you are doing. Adobe App Builder is one of those products. Here is my minimalist version of what is actually needed." />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <title>Kevin Hoyt · Notes</title>
@@ -122,14 +122,14 @@
     
 
     <header>
-      <h1>Jun 19, 2026</h1>
+      <h1>Aug 19, 2026</h1>
       
-        <a href="/notes/2026/08/19/">
+        <a href="/notes/2026/08/20/">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>
         </a>
       
       
-        <a href="/notes/2026/06/09/">
+        <a href="/notes/2026/06/19/">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8L4.646 2.354a.5.5 0 0 1 0-.708"/></svg>
         </a>
       
@@ -149,12 +149,59 @@
 
     </aside>
 
-    <p>When exporting SVG from Illustrator, individual tspan elements will be created for text blocks with font changes. The spans include coordinate attributes, preventing the natural flow of the text. This can create unwanted spacing between words. These attributes can be removed.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">stripPosition</span><span class="token punctuation">(</span> <span class="token parameter">tag</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> tag
-    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s+x="-?[\d.]+"</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span> <span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s+y="-?[\d.]+"</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span> <span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s+xml:space="[^"]*"</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <p>A lot of setup guides make their job easy by making your job hard. They do so by having you install all manner of additional dependencies before you even know what you are doing. Adobe App Builder is one of those products. Here is my minimalist version of what is actually needed.</p>
+<pre class="language-text"><code class="language-text">.
+├── actions/          Root directory for serverless functions
+│    └── hello.js     Test "Hello World" serverless function
+├── app.config.yaml   App Builder configuraton file 
+├── package.json      Node project configuration file
+└── node_modules      Directory containing Node dependencies</code></pre>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span> <span class="token parameter">params</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">statusCode</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">headers</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string-property property">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'application/json'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>params<span class="token punctuation">.</span>name <span class="token operator">??</span> <span class="token string">'World'</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!</span><span class="token template-punctuation string">`</span></span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+exports<span class="token punctuation">.</span>main <span class="token operator">=</span> main</code></pre>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">application</span><span class="token punctuation">:</span>
+  <span class="token key atrule">runtimeManifest</span><span class="token punctuation">:</span>
+    <span class="token key atrule">packages</span><span class="token punctuation">:</span>
+      <span class="token key atrule">api</span><span class="token punctuation">:</span>
+        <span class="token key atrule">license</span><span class="token punctuation">:</span> Apache<span class="token punctuation">-</span><span class="token number">2.0</span>
+        <span class="token key atrule">actions</span><span class="token punctuation">:</span>
+          <span class="token key atrule">hello</span><span class="token punctuation">:</span>
+            <span class="token key atrule">function</span><span class="token punctuation">:</span> actions/hello.js
+            <span class="token key atrule">web</span><span class="token punctuation">:</span> <span class="token string">'yes'</span>
+            <span class="token key atrule">runtime</span><span class="token punctuation">:</span> nodejs<span class="token punctuation">:</span><span class="token number">18</span>
+        <span class="token key atrule">apis</span><span class="token punctuation">:</span>
+          <span class="token key atrule">hello-api</span><span class="token punctuation">:</span>
+            <span class="token key atrule">v1</span><span class="token punctuation">:</span>
+              <span class="token key atrule">hello</span><span class="token punctuation">:</span>
+                <span class="token key atrule">hello</span><span class="token punctuation">:</span>
+                  <span class="token key atrule">method</span><span class="token punctuation">:</span> get
+                  <span class="token key atrule">response</span><span class="token punctuation">:</span> http
+  <span class="token key atrule">actions</span><span class="token punctuation">:</span> actions</code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"MyServerlessApp"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.0.1"</span><span class="token punctuation">,</span>
+  <span class="token property">"private"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@adobe/aio-sdk"</span><span class="token operator">:</span> <span class="token string">"^6"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"eslint"</span><span class="token operator">:</span> <span class="token string">"^8"</span><span class="token punctuation">,</span>
+    <span class="token property">"eslint-plugin-jest"</span><span class="token operator">:</span> <span class="token string">"^27.2.3"</span><span class="token punctuation">,</span>
+    <span class="token property">"jest"</span><span class="token operator">:</span> <span class="token string">"^29"</span>
+  <span class="token punctuation">}</span>
+  <span class="token property">"engines"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"node"</span><span class="token operator">:</span> <span class="token string">">=18"</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 
 

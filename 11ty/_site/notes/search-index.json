@@ -1,5 +1,71 @@
 [
   {
+    "uuid": "2cd2af1b-4bf9-4454-9b68-df9dc00f13d2",
+    "date": "2026-08-25",
+    "url": "/notes/2026/08/25/",
+    "excerpt": "Implementing a serverless function that creates custom charts. I started by placing an SVG template in a string literal. This evolved into creating functions that generate SVG primitives. The resulting is code that is much cleaner, more readable, and potentially more flexible.",
+    "body": "Implementing a serverless function that creates custom charts. I started by placing an SVG template in a string literal. This evolved into creating functions that generate SVG primitives. The resulting is code that is much cleaner, more readable, and potentially more flexible.\n\n// Example generating a text element\nfunction text( { \n  x, \n  y, \n  text, \n  children, \n  fontSize, \n  fontWeight, \n  fill, \n  textAnchor = 'middle', \n  dominantBaseline = 'hanging', \n  className \n} ) {\n  const content = children ? children.join( '' ) : text );\n\n  return \n    <text\n      x=\"${x}\"\n      y=\"${y}\"\n      text-anchor=\"${textAnchor}\"\n      dominant-baseline=\"${dominantBaseline}\"\n      ${fontSize !== undefined ? font-size=\"${fontSize}\" : ''}\n      ${fontWeight !== undefined ? font-weight=\"${fontWeight}\" : ''}\n      ${fill !== undefined ? fill=\"${fill}\" : ''}\n      ${className ? class=\"${className}\" : ''}>\n    ${content}\n  </text>;\n}",
+    "code": true,
+    "image": false,
+    "link": false,
+    "video": false
+  },
+  {
+    "uuid": "58cc4dd6-78cb-4a14-8e01-24241fc4c197",
+    "date": "2026-08-24",
+    "url": "/notes/2026/08/24/",
+    "excerpt": "Due to deployment constraints, I needed a simple stateless MCP server deployed as a serverless function. The request arrives, CORS is added, GET returns 200, POST routes to handler. The handler calls other APIs, mapping to the protocol. Tools are described using Zod per convention.",
+    "body": "Due to deployment constraints, I needed a simple stateless MCP server deployed as a serverless function. The request arrives, CORS is added, GET returns 200, POST routes to handler. The handler calls other APIs, mapping to the protocol. Tools are described using Zod per convention.",
+    "code": false,
+    "image": false,
+    "link": false,
+    "video": false
+  },
+  {
+    "uuid": "47487ff6-29a4-40af-9b33-f9fdeb022ec2",
+    "date": "2026-08-22",
+    "url": "/notes/2026/08/22/",
+    "excerpt": "If you are converting SVG to PNG then you probably want to keep the font styles intact. The resvg package can accommodate this with a font configuration. The font files themselves need to be loaded into buffers. Font styles need to be applied inline - CSS does not seem to apply.",
+    "body": "If you are converting SVG to PNG then you probably want to keep the font styles intact. The resvg package can accommodate this with a font configuration. The font files themselves need to be loaded into buffers. Font styles need to be applied inline - CSS does not seem to apply.\n\nconst fs = require( 'fs' );\nconst path = require( 'path' );\n\nconst { Resvg, initWasm } = require( '@resvg/resvg-wasm' );\n\nlet wasmReady;\n\nasync function main( params ) {\n  const svg = \n    <svg\n      width=\"640\"\n      height=\"480\"\n      viewBox=\"0 0 640 480\"\n      xmlns=\"http://www.w3.org/2000/svg\">\n      <style>\n        text {\n          font-size: 36px;\n        }\n      </style>\n      <text\n        x=\"320\"\n        y=\"240\"\n        text-anchor=\"middle\"\n        dominant-baseline=\"middle\">\n        <tspan>Hello,</tspan>\n        <tspan \n          font-family=\"Isidora\" \n          fill=\"${params.color ?? 'black'}\">${params.name ?? 'World'}!</tspan>\n      </text>\n    </svg>\n  ;\n\n  if( !wasmReady ) {\n    wasmReady = initWasm( fs.readFileSync( \n      path.join( dirname, 'indexbg.wasm' ) \n    ) );\n  }\n\n  await wasmReady;\n  \n  const regularBuffer = fs.readFileSync( \n    path.join( dirname, 'Roboto-Regular.ttf' ) \n  );\n  const boldBuffer = fs.readFileSync( \n    path.join( dirname, 'Isidora-Bold.otf' ) \n  );\n\n  const resvg = new Resvg( svg, {\n    font: {\n      fontBuffers: [regularBuffer, boldBuffer],\n      loadSystemFonts: false,\n      defaultFontFamily: 'Roboto',\n      sansSerifFamily: 'Roboto'\n    }\n  } );\n\n  return {\n    statusCode: 200,\n    headers: {\n      'Content-Type': 'image/png'\n    },\n    body: Buffer.from( resvg.render().asPng() )\n  };\n}",
+    "code": true,
+    "image": false,
+    "link": false,
+    "video": false
+  },
+  {
+    "uuid": "56a39334-8acd-4a3e-97f5-9acd0eba6bb7",
+    "date": "2026-08-21",
+    "url": "/notes/2026/08/21/",
+    "excerpt": "Converting SVG to PNG is usually the domain of packages such as Sharp. This creates a binary dependency which complicates deployment (develop on Mac, deploy on Linux). The resvg package gives you this functionality without the binary dependency thanks to the included WASM module.",
+    "body": "Converting SVG to PNG is usually the domain of packages such as Sharp. This creates a binary dependency which complicates deployment (develop on Mac, deploy on Linux). The resvg package gives you this functionality without the binary dependency thanks to the included WASM module.\n\nconst fs = require( 'fs' );\nconst path = require( 'path' );\n\nconst { Resvg, initWasm } = require( '@resvg/resvg-wasm' );\n\nlet wasmReady = false;\n\nasync function main( params ) {\n  const svg = \n    <svg\n      width=\"640\"\n      height=\"480\"\n      viewBox=\"0 0 640 480\"\n      xmlns=\"http://www.w3.org/2000/svg\">\n      <style>\n        rect {\n          fill: ${params.backgroundColor ?? 'red'};\n          stroke: none;\n        }\n      </style>\n      <rect\n        x=\"270\"\n        y=\"190\"\n        width=\"100\"\n        height=\"100\"\n        rx=\"13\"\n        ry=\"13\" />\n    </svg>\n  ;\n\n  if( !wasmReady ) {\n    wasmReady = await initWasm( fs.readFileSync( \n      path.join( dirname, 'indexbg.wasm' ) \n    ) );\n  }\n\n  await wasmReady;\n\n  const resvg = new Resvg( svg );\n  \n  return {\n    statusCode: 200,\n    headers: {\n      'Content-Type': 'image/png'\n    },\n    body: Buffer.from( resvg.render().asPng() )\n  };\n}",
+    "code": true,
+    "image": false,
+    "link": false,
+    "video": false
+  },
+  {
+    "uuid": "896a2771-bd40-4d2d-9e77-e0fc9229cfde",
+    "date": "2026-08-20",
+    "url": "/notes/2026/08/20/",
+    "excerpt": "OpenWhisk (Adobe IO Runtime) output can present whatever content type is desired. In the case of SVG that content type would be image/svg+xml with the body of the response being the text string representing the SVG. You can use string literals to dynamically build the SVG.",
+    "body": "OpenWhisk (Adobe IO Runtime) output can present whatever content type is desired. In the case of SVG that content type would be \"image/svg+xml\" with the body of the response being the text string representing the SVG. You can use string literals to dynamically build the SVG.\n\nfunction main( params ) {\n  const svg = \n    <svg\n      width=\"640\"\n      height=\"480\"\n      viewBox=\"0 0 640 480\"\n      xmlns=\"http://www.w3.org/2000/svg\">\n      <style>\n        rect {\n          fill: ${params.backgroundColor ?? 'red'};\n          stroke: none;\n        }\n      </style>\n      <rect \n        x=\"${calculateX()}\" \n        y=\"${calculateY()}\" \n        width=\"640\" \n        height=\"480\" />\n    </svg>\n  ;\n\n  return {\n    statusCode: 200,\n    headers: {\n      'Content-Type': 'image/svg+xml'\n    },\n    body: svg\n  };\n}",
+    "code": true,
+    "image": false,
+    "link": false,
+    "video": false
+  },
+  {
+    "uuid": "7e403a51-d750-4648-85ec-f0a80616d26a",
+    "date": "2026-08-19",
+    "url": "/notes/2026/08/19/",
+    "excerpt": "A lot of setup guides make their job easy by making your job hard. They do so by having you install all manner of additional dependencies before you even know what you are doing. Adobe App Builder is one of those products. Here is my minimalist version of what is actually needed.",
+    "body": "A lot of setup guides make their job easy by making your job hard. They do so by having you install all manner of additional dependencies before you even know what you are doing. Adobe App Builder is one of those products. Here is my minimalist version of what is actually needed.\n\n.\n├── actions/          Root directory for serverless functions\n│    └── hello.js     Test \"Hello World\" serverless function\n├── app.config.yaml   App Builder configuraton file \n├── package.json      Node project configuration file\n└── node_modules      Directory containing Node dependencies\n\nfunction main( params ) {\n  return {\n    statusCode: 200,\n    headers: {\n      'Content-Type': 'application/json'\n    },\n    body: {\n      message: Hello, ${params.name ?? 'World'}!\n    }\n  }\n}\n\nexports.main = main\n\napplication:\n  runtimeManifest:\n    packages:\n      api:\n        license: Apache-2.0\n        actions:\n          hello:\n            function: actions/hello.js\n            web: 'yes'\n            runtime: nodejs:18\n        apis:\n          hello-api:\n            v1:\n              hello:\n                hello:\n                  method: get\n                  response: http\n  actions: actions\n\n{\n  \"name\": \"MyServerlessApp\",\n  \"version\": \"0.0.1\",\n  \"private\": true,\n  \"dependencies\": {\n    \"@adobe/aio-sdk\": \"^6\"\n  },\n  \"devDependencies\": {\n    \"eslint\": \"^8\",\n    \"eslint-plugin-jest\": \"^27.2.3\",\n    \"jest\": \"^29\"\n  }\n  \"engines\": {\n    \"node\": \">=18\"\n  }\n}",
+    "code": true,
+    "image": false,
+    "link": false,
+    "video": false
+  },
+  {
     "uuid": "d28ed3c1-2577-46c6-ae64-68ec360cc4d0",
     "date": "2026-06-19",
     "url": "/notes/2026/06/19/",

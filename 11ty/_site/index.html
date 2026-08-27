@@ -427,7 +427,7 @@
 
     
 
-      <a href="/notes/2026/06/19/">
+      <a href="/notes/2026/08/25/">
 
         <article>
 
@@ -436,7 +436,7 @@
             <!-- <img src="/img/krhoyt.jpg" /> -->
             <kh-avatar name="code" size="24"></kh-avatar>
             <script src="/script/avatar.js" type="module"></script>
-            <time>Jun 19, 2026</time>
+            <time>Aug 25, 2026</time>
 
             <aside>
 
@@ -456,7 +456,7 @@
 
           </div>
 
-          <p>When exporting SVG from Illustrator, individual tspan elements will be created for text blocks with font changes. The spans include coordinate attributes, preventing the natural flow of the text. This can create unwanted spacing between words. These attributes can be removed.</p>
+          <p>Implementing a serverless function that creates custom charts. I started by placing an SVG template in a string literal. This evolved into creating functions that generate SVG primitives. The resulting is code that is much cleaner, more readable, and potentially more flexible.</p>
 
         </article>
       
@@ -464,44 +464,7 @@
       
     
 
-      <a href="/notes/2026/06/09/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="code" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Jun 9, 2026</time>
-
-            <aside>
-
-              
-
-              
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>   
-              
-
-              
-
-                
-
-            </aside>
-
-          </div>
-
-          <p>When building workflows, consider the pipeline pattern. This pattern is an array of step functions that leverage the same context object. The context is created with all the necessary keys, then passed to a step which may/not modify it, and then returns it. Repeat for each step.</p>
-
-        </article>
-      
-      </a>
-      
-    
-
-      <a href="/notes/2026/05/29/">
+      <a href="/notes/2026/08/24/">
 
         <article>
 
@@ -510,7 +473,7 @@
             <!-- <img src="/img/krhoyt.jpg" /> -->
             <kh-avatar name="Kevin Hoyt" size="24"></kh-avatar>
             <script src="/script/avatar.js" type="module"></script>
-            <time>May 29, 2026</time>
+            <time>Aug 24, 2026</time>
 
             <aside>
 
@@ -526,7 +489,44 @@
 
           </div>
 
-          <p>Ran across an interesting tweak to the 1:1 meeting today. At the start of the meeting, each participant must ask one non-work-related question. Question can be vetoed. The 1:1 meeting is for the direct report, not the manager. This is a great way to set that framing.</p>
+          <p>Due to deployment constraints, I needed a simple stateless MCP server deployed as a serverless function. The request arrives, CORS is added, GET returns 200, POST routes to handler. The handler calls other APIs, mapping to the protocol. Tools are described using Zod per convention.</p>
+
+        </article>
+      
+      </a>
+      
+    
+
+      <a href="/notes/2026/08/22/">
+
+        <article>
+
+          <div>
+
+            <!-- <img src="/img/krhoyt.jpg" /> -->
+            <kh-avatar name="code" size="24"></kh-avatar>
+            <script src="/script/avatar.js" type="module"></script>
+            <time>Aug 22, 2026</time>
+
+            <aside>
+
+              
+
+              
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                  <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
+                </svg>   
+              
+
+              
+
+                
+
+            </aside>
+
+          </div>
+
+          <p>If you are converting SVG to PNG then you probably want to keep the font styles intact. The resvg package can accommodate this with a font configuration. The font files themselves need to be loaded into buffers. Font styles need to be applied inline - CSS does not seem to apply.</p>
 
         </article>
       

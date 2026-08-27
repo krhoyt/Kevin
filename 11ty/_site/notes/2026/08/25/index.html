@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="When exporting SVG from Illustrator, individual tspan elements will be created for text blocks with font changes. The spans include coordinate attributes, preventing the natural flow of the text. This can create unwanted spacing between words. These attributes can be removed." />
+  <meta name="description" content="Implementing a serverless function that creates custom charts. I started by placing an SVG template in a string literal. This evolved into creating functions that generate SVG primitives. The resulting is code that is much cleaner, more readable, and potentially more flexible." />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <title>Kevin Hoyt · Notes</title>
@@ -122,14 +122,10 @@
     
 
     <header>
-      <h1>Jun 19, 2026</h1>
-      
-        <a href="/notes/2026/08/19/">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>
-        </a>
+      <h1>Aug 25, 2026</h1>
       
       
-        <a href="/notes/2026/06/09/">
+        <a href="/notes/2026/08/24/">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8L4.646 2.354a.5.5 0 0 1 0-.708"/></svg>
         </a>
       
@@ -149,12 +145,34 @@
 
     </aside>
 
-    <p>When exporting SVG from Illustrator, individual tspan elements will be created for text blocks with font changes. The spans include coordinate attributes, preventing the natural flow of the text. This can create unwanted spacing between words. These attributes can be removed.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">stripPosition</span><span class="token punctuation">(</span> <span class="token parameter">tag</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> tag
-    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s+x="-?[\d.]+"</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span> <span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s+y="-?[\d.]+"</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span> <span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s+xml:space="[^"]*"</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <p>Implementing a serverless function that creates custom charts. I started by placing an SVG template in a string literal. This evolved into creating functions that generate SVG primitives. The resulting is code that is much cleaner, more readable, and potentially more flexible.</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Example generating a text element</span>
+<span class="token keyword">function</span> <span class="token function">text</span><span class="token punctuation">(</span> <span class="token punctuation">{</span> 
+  x<span class="token punctuation">,</span> 
+  y<span class="token punctuation">,</span> 
+  text<span class="token punctuation">,</span> 
+  children<span class="token punctuation">,</span> 
+  fontSize<span class="token punctuation">,</span> 
+  fontWeight<span class="token punctuation">,</span> 
+  fill<span class="token punctuation">,</span> 
+  textAnchor <span class="token operator">=</span> <span class="token string">'middle'</span><span class="token punctuation">,</span> 
+  dominantBaseline <span class="token operator">=</span> <span class="token string">'hanging'</span><span class="token punctuation">,</span> 
+  className 
+<span class="token punctuation">}</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> content <span class="token operator">=</span> children <span class="token operator">?</span> children<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span> <span class="token string">''</span> <span class="token punctuation">)</span> <span class="token operator">:</span> text <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    &lt;text
+      x="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>x<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"
+      y="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>y<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"
+      text-anchor="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>textAnchor<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"
+      dominant-baseline="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>dominantBaseline<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"
+      </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>fontSize <span class="token operator">!==</span> <span class="token keyword">undefined</span> <span class="token operator">?</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">font-size="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>fontSize<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span><span class="token template-punctuation string">`</span></span> <span class="token operator">:</span> <span class="token string">''</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+      </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>fontWeight <span class="token operator">!==</span> <span class="token keyword">undefined</span> <span class="token operator">?</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">font-weight="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>fontWeight<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span><span class="token template-punctuation string">`</span></span> <span class="token operator">:</span> <span class="token string">''</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+      </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>fill <span class="token operator">!==</span> <span class="token keyword">undefined</span> <span class="token operator">?</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">fill="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>fill<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span><span class="token template-punctuation string">`</span></span> <span class="token operator">:</span> <span class="token string">''</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+      </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>className <span class="token operator">?</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">class="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>className<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span><span class="token template-punctuation string">`</span></span> <span class="token operator">:</span> <span class="token string">''</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">>
+    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>content<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+  &lt;/text></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 
 

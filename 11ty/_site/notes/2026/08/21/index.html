@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="When exporting SVG from Illustrator, individual tspan elements will be created for text blocks with font changes. The spans include coordinate attributes, preventing the natural flow of the text. This can create unwanted spacing between words. These attributes can be removed." />
+  <meta name="description" content="Converting SVG to PNG is usually the domain of packages such as Sharp. This creates a binary dependency which complicates deployment (develop on Mac, deploy on Linux). The resvg package gives you this functionality without the binary dependency thanks to the included WASM module." />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <title>Kevin Hoyt · Notes</title>
@@ -122,14 +122,14 @@
     
 
     <header>
-      <h1>Jun 19, 2026</h1>
+      <h1>Aug 21, 2026</h1>
       
-        <a href="/notes/2026/08/19/">
+        <a href="/notes/2026/08/22/">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>
         </a>
       
       
-        <a href="/notes/2026/06/09/">
+        <a href="/notes/2026/08/20/">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8L4.646 2.354a.5.5 0 0 1 0-.708"/></svg>
         </a>
       
@@ -149,12 +149,54 @@
 
     </aside>
 
-    <p>When exporting SVG from Illustrator, individual tspan elements will be created for text blocks with font changes. The spans include coordinate attributes, preventing the natural flow of the text. This can create unwanted spacing between words. These attributes can be removed.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">stripPosition</span><span class="token punctuation">(</span> <span class="token parameter">tag</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> tag
-    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s+x="-?[\d.]+"</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span> <span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s+y="-?[\d.]+"</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span> <span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s+xml:space="[^"]*"</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <p>Converting SVG to PNG is usually the domain of packages such as <a href="https://www.sharpjs.cn/">Sharp</a>. This creates a binary dependency which complicates deployment (develop on Mac, deploy on Linux). The <code>resvg</code> <a href="https://github.com/linebender/resvg">package</a> gives you this functionality without the binary dependency thanks to the included WASM module.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span> <span class="token string">'fs'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span> <span class="token string">'path'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> Resvg<span class="token punctuation">,</span> initWasm <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span> <span class="token string">'@resvg/resvg-wasm'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> wasmReady <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span> <span class="token parameter">params</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> svg <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    &lt;svg
+      width="640"
+      height="480"
+      viewBox="0 0 640 480"
+      xmlns="http://www.w3.org/2000/svg">
+      &lt;style>
+        rect {
+          fill: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>params<span class="token punctuation">.</span>backgroundColor <span class="token operator">??</span> <span class="token string">'red'</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">;
+          stroke: none;
+        }
+      &lt;/style>
+      &lt;rect
+        x="270"
+        y="190"
+        width="100"
+        height="100"
+        rx="13"
+        ry="13" />
+    &lt;/svg>
+  </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>wasmReady <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    wasmReady <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">initWasm</span><span class="token punctuation">(</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span> 
+      path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span> __dirname<span class="token punctuation">,</span> <span class="token string">'index_bg.wasm'</span> <span class="token punctuation">)</span> 
+    <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">await</span> wasmReady<span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> resvg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Resvg</span><span class="token punctuation">(</span> svg <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">statusCode</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">headers</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string-property property">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'image/png'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">body</span><span class="token operator">:</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span> resvg<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">asPng</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 
 
