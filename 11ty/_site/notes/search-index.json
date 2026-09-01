@@ -1,5 +1,16 @@
 [
   {
+    "uuid": "2b4a830b-1a29-486d-b246-5029fac20429",
+    "date": "2026-09-01",
+    "url": "/notes/2026/09/01/",
+    "excerpt": "The rect element in SVG draws a rectangle. The element has rx and ry attributes to specify corner radius for rounded rectangles. The radius is applied to all corners. Rounded rectangles with different corner radii requires using path and calculating arcs for smooth corners.",
+    "body": "The rect element in SVG draws a rectangle. The element has rx and ry attributes to specify corner radius for rounded rectangles. The radius is applied to all corners. Rounded rectangles with different corner radii requires using path and calculating arcs for smooth corners.\n\nfunction roundedRect( { \n  x = 0, \n  y = 0, \n  width, \n  height, \n  topLeft = 13, \n  topRight = 13, \n  bottomRight = 0, \n  bottomLeft = 0, \n  fill, \n  stroke = 'none', \n  strokeWidth, \n  className \n} ) {\n  const maxRadius = Math.min( width, height ) / 2;\n  [topLeft, topRight, bottomRight, bottomLeft] = [\n    topLeft, topRight, bottomRight, bottomLeft\n  ].map( ( r ) => Math.min( r, maxRadius ) );\n\n  const d = [\n    M ${x + topLeft} ${y},\n    L ${x + width - topRight} ${y},\n    A ${topRight} ${topRight} 0 0 1 ${x + width} ${y + topRight},\n    L ${x + width} ${y + height - bottomRight},\n    A ${bottomRight} ${bottomRight} 0 0 1 ${x + width - bottomRight} ${y + height},\n    L ${x + bottomLeft} ${y + height},\n    A ${bottomLeft} ${bottomLeft} 0 0 1 ${x} ${y + height - bottomLeft},\n    L ${x} ${y + topLeft},\n    A ${topLeft} ${topLeft} 0 0 1 ${x + topLeft} ${y},\n    'Z'\n  ].join( ' ' );\n\n  const attrs = [\n    d=\"${d}\",\n    fill !== undefined ? fill=\"${fill}\" : null,\n    stroke=\"${stroke}\",\n    strokeWidth !== undefined ? stroke-width=\"${strokeWidth}\" : null,\n    className ? class=\"${className}\" : null\n  ].filter( Boolean ).join( ' ' );\n\n  return <path ${attrs} />;\n}",
+    "code": true,
+    "image": false,
+    "link": false,
+    "video": false
+  },
+  {
     "uuid": "2cd2af1b-4bf9-4454-9b68-df9dc00f13d2",
     "date": "2026-08-25",
     "url": "/notes/2026/08/25/",
