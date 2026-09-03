@@ -3,10 +3,10 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="Dispatches from development and design." />
+  <meta name="description" content="Building an MCP App? Do not use &lt;base href&gt; to point a resource&#39;s root-relative script src at your CDN. Claude Desktop hardcodes base-uri self and silently ignores your CSP&#39;s baseUriDomains - the tag just gets blocked, no error thrown. Rewrite the URLs to absolute instead." />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <title>September 2026 - Kevin Hoyt</title>
+  <title>Kevin Hoyt · Notes</title>
 
   <link rel="icon" type="image/x-icon" href="/img/edit.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,16 +17,12 @@
 
   <link rel="stylesheet" href="/style/kevinhoyt.css" />
   <link rel="stylesheet" href="/style/header.css" />
-  <link rel="stylesheet" href="/style/hero.css" />
   <link rel="stylesheet" href="/style/prism.css" />
-  <link rel="stylesheet" href="/style/notebook.css" />
+  <link rel="stylesheet" href="/style/note.css" />
   <link rel="stylesheet" href="/style/footer.css" />
 
 </head>
 <body>
-
-  
-  
 
   <header id="header">
 
@@ -117,182 +113,51 @@
 
 </header>
 
-  <section id="hero" fetchpriority="high">
 
-  <article>
+  <main>
 
-    
-      <h2>Kevin Hoyt · Notes</h2>
-    
+    <!-- <a href="/notes">Back to Notes</a> -->
 
     
-      <h3>Dispatches from development and design.</h3>
     
 
-    
-
-  </article>
-
-</section>
-
-  <section id="notes">
-
-  
-  <nav>
-    <div>
-      <a class="home" href="/notes">Notes</a>
-      <p>|</p>              
+    <header>
+      <h1>Sep 3, 2026</h1>
       
-        
-          <p>2026</p>
-          <p>|</p>
-        
-        <a href="/notes/2026/01/">Jan</a>
+        <a href="/notes/2026/09/04/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>
+        </a>
       
-        
-        <a href="/notes/2026/02/">Feb</a>
       
-        
-        <a href="/notes/2026/03/">Mar</a>
+        <a href="/notes/2026/09/01/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8L4.646 2.354a.5.5 0 0 1 0-.708"/></svg>
+        </a>
       
-        
-        <a href="/notes/2026/04/">Apr</a>
+    </header>
+
+    <aside>
+
       
-        
-        <a href="/notes/2026/05/">May</a>
+
       
-        
-        <a href="/notes/2026/06/">Jun</a>
+        <p class="tag">Code</p>
       
-        
-        <a href="/notes/2026/08/">Aug</a>
+
       
+
         
-        <a href="/notes/2026/09/" class="current">Sep</a>
-      
-    </div>
-  </nav>
+
+    </aside>
+
+    <p>Building an MCP App? Do not use <code>&lt;base href&gt;</code> to point a resource's root-relative script <code>src</code> at your CDN. Claude Desktop hardcodes <code>base-uri</code> <code>self</code> and silently ignores your CSP's <code>baseUriDomains</code> - the tag just gets blocked, no error thrown. Rewrite the URLs to absolute instead.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">absolutizeRootRelativeUrls</span><span class="token punctuation">(</span> <span class="token parameter">html<span class="token punctuation">,</span> origin</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> html<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">((?:src|href)=")\/(?!\/)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">$1</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>origin<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/</span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 
 
+    <a href="/notes">Back to Notes</a>
 
-  <div>
-
-    
-
-      <a href="/notes/2026/09/04/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="code" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Sep 4, 2026</time>
-
-            <aside>
-
-              
-
-              
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>
-              
-
-              
-
-              
-
-            </aside>
-
-          </div>
-
-          <p>Web platform gotcha: mutating innerText on a &lt;textarea&gt; does not reliably update what is displayed or copyable once the browser treats it as an editable value. Burned time debugging missing data that was arriving fine the whole time. Use &lt;pre&gt;/&lt;div&gt; for live logs instead.</p>
-
-        </article>
-
-      </a>
-
-    
-
-      <a href="/notes/2026/09/03/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="code" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Sep 3, 2026</time>
-
-            <aside>
-
-              
-
-              
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>
-              
-
-              
-
-              
-
-            </aside>
-
-          </div>
-
-          <p>Building an MCP App? Do not use &lt;base href&gt; to point a resource&#39;s root-relative script src at your CDN. Claude Desktop hardcodes base-uri self and silently ignores your CSP&#39;s baseUriDomains - the tag just gets blocked, no error thrown. Rewrite the URLs to absolute instead.</p>
-
-        </article>
-
-      </a>
-
-    
-
-      <a href="/notes/2026/09/01/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="code" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Sep 1, 2026</time>
-
-            <aside>
-
-              
-
-              
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>
-              
-
-              
-
-              
-
-            </aside>
-
-          </div>
-
-          <p>The rect element in SVG draws a rectangle. The element has rx and ry attributes to specify corner radius for rounded rectangles. The radius is applied to all corners. Rounded rectangles with different corner radii requires using path and calculating arcs for smooth corners.</p>
-
-        </article>
-
-      </a>
-
-    
-
-  </div>
-
-</section>
+  </main>
 
   <footer id="footer">
 
@@ -303,6 +168,7 @@
 </footer>
 
 
+  <script src="/script/avatar.js" type="module"></script>
   <script src="/script/menu.js"></script>
 
 </body>

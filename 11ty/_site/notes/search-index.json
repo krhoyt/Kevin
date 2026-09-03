@@ -1,5 +1,27 @@
 [
   {
+    "uuid": "30fc06cb-e32b-4f30-9e75-9fabc448fd3d",
+    "date": "2026-09-04",
+    "url": "/notes/2026/09/04/",
+    "excerpt": "Web platform gotcha: mutating innerText on a <textarea> does not reliably update what is displayed or copyable once the browser treats it as an editable value. Burned time debugging missing data that was arriving fine the whole time. Use <pre>/<div> for live logs instead.",
+    "body": "Web platform gotcha: mutating .innerText on a <textarea> does not reliably update what is displayed or copyable once the browser treats it as an editable value. Burned time debugging \"missing\" data that was arriving fine the whole time. Use <pre>/<div> for live logs instead.\n\n// Don't do this for a live-updating log/debug display\nconst textarea = document.querySelector( 'textarea' );\n\n// May not show up on screen\ntextarea.innerText += 'new line\\n'; \n\n// Do this instead\n// <pre>/<div> have no value/dirty-flag mechanism to fight\nconst log = document.querySelector( 'pre' );\nlog.innerText += 'new line\\n';",
+    "code": true,
+    "image": false,
+    "link": false,
+    "video": false
+  },
+  {
+    "uuid": "ddce2bbe-7426-4e71-9d6a-a755e1f27c0c",
+    "date": "2026-09-03",
+    "url": "/notes/2026/09/03/",
+    "excerpt": "Building an MCP App? Do not use <base href> to point a resource's root-relative script src at your CDN. Claude Desktop hardcodes base-uri self and silently ignores your CSP's baseUriDomains - the tag just gets blocked, no error thrown. Rewrite the URLs to absolute instead.",
+    "body": "Building an MCP App? Do not use <base href> to point a resource's root-relative script src at your CDN. Claude Desktop hardcodes base-uri self and silently ignores your CSP's baseUriDomains - the tag just gets blocked, no error thrown. Rewrite the URLs to absolute instead.\n\nfunction absolutizeRootRelativeUrls( html, origin ) {\n  return html.replace( /((?:src|href)=\")\\/(?!\\/)/g, $1${origin}/ );\n}",
+    "code": true,
+    "image": false,
+    "link": false,
+    "video": false
+  },
+  {
     "uuid": "2b4a830b-1a29-486d-b246-5029fac20429",
     "date": "2026-09-01",
     "url": "/notes/2026/09/01/",

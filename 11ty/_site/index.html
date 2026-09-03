@@ -427,6 +427,80 @@
 
     
 
+      <a href="/notes/2026/09/04/">
+
+        <article>
+
+          <div>
+
+            <!-- <img src="/img/krhoyt.jpg" /> -->
+            <kh-avatar name="code" size="24"></kh-avatar>
+            <script src="/script/avatar.js" type="module"></script>
+            <time>Sep 4, 2026</time>
+
+            <aside>
+
+              
+
+              
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                  <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
+                </svg>   
+              
+
+              
+
+                
+
+            </aside>
+
+          </div>
+
+          <p>Web platform gotcha: mutating innerText on a &lt;textarea&gt; does not reliably update what is displayed or copyable once the browser treats it as an editable value. Burned time debugging missing data that was arriving fine the whole time. Use &lt;pre&gt;/&lt;div&gt; for live logs instead.</p>
+
+        </article>
+      
+      </a>
+      
+    
+
+      <a href="/notes/2026/09/03/">
+
+        <article>
+
+          <div>
+
+            <!-- <img src="/img/krhoyt.jpg" /> -->
+            <kh-avatar name="code" size="24"></kh-avatar>
+            <script src="/script/avatar.js" type="module"></script>
+            <time>Sep 3, 2026</time>
+
+            <aside>
+
+              
+
+              
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                  <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
+                </svg>   
+              
+
+              
+
+                
+
+            </aside>
+
+          </div>
+
+          <p>Building an MCP App? Do not use &lt;base href&gt; to point a resource&#39;s root-relative script src at your CDN. Claude Desktop hardcodes base-uri self and silently ignores your CSP&#39;s baseUriDomains - the tag just gets blocked, no error thrown. Rewrite the URLs to absolute instead.</p>
+
+        </article>
+      
+      </a>
+      
+    
+
       <a href="/notes/2026/09/01/">
 
         <article>
@@ -457,76 +531,6 @@
           </div>
 
           <p>The rect element in SVG draws a rectangle. The element has rx and ry attributes to specify corner radius for rounded rectangles. The radius is applied to all corners. Rounded rectangles with different corner radii requires using path and calculating arcs for smooth corners.</p>
-
-        </article>
-      
-      </a>
-      
-    
-
-      <a href="/notes/2026/08/25/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="code" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Aug 25, 2026</time>
-
-            <aside>
-
-              
-
-              
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                  <path fill="#1a1a1a" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-                </svg>   
-              
-
-              
-
-                
-
-            </aside>
-
-          </div>
-
-          <p>Implementing a serverless function that creates custom charts. I started by placing an SVG template in a string literal. This evolved into creating functions that generate SVG primitives. The resulting is code that is much cleaner, more readable, and potentially more flexible.</p>
-
-        </article>
-      
-      </a>
-      
-    
-
-      <a href="/notes/2026/08/24/">
-
-        <article>
-
-          <div>
-
-            <!-- <img src="/img/krhoyt.jpg" /> -->
-            <kh-avatar name="Kevin Hoyt" size="24"></kh-avatar>
-            <script src="/script/avatar.js" type="module"></script>
-            <time>Aug 24, 2026</time>
-
-            <aside>
-
-              
-
-              
-
-              
-
-                
-
-            </aside>
-
-          </div>
-
-          <p>Due to deployment constraints, I needed a simple stateless MCP server deployed as a serverless function. The request arrives, CORS is added, GET returns 200, POST routes to handler. The handler calls other APIs, mapping to the protocol. Tools are described using Zod per convention.</p>
 
         </article>
       
