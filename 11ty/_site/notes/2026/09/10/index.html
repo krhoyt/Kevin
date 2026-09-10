@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="Web platform gotcha: mutating innerText on a &lt;textarea&gt; does not reliably update what is displayed or copyable once the browser treats it as an editable value. Burned time debugging missing data that was arriving fine the whole time. Use &lt;pre&gt;/&lt;div&gt; for live logs instead." />
+  <meta name="description" content="To use an image in an Adobe App Builder project, mind the Parcel bundler. A plain JS import of an asset silently resolves to an empty module. Use the url: scheme instead to get the real, hashed URL. Also, in the age of the modern web, consider not forcing bundlers on developers." />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <title>Kevin Hoyt · Notes</title>
@@ -122,14 +122,10 @@
     
 
     <header>
-      <h1>Sep 4, 2026</h1>
-      
-        <a href="/notes/2026/09/10/">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>
-        </a>
+      <h1>Sep 10, 2026</h1>
       
       
-        <a href="/notes/2026/09/03/">
+        <a href="/notes/2026/09/04/">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8L4.646 2.354a.5.5 0 0 1 0-.708"/></svg>
         </a>
       
@@ -149,17 +145,10 @@
 
     </aside>
 
-    <p>Web platform gotcha: mutating <code>.innerText</code> on a <code>&lt;textarea&gt;</code> does not reliably update what is displayed or copyable once the browser treats it as an editable value. Burned time debugging &quot;missing&quot; data that was arriving fine the whole time. Use <code>&lt;pre&gt;</code>/<code>&lt;div&gt;</code> for live logs instead.</p>
-<pre class="language-js"><code class="language-js"><span class="token comment">// Don't do this for a live-updating log/debug display</span>
-<span class="token keyword">const</span> textarea <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span> <span class="token string">'textarea'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <p>To use an image in an Adobe App Builder project, mind the Parcel bundler. A plain JS import of an asset silently resolves to an empty module. Use the <code>url:</code> scheme instead to get the real, hashed URL. Also, in the age of the modern web, consider not forcing bundlers on developers.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">import</span> icon <span class="token keyword">from</span> <span class="token string">'url:./icon.svg'</span><span class="token punctuation">;</span>
 
-<span class="token comment">// May not show up on screen</span>
-textarea<span class="token punctuation">.</span>innerText <span class="token operator">+=</span> <span class="token string">'new line\n'</span><span class="token punctuation">;</span> 
-
-<span class="token comment">// Do this instead</span>
-<span class="token comment">// &lt;pre>/&lt;div> have no value/dirty-flag mechanism to fight</span>
-<span class="token keyword">const</span> log <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span> <span class="token string">'pre'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-log<span class="token punctuation">.</span>innerText <span class="token operator">+=</span> <span class="token string">'new line\n'</span><span class="token punctuation">;</span></code></pre>
+<span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">"${icon}"</span> width<span class="token operator">=</span><span class="token string">"32"</span> height<span class="token operator">=</span><span class="token string">"32"</span><span class="token operator">></span></code></pre>
 
 
     <a href="/notes">Back to Notes</a>

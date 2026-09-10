@@ -1,5 +1,16 @@
 [
   {
+    "uuid": "ba3cf3c3-3b65-4a60-9cdf-abce97c65926",
+    "date": "2026-09-10",
+    "url": "/notes/2026/09/10/",
+    "excerpt": "To use an image in an Adobe App Builder project, mind the Parcel bundler. A plain JS import of an asset silently resolves to an empty module. Use the url: scheme instead to get the real, hashed URL. Also, in the age of the modern web, consider not forcing bundlers on developers.",
+    "body": "To use an image in an Adobe App Builder project, mind the Parcel bundler. A plain JS import of an asset silently resolves to an empty module. Use the url: scheme instead to get the real, hashed URL. Also, in the age of the modern web, consider not forcing bundlers on developers.\n\nimport icon from 'url:./icon.svg';\n\n<img src=\"${icon}\" width=\"32\" height=\"32\">",
+    "code": true,
+    "image": false,
+    "link": false,
+    "video": false
+  },
+  {
     "uuid": "30fc06cb-e32b-4f30-9e75-9fabc448fd3d",
     "date": "2026-09-04",
     "url": "/notes/2026/09/04/",
