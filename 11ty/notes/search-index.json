@@ -1,5 +1,16 @@
 [
   {
+    "uuid": "e0424871-cdf9-4fde-85c3-b7885a46d750",
+    "date": "2026-09-28",
+    "url": "/notes/2026/09/28/",
+    "excerpt": "Encountered a unique prioritization framework today that assigned a value of 1 - 5 (5 being highest) for the categories of business value, impact scope, urgency, effort (workload), and risk (optional). A mathematical formula can then be used to determined a priority score.",
+    "body": "Encountered a unique prioritization framework today that assigned a value of 1 - 5 (5 being highest) for the categories of business value, impact scope, urgency, effort (workload), and risk (optional). A mathematical formula can then be used to determined a priority score.\n\nValue-Based Job First (VBJF)\n\n1. Business value: Revenue impact, customer adoption, strategic alignment.\n2. Impact scope: How many workstreams are affected? Does it unlock additional use cases?\n3. Urgency: Time-sensitive\n4. Effort (Workload): Engineering complexity, dependencies, delivery effort.\n5. Risk (Optional): Technical or business uncertainty.\n\nPriority Score = ( Value + Scope + Urgency ) / ( Effort + Risk )",
+    "code": false,
+    "image": false,
+    "link": false,
+    "video": false
+  },
+  {
     "uuid": "ba3cf3c3-3b65-4a60-9cdf-abce97c65926",
     "date": "2026-09-10",
     "url": "/notes/2026/09/10/",
